@@ -7,15 +7,12 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Site Title</title>
+        <title>Toyota model helper</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
         <link href="favicon.ico" rel="shortcut icon">
         
-        <script src="assets/scripts/vendor/modernizr-2.6.2.min.js"></script>
-        
-
         <link rel='stylesheet' href='assets/styles/toyota-est.css'>
         
         <!-- Hammer reload -->
@@ -41,13 +38,8 @@
         <!-- /Hammer reload -->
       
     </head>
-    <body class="page">
+    <body class="Model Data">
     
-    <!--[if lt IE 7]>
-        <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-    <![endif]-->
-
-    <header class="banner"></header> 
 
 <nav id="nav-primary" class="navbar navbar-fixed-top">
   <div class="navbar-inner container">
@@ -64,21 +56,11 @@
       <a href="index.html" id="logo-medium" class="logo-link hidden-xs hidden-sm logo-logo-sm"></a>
       <a href="index.html" id="logo-big" class="logo-link hidden-xs hidden-sm logo-logo-md-red" itemprop="url"><span itemprop="name" style="display:none">Esileht</span></a></div>
       <div class="float-right large-nav my-toyota hidden-xs dropdown">
-        <a id="dropdown-button-my-toyota" class="dropdown-toggle" data-toggle="dropdown" role="button" data-action-target="#dropdown-menu-my-toyota" href="index.html#" data-bt-action="menu" data-bt-value="show_my_toyota" data-bt-collapse-value="hide_my_toyota" data-bt-action-target="#dropdown-menu-my-toyota" data-bt-track="">
+        <!-- <a id="dropdown-button-my-toyota" class="dropdown-toggle" data-toggle="dropdown" role="button" data-action-target="#dropdown-menu-my-toyota" href="index.html#" data-bt-action="menu" data-bt-value="show_my_toyota" data-bt-collapse-value="hide_my_toyota" data-bt-action-target="#dropdown-menu-my-toyota" data-bt-track="">
         <span>My Toyota</span>
-        </a>
+        </a> -->
 
-        <div id="dropdown-menu-my-toyota" class="dropdown-menu" role="menu" data-expand-height="content">
-          <nav class="container navigation-menu clearfix">
-            <div id="myToyota" data-url="/sys/my-toyota">
-              
-              <a class="ty-icon" href="index.html#/publish/my_toyota_my_cars">Minu autod</a>
-              
-              <a class="ty-icon" href="index.html#/publish/my_toyota_owners_area">Kliendile</a>
-              
-            </div>
-          </nav>
-        </div>
+        
       </div>
       </div>
 
@@ -148,177 +130,79 @@
 </div>
 
 
-<section id="minicarconfig" class="carconfig-mini hidden-xs">
-  <div class="container">
-    <header>
-      <h1>Mini configurator</h1>
-      <p class="text-center">Quickly find the price and the basic options for your favorite car.</p>
-    </header>
-    <div class="row">
-      <div class="col-xs-12 col-md-6 carconfig-mini-app text-left">
-        <div class="carconfig-mini-form">
-          <div class="carconfig-mini-summary">
-            <header class="visible-xs">
-              <div class="pull-left">
-                <h4>Your choice</h4>
+<section>
+  <!-- source: http://jsfiddle.net/ivanarvizu/JS6JV/16/light/ -->
+<div class="container">
+  <header>
+      <h1>Stock in Network</h1>
+      <p class="text-center">Cars all over Toyota</p>
+  </header>
+  <div class="row">
+    <div class="col-xs-12">
+      <div id='carousel-carid' class='carousel slide' data-ride='carousel' data-interval="false">
+        <div id="placeholder-modeldata"></div>
+      
+        <script type="text/x-handlebars-template" id="modeldata-template">
+         
+          <div class='carousel-outer'>
+
+            <div class='carousel-inner'>
+            {{#images}}
+              <div class='row item {{class}}'>
+                <div class="col-xs-4">
+                  <img alt="{{id}}" src="http://images.toyota-europe.com/lt/{{id}}/width/308/height/190/exterior-32.png">
+                </div>
+                <div class="col-xs-8 text-left">
+                  <h2>{{caption}}</h2>
+                  <p><span class="price">hjsadgjfkh</span><span>szfhldlk</span><span>gaksflsdhzd</span></p>
+                </div>
               </div>
-              <div class="pull-right">
-                <a class="btn btn-dark btn-reset">Reset<i class="icon-repeat"></i></a>
-              </div>
-            </header>
-            <div class="body">
-              <ul class="summary-selection visible-xs"></ul>
-              <div class="summary-selection-nice">
-              </div>
-              <div class="table-responsive summary-price">
-                <table class="table">
-                  <thead></thead>
-                  <tbody>
-                    <tr class="price"><td>Price:</td><td></td></tr>
-                    <tr class="color"><td>Extra colour:</td><td></td></tr>
-                    <tr class="price-total"><td>Total Price:</td><td></td></tr>
-                    <tr class="code"><td>Toyota code:</td><td></td></tr>
-                    <tr class="price-monthly finance-rate hidden">
-                      <td>Monthly finance available from <br /> <span class="small">Terms & Conditions apply</span></td>
-                      <td><span class="price-monthly-value"></span></td>
-                    </tr>
-                    <tr class="finance-rates finance-rate hidden">
-                      <td>Rates informations</td>
-                      <td>
-                        <span class="finance-rates-value"></span>
-                        <div class="expansion-content exceptions" id="miniCCDisclaimer">
-                          <a class="closelink" href="carchapter-radio.html#">Close<i class="icon-remove"></i></a>
-                          <div class="expansion-inner"></div>
-                          <div class="expansion-arrow"/>
-                        </div>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+              {{/images}}
             </div>
           </div>
-          <div class="finance-quote finance-rate">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
-          </div>
-          <ul class="carconfig-mini-select">
-            <li class="dropdown model" data-step="models">
-              <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="carchapter-radio.html#"><span>Choose a model</span><i class="icon-chevron-down"></i></a>
-              <ul class="dropdown-menu" role="menu">
-                <li>
-                  <a data-id="auris-ts">Auris Touring Sports</a>
-                </li>
-                <li>
-                  <a data-id="pg">Prius Plug-in</a>
-                </li>
-                <li>
-                  <a data-id="gt">GT86</a>
-                </li>
-                <li>
-                  <a data-id="pi-mpv">Grand Prius+</a>
-                </li>
-                <li>
-                  <a data-id="auris">Auris</a>
-                </li>
-                <li>
-                  <a data-id="avensis" data-selected="true">Avensis</a>
-                </li>
-                <li>
-                  <a data-id="ag">Aygo</a>
-                </li>
-                <li>
-                  <a data-id="hilux">Hilux</a>
-                </li>
-                <li>
-                  <a data-id="iq">iQ</a>
-                </li>
-                <li>
-                  <a data-id="landcruiser150">Land Cruiser 150</a>
-                </li>
-                <li>
-                  <a data-id="landcruiser100">Land Cruiser V8</a>
-                </li>
-                <li>
-                  <a data-id="prius">Prius</a>
-                </li>
-                <li>
-                  <a data-id="ra">Rav4</a>
-                </li>
-                <li>
-                  <a data-id="verso">Verso</a>
-                </li>
-                <li>
-                  <a data-id="verso-s">Verso-S</a>
-                </li>
-                <li>
-                  <a data-id="ya">Yaris</a>
-                </li>
-              </ul>
-            </li>
-            <li class="dropdown bodyType" data-step="bodyType">
-              <a class="dropdown-toggle disabled" role="button" data-toggle="dropdown" href="carchapter-radio.html#"><span>Choose a body style</span><i class="icon-chevron-down"></i></a>
-            </li>
-            <li class="dropdown engine" data-step="engine">
-              <a class="dropdown-toggle disabled" role="button" data-toggle="dropdown" href="carchapter-radio.html#"><span>Choose an engine</span><i class="icon-chevron-down"></i></a>
-            </li>
-            <li class="dropdown transmission" data-step="transmission">
-              <a class="dropdown-toggle disabled" role="button" data-toggle="dropdown" href="carchapter-radio.html#"><span>Choose a transmission</span><i class="icon-chevron-down"></i></a>
-            </li>
-            <li class="dropdown wheelDrives" data-step="wheelDrives">
-              <a class="dropdown-toggle disabled" role="button" data-toggle="dropdown" href="carchapter-radio.html#"><span>Choose a wheeldrive</span><i class="icon-chevron-down"></i></a>
-            </li>
-            <li class="dropdown grades" data-step="grades">
-              <a class="dropdown-toggle disabled" role="button" data-toggle="dropdown" href="carchapter-radio.html#"><span>Choose a grade</span><i class="icon-chevron-down"></i></a>
-            </li>
-            <li class="dropdown colours" data-step="colours">
-              <a class="dropdown-toggle disabled" role="button" data-toggle="dropdown" href="carchapter-radio.html#"><span>Choose a colour</span><i class="icon-chevron-down"></i></a>
-            </li>
-          </ul>
-        </div>
-      </div>
 
-      <div class="col-xs-12 col-md-6 carconfig-mini-preview">
-        <img class="image-result" src="../../assets/images/minicar-config-default.png" />
-        <div class="carconfig-mini-actions">
-          <a class="btn btn-dark btn-reset">Reset<i class="icon-repeat"></i></a>
-          <a class="btn btn-grey btn-my-toyota" href="carchapter-radio.html#">Save to MyToyota</a>
-          <a class="btn btn-grey btn-more-about" href="carchapter-radio.html#"></a>
-        </div>
-      </div>
+          <ol class='carousel-indicators mCustomScrollbar'>
+            {{#images}}
+            <li data-target='#carousel-carid' data-slide-to='{{no}}' class='{{class}}'><img src='http://images.toyota-europe.com/lt/{{id}}/width/100/height/60/exterior-32.png' alt='' /></li>
+            {{/images}}
+          </ol>
+          <hr>
+        
+        </script>
 
+      </div>
     </div>
+
+
   </div>
+</div>
 </section>
 
-  <section class="spotlights navy footer">
-    <div class="container clearfix">
+    <section class="spotlights navy footer">
+      <div class="container clearfix">
 
-      <div class="row">
-        <div class="buttons col-xs-12">
-          <a href="index.html" class="btn btn-grey pull-left empty">
-            <span>Previous</span>
-          </a>
-          <a href="model-data.html" class="current btn btn-red pull-right hidden" id="nextPage">
-            <span>Model data</span><i class="icon-chevron-right"></i>
-          </a>
+        <div class="row">
+          <div class="buttons col-xs-12">
+            <a href="index.html" class="btn btn-grey pull-left">
+              <span>Previous</span>
+            </a>
+            <a href="model-data.html" class="current btn btn-red pull-right empty" id="nextPage">
+              <span>Model data</span><i class="icon-chevron-right"></i>
+            </a>
+          </div>
+          
+          
         </div>
-        
-        
       </div>
-    </div>
-  </section>
+    </section>
 
 
 <!-- scripts -->
 <script src='assets/scripts/vendor/handlebars.js'></script>
-<script src='assets/scripts/vendor/lodash.js'></script>
 <script src='assets/scripts/vendor/jquery.js'></script>
-<script src='assets/scripts/vendor/pubsub.js'></script>
 <script src='assets/scripts/vendor/skrollr.stylesheets.js'></script>
 <script src='assets/scripts/vendor/skrollr.js'></script>
 <script src='assets/scripts/vendor/jquery.touchSwipe.js'></script>
-<script src='assets/scripts/vendor/jquery.tablesorter.js'></script>
-<script src='assets/scripts/vendor/globalize.js'></script>
 <script src='assets/scripts/vendor/bootstrap.js'></script>
 <script src='assets/scripts/vendor/iscroll.js'></script>
 <script src='assets/scripts/vendor/jquery.scrollTo.min.js'></script>
@@ -326,17 +210,15 @@
 <script src='assets/scripts/vendor/bootstrap-paginator.js'></script>
 <script src='assets/scripts/vendor/screenfull.js'></script>
 <script src='assets/scripts/vendor/spritespin.js'></script>
-<script src='assets/scripts/vendor/retina.js'></script>
-<script src='assets/special.includes.js'></script>
-<script src='assets/scripts/vendor-basics.js'></script>
-<script src='assets/scripts/vendor-ext.js'></script>
+<script src='assets/scripts/vendor/bootstrap-select.min.js'></script>
 
 <script src="data/model-list.json"></script>
+<script src="data/model-data.json"></script>
 
 <script>
-  jQuery(function(){
+    jQuery(function(){
 
-  // jQuery('.selectpicker').selectpicker({'title' : 'vali'}).val('Mustard1');
+  jQuery('.selectpicker').selectpicker();
 
   jQuery('.modelitem').click(function(){
     jQuery('.modelitem').removeClass('active');
@@ -346,6 +228,9 @@
   });
 
 });
+
+
 </script>
-    </body>
+
+  </body>
 </html>

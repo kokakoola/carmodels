@@ -16,8 +16,19 @@ body {
 
 }
 
+#opening-buttons {
+  margin-top: 60px;
+  .btn {
+    margin-top: 30px;
+  }
+}
+
 .modelrange .row a .modelitem span {
   margin-top: -12px;
+}
+
+.carousel-inner .item:hover {
+  background-color: #E8E9EA;
 }
 
 .modelitem.active {
@@ -25,7 +36,7 @@ body {
   border-bottom: 2px solid #D2001E;
 }
 
-h1 {
+section h1 {
   border-bottom: 1px solid #C9C9C9;
   text-align: center;
 }
@@ -52,3 +63,58 @@ section.footer {
   }
 }
 
+// carousel
+h4 {
+    margin: 20px 10px 10px;
+}
+p {
+    margin: 10px;
+}
+
+.carousel-indicators {
+    margin: 10px 0 0;
+
+    overflow: auto;
+    position: static;
+    text-align: left;
+    white-space: nowrap;
+    width: 100%;
+}
+.carousel-indicators li {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    display: inline-block;
+    height: auto;
+    margin: 0 !important;
+    width: auto;
+}
+.carousel-indicators li img {
+    display: block;
+    opacity: 1;
+    padding: 0 10px;
+}
+
+.carousel-indicators li:hover {
+  background-color: #E8E9EA;
+}
+.carousel-indicators .active {
+  width: auto;
+  height: auto;
+  background-color: #E8E9EA;
+  border-bottom: 2px solid #D2001E;
+}
+.carousel-indicators li.active img {
+    opacity: 0.5;
+    display: block;
+}
+.carousel-indicators li:hover img {
+    opacity: 0.75;
+}
+.carousel-outer {
+    position: relative;
+}
+
+.open>.dropdown-menu {
+  display: block !important;
+}

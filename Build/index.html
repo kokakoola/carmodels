@@ -7,15 +7,12 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Site Title</title>
+        <title>Toyota model helper</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
         <link href="favicon.ico" rel="shortcut icon">
         
-        <script src="assets/scripts/vendor/modernizr-2.6.2.min.js"></script>
-        
-
         <link rel='stylesheet' href='assets/styles/toyota-est.css'>
         
         <!-- Hammer reload -->
@@ -41,13 +38,8 @@
         <!-- /Hammer reload -->
       
     </head>
-    <body class="page">
+    <body class="Start">
     
-    <!--[if lt IE 7]>
-        <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-    <![endif]-->
-
-    <header class="banner"></header> 
 
 <nav id="nav-primary" class="navbar navbar-fixed-top">
   <div class="navbar-inner container">
@@ -64,21 +56,11 @@
       <a href="index.html" id="logo-medium" class="current logo-link hidden-xs hidden-sm logo-logo-sm"></a>
       <a href="index.html" id="logo-big" class="current logo-link hidden-xs hidden-sm logo-logo-md-red" itemprop="url"><span itemprop="name" style="display:none">Esileht</span></a></div>
       <div class="float-right large-nav my-toyota hidden-xs dropdown">
-        <a id="dropdown-button-my-toyota" class="dropdown-toggle" data-toggle="dropdown" role="button" data-action-target="#dropdown-menu-my-toyota" href="index.html#" data-bt-action="menu" data-bt-value="show_my_toyota" data-bt-collapse-value="hide_my_toyota" data-bt-action-target="#dropdown-menu-my-toyota" data-bt-track="">
+        <!-- <a id="dropdown-button-my-toyota" class="dropdown-toggle" data-toggle="dropdown" role="button" data-action-target="#dropdown-menu-my-toyota" href="index.html#" data-bt-action="menu" data-bt-value="show_my_toyota" data-bt-collapse-value="hide_my_toyota" data-bt-action-target="#dropdown-menu-my-toyota" data-bt-track="">
         <span>My Toyota</span>
-        </a>
+        </a> -->
 
-        <div id="dropdown-menu-my-toyota" class="dropdown-menu" role="menu" data-expand-height="content">
-          <nav class="container navigation-menu clearfix">
-            <div id="myToyota" data-url="/sys/my-toyota">
-              
-              <a class="ty-icon" href="index.html#/publish/my_toyota_my_cars">Minu autod</a>
-              
-              <a class="ty-icon" href="index.html#/publish/my_toyota_owners_area">Kliendile</a>
-              
-            </div>
-          </nav>
-        </div>
+        
       </div>
       </div>
 
@@ -148,43 +130,64 @@
 </div>
 
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm-3">
-      Model menu
-    </div>
-  </div>
-</div>
-
-  <section class="spotlights navy footer">
-    <div class="container clearfix">
-
-      <div class="row">
-        <div class="buttons col-xs-12">
-          <a href="index.html" class="current btn btn-grey pull-left hidden">
-            <span>Previous</span>
-          </a>
-          <a href="model-menu.html" class="btn btn-red pull-right hidden" id="nextPage">
-            <span>Model data</span><i class="icon-chevron-right"></i>
-          </a>
-        </div>
-        
-        
+<section id="opening-buttons">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-3">
+        <a href="model-menu.html">
+          <img src="http://d60d6o25njma0.cloudfront.net/fr/vehicle/ag/3e1d85bf-6b03-4aef-ba28-8af575c532ce/width/263/height/130/exterior-32.png" class="img-responsive" alt="">
+        </a>
+        <a href="model-menu.html" class="btn btn-block btn-dark">Model menu<i class="icon-chevron-right"></i></a>
+      </div>
+      <div class="col-xs-12 col-sm-3">  
+        <a href="#">
+          <img src="http://d60d6o25njma0.cloudfront.net/fr/vehicle/ag/3e1d85bf-6b03-4aef-ba28-8af575c532ce/width/263/height/130/exterior-32.png" class="img-responsive" alt="">
+        </a>
+        <a href="carchapter-comparers.html#" class="btn btn-block btn-dark">Best offers<i class="icon-chevron-right"></i></a>
+      </div>
+      <div class="col-xs-12 col-sm-3">
+        <a href="#">
+          <img src="http://d60d6o25njma0.cloudfront.net/fr/vehicle/ag/3e1d85bf-6b03-4aef-ba28-8af575c532ce/width/263/height/130/exterior-32.png" class="img-responsive" alt="">
+        </a>
+        <a href="carchapter-comparers.html#" class="btn btn-block btn-dark">Leasing calculator<i class="icon-chevron-right"></i></a>
+      </div>
+      <div class="col-xs-12 col-sm-3">
+        <a href="#">
+          <img src="http://d60d6o25njma0.cloudfront.net/fr/vehicle/ag/3e1d85bf-6b03-4aef-ba28-8af575c532ce/width/263/height/130/exterior-32.png" class="img-responsive" alt="">
+        </a>
+        <a href="carchapter-comparers.html#" class="btn btn-block btn-dark">Check my car<i class="icon-chevron-right"></i></a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+        
+
+
+    <section class="spotlights navy footer">
+      <div class="container clearfix">
+
+        <div class="row">
+          <div class="buttons col-xs-12">
+            <a href="index.html" class="current btn btn-grey pull-left">
+              <span>Previous</span>
+            </a>
+            <a href="model-menu.html" class="btn btn-red pull-right hidden" id="nextPage">
+              <span>Model data</span><i class="icon-chevron-right"></i>
+            </a>
+          </div>
+          
+          
+        </div>
+      </div>
+    </section>
 
 
 <!-- scripts -->
 <script src='assets/scripts/vendor/handlebars.js'></script>
-<script src='assets/scripts/vendor/lodash.js'></script>
 <script src='assets/scripts/vendor/jquery.js'></script>
-<script src='assets/scripts/vendor/pubsub.js'></script>
 <script src='assets/scripts/vendor/skrollr.stylesheets.js'></script>
 <script src='assets/scripts/vendor/skrollr.js'></script>
 <script src='assets/scripts/vendor/jquery.touchSwipe.js'></script>
-<script src='assets/scripts/vendor/jquery.tablesorter.js'></script>
-<script src='assets/scripts/vendor/globalize.js'></script>
 <script src='assets/scripts/vendor/bootstrap.js'></script>
 <script src='assets/scripts/vendor/iscroll.js'></script>
 <script src='assets/scripts/vendor/jquery.scrollTo.min.js'></script>
@@ -192,17 +195,15 @@
 <script src='assets/scripts/vendor/bootstrap-paginator.js'></script>
 <script src='assets/scripts/vendor/screenfull.js'></script>
 <script src='assets/scripts/vendor/spritespin.js'></script>
-<script src='assets/scripts/vendor/retina.js'></script>
-<script src='assets/special.includes.js'></script>
-<script src='assets/scripts/vendor-basics.js'></script>
-<script src='assets/scripts/vendor-ext.js'></script>
+<script src='assets/scripts/vendor/bootstrap-select.min.js'></script>
 
 <script src="data/model-list.json"></script>
+<script src="data/model-data.json"></script>
 
 <script>
-  jQuery(function(){
+    jQuery(function(){
 
-  // jQuery('.selectpicker').selectpicker({'title' : 'vali'}).val('Mustard1');
+  jQuery('.selectpicker').selectpicker();
 
   jQuery('.modelitem').click(function(){
     jQuery('.modelitem').removeClass('active');
@@ -212,6 +213,9 @@
   });
 
 });
+
+
 </script>
-    </body>
+
+  </body>
 </html>

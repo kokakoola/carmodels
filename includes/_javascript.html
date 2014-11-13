@@ -1,4 +1,22 @@
 <!-- scripts -->
-<!-- @javascript handlebars lodash jquery pubsub skrollr.stylesheets skrollr jquery.touchSwipe jquery.tablesorter globalize bootstrap iscroll jquery.scrollTo.min bootstrap-datepicker bootstrap-paginator screenfull spritespin retina special.includes vendor-basics vendor-ext -->
+<!-- @javascript handlebars jquery skrollr.stylesheets skrollr jquery.touchSwipe bootstrap iscroll jquery.scrollTo.min bootstrap-datepicker bootstrap-paginator screenfull spritespin  bootstrap-select.min -->
 
 <script src="data/model-list.json"></script>
+<script src="data/model-data.json"></script>
+
+<script>
+    jQuery(function(){
+
+  jQuery('.selectpicker').selectpicker();
+
+  jQuery('.modelitem').click(function(){
+    jQuery('.modelitem').removeClass('active');
+    jQuery(this).addClass('active');
+    jQuery('#nextPage').removeClass('hidden');
+    return false;
+  });
+
+});
+
+
+</script>

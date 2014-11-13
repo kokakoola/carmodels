@@ -1,0 +1,41 @@
+  var source   = $("#modeldata-template").html();
+  var template = Handlebars.compile(source); 
+
+
+  var data = { images: [
+    {
+      caption: "Aygo",
+      id: "aygo",
+      no: "0",
+      class: "active"
+    },
+    {
+      caption: "Yaris",
+      id: "yaris",
+      no: "1"
+    },
+    {
+      caption: "Verso-S",
+      id: "Verso-S",
+      no: "2"
+    },
+    {
+      caption: "Auris",
+      id: "Auris",
+      hybrid: "Hübriid saadaval",
+      no: "3"
+    },
+    {
+      caption: "Corolla",
+      id: "Corolla",
+      no: "4"
+    },
+    {
+      caption: "Verso",
+      id: "Verso",
+      no: "5"
+
+    }
+    ]};
+
+  $("#placeholder-modeldata").html(template(data));

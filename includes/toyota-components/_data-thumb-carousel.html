@@ -1,0 +1,45 @@
+<!-- source: http://jsfiddle.net/ivanarvizu/JS6JV/16/light/ -->
+<div class="container">
+  <header>
+      <h1>Stock in Network</h1>
+      <p class="text-center">Cars all over Toyota</p>
+  </header>
+  <div class="row">
+    <div class="col-xs-12">
+      <div id='carousel-carid' class='carousel slide' data-ride='carousel' data-interval="false">
+        <div id="placeholder-modeldata"></div>
+      
+        <script type="text/x-handlebars-template" id="modeldata-template">
+         
+          <div class='carousel-outer'>
+
+            <div class='carousel-inner'>
+            {{#images}}
+              <div class='row item {{class}}'>
+                <div class="col-xs-4">
+                  <img alt="{{id}}" src="http://images.toyota-europe.com/lt/{{id}}/width/308/height/190/exterior-32.png">
+                </div>
+                <div class="col-xs-8 text-left">
+                  <h2>{{caption}}</h2>
+                  <p><span class="price">hjsadgjfkh</span><span>szfhldlk</span><span>gaksflsdhzd</span></p>
+                </div>
+              </div>
+              {{/images}}
+            </div>
+          </div>
+
+          <ol class='carousel-indicators mCustomScrollbar'>
+            {{#images}}
+            <li data-target='#carousel-carid' data-slide-to='{{no}}' class='{{class}}'><img src='http://images.toyota-europe.com/lt/{{id}}/width/100/height/60/exterior-32.png' alt='' /></li>
+            {{/images}}
+          </ol>
+          <hr>
+        
+        </script>
+
+      </div>
+    </div>
+
+
+  </div>
+</div>
