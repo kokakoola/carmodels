@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if IE 9]>         <html class="no-js eq-ie9"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js"> <!--<![endif]-->
+
+<head data-eprivacy-default-level="40" data-eprivacy-cookie="TmeEPrivacy">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=963px;" />
+
+	<title>Mockup</title>
+
+	<!--[if gt IE 9]><!--> <link href="../../styles/T1-style.css" rel="stylesheet"><!--<![endif]-->
+	<!--[if lte IE 9]><link href="/styles/T1-style-ie-blessed1.css" rel="stylesheet"><link href="/styles/T1-style-ie.css" rel="stylesheet"><![endif]-->
+
+	<link rel="stylesheet" type="text/css" href="../../styles/T1-skrollr.css" media="only screen and (min-width: 769px)" data-skrollr-stylesheet>
+	<link rel="stylesheet" href="../../styles/carconfigurator/ccv6.css" />
+
+	<script src="../../assets/modernizr.custom.12394.js"></script>
+	<script src="../../assets/special.includes.js"></script>
+</head>
+
+<body>
+	<section id="tmxcc-v6" class="tmxcc-v6-container"></section>
+
+	<!-- vendor-basics.js -->
+	<script src="http://t1-production-client.herokuapp.com/bower_components/jquery/dist/jquery.js"></script>
+	<script src="http://t1-production-client.herokuapp.com/bower_components/pubsub-js/src/pubsub.js"></script>
+	<!-- end vendor-basics.js -->
+
+	<script src="../../scripts/T1-constants.js"></script>
+	<script src="../../scripts/T1-statistics.js"></script>
+	<script src="../../scripts/carconfig.js"></script>
+
+	<script src="http://t1-production-client.herokuapp.com/bower_components/jQuery.XDomainRequest/jquery.xdomainrequest.min.js"></script>
+<script src="http://t1-production-client.herokuapp.com/bower_components/underscore/underscore.js"></script>
+<script src="http://t1-production-client.herokuapp.com/bower_components/es5-shim/es5-shim.js"></script>
+<script src="http://t1-production-client.herokuapp.com/bower_components/es5-shim/es5-sham.js"></script>
+<script src="http://t1-production-client.herokuapp.com/bower_components/react/react-with-addons.js"></script>
+
+<!-- cc controller -->
+<script src="../../scripts/carconfigurator/be/marlon/tme/cc/controller/Controller.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/tme/cc/data/Configuration.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/tme/cc/webservice/URLLoader.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/tme/cc/webservice/WebService.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/tme/cc/modules/QueueLoader.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/tme/cc/events/DataEvent.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/tme/cc/events/ErrorEvent.js"></script>
+
+<!-- aft controller -->
+<script src="../../scripts/carconfigurator/be/marlon/tme/aft/controller/Controller.js"></script>
+
+<!-- tmxcc files -->
+<script src="../../scripts/carconfigurator/be/marlon/data/Brighttag.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/data/Utils.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/data/Mixins.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/data/Scroller.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/ui/CarConfig.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/data/Debug.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/data/List.js"></script>
+
+<script src="../../scripts/carconfigurator/be/marlon/ui/components/Slider.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/ui/components/HListBase.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/ui/components/HList.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/ui/components/VList/components/VListItemBase.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/ui/components/VList/components/PassiveListItem.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/ui/components/VList/components/ActiveListItem.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/ui/components/VList/components/ContentListItem.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/ui/components/VList/VList.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/ui/components/HContainer.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/ui/components/InterfaceControl.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/ui/components/MenuButton.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/ui/components/WheelComponent.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/ui/components/ChangeModelButton.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/ui/components/StaticCarHeader.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/ui/components/EcoSection.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/ui/components/DisclaimerSection.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/ui/components/DisabledOverlay.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/ui/components/Overlay.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/ui/components/PreLoader.js"></script>
+
+<script src="../../scripts/carconfigurator/be/marlon/ui/containers/TopContainer.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/ui/containers/controls/Exterior.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/ui/containers/controls/Interior.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/ui/containers/controls/Accessories.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/ui/containers/controls/ExternalFrame.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/ui/containers/controls/spin/Spin.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/ui/containers/controls/spin/components/SpinHeader.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/ui/containers/controls/spin/components/ExteriorSpin.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/ui/containers/controls/spin/components/InteriorSpin.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/ui/containers/controls/spin/components/InteriorGallery.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/ui/containers/controls/spin/components/Sprite3D.js"></script>
+
+<script src="../../scripts/carconfigurator/be/marlon/ui/containers/MiddleContainer.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/ui/components/NextButton.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/ui/components/Navigation.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/ui/components/Slider.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/ui/containers/BottomContainer.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/ui/components/SidePanel.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/ui/components/ItemSelector.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/ui/containers/controls/Submodels.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/ui/containers/controls/BodyTypes.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/ui/containers/controls/ProAce.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/ui/components/ProAceSlider.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/ui/containers/controls/Filtertool.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/ui/containers/controls/PromoScreen.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/ui/containers/controls/EngineGrades.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/ui/components/ComparePane.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/ui/components/specsheet/SpecContainer.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/ui/components/specsheet/components/SpecSheet.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/ui/components/specsheet/components/TechSpecSheet.js"></script>
+<script src="../../scripts/carconfigurator/be/marlon/ui/components/specsheet/components/EquipmentSheet.js"></script>
+
+
+<script src="../../scripts/carconfigurator/be/marlon/ui/components/InfoPanel.js"></script>
+	<script type="text/javascript">
+T1.labels = {
+	// generic -------------------------------------------------------------
+	switchTo							: 'Switch to',
+	imageView							: 'image view',
+	listView							: 'list view',
+	page								: 'page',
+	backTo								: 'back to',
+	close								: 'Close',
+	update								: 'Update',
+	cancel								: 'Cancel',
+	compare								: 'Compare',
+	configureButton						: 'Configure',
+	downloads							: 'Downloads',
+	hybrid								: 'Hybrid',
+	menu								: 'Menu',
+	moreAbout							: 'More about',
+	playMovie							: 'Play movie',
+	priceFrom							: 'From %s',
+	pricePerMonth						: '€ %a pcm / %m months',
+	readMore							: 'Read more',
+	save								: 'Save',
+	search								: 'Search Toyota',
+	share								: 'Share',
+	validUntilDate						: 'Valid until %s',
+	viewAll								: 'View all',
+	viewLess							: 'View less',
+	viewPrices							: 'View prices',
+	viewDisclaimer						: 'View Disclaimer',
+	viewFinanceDisclaimer				: 'View finance disclaimer',
+	selectAll							: 'Select All',
+	deselectAll							: 'Deselect All',
+	prices								: 'Prices',
+	selectOn							: 'On',
+	selectOff							: 'Off',
+	promotionSpecialOffer				: 'Special offer',
+	news								: 'News',
+	story								: 'Story',
+	event								: 'Event',
+	gender								: 'Gender',
+	yes									: 'Yes',
+	no									: 'No',
+	innovation							: 'Innovation',
+	motorsport							: 'Motorsport',
+	toastText							: 'Drag or use arrow controls',
+	tel									: 'Tel',
+	fax									: 'Fax',
+	website								: 'Website',
+	'exceptions'						: 'Exceptions',
+	'exceptionsDetails'					: 'Exceptions details shown as a tooltip (exceptions legend)',
+	rateSubmitted						: 'Thank you for rating this page!',
+	rateAlreadySubmitted				: 'You already rated this page!',
+
+	// error messages ------------------------------------------------------
+	videoSourceNotSupported				: 'Video source not supported',
+	FLASH_ERROR							: 'Error: Dependency not met',
+	FLASH_REQUIRED						: 'You need Flash Player in order to see the requested content',
+
+	// backend -------------------------------------------------------------
+	'corporate-social-responisibility'	: 'Corporate Social responsibility',
+
+	// ??????? KGH: has no idea where these belong
+	viewAllModels						: 'View all models',
+	viewOnlyHybridModels				: 'View only Hybrid models',
+
+	// component specific -------------------------------------------------------------
+	forms: {
+		errorInValid					: 'There are some errors, please see below...',
+		errorSubmit						: 'There was an error submitting the form',
+		ratingSuccess					: 'Thank you for rating this page!',
+		selectItemsRestriction			: 'Select maximum [0] item(s)'
+	},
+
+	dealer: {
+		errorGeoNotFound				: 'No geolocation found',
+		errorGeoFailed					: 'Location not found',
+		errorDealersNotFound			: 'No dealers found for current location',
+		errorNoValue					: 'Please enter a value',
+		dealerSearchBy					: 'Search by city or zip code',
+		dealerSearchOptions				: 'Search options',
+		dealersFound					: 'There are {%0} dealers nearby',
+		dealerDirections				: 'Dealer directions'
+	},
+
+	reviews: {
+		voteSuccess						: 'Vote registered!',
+		voteFailure						: 'Error while casting vote:',
+		alreadyVoted					: 'Already voted on this review',
+		outOfFive						: 'out of 5',
+		createNew						: 'Create a new review',
+		submitNew						: 'Submit your own review',
+		overallRating					: 'Overall Rating',
+		feedback						: 'Was this helpful?',
+		report							: 'Report',
+		reported						: 'This review has been reported.',
+		pageName						: 'Driver reviews',
+		byNameDate						: 'by {name} on {date}',
+		submissionReturn                : "Submission returns"
+	},
+
+	carconfig: {
+		"bodyType": "Bodytype",
+		"engineGrade": "Engine and grade",
+		"exterior": "Exterior",
+		"interior": "Interior",
+		"accessories": "Accessories",
+		"summary": "Summary", "financing": "Financing",
+		"nextStep": "Next step",
+		"changeModel": "Change model",
+		"compareGrades": "Compare grades",
+		"comparePacks": "Compare packs",
+		"from": "From: ",
+		"yourConfiguration": "Your configuration",
+		"yourSpecifications": "Your specifications",
+		"technicalSpecifications": "Technical specifications",
+		"equipment": "Equipment",
+		"viewAllPromotions": "View all promotions",
+		"priceWithoutPromotions": "Your total price without promotions ",
+		"youSave": "You save",
+		"finalPrice": "Your final price ",
+		"standard": "Standard",
+		"optional": "Optional",
+		"colours": "Colours",
+		"wheels": "Wheels",
+		"gradeFeature": "Grade feature.",
+		"packs": "Packs",
+		"packFeatures": "Show {#} features",
+		"packStandardEquipment":"Standard equipment",
+		"packShow": "Show",
+		"packHide":"Hide",
+		"packMorePersonalization": "More personalization...",
+		"packEquipmentInfoTitle": "Pack equipment",
+		"upholsteries": "Upholsteries",
+		"inlays": "Inlays",
+		"upholsteriesAndInlays": "Upholsteries and inlays",
+		"scModel": "Model",
+		"scBodytype": "Bodytype",
+		"scEngine": "Engine",
+		"scTransmission": "Transmission",
+		"scGrades": "Grades",
+		"scAddPack": "Add pack",
+		"scAddExtOptions": "Add exterior options",
+		"scAddIntOptions": "Add interior options",
+		"scAddAccessories": "Add accessories",
+		"scBasePrice": "Base price ",
+		"resetFilters": "Reset filters",
+		"filterInfoDescription": "Filter info description",
+		"noCarsFound": "No cars found",
+		"hybrid": "Hybrid",
+		"promotions": "Promotions",
+		"availableGrades": "Available grades",
+		"moreInfo": "More info",
+		"configure": "configure",
+		"priceRange": "Price range",
+		"typeOfVehicle": "Type of vehicle",
+		"environmentalAspects": "Environmental aspects",
+		"engineAndPerformance": "Engine and performance",
+		"restartConfiguration": "Restart configuration",
+		"myToyota": "My Toyota",
+		"changeView": "Change view",
+		"xRay4x4": "XRay 4x4",
+		"xRayHybrid": "XRay hybrid",
+		"xRaySafety": "XRay safety",
+		"promoDate": "Valid from {from} until {to}",
+		"promoPrice": "Con {price} di vantaggi. Anche senza rottamazione",
+		"promoTitle": "Special offer",
+		"configureThisPromotion": "Configura il modello in promozione",
+		"engines": "Motorizations",
+		"gradeFeatures": "Grade features",
+		"all": "All",
+		"disclaimers": "Disclaimers",
+		"chooseModel": "Choose your model",
+		"compareLegendStandard": "Standard",
+		"compareLegendNotAvailable": "Not available",
+		"compareLegendOptional": "Optional",
+		"compareHighlight": "Highlight differences",
+		"nightMode": "Night",
+		"bootMode": "View the boot",
+		"cancel": "Cancel",
+		"ok": "Ok",
+		"compatibilityCheckTitle": "Take note",
+		"compatibilityCheckDescription": "Changing the configuration may result in a loss of configured equipment, are you sure you want to continue?",
+		"serviceErrorTitle": "An error occured!",
+		"itemConflictTitle": "Your selection of {ITEM_NAME} requires an additional piece of equipment. Please select your preferred additional equipment below.",
+		"qrTitle": "Toyota code",
+		"qrDescription": "This is a description for the toyota code.",
+		"filterCapacity": "Capacity",
+		"filterDoors": "Doors",
+        "chooseGeometry":"Choose geometry",
+        "chooseFinish":"Choose finish",
+        "chooseCap":"Choose cap color",
+		"chooseSurround":"Choose ring color",
+        "insurance":"Insurance",
+		"exteriorLight":"Exterior, light background",
+		"exteriorDark":"Exterior, dark background",
+		"interiorLight":"Interior, light background",
+		"interiorDark":"Interior, dark background",
+		"monthlyPayment":"\/month",
+		"anualInterestRate":"anual interest rate.",
+		"effectiveInterestRate":"effective interest rate.",
+		"term":"term.",
+		"monthlyRateTitle":"Monthly rate",
+		"disclaimer":"Disclaimer",
+		"ecoTitle":"CO2 - EFFICIENCY",
+		"ecoDescription":"Based on the measured CO2 emissions calculated taking into account the mass of the vehicle.",
+		"ecoDisclaimer":'<p> measured by the prescribed EU methods of measurement </p><p> Further information on official fuel consumption and the official specific CO2 emissions of new passenger cars can be the "guide on fuel economy, CO2 emissions and energy consumption of new passenger cars" are taken of charge at all sales outlets and at the Deutsche Automobil Treuhand GmbH (<a href="http://www.dat.de" target="_blank">DAT </a>) [link: www.dat.de] is available free of charge </p>',
+		"showMonthlyRates":"Show monthly repayment rates",
+		"showMonthlyRatesDescription":"You can choose whether of not to see Toyota Finance monthly repayment rates by selecting or deselecting “Show monthly rate” displayed above",
+		"disabledLoaderLabel":"The data is being loaded, please wait until completion.",
+		"noMatchFound":"No match found",
+		"ctaLoading":"preparing {CTA}",
+		"ctaReady":"{CTA} ready",
+		"ctaReadyTooltip":"Your {CTA} is ready, click the button again to view",
+		"changeSubModel":"Change engine type"
+	},
+
+	carconfigMini: {
+		chooseModel				: 'Choose a model',
+		chooseBodyType			: 'Choose a body style',
+		chooseEngine			: 'Choose an engine',
+		chooseTransmission		: 'Choose a transmission',
+		chooseWheelDrive		: 'Choose a wheeldrive',
+		chooseGrade				: 'Choose a grade',
+		chooseColour			: 'Choose a colour',
+		selectedModel			: 'Model',
+		selectedBodyType		: 'Body style',
+		selectedEngine			: 'Engine',
+		selectedTransmission	: 'Transmission',
+		selectedWheelDrive		: 'Wheeldrive',
+		selectedGrade			: 'Grade',
+		selectedColour			: 'Colour',
+		priceRates				: '[productName]{value}<br/>[/productName][taeg]TAEG {value}[/taeg][term], {value} months[/term]'
+	},
+
+	'comparator':{
+		'changeModelSelect'                 :'Change selected models',
+		'printSelect'                		:'Print',
+		'changeEngineSelect'                :'Change selected engines',
+		'available'							:'Available',
+		'body'								:'Body',
+		'bodySpecs'							:'%s body specifications',
+		'chooseBodytype'					:'Choose a bodytype',
+		'chooseFuel'						:'Choose fuel type',
+		'compareMaxEqu'						:'Compare maximum 3 models',
+		'compareMinEqu'						:'Compare minimum 2 models',
+		'compareMaxEng'						:'Compare maximum 3 engines',
+		'compareMinEng'						:'Compare minimum 2 engines',
+		'compareModels'						:'Compare %s Model',
+		'compareSelected'					:'Compare selected grades',
+		'engine'							:'Engine',
+		'engineSpecs'						:'%s engine specifications',
+		'equipmentAndOptions'				:'Equipment & Options',
+		'highlightDifferences'				:'Highlight differences',
+		'notApplicable'						:'Not available',
+		'optional'							:'Option',
+		'prices'							:'Prices',
+		'promotions'						:'Promotions',
+		'selectEngine'						:'Select up to 3 engines to compare detail',
+		'selectGrade'						:'Select up to 3 grades to compare detail',
+		'standard'							:'Standard',
+		'viewAllEngines'					:'View all engines',
+		'viewFullGradeDetails'				:'View full grade details',
+		'printDate'							:'Print on {date}',
+		'monthlyPayment'					:'[price]From {value}/month[/price][term], {value} months[/term]',
+		'shortMonthlyPayment'				:'[price]{value} pcm[/price][term]/{value} months [/term]',
+		'priceRate'							:'[productName]{value}<br/>[/productName][taeg]TAEG {value}[/taeg]',
+		selectMaxReached					: 'Select maximum {count} item(s)',
+		selectMinReached					: 'Select minimum {count} item(s)'
+	},
+
+	'mytoyota':{
+		'carConfigurationNotFound'			: 'Car configuration not found!',
+		'carAlreadySaved'					: 'This car is already saved.',
+		'saveCarNotLoggedIn'				: 'You must be logged in to save a car to My Toyota.',
+		'dealerAlreadySaved'				: 'This dealer is already saved.',
+		'dealerSaved'						: 'Dealer saved!',
+		'dealerCarNotLoggedIn'				: 'You must be logged in to save a dealer to My Toyota.'
+	},
+
+	"wrongBrowser": {
+		"incompatibleBrowser": "<p>We are sorry, but some features of the Toyota website may not function correctly in your current browser. Please consider upgrading to a more recent browser. <a href="http://t1-production-client.herokuapp.com/mockups/carconfig/\&quot;https://browser-update.org/update.html\&quot;">Click here for more information</a></p>"
+	}
+};
+
+T1.settings = {
+	"mock" : true,
+	"country" : "fr",
+	"language" : "fr",
+	"cardbImageHost" : "https://s3-eu-west-1.amazonaws.com/tme-carassets-acc/",
+	"loadSaveServer" : "http://t1-dev-proxy.herokuapp.com",
+	"loadSaveHost" : "http://t1-dev-proxy.herokuapp.com/config",
+	"CCISHost" : "http://t1-dev-proxy.herokuapp.com/ccis/fr/",
+	"CCISServer" : "http://t1-production-proxy.herokuapp.com/ccis",
+	"bazaarVoiceApiLink": "http://toyota.ugc.bazaarvoice.com/bvstaging/static/6687-de_de/bvapi.js",
+	"bazaarVoiceJsonLink": "http://stg.api.bazaarvoice.com/data/reviews.json?apiversion=5.4&passkey=mw7tnvda6e6r69tjdw8cphsf&filter=ProductId:<id>&Include=Products&Stats=Reviews&callback=?",
+	"hidePrices" : "false",
+	"enableEprivacy" : "true",
+	"showMonthlyRepaymentRatesBox" : "true",
+	"socialSharePrivacy":"false",
+	"eprivacy": {
+		"delay":7000,
+		"version":11,
+		"defaultLevel":40,
+		"levels":[20,30,40],
+		"type":"explicit"
+	},
+	"showIncompatibleBrowser": "true",
+	"culture" : {
+		"name": "en",
+		"englishName": "English",
+		"nativeName": "English",
+		"isRTL": false,
+		"language": "en",
+		"numberFormat": {
+			"pattern": [
+				"-n"
+			],
+			"decimals": 2,
+			",": ",",
+			".": ".",
+			"groupSizes": [
+				3
+			],
+			"+": "+",
+			"-": "-",
+			"NaN": "NaN",
+			"negativeInfinity": "-Infinity",
+			"positiveInfinity": "Infinity",
+			"percent": {
+				"pattern": [
+					"-n %",
+					"n %"
+				],
+				"decimals": 2,
+				"groupSizes": [
+					3
+				],
+				",": ",",
+				".": ".",
+				"symbol": "%"
+			},
+			"currency": {
+				"pattern": [
+					"($n)",
+					"$n"
+				],
+				"decimals": 2,
+				"groupSizes": [
+					3
+				],
+				",": ",",
+				".": ".",
+				"symbol": "$"
+			}
+		},
+		"calendars": {
+			"standard": {
+				"name": "Gregorian_USEnglish",
+				"/": "/",
+				":": ":",
+				"firstDay": 0,
+				"days": {
+					"names": [
+						"Sunday",
+						"Monday",
+						"Tuesday",
+						"Wednesday",
+						"Thursday",
+						"Friday",
+						"Saturday"
+					],
+					"namesAbbr": [
+						"Sun",
+						"Mon",
+						"Tue",
+						"Wed",
+						"Thu",
+						"Fri",
+						"Sat"
+					],
+					"namesShort": [
+						"Su",
+						"Mo",
+						"Tu",
+						"We",
+						"Th",
+						"Fr",
+						"Sa"
+					]
+				},
+				"months": {
+					"names": [
+						"January",
+						"February",
+						"March",
+						"April",
+						"May",
+						"June",
+						"July",
+						"August",
+						"September",
+						"October",
+						"November",
+						"December",
+						""
+					],
+					"namesAbbr": [
+						"Jan",
+						"Feb",
+						"Mar",
+						"Apr",
+						"May",
+						"Jun",
+						"Jul",
+						"Aug",
+						"Sep",
+						"Oct",
+						"Nov",
+						"Dec",
+						""
+					]
+				},
+				"AM": [
+					"AM",
+					"am",
+					"AM"
+				],
+				"PM": [
+					"PM",
+					"pm",
+					"PM"
+				],
+				"eras": [
+					{
+						"name": "A.D.",
+						"start": null,
+						"offset": 0
+					}
+				],
+				"twoDigitYearMax": 2029,
+				"patterns": {
+					"d": "M/d/yyyy",
+					"D": "dddd, MMMM dd, yyyy",
+					"t": "h:mm tt",
+					"T": "h:mm:ss tt",
+					"f": "dddd, MMMM dd, yyyy h:mm tt",
+					"F": "dddd, MMMM dd, yyyy h:mm:ss tt",
+					"M": "MMMM dd",
+					"Y": "yyyy MMMM",
+					"S": "yyyy'-'MM'-'dd'T'HH':'mm':'ss"
+				}
+			}
+		},
+		"messages": {},
+		"calendar": {
+			"name": "Gregorian_USEnglish",
+			"/": "/",
+			":": ":",
+			"firstDay": 0,
+			"days": {
+				"names": [
+					"Sunday",
+					"Monday",
+					"Tuesday",
+					"Wednesday",
+					"Thursday",
+					"Friday",
+					"Saturday"
+				],
+				"namesAbbr": [
+					"Sun",
+					"Mon",
+					"Tue",
+					"Wed",
+					"Thu",
+					"Fri",
+					"Sat"
+				],
+				"namesShort": [
+					"Su",
+					"Mo",
+					"Tu",
+					"We",
+					"Th",
+					"Fr",
+					"Sa"
+				]
+			},
+			"months": {
+				"names": [
+					"January",
+					"February",
+					"March",
+					"April",
+					"May",
+					"June",
+					"July",
+					"August",
+					"September",
+					"October",
+					"November",
+					"December",
+					""
+				],
+				"namesAbbr": [
+					"Jan",
+					"Feb",
+					"Mar",
+					"Apr",
+					"May",
+					"Jun",
+					"Jul",
+					"Aug",
+					"Sep",
+					"Oct",
+					"Nov",
+					"Dec",
+					""
+				]
+			},
+			"AM": [
+				"AM",
+				"am",
+				"AM"
+			],
+			"PM": [
+				"PM",
+				"pm",
+				"PM"
+			],
+			"eras": [
+				{
+					"name": "A.D.",
+					"start": null,
+					"offset": 0
+				}
+			],
+			"twoDigitYearMax": 2029,
+			"patterns": {
+				"d": "M/d/yyyy",
+				"D": "dddd, MMMM dd, yyyy",
+				"t": "h:mm tt",
+				"T": "h:mm:ss tt",
+				"f": "dddd, MMMM dd, yyyy h:mm tt",
+				"F": "dddd, MMMM dd, yyyy h:mm:ss tt",
+				"M": "MMMM dd",
+				"Y": "yyyy MMMM",
+				"S": "yyyy'-'MM'-'dd'T'HH':'mm':'ss"
+			}
+		}
+	},
+	"carconfig": {
+		"inOverlay"				: "true",
+		"urlContent"			: "/mockups/carconfig/index.html",
+	//	"urlContent"			: "http://127.0.0.1:5050",
+		"country"				: "ie",
+		"language"				: "en",
+		"brand"					: "toyota",
+		//"gateway"				: "http://t1-dev-proxy.herokuapp.com/texus/car/",
+		"gateway"				: "http://t1-preview-proxy.herokuapp.com/texus/car/",
+		//"gateway"				: "http://t1-production-proxy.herokuapp.com/texus/car/",
+		"currencySymbol"		: "€",
+		"currencySymbolPosition": "RIGHT",
+		"digitGroupingSymbol"	: ".",
+		"decimalSymbol"			: ",",
+		"numberOfDecimals"		: "2",
+		"showPrice"				: "true",
+		//"ccisPath"				: "http://t1-dev-proxy.herokuapp.com/ccis/",
+		"ccisPath"				: "http://t1-preview-proxy.herokuapp.com/ccis/",
+		//"ccisPath"				: "http://t1-production-proxy.herokuapp.com/ccis/",
+		"filterImagePath"		: "http://www.toyota-europe.com/media/global/assets/",
+		//"cardbAssetPath"		: "http://t1-dev-proxy.herokuapp.com/resize/cardb/",
+		"cardbAssetPath"		: "http://t1-prev-proxy.herokuapp.com/resize/cardb/",
+		"financing"				: "http://TFSCalcV3UAT.synectics-solutions.com/1A951604-12B5-489B-A09C-F4D0F9D06661",
+		"insurance"				: "http://TFSCalcV3UAT.synectics-solutions.com/5CF4B8BF-E510-4B83-98EB-4CD8C5157EA6",
+		//"saveLocation"			: "http://t1-dev-proxy.herokuapp.com/config/find/json/legacy",
+		"saveLocation"			: "http://t1-preview-proxy.herokuapp.com/config/find/json/legacy",
+		//"saveLocation"			: "http://t1-production-proxy.herokuapp.com/config/find/json/legacy",
+		"showFilterGrades"		: true,
+		"usePromo"				: "true",
+		"showPromo"				: "true",
+		"hidePromoButtons"		: "false",
+		"showQRCode"			: "true",
+		"disabledOverlayCarConfig":"true",
+		"showFinanceButtonCarConfig":"true",
+		"showInsuranceButtonCarConfig":"true",
+		"enableCarconfigWebserviceTimeout":"true",
+		"carconfigWebserviceTimeout":"25000",
+		"carconfigWebserviceSegmentMaxLength":"570",
+		"enableListSearch"		:"true",
+		"showMonthlyRateCarConfig":"true",
+		"showMonthlyRateToggleCarConfig":"true",
+		"monthlyRateToggleDefaultValueCarConfig":"true",
+		"urlSendToDealer"		: "/mockups/forms/forms.html?tab=pane-contact-dealer",
+		"monthlyRate":"http://tfsmrwsuat.synectics-solutions.com/ccMonthlyPayment.asmx/ccGetMonthlyPayment",
+		"monthlyRateDisclaimer":"http://tfsmrwsuat.synectics-solutions.com/ccMonthlyPayment.asmx/ccGetLegalText",
+		"useExtendedWheelColourFiltering":"false"
+	},
+	"carconfigMini": {
+		"showFinanceButtonMiniConfig"				: "true",
+		"showInsuranceButtonMiniConfig"				: "true",
+		"showMonthlyRateMiniConfig"					: "true",
+		"showFinanceDisclaimerInOverlayMiniConfig"	: "true"
+	},
+	"dealer": {
+		"googleAPIKey": "AIzaSyCzSqwC9jetkTnZquwQN13TC0wvVK0MeEg",
+		"distanceUnit": "km",
+		"markerPath": "/images/dealer_finder/",
+		"formUrl": "/mockups/forms/forms.html",
+		"searchResultCount": 10
+	},
+	"formsDealersByCity": "true",
+	"useEcoLabels": "true",
+	"ecoLabel": {
+		"title": "CO<sub>2</sub> - EFFIZIENZ",
+		"intro": "Auf der Grundlage der gemessenen CO2-Emmissionen unter Berücksichtingung der Masse des Fahrzeugs ermittelt.",
+		"disclaimer": "Weitere Informationen zum offiziellen Kraftstoffverbrauch und den offiziellen spezifischen CO2-Emissionen neuer Personenkraftwagen können dem \"Leitfaden über den Kraftstoffverbrauch, die CO2-Emissionen und den Stromverbrauch neuer Personenkraftwagen\" entnommen werden, der an allen Verkaufstellen und bei der Deutschen Automobil Treuhand GmbH (<a href="http://t1-production-client.herokuapp.com/mockups/carconfig/\&quot;http://www.dat.de\&quot;" target=\"_blank\">DAT</a>) [link: www.dat.de] unentgeltlich erhältlich ist.",
+		"configuredTitle": "Ihres konfigurierten [modelname]",
+		"label": "Pkw Label",
+		"specsCondition": "gemessen nach dem vorgeschriebenen EU Messverfahren",
+		"images" : {
+			"a": "https://s3-eu-west-1.amazonaws.com/tme-toyotaone-dev/toyotaone/glen/eec-label-_tcm-11-17389.png",
+			"aPlus": "https://s3-eu-west-1.amazonaws.com/tme-toyotaone-dev/toyotaone/glen/eec-label-aplu_tcm-11-17390.png",
+			"aPlusPlus": "https://d37msauheccvdt.cloudfront.net/toyotaone/dede/eec-label-aplusplus_tcm-25-120291.png",
+			"b": "https://s3-eu-west-1.amazonaws.com/tme-toyotaone-dev/toyotaone/glen/eec-label-_tcm-11-17391.png",
+			"c": "https://s3-eu-west-1.amazonaws.com/tme-toyotaone-dev/toyotaone/glen/eec-label-_tcm-11-17392.png",
+			"d": "https://s3-eu-west-1.amazonaws.com/tme-toyotaone-dev/toyotaone/glen/eec-label-_tcm-11-17393.png",
+			"e": "https://s3-eu-west-1.amazonaws.com/tme-toyotaone-dev/toyotaone/glen/eec-label-_tcm-11-17394.png",
+			"f": "https://s3-eu-west-1.amazonaws.com/tme-toyotaone-dev/toyotaone/glen/eec-label-_tcm-11-17395.png",
+			"g": "https://s3-eu-west-1.amazonaws.com/tme-toyotaone-dev/toyotaone/glen/eec-label-_tcm-11-17396.png"
+		}
+	},
+	"ebrochure": {
+		page_width: 550,
+		page_height: 410,
+		zoom_double_click: 1,
+		zoom_step: 0.06,
+		double_click_enabled: true,
+		tooltip_visible: true,
+		toolbar_visible: true,
+		gotopage_width: 30,
+		deeplinking_enabled: false,
+		deep_share_url: "#/publish/pageoverlayer_open/preserveContent=true/html=.fb5",/*"/mockups/pages/ebrochure-alone.html",*/
+		rtl: false,
+		full_area: false
+	},
+	"finance": {
+		urlMyFinanceMiniCC: "http://tfscalcv3uat.synectics-solutions.com/1A951604-12B5-489B-A09C-F4D0F9D06661",
+		urlMyInsuranceMiniCC: "http://tfscalcv3uat.synectics-solutions.com/39A2F185-AA9E-46A6-9524-7AA15361A612",
+		showRatesMonthly: "true",
+		configPageKey: 88,
+		configPageUrl: '/mockups/pages/finance-config-view.html'
+	},
+	"promotions": {
+		tfsEnabledForDetails: "true",
+		tfsEnabledForOverview: "true"
+	},
+	"modelMap": {
+		"IQ": {
+			"id": "36181808-0532-4147-adb0-11ffd781d946",
+			"internalCode": "IQ",
+			"localCode": "IQ",
+			"name": "iQ",
+			"ccVersion": "5.x",
+			"links": {
+				"CarChapter": "http://preview142.sitebuilder.toyota-europe.com/cars/new_cars/iq",
+				"CarConfigurator": "http://preview142.sitebuilder.toyota-europe.com/car-configurator/index.tmex?model=iq",
+				"PrintPage": "http://preview142.sitebuilder.toyota-europe.com/car-configurator/print.tmex",
+				"PromoPage": "http://preview142.sitebuilder.toyota-europe.com/cars/new_cars/iq/promos.tmex"
+			}
+		},
+		"AG": {
+			"id": "813b0db9-bca0-4893-9167-cc0c4f69cfc2",
+			"internalCode": "AG",
+			"localCode": "AG",
+			"name": "AYGO",
+			"ccVersion": "5.x",
+			"links": {
+				"CarChapter": "http://preview142.sitebuilder.toyota-europe.com/cars/new_cars/aygo",
+				"CarConfigurator": "http://preview142.sitebuilder.toyota-europe.com/car-configurator/index.tmex?model=aygo",
+				"PrintPage": "http://preview142.sitebuilder.toyota-europe.com/car-configurator/print.tmex",
+				"PromoPage": "http://preview142.sitebuilder.toyota-europe.com/cars/new_cars/aygo/promos.tmex"
+			}
+		},
+		"YA": {
+			"id": "09a6531a-c3f1-4d2d-b4d3-eb45cbb35478",
+			"internalCode": "YA",
+			"localCode": "YA",
+			"name": "Yaris",
+			"ccVersion": "5.x",
+			"links": {
+				"CarChapter": "http://preview142.sitebuilder.toyota-europe.com/cars/new_cars/yaris",
+				"CarConfigurator": "http://preview142.sitebuilder.toyota-europe.com/car-configurator/index.tmex?model=yaris",
+				"PrintPage": "http://preview142.sitebuilder.toyota-europe.com/car-configurator/print.tmex",
+				"PromoPage": "http://preview142.sitebuilder.toyota-europe.com/cars/new_cars/yaris/promos.tmex"
+			},
+			"subModels": [
+				{
+					"id": "0a233d8b-182f-4ad1-a6eb-65ccbf81abe5",
+					"internalCode": "YA",
+					"localCode": "YA",
+					"name": "Yaris",
+					"hybrid": false
+				},
+				{
+					"id": "162270fd-0d19-499a-95c7-4f4051f8f45f",
+					"internalCode": "YA_HSD",
+					"localCode": "YA_HSD",
+					"name": "Yaris Hybride",
+					"hybrid": true
+				}
+			]
+		},
+		"VERSO-S": {
+			"id": "525c4704-7aeb-4b1d-8de8-f5a4417fb412",
+			"internalCode": "VERSO-S",
+			"localCode": "VERSO-S",
+			"name": "Verso-S",
+			"ccVersion": "5.x",
+			"links": {
+				"CarChapter": "http://preview142.sitebuilder.toyota-europe.com/cars/new_cars/verso-s",
+				"CarConfigurator": "http://preview142.sitebuilder.toyota-europe.com/car-configurator/index.tmex?model=verso-s",
+				"PrintPage": "http://preview142.sitebuilder.toyota-europe.com/car-configurator/print.tmex",
+				"PromoPage": "http://preview142.sitebuilder.toyota-europe.com/cars/new_cars/verso-s/promos.tmex"
+			}
+		},
+		"AURIS": {
+			"id": "b163d626-70cf-446b-996f-ce93db94e80e",
+			"internalCode": "AURIS",
+			"localCode": "AURIS",
+			"name": "Auris",
+			"ccVersion": "5.x",
+			"links": {
+				"CarChapter": "http://preview142.sitebuilder.toyota-europe.com/cars/new_cars/auris",
+				"CarConfigurator": "http://preview142.sitebuilder.toyota-europe.com/car-configurator/index.tmex?model=auris",
+				"PrintPage": "http://preview142.sitebuilder.toyota-europe.com/car-configurator/print.tmex",
+				"PromoPage": "http://preview142.sitebuilder.toyota-europe.com/cars/new_cars/auris/promos.tmex"
+			},
+			"subModels": [
+				{
+					"id": "6ee36359-47be-4902-ae31-9c7bdcd3f594",
+					"internalCode": "Auris",
+					"localCode": "Auris",
+					"name": "Auris",
+					"hybrid": false
+				},
+				{
+					"id": "9bb11a50-11b7-4b0f-a662-fc4002fde706",
+					"internalCode": "Auris HSD",
+					"localCode": "Auris HSD",
+					"name": "Auris HSD",
+					"hybrid": true
+				}
+			]
+		},
+		"AURIS-TS": {
+			"id": "9b583dc1-c747-44db-b6b1-f85e5dedb871",
+			"internalCode": "AURIS-TS",
+			"localCode": "AURIS-TS",
+			"name": "Auris Touring Sports",
+			"ccVersion": "5.x",
+			"links": {
+				"CarChapter": "http://preview142.sitebuilder.toyota-europe.com/cars/new_cars/auris-touring-sports",
+				"CarConfigurator": "http://preview142.sitebuilder.toyota-europe.com/car-configurator/index.tmex?model=auris-ts",
+				"PrintPage": "http://preview142.sitebuilder.toyota-europe.com/car-configurator/print.tmex",
+				"PromoPage": "http://preview142.sitebuilder.toyota-europe.com/cars/new_cars/auris-touring-sports/promos.tmex"
+			},
+			"subModels": [
+				{
+					"id": "9d48b391-57e9-49f7-bfbd-53cbe9992d7f",
+					"internalCode": "Auris TS",
+					"localCode": "Auris TS",
+					"name": "Auris Touring Sports",
+					"hybrid": false
+				},
+				{
+					"id": "67dfcd21-d556-4a0a-a4b9-f07fb3184955",
+					"internalCode": "Auris HSD TS",
+					"localCode": "Auris HSD TS",
+					"name": "Auris Touring Sports Hybride",
+					"hybrid": true
+				}
+			]
+		},
+		"VERSO": {
+			"id": "392913d2-ba3c-4190-868c-ec8898c85072",
+			"internalCode": "VERSO",
+			"localCode": "VERSO",
+			"name": "Verso",
+			"ccVersion": "5.x",
+			"links": {
+				"CarChapter": "http://preview142.sitebuilder.toyota-europe.com/cars/new_cars/verso",
+				"CarConfigurator": "http://preview142.sitebuilder.toyota-europe.com/car-configurator/index.tmex?model=verso",
+				"PrintPage": "http://preview142.sitebuilder.toyota-europe.com/car-configurator/print.tmex",
+				"PromoPage": "http://preview142.sitebuilder.toyota-europe.com/cars/new_cars/verso/promos.tmex"
+			}
+		},
+		"PRIUS": {
+			"id": "8ce29243-9376-4d0e-9c82-80841d56e517",
+			"internalCode": "PRIUS",
+			"localCode": "PRIUS",
+			"name": "Prius",
+			"ccVersion": "5.x",
+			"links": {
+				"CarChapter": "http://preview142.sitebuilder.toyota-europe.com/cars/new_cars/prius",
+				"CarConfigurator": "http://preview142.sitebuilder.toyota-europe.com/car-configurator/index.tmex?model=prius",
+				"PrintPage": "http://preview142.sitebuilder.toyota-europe.com/car-configurator/print.tmex",
+				"PromoPage": "http://preview142.sitebuilder.toyota-europe.com/cars/new_cars/prius/promos.tmex"
+			}
+		},
+		"PG": {
+			"id": "d27a100c-76fc-4d03-8ed4-ab4a152b09da",
+			"internalCode": "PG",
+			"localCode": "PG",
+			"name": "Prius Rechargeable",
+			"ccVersion": "5.x",
+			"links": {
+				"CarChapter": "http://preview142.sitebuilder.toyota-europe.com/cars/new_cars/prius-plugin",
+				"CarConfigurator": "http://preview142.sitebuilder.toyota-europe.com/car-configurator/index.tmex?model=pg",
+				"PrintPage": "http://preview142.sitebuilder.toyota-europe.com/car-configurator/print.tmex",
+				"PromoPage": "http://preview142.sitebuilder.toyota-europe.com/cars/new_cars/prius-plugin/promos.tmex"
+			}
+		},
+		"PI-MPV": {
+			"id": "3c619710-904a-4a52-8d39-e32c57731f3b",
+			"internalCode": "PI-MPV",
+			"localCode": "PI-MPV",
+			"name": "Prius+",
+			"ccVersion": "5.x",
+			"links": {
+				"CarChapter": "http://preview142.sitebuilder.toyota-europe.com/cars/new_cars/prius-plus",
+				"CarConfigurator": "http://preview142.sitebuilder.toyota-europe.com/car-configurator/index.tmex?model=pi-mpv",
+				"PrintPage": "http://preview142.sitebuilder.toyota-europe.com/car-configurator/print.tmex",
+				"PromoPage": "http://preview142.sitebuilder.toyota-europe.com/cars/new_cars/prius-plus/promos.tmex"
+			}
+		},
+		"AVENSIS": {
+			"id": "c4d74416-8a40-4308-8b01-95fc4d072dc1",
+			"internalCode": "AVENSIS",
+			"localCode": "AVENSIS",
+			"name": "Avensis",
+			"ccVersion": "5.x",
+			"links": {
+				"CarChapter": "http://preview142.sitebuilder.toyota-europe.com/cars/new_cars/avensis",
+				"CarConfigurator": "http://preview142.sitebuilder.toyota-europe.com/car-configurator/index.tmex?model=avensis",
+				"PrintPage": "http://preview142.sitebuilder.toyota-europe.com/car-configurator/print.tmex",
+				"PromoPage": "http://preview142.sitebuilder.toyota-europe.com/cars/new_cars/avensis/promos.tmex"
+			}
+		},
+		"GT": {
+			"id": "c8652c8a-3e64-4f82-a694-0dbbe23af42e",
+			"internalCode": "GT",
+			"localCode": "GT",
+			"name": "GT86",
+			"ccVersion": "5.x",
+			"links": {
+				"CarChapter": "http://preview142.sitebuilder.toyota-europe.com/cars/new_cars/gt86",
+				"CarConfigurator": "http://preview142.sitebuilder.toyota-europe.com/car-configurator/index.tmex?model=gt",
+				"PrintPage": "http://preview142.sitebuilder.toyota-europe.com/car-configurator/print.tmex",
+				"PromoPage": "http://preview142.sitebuilder.toyota-europe.com/cars/new_cars/gt86/promos.tmex"
+			}
+		},
+		"RA": {
+			"id": "a68a58fb-a10e-41ae-9459-3a7c4060500f",
+			"internalCode": "RA",
+			"localCode": "RA",
+			"name": "RAV4",
+			"ccVersion": "5.x",
+			"links": {
+				"CarChapter": "http://preview142.sitebuilder.toyota-europe.com/cars/new_cars/rav4",
+				"CarConfigurator": "http://preview142.sitebuilder.toyota-europe.com/car-configurator/index.tmex?model=rav4",
+				"PrintPage": "http://preview142.sitebuilder.toyota-europe.com/car-configurator/print.tmex",
+				"PromoPage": "http://preview142.sitebuilder.toyota-europe.com/cars/new_cars/rav4/promos.tmex"
+			}
+		},
+		"LANDCRUISER150": {
+			"id": "60ae2897-f9e1-4ff6-bc61-974d2d0edb5f",
+			"internalCode": "LANDCRUISER150",
+			"localCode": "LANDCRUISER150",
+			"name": "Land Cruiser",
+			"ccVersion": "5.x",
+			"links": {
+				"CarChapter": "http://preview142.sitebuilder.toyota-europe.com/cars/new_cars/land_cruiser",
+				"CarConfigurator": "http://preview142.sitebuilder.toyota-europe.com/car-configurator/index.tmex?model=landcruiser150",
+				"PrintPage": "http://preview142.sitebuilder.toyota-europe.com/car-configurator/print.tmex",
+				"PromoPage": "http://preview142.sitebuilder.toyota-europe.com/cars/new_cars/land_cruiser/promos.tmex"
+			}
+		},
+		"LANDCRUISER100": {
+			"id": "c682e0ba-ed3a-4a8b-823d-a337fd3ae522",
+			"internalCode": "LANDCRUISER100",
+			"localCode": "LANDCRUISER100",
+			"name": "Land Cruiser SW V8",
+			"ccVersion": "5.x",
+			"links": {
+				"CarChapter": "http://preview142.sitebuilder.toyota-europe.com/cars/new_cars/land_cruiser-v8",
+				"CarConfigurator": "http://preview142.sitebuilder.toyota-europe.com/car-configurator/index.tmex?model=landcruiser100",
+				"PrintPage": "http://preview142.sitebuilder.toyota-europe.com/car-configurator/print.tmex",
+				"PromoPage": "http://preview142.sitebuilder.toyota-europe.com/cars/new_cars/land_cruiser-v8/promos.tmex"
+			}
+		},
+		"HILUX": {
+			"id": "e1610f96-e7f9-4cb1-8d64-a659fee2b768",
+			"internalCode": "HILUX",
+			"localCode": "HILUX",
+			"name": "Hilux",
+			"ccVersion": "5.x",
+			"links": {
+				"CarChapter": "http://preview142.sitebuilder.toyota-europe.com/cars/new_cars/hilux",
+				"CarConfigurator": "http://preview142.sitebuilder.toyota-europe.com/car-configurator/index.tmex?model=hilux",
+				"PrintPage": "http://preview142.sitebuilder.toyota-europe.com/car-configurator/print.tmex",
+				"PromoPage": "http://preview142.sitebuilder.toyota-europe.com/cars/new_cars/hilux/promos.tmex"
+			}
+		},
+		"DYNA": {
+			"id": "021fb9f8-3b68-4e33-a23c-d5d1d7062357",
+			"internalCode": "DYNA",
+			"localCode": "DYNA",
+			"name": "Dyna",
+			"ccVersion": "3.x",
+			"links": {
+				"CarChapter": "http://preview142.sitebuilder.toyota-europe.com/cars/new_cars/dyna",
+				"CarConfigurator": "http://preview142.sitebuilder.toyota-europe.com/carconfig/car-configurator.tmex?settings=xml/fr/fr/settings_dyna.xml&model=dyna",
+				"PrintPage": "http://preview180.sitebuilder.toyota-europe.com/carconfig/selectedconfig/default.aspx",
+				"PromoPage": "http://preview142.sitebuilder.toyota-europe.com/cars/new_cars/dyna/promos.tmex"
+			}
+		},
+		"PROACE": {
+			"id": "456305c2-361e-4c72-beac-1a1abbdad15d",
+			"internalCode": "PROACE",
+			"localCode": "PROACE",
+			"name": "PROACE",
+			"ccVersion": "5.x",
+			"links": {
+				"CarChapter": "http://preview142.sitebuilder.toyota-europe.com/cars/new_cars/proace",
+				"CarConfigurator": "http://preview142.sitebuilder.toyota-europe.com/car-configurator/index.tmex?model=proace",
+				"PrintPage": "http://preview142.sitebuilder.toyota-europe.com/car-configurator/print.tmex",
+				"PromoPage": "http://preview142.sitebuilder.toyota-europe.com/cars/new_cars/proace/promos.tmex"
+			}
+		}
+	}
+};
+
+T1.taxonomyTranslations = {
+	"TaxonomyTraining1" : "TaxonomyTraining1",
+	"environment" : "Environment",
+	"safety-technology" : "Safety Technology",
+	"environment-technology" : "Environment Technology",
+	"innovation" : "Innovation",
+	"corporate-social-responisibility" : "Corporate Social Responisibility",
+	"news" : "News",
+	"motorsport" : "Motorsport",
+	"finance" : "Finance",
+	"hybrid" : "Hybrid",
+	"about-toyota" : "About Toyota",
+	"events" : "Events",
+	"stories" : "Stories"
+};
+
+T1.data = {
+	"finance": {
+		configs: {
+			'df077687-f330-4b82-b438-3fb6c6e01e0f': {
+				Country: "DE",
+				Brand: "TOYOTA",
+				Language: "DE",
+				ModelID: "392913d2-ba3c-4190-868c-ec8898c85072",
+				CarID: "39456acc-a2fa-41fc-b82d-bcca994b03f6",
+				ExteriorColourID: "b4da34a1-391c-4b57-a153-13ac02e8da7f",
+				UpholsteryID: "33a8d5b5-6e39-4b7a-9796-efde1d9f68c6",
+				Promotions: [
+				"df077687-f330-4b82-b438-3fb6c6e01e0f"
+				]
+			},
+			'ff76925b-43a7-4a11-98b3-287146ac488c': {
+				Country: "DE",
+				Brand: "TOYOTA",
+				Language: "DE",
+				ModelID: "392913d2-ba3c-4190-868c-ec8898c85072",
+				CarID: "43b71d67-0370-4870-a367-6097729d828a",
+				ExteriorColourID: "b4da34a1-391c-4b57-a153-13ac02e8da7f",
+				UpholsteryID: "33a8d5b5-6e39-4b7a-9796-efde1d9f68c6",
+				Promotions: [
+				"ff76925b-43a7-4a11-98b3-287146ac488c"
+				]
+			}
+		}
+	}
+};
+
+</script>
+
+<script type="text/javascript">
+	(function () {
+		//load tag js
+		var tagjs = document.createElement("script");
+		var s = document.getElementsByTagName("script")[0];
+		tagjs.text = "{'site':'H8SYQMW'}";
+		tagjs.async = true;
+		tagjs.src = "//s.btstatic.com/tag.js";
+		s.parentNode.insertBefore(tagjs, s);
+	}());
+</script>
+<noscript>
+	<iframe src="http://s.thebrighttag.com/iframe?c=H8SYQMW" width="1" height="1" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+</noscript>
+
+	<script>
+	T1.context = {
+		carconfig : {
+			"standard": {
+				"summary": {
+					"primary": [
+						{
+							"title": "Send to dealer",
+							"subtitle": "Find your nearest dealer",
+							"jsfunction": "send"
+						},
+						{
+							"title": "Download PDF",
+							"subtitle": "Download a PDF of your configuration",
+							"jsfunction": "download"
+						},
+						{
+							"title": "Testdrive",
+							"subtitle": "Request a testdrive",
+							"href": "",
+							"target": "",
+							"jsfunction": "testDrive"
+						},
+						{
+							"title": "Finance calculator",
+							"subtitle": "Finance and leasing",
+							"jsfunction": "finance"
+						}
+					],
+					"secondary": [
+						{
+							"title": "Save",
+							"subtitle": "Save your configuration",
+							"jsfunction": "save"
+						},
+						{
+							"title": "Load",
+							"subtitle": "Load a configured car",
+							"jsfunction": "load"
+						},
+						{
+							"title": "Print",
+							"subtitle": "Print your configuration",
+							"jsfunction": "print"
+						}
+					]
+				}
+			},
+			"models": [
+				{
+					"model": "YA",
+					"submodels": [
+						{
+							"submodel": "YA",
+							"summary": {
+								"primary": [
+									{
+										"title": "Encuentra tu concesionario Toyota",
+										"subtitle": "Encuentra tu distribuidor más cercano",
+										"href": "dealerFinder"
+									},
+									{
+										"title": "Descargar PDF",
+										"subtitle": "Descarga tu configuración en PDF",
+										"href": "download"
+									},
+									{
+										"title": "Solicitud de prueba",
+										"subtitle": "Solicita una prueba",
+										"href": "testDrive('yaris')"
+									},
+									{
+										"title": "CALCULADORA FINANCIERA",
+										"subtitle": "Financia tu Toyota",
+										"href": "finance"
+									}
+								],
+								"secondary": [
+									{
+										"title": "Guardar",
+										"subtitle": "Guarda tu configuración",
+										"href": "save"
+									},
+									{
+										"title": "Enviar",
+										"subtitle": "Enviar",
+										"href": "send"
+									},
+									{
+										"title": "Imprimir",
+										"subtitle": "Imprimir",
+										"href": "print"
+									}
+								]
+							}
+						}
+					]
+				}
+			]
+		}
+	}
+</script>
+
+</body>
+</html>

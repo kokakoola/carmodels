@@ -1,0 +1,141 @@
+<section id="minicarconfig" class="carconfig-mini hidden-xs">
+  <div class="container">
+    <header>
+      <h1>Mini configurator</h1>
+      <p class="text-center">Quickly find the price and the basic options for your favorite car.</p>
+    </header>
+    <div class="row">
+      <div class="col-xs-12 col-md-6 carconfig-mini-app text-left">
+        <div class="carconfig-mini-form">
+          <div class="carconfig-mini-summary">
+            <header class="visible-xs">
+              <div class="pull-left">
+                <h4>Your choice</h4>
+              </div>
+              <div class="pull-right">
+                <a class="btn btn-dark btn-reset">Reset<i class="icon-repeat"></i></a>
+              </div>
+            </header>
+            <div class="body">
+              <ul class="summary-selection visible-xs"></ul>
+              <div class="summary-selection-nice">
+              </div>
+              <div class="table-responsive summary-price">
+                <table class="table">
+                  <thead></thead>
+                  <tbody>
+                    <tr class="price"><td>Price:</td><td></td></tr>
+                    <tr class="color"><td>Extra colour:</td><td></td></tr>
+                    <tr class="price-total"><td>Total Price:</td><td></td></tr>
+                    <tr class="code"><td>Toyota code:</td><td></td></tr>
+                    <tr class="price-monthly finance-rate hidden">
+                      <td>Monthly finance available from <br /> <span class="small">Terms & Conditions apply</span></td>
+                      <td><span class="price-monthly-value"></span></td>
+                    </tr>
+                    <tr class="finance-rates finance-rate hidden">
+                      <td>Rates informations</td>
+                      <td>
+                        <span class="finance-rates-value"></span>
+                        <div class="expansion-content exceptions" id="miniCCDisclaimer">
+                          <a class="closelink" href="carchapter-radio.html#">Close<i class="icon-remove"></i></a>
+                          <div class="expansion-inner"></div>
+                          <div class="expansion-arrow"/>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="finance-quote finance-rate">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+          </div>
+          <ul class="carconfig-mini-select">
+            <li class="dropdown model" data-step="models">
+              <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="carchapter-radio.html#"><span>Choose a model</span><i class="icon-chevron-down"></i></a>
+              <ul class="dropdown-menu" role="menu">
+                <li>
+                  <a data-id="auris-ts">Auris Touring Sports</a>
+                </li>
+                <li>
+                  <a data-id="pg">Prius Plug-in</a>
+                </li>
+                <li>
+                  <a data-id="gt">GT86</a>
+                </li>
+                <li>
+                  <a data-id="pi-mpv">Grand Prius+</a>
+                </li>
+                <li>
+                  <a data-id="auris">Auris</a>
+                </li>
+                <li>
+                  <a data-id="avensis" data-selected="true">Avensis</a>
+                </li>
+                <li>
+                  <a data-id="ag">Aygo</a>
+                </li>
+                <li>
+                  <a data-id="hilux">Hilux</a>
+                </li>
+                <li>
+                  <a data-id="iq">iQ</a>
+                </li>
+                <li>
+                  <a data-id="landcruiser150">Land Cruiser 150</a>
+                </li>
+                <li>
+                  <a data-id="landcruiser100">Land Cruiser V8</a>
+                </li>
+                <li>
+                  <a data-id="prius">Prius</a>
+                </li>
+                <li>
+                  <a data-id="ra">Rav4</a>
+                </li>
+                <li>
+                  <a data-id="verso">Verso</a>
+                </li>
+                <li>
+                  <a data-id="verso-s">Verso-S</a>
+                </li>
+                <li>
+                  <a data-id="ya">Yaris</a>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown bodyType" data-step="bodyType">
+              <a class="dropdown-toggle disabled" role="button" data-toggle="dropdown" href="carchapter-radio.html#"><span>Choose a body style</span><i class="icon-chevron-down"></i></a>
+            </li>
+            <li class="dropdown engine" data-step="engine">
+              <a class="dropdown-toggle disabled" role="button" data-toggle="dropdown" href="carchapter-radio.html#"><span>Choose an engine</span><i class="icon-chevron-down"></i></a>
+            </li>
+            <li class="dropdown transmission" data-step="transmission">
+              <a class="dropdown-toggle disabled" role="button" data-toggle="dropdown" href="carchapter-radio.html#"><span>Choose a transmission</span><i class="icon-chevron-down"></i></a>
+            </li>
+            <li class="dropdown wheelDrives" data-step="wheelDrives">
+              <a class="dropdown-toggle disabled" role="button" data-toggle="dropdown" href="carchapter-radio.html#"><span>Choose a wheeldrive</span><i class="icon-chevron-down"></i></a>
+            </li>
+            <li class="dropdown grades" data-step="grades">
+              <a class="dropdown-toggle disabled" role="button" data-toggle="dropdown" href="carchapter-radio.html#"><span>Choose a grade</span><i class="icon-chevron-down"></i></a>
+            </li>
+            <li class="dropdown colours" data-step="colours">
+              <a class="dropdown-toggle disabled" role="button" data-toggle="dropdown" href="carchapter-radio.html#"><span>Choose a colour</span><i class="icon-chevron-down"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-md-6 carconfig-mini-preview">
+        <img class="image-result" src="../../assets/images/minicar-config-default.png" />
+        <div class="carconfig-mini-actions">
+          <a class="btn btn-dark btn-reset">Reset<i class="icon-repeat"></i></a>
+          <a class="btn btn-grey btn-my-toyota" href="carchapter-radio.html#">Save to MyToyota</a>
+          <a class="btn btn-grey btn-more-about" href="carchapter-radio.html#"></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

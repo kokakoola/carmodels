@@ -1,0 +1,54 @@
+@import 
+    'base'
+    ;
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  background: #DDD;
+  background: -webkit-linear-gradient(left, #DDD 0%, #FFF 20%, #FFF 80%, #DDD 100%);
+  background: -o-linear-gradient(left, #DDD 0%, #FFF 20%, #FFF 80%, #DDD 100%);
+  background: linear-gradient(to right, #DDD 0%, #FFF 20%, #FFF 80%, #DDD 100%);
+  margin-bottom: 85px;
+
+}
+
+.modelrange .row a .modelitem span {
+  margin-top: -12px;
+}
+
+.modelitem.active {
+  background-color: #E8E9EA;
+  border-bottom: 2px solid #D2001E;
+}
+
+h1 {
+  border-bottom: 1px solid #C9C9C9;
+  text-align: center;
+}
+
+.buttons {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.navbar-fixed-top {
+  position: static !important;
+}
+
+section.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 85px;
+  a {
+    color: #fff;
+  }
+  &.spotlights {
+    padding-bottom: 0;
+  }
+}
+

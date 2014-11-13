@@ -1,0 +1,74 @@
+  var source   = $("#modellist-template").html();
+  var template = Handlebars.compile(source); 
+
+
+  var data = { images: [
+    {
+      caption: "Aygo",
+      id: "aygo"
+    },
+    {
+      caption: "Yaris",
+      id: "yaris"
+    },
+    {
+      caption: "Verso-S",
+      id: "Verso-S"
+    },
+    {
+      caption: "Auris",
+      id: "Auris"
+    },
+    {
+      caption: "Corolla",
+      id: "Corolla"
+    },
+    {
+      caption: "Verso",
+      id: "Verso"
+
+    },
+    {
+      caption: "Avensis",
+      id: "Avensis"
+    },
+    {
+      caption: "GT86",
+      id: "gt"
+    },
+    {
+    caption: "Prius",
+      id: "prius"
+    },
+    {
+      caption: "Prius+",
+      id: "pi-mpv"
+
+    },
+    {
+      caption: "Prius Plug-in Hybrid",
+      id: "pg"
+    },
+    {
+      caption: "RAV4",
+      id: "rav4"
+    },
+    {
+    caption: "Land Cruiser",
+      id: "landcruiser150"
+    },
+    {
+      caption: "Land Cruiser V8",
+      id: "landcruiser100"
+    },
+    {
+      caption: "Hilux",
+      id: "hilux"
+    },
+    {
+    caption: "Proace",
+      id: "proace"
+    }
+    ]};
+
+  $("#placeholder-modellist").html(template(data));
