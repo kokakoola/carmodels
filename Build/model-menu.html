@@ -43,28 +43,25 @@
 
 <nav id="nav-primary" class="navbar navbar-inverse navbar-fixed-top">
   <div class="navbar-inner container">
-    <div class="float-left large-nav dropdown">
+    
 
-      <ol id="menu-breadcrumb" class="breadcrumb">
-  <li><a href="index.html">Start</a><i class="sprite-menu-dark-arrow"></i><i>/</i></li>
-  <li class="current active"><a class='current' href="model-menu.html">Model Menu</a><i class="sprite-menu-dark-arrow"></i><i>/</i></li>
-</ol>
-
-    </div>
-
-    <div class="float-right" itemscope itemtype="http://schema.org/SiteNavigationElement"><a href="index.html" id="logo-small" class="logo-link visible-xs visible-sm logo-logo-xs"></a>
+    <div class="nav navbar-nav navbar-left">
+      <a href="index.html" id="logo-small" class="logo-link visible-xs visible-sm logo-logo-xs"></a>
       <a href="index.html" id="logo-medium" class="logo-link hidden-xs hidden-sm logo-logo-sm"></a>
-      <a href="index.html" id="logo-big" class="logo-link hidden-xs hidden-sm logo-logo-md-red" itemprop="url"><span itemprop="name" style="display:none">Esileht</span></a>
+      <a href="index.html" id="logo-big" class="logo-link hidden-xs hidden-sm logo-logo-md-red"></a>
+      <ol id="menu-breadcrumb" class="breadcrumb">
+  <li><a href="index.html">Start</a><i class="sprite-menu-white-arrow"></i><i>/</i></li>
+  <li class="current active"><a class='current' href="model-menu.html">Model Menu</a><i class="sprite-menu-white-arrow"></i><i>/</i></li>
+</ol>
     </div>
-    <div class="float-right large-nav">
-      <div class="button-wrapper clearfix">
-        <a href="index.html" class="btn btn-small btn-dark pull-left">
-          <span>Previous</span>
-        </a>
-        <a href="model-data.html" class="btn btn-small btn-red pull-right hidden" id="nextPage">
-          <span>Model data</span><i class="icon-chevron-right"></i>
-        </a>
-      </div>
+
+    <div class="button-wrapper navbar-right">
+      <a href="index.html" class="btn btn-small btn-dark">
+        <span>Previous</span>
+      </a>
+      <a href="model-data.html" class="btn btn-small btn-red  hidden" id="nextPage">
+        <span>Model data</span><i class="icon-chevron-right"></i>
+      </a>
     </div>
   </div>
 </nav>
@@ -148,25 +145,6 @@
 });
 </script>
 
-<script>
-    carconfigMini: {
-    chooseModel       : 'Choose a model',
-    chooseBodyType      : 'Choose a body style',
-    chooseEngine      : 'Choose an engine',
-    chooseTransmission    : 'Choose a transmission',
-    chooseWheelDrive    : 'Choose a wheeldrive',
-    chooseGrade       : 'Choose a grade',
-    chooseColour      : 'Choose a colour',
-    selectedModel     : 'Model',
-    selectedBodyType    : 'Body style',
-    selectedEngine      : 'Engine',
-    selectedTransmission  : 'Transmission',
-    selectedWheelDrive    : 'Wheeldrive',
-    selectedGrade     : 'Grade',
-    selectedColour      : 'Colour',
-    priceRates        : '[productName]{value}<br/>[/productName][taeg]TAEG {value}[/taeg][term], {value} months[/term]'
-  },
-</script>
 
   </body>
 </html>

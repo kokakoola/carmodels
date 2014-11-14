@@ -36,6 +36,10 @@ section h1 {
   border-bottom: 1px solid #C9C9C9;
   text-align: center; }
 
+.promotion h5 {
+  border-bottom: 1px solid #C9C9C9;
+  margin-top: 30px; }
+
 .buttons {
   padding-top: 20px;
   padding-bottom: 20px; }
@@ -46,8 +50,10 @@ section h1 {
   .navbar-fixed-top.navbar-inverse .breadcrumb li.active > a:hover {
     color: #fff; }
   .navbar-fixed-top.navbar-inverse .button-wrapper {
-    min-width: 190px;
-    margin: 10px; }
+    width: auto;
+    display: inline-block; }
+    .navbar-fixed-top.navbar-inverse .button-wrapper .btn {
+      margin: 10px 10px 10px 0; }
 
 h4 {
   margin: 20px 10px 10px; }

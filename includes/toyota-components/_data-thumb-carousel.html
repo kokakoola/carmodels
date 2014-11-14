@@ -3,12 +3,41 @@
   <div class="container">
     <header>
         <h1>Exact Match</h1>
+        <div id="placeholder-rav4-in-stock"></div>
+        
+          <script type="text/x-handlebars-template" id="rav4-in-stock-template">
+          {{#VehicleDTO }}
+            <div class="row item">
+              <div class="col-sm-4">
+                <img class="img-responsive" alt="{{ImageBaseURL}}" src="http://images.toyota-europe.com/lt/{{ImageBaseURL}}/width/308/height/190/exterior-32_{{ExtColour}}.png">
+              </div>
+              <div class="col-sm-8 promotion">
+                <h5>{{Model.Name}}</h5>
+                    <p class="desc">
+                      <span class="price">{{Price}} €</span> 
+                      {{#if SpecialPrice }}
+                        {{#unless true}}
+  
+                        <span class="price special-price">{{SpecialPrice}} €</span>
+                        {{/unless}}
+                      {{/if}}
+                      <span>Interior color: {{IntColour}}</span><span>Exterior color: {{ExtColour}}</span>
+                      </p>
+                      {{#if Options}}
+                      <p>
+                      Extras: {{Options.string}}
+                      </p>
+                      {{/if}}
+              </div>
+            </div>
+          {{/VehicleDTO}}
+          </script>
     </header>
     <header>
         <h1>Stock In-House</h1>
     </header>
     <header>
-        <h1>Stock In Toyota</h1>
+        <h1>Stock In Toyo</h1>
     </header>
     <header>
         <h1>Stock in Network</h1>
@@ -25,12 +54,12 @@
               <div class='carousel-inner'>
               {{#VehicleDTO}}
                 <div class='row item {{class}}'>
-                  <div class="col-xs-4">
+                  <div class="col-sm-4">
                     <img alt="{{ImageBaseURL}}" src="http://images.toyota-europe.com/lt/{{ImageBaseURL}}/width/308/height/190/exterior-32_{{ExtColour}}.png">
                   </div>
-                  <div class="col-xs-8 text-left">
-                    <h2>{{Model.Name}}</h2>
-                    <p>
+                  <div class="col-sm-8 promotion">
+                    <h5>{{Model.Name}}</h5>
+                    <p class="desc">
                       <span class="price">{{Price}} €</span> 
                       {{#if SpecialPrice }}
                         {{#unless true}}
@@ -38,10 +67,14 @@
                         <span class="price special-price">{{SpecialPrice}} €</span>
                         {{/unless}}
                       {{/if}}
-                      <span>Interior color: {{IntColour}}</span><span>Exterior color: {{ExtColour}}</span></p>
-                      <p>Extras: {{Options.string}}
-                        
+                      <span>Interior color: {{IntColour}}</span><span>Exterior color: {{ExtColour}}</span>
                       </p>
+                      {{#if Options}}
+                      <p>
+                      Extras: {{Options.string}}
+                      </p>
+                      {{/if}}
+
                   </div>
                 </div>
                 {{/VehicleDTO}}

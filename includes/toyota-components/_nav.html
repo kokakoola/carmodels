@@ -1,24 +1,21 @@
 <nav id="nav-primary" class="navbar navbar-inverse navbar-fixed-top">
   <div class="navbar-inner container">
-    <div class="float-left large-nav dropdown">
+    
 
-      <!-- @include breadcrumb -->
-
-    </div>
-
-    <div class="float-right" itemscope itemtype="http://schema.org/SiteNavigationElement"><a href="index.html" id="logo-small" class="logo-link visible-xs visible-sm logo-logo-xs"></a>
+    <div class="nav navbar-nav navbar-left">
+      <a href="index.html" id="logo-small" class="logo-link visible-xs visible-sm logo-logo-xs"></a>
       <a href="index.html" id="logo-medium" class="logo-link hidden-xs hidden-sm logo-logo-sm"></a>
-      <a href="index.html" id="logo-big" class="logo-link hidden-xs hidden-sm logo-logo-md-red" itemprop="url"><span itemprop="name" style="display:none">Esileht</span></a>
+      <a href="index.html" id="logo-big" class="logo-link hidden-xs hidden-sm logo-logo-md-red"></a>
+      <!-- @include breadcrumb -->
     </div>
-    <div class="float-right large-nav">
-      <div class="button-wrapper clearfix">
-        <a href="index.html" class="btn btn-small btn-dark pull-left">
-          <span>Previous</span>
-        </a>
-        <a href="<!-- $next -->.html" class="btn btn-small btn-red pull-right <!-- $hidden -->" id="nextPage">
-          <span>Model data</span><i class="icon-chevron-right"></i>
-        </a>
-      </div>
+
+    <div class="button-wrapper navbar-right">
+      <a href="<!-- $prev -->.html" class="btn btn-small btn-dark">
+        <span>Previous</span>
+      </a>
+      <a href="<!-- $next -->.html" class="btn btn-small btn-red  <!-- $hidden -->" id="nextPage">
+        <span><!-- $nextname --></span><i class="icon-chevron-right"></i>
+      </a>
     </div>
   </div>
 </nav>

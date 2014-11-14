@@ -43,28 +43,25 @@
 
 <nav id="nav-primary" class="navbar navbar-inverse navbar-fixed-top">
   <div class="navbar-inner container">
-    <div class="float-left large-nav dropdown">
+    
 
-      <ol id="menu-breadcrumb" class="breadcrumb">
-  <li><a href="model-menu.html">Model menu</a><i class="sprite-menu-dark-arrow"></i><i>/</i></li>
-  <li class="current active"><a class='current' href="model-data.html">Model Data</a><i class="sprite-menu-dark-arrow"></i><i>/</i></li>
-</ol>
-
-    </div>
-
-    <div class="float-right" itemscope itemtype="http://schema.org/SiteNavigationElement"><a href="index.html" id="logo-small" class="logo-link visible-xs visible-sm logo-logo-xs"></a>
+    <div class="nav navbar-nav navbar-left">
+      <a href="index.html" id="logo-small" class="logo-link visible-xs visible-sm logo-logo-xs"></a>
       <a href="index.html" id="logo-medium" class="logo-link hidden-xs hidden-sm logo-logo-sm"></a>
-      <a href="index.html" id="logo-big" class="logo-link hidden-xs hidden-sm logo-logo-md-red" itemprop="url"><span itemprop="name" style="display:none">Esileht</span></a>
+      <a href="index.html" id="logo-big" class="logo-link hidden-xs hidden-sm logo-logo-md-red"></a>
+      <ol id="menu-breadcrumb" class="breadcrumb">
+  <li><a href="model-menu.html">Model menu</a><i class="sprite-menu-white-arrow"></i><i>/</i></li>
+  <li class="current active"><a class='current' href="model-data.html">Model Data</a><i class="sprite-menu-white-arrow"></i><i>/</i></li>
+</ol>
     </div>
-    <div class="float-right large-nav">
-      <div class="button-wrapper clearfix">
-        <a href="index.html" class="btn btn-small btn-dark pull-left">
-          <span>Previous</span>
-        </a>
-        <a href="model-data.html" class="current btn btn-small btn-red pull-right empty" id="nextPage">
-          <span>Model data</span><i class="icon-chevron-right"></i>
-        </a>
-      </div>
+
+    <div class="button-wrapper navbar-right">
+      <a href="model-menu.html" class="btn btn-small btn-dark">
+        <span>Previous</span>
+      </a>
+      <a href="view-car.html" class="btn btn-small btn-red  empty" id="nextPage">
+        <span>View my Car</span><i class="icon-chevron-right"></i>
+      </a>
     </div>
   </div>
 </nav>
@@ -206,12 +203,41 @@
   <div class="container">
     <header>
         <h1>Exact Match</h1>
+        <div id="placeholder-rav4-in-stock"></div>
+        
+          <script type="text/x-handlebars-template" id="rav4-in-stock-template">
+          {{#VehicleDTO }}
+            <div class="row item">
+              <div class="col-sm-4">
+                <img class="img-responsive" alt="{{ImageBaseURL}}" src="http://images.toyota-europe.com/lt/{{ImageBaseURL}}/width/308/height/190/exterior-32_{{ExtColour}}.png">
+              </div>
+              <div class="col-sm-8 promotion">
+                <h5>{{Model.Name}}</h5>
+                    <p class="desc">
+                      <span class="price">{{Price}} €</span> 
+                      {{#if SpecialPrice }}
+                        {{#unless true}}
+  
+                        <span class="price special-price">{{SpecialPrice}} €</span>
+                        {{/unless}}
+                      {{/if}}
+                      <span>Interior color: {{IntColour}}</span><span>Exterior color: {{ExtColour}}</span>
+                      </p>
+                      {{#if Options}}
+                      <p>
+                      Extras: {{Options.string}}
+                      </p>
+                      {{/if}}
+              </div>
+            </div>
+          {{/VehicleDTO}}
+          </script>
     </header>
     <header>
         <h1>Stock In-House</h1>
     </header>
     <header>
-        <h1>Stock In Toyota</h1>
+        <h1>Stock In Toyo</h1>
     </header>
     <header>
         <h1>Stock in Network</h1>
@@ -228,12 +254,12 @@
               <div class='carousel-inner'>
               {{#VehicleDTO}}
                 <div class='row item {{class}}'>
-                  <div class="col-xs-4">
+                  <div class="col-sm-4">
                     <img alt="{{ImageBaseURL}}" src="http://images.toyota-europe.com/lt/{{ImageBaseURL}}/width/308/height/190/exterior-32_{{ExtColour}}.png">
                   </div>
-                  <div class="col-xs-8 text-left">
-                    <h2>{{Model.Name}}</h2>
-                    <p>
+                  <div class="col-sm-8 promotion">
+                    <h5>{{Model.Name}}</h5>
+                    <p class="desc">
                       <span class="price">{{Price}} €</span> 
                       {{#if SpecialPrice }}
                         {{#unless true}}
@@ -241,10 +267,14 @@
                         <span class="price special-price">{{SpecialPrice}} €</span>
                         {{/unless}}
                       {{/if}}
-                      <span>Interior color: {{IntColour}}</span><span>Exterior color: {{ExtColour}}</span></p>
-                      <p>Extras: {{Options.string}}
-                        
+                      <span>Interior color: {{IntColour}}</span><span>Exterior color: {{ExtColour}}</span>
                       </p>
+                      {{#if Options}}
+                      <p>
+                      Extras: {{Options.string}}
+                      </p>
+                      {{/if}}
+
                   </div>
                 </div>
                 {{/VehicleDTO}}
@@ -317,25 +347,6 @@
 });
 </script>
 
-<script>
-    carconfigMini: {
-    chooseModel       : 'Choose a model',
-    chooseBodyType      : 'Choose a body style',
-    chooseEngine      : 'Choose an engine',
-    chooseTransmission    : 'Choose a transmission',
-    chooseWheelDrive    : 'Choose a wheeldrive',
-    chooseGrade       : 'Choose a grade',
-    chooseColour      : 'Choose a colour',
-    selectedModel     : 'Model',
-    selectedBodyType    : 'Body style',
-    selectedEngine      : 'Engine',
-    selectedTransmission  : 'Transmission',
-    selectedWheelDrive    : 'Wheeldrive',
-    selectedGrade     : 'Grade',
-    selectedColour      : 'Colour',
-    priceRates        : '[productName]{value}<br/>[/productName][taeg]TAEG {value}[/taeg][term], {value} months[/term]'
-  },
-</script>
 
   </body>
 </html>
