@@ -41,7 +41,7 @@
     <body class="Model Menu">
     
 
-<nav id="nav-primary" class="navbar navbar-fixed-top">
+<nav id="nav-primary" class="navbar navbar-inverse navbar-fixed-top">
   <div class="navbar-inner container">
     <div class="float-left large-nav dropdown">
 
@@ -50,20 +50,23 @@
   <li class="current active"><a class='current' href="model-menu.html">Model Menu</a><i class="sprite-menu-dark-arrow"></i><i>/</i></li>
 </ol>
 
-      </div>
+    </div>
 
     <div class="float-right" itemscope itemtype="http://schema.org/SiteNavigationElement"><a href="index.html" id="logo-small" class="logo-link visible-xs visible-sm logo-logo-xs"></a>
       <a href="index.html" id="logo-medium" class="logo-link hidden-xs hidden-sm logo-logo-sm"></a>
-      <a href="index.html" id="logo-big" class="logo-link hidden-xs hidden-sm logo-logo-md-red" itemprop="url"><span itemprop="name" style="display:none">Esileht</span></a></div>
-      <div class="float-right large-nav my-toyota hidden-xs dropdown">
-        <!-- <a id="dropdown-button-my-toyota" class="dropdown-toggle" data-toggle="dropdown" role="button" data-action-target="#dropdown-menu-my-toyota" href="index.html#" data-bt-action="menu" data-bt-value="show_my_toyota" data-bt-collapse-value="hide_my_toyota" data-bt-action-target="#dropdown-menu-my-toyota" data-bt-track="">
-        <span>My Toyota</span>
-        </a> -->
-
-        
+      <a href="index.html" id="logo-big" class="logo-link hidden-xs hidden-sm logo-logo-md-red" itemprop="url"><span itemprop="name" style="display:none">Esileht</span></a>
+    </div>
+    <div class="float-right large-nav">
+      <div class="button-wrapper clearfix">
+        <a href="index.html" class="btn btn-small btn-dark pull-left">
+          <span>Previous</span>
+        </a>
+        <a href="model-data.html" class="btn btn-small btn-red pull-right hidden" id="nextPage">
+          <span>Model data</span><i class="icon-chevron-right"></i>
+        </a>
       </div>
-      </div>
-
+    </div>
+  </div>
 </nav>
 
 <section id="modelrange" class="modelrange">
@@ -101,7 +104,7 @@
   </div>
 </section>
 
-    <section class="spotlights navy footer">
+<!--     <section class="spotlights navy footer">
       <div class="container clearfix">
 
         <div class="row">
@@ -109,7 +112,7 @@
             <a href="index.html" class="btn btn-grey pull-left">
               <span>Previous</span>
             </a>
-            <a href="model-data.html" class="btn btn-red pull-right hidden" id="nextPage">
+            <a href=".html" class="btn btn-red pull-right" id="nextPage">
               <span>Model data</span><i class="icon-chevron-right"></i>
             </a>
           </div>
@@ -117,31 +120,23 @@
           
         </div>
       </div>
-    </section>
+    </section> -->
 
 
 <!-- scripts -->
 <script src='assets/scripts/vendor/handlebars.js'></script>
 <script src='assets/scripts/vendor/jquery.js'></script>
-<script src='assets/scripts/vendor/skrollr.stylesheets.js'></script>
-<script src='assets/scripts/vendor/skrollr.js'></script>
-<script src='assets/scripts/vendor/jquery.touchSwipe.js'></script>
 <script src='assets/scripts/vendor/bootstrap.js'></script>
-<script src='assets/scripts/vendor/iscroll.js'></script>
-<script src='assets/scripts/vendor/jquery.scrollTo.min.js'></script>
-<script src='assets/scripts/vendor/bootstrap-datepicker.js'></script>
-<script src='assets/scripts/vendor/bootstrap-paginator.js'></script>
-<script src='assets/scripts/vendor/screenfull.js'></script>
-<script src='assets/scripts/vendor/spritespin.js'></script>
-<script src='assets/scripts/vendor/bootstrap-select.min.js'></script>
+<script src='assets/scripts/herokuscripts/T1-carconfigMini.js'></script>
 
 <script src="data/model-list.json"></script>
 <script src="data/model-data.json"></script>
+<script src="data/rav4-stock.json"></script>
 
 <script>
     jQuery(function(){
 
-  jQuery('.selectpicker').selectpicker();
+  // jQuery('.selectpicker').selectpicker();
 
   jQuery('.modelitem').click(function(){
     jQuery('.modelitem').removeClass('active');
@@ -151,8 +146,26 @@
   });
 
 });
+</script>
 
-
+<script>
+    carconfigMini: {
+    chooseModel       : 'Choose a model',
+    chooseBodyType      : 'Choose a body style',
+    chooseEngine      : 'Choose an engine',
+    chooseTransmission    : 'Choose a transmission',
+    chooseWheelDrive    : 'Choose a wheeldrive',
+    chooseGrade       : 'Choose a grade',
+    chooseColour      : 'Choose a colour',
+    selectedModel     : 'Model',
+    selectedBodyType    : 'Body style',
+    selectedEngine      : 'Engine',
+    selectedTransmission  : 'Transmission',
+    selectedWheelDrive    : 'Wheeldrive',
+    selectedGrade     : 'Grade',
+    selectedColour      : 'Colour',
+    priceRates        : '[productName]{value}<br/>[/productName][taeg]TAEG {value}[/taeg][term], {value} months[/term]'
+  },
 </script>
 
   </body>

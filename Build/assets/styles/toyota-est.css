@@ -1,5 +1,3 @@
-@import url(T1-skrollr.css);
-@import url(bootstrap-select.css);
 @import url(T1-style.css);
 html {
   position: relative;
@@ -10,12 +8,19 @@ body {
   background: -webkit-linear-gradient(left, #dddddd 0%, white 20%, white 80%, #dddddd 100%);
   background: -o-linear-gradient(left, #dddddd 0%, white 20%, white 80%, #dddddd 100%);
   background: linear-gradient(to right, #dddddd 0%, white 20%, white 80%, #dddddd 100%);
-  margin-bottom: 85px; }
+  margin-top: 56px; }
 
-#opening-buttons {
-  margin-top: 60px; }
-  #opening-buttons .btn {
+.iconrow-lg {
+  margin-top: 100px; }
+  .iconrow-lg .icon {
+    font-size: 64px; }
+  .iconrow-lg a:hover {
+    text-decoration: none; }
+  .iconrow-lg .btn {
     margin-top: 30px; }
+  .iconrow-lg input {
+    margin-top: 20px;
+    margin-bottom: 40px; }
 
 .modelrange .row a .modelitem span {
   margin-top: -12px; }
@@ -35,24 +40,23 @@ section h1 {
   padding-top: 20px;
   padding-bottom: 20px; }
 
-.navbar-fixed-top {
-  position: static !important; }
-
-section.footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 85px; }
-  section.footer a {
+.navbar-fixed-top.navbar-inverse {
+  background: #1E2A32; }
+  .navbar-fixed-top.navbar-inverse .breadcrumb li.active > a,
+  .navbar-fixed-top.navbar-inverse .breadcrumb li.active > a:hover {
     color: #fff; }
-  section.footer.spotlights {
-    padding-bottom: 0; }
+  .navbar-fixed-top.navbar-inverse .button-wrapper {
+    min-width: 190px;
+    margin: 10px; }
 
 h4 {
   margin: 20px 10px 10px; }
 
 p {
   margin: 10px; }
+
+.carconfig-mini .carconfig-mini-preview {
+  margin-top: 60px; }
 
 .carousel-indicators {
   margin: 10px 0 0;
@@ -69,7 +73,7 @@ p {
   display: inline-block;
   height: auto;
   margin: 0 !important;
-  width: auto; }
+  width: 130px; }
 
 .carousel-indicators li img {
   display: block;
@@ -80,7 +84,7 @@ p {
   background-color: #E8E9EA; }
 
 .carousel-indicators .active {
-  width: auto;
+  width: 130px;
   height: auto;
   background-color: #E8E9EA;
   border-bottom: 2px solid #D2001E; }
