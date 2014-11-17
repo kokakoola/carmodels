@@ -1,7 +1,23 @@
-var source   = $("#rav4-template").html();
-var source1   = $("#rav4-in-stock-template").html();
-var template = Handlebars.compile(source); 
-var template1 = Handlebars.compile(source1); 
+// a iterate over a specific portion of a list.
+// usage: {{#slice items offset="1" limit="5"}}{{name}}{{/slice}} : items 1 thru 6
+// usage: {{#slice items limit="10"}}{{name}}{{/slice}} : items 0 thru 9
+// usage: {{#slice items offset="3"}}{{name}}{{/slice}} : items 3 thru context.length
+// defaults are offset=0, limit=5
+// todo: combine parameters into single string like python or ruby slice ("start:length" or "start,length")
+Handlebars.registerHelper('slice', function(context, block) {
+  var ret = "",
+      offset = parseInt(block.hash.offset) || 0,
+      limit = parseInt(block.hash.limit) || 5,
+      i = (offset < context.length) ? offset : 0,
+      j = ((limit + offset) < context.length) ? (limit + offset) : context.length;
+ 
+  for(i,j; i<j; i++) {
+    ret += block.fn(context[i]);
+  }
+
+  return ret;
+});
+
 
 var data = {
   "VehicleDTO": [
@@ -13,6 +29,7 @@ var data = {
         "ModelFamilyID": "23",
         "Name": "RAV4 2.0 Valvematic Luxury 4WD Multidrive S",
         NormalPrice: "0",
+      GoodPrice: "22360",
         SpecialPrice: {
           "@nil": "true"
         },
@@ -178,9 +195,7 @@ var data = {
         "ModelFamilyID": "23",
         "Name": "RAV4 2.0 Valvematic Standard 4WD M/T",
         "NormalPrice": "0",
-        "SpecialPrice": {
-          "@nil": "true"
-        },
+        "GoodPrice": "42000",
         "BodyType": {
           "ID": "24",
           "Name": "SUV"
@@ -709,6 +724,8 @@ var data = {
       }
     },
     {
+      no: "11",
+      class: "active",
       "Model": {
         "ID": "2095",
         "ModelFamilyID": "23",
@@ -747,11 +764,13 @@ var data = {
       }
     },
     {
+      no: "12",
       "Model": {
         "ID": "2105",
         "ModelFamilyID": "23",
         "Name": "RAV4 2.0 Valvematic Premium Plus 4WD Multidrive S",
         "NormalPrice": "0",
+GoodPrice: "22360",
         "SpecialPrice": {
           "@nil": "true"
         },
@@ -785,11 +804,13 @@ var data = {
       }
     },
     {
+      no: "13",
       "Model": {
         "ID": "2110",
         "ModelFamilyID": "23",
         "Name": "RAV4 2.0 Valvematic Luxury Plus 4WD Multidrive S",
         "NormalPrice": "0",
+GoodPrice: "22360",
         "SpecialPrice": {
           "@nil": "true"
         },
@@ -829,6 +850,7 @@ var data = {
       }
     },
     {
+      no: "14",
       "Model": {
         "ID": "2094",
         "ModelFamilyID": "23",
@@ -1703,5 +1725,11 @@ var data = {
   ]
 }
 
-$("#placeholder-rav4").html(template(data));
-$("#placeholder-rav4-in-stock").html(template1(data));
+var source   = $(".rav4-template").html();
+var source1   = $(".rav4-in-stock-template").html();
+var template = Handlebars.compile(source); 
+var template1 = Handlebars.compile(source1); 
+
+
+$(".placeholder-rav4").html(template(data));
+$(".placeholder-rav4-in-stock").html(template1(data));

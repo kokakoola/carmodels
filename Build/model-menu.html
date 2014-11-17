@@ -46,9 +46,13 @@
     
 
     <div class="nav navbar-nav navbar-left">
-      <a href="index.html" id="logo-small" class="logo-link visible-xs visible-sm logo-logo-xs"></a>
-      <a href="index.html" id="logo-medium" class="logo-link hidden-xs hidden-sm logo-logo-sm"></a>
-      <a href="index.html" id="logo-big" class="logo-link hidden-xs hidden-sm logo-logo-md-red"></a>
+<!--       <a href="index.html" id="logo-small" class="logo-link visible-xs visible-sm logo-logo-xs"></a> -->
+      <div class="navbar-header">
+        <a href="index.html" class="navbar-brand">
+          <img class="img-responsive" src=" assets/images/sprites/logo.png" alt="">
+        </a>
+      </div>
+<!--       <a href="index.html" id="logo-big" class="logo-link hidden-xs hidden-sm logo-logo-md-red"></a> -->
       <ol id="menu-breadcrumb" class="breadcrumb">
   <li><a href="index.html">Start</a><i class="sprite-menu-white-arrow"></i><i>/</i></li>
   <li class="current active"><a class='current' href="model-menu.html">Model Menu</a><i class="sprite-menu-white-arrow"></i><i>/</i></li>
@@ -133,11 +137,16 @@
 <script>
     jQuery(function(){
 
-  // jQuery('.selectpicker').selectpicker();
-
   jQuery('.modelitem').click(function(){
     jQuery('.modelitem').removeClass('active');
     jQuery(this).addClass('active');
+    jQuery('#nextPage').removeClass('hidden');
+    return false;
+  });
+
+  jQuery('.item').click(function(){
+    jQuery('.item').removeClass('current');
+    jQuery(this).addClass('current');
     jQuery('#nextPage').removeClass('hidden');
     return false;
   });

@@ -10,6 +10,11 @@ body {
   background: linear-gradient(to right, #dddddd 0%, white 20%, white 80%, #dddddd 100%);
   margin-top: 56px; }
 
+.navbar-brand {
+  padding: 0; }
+  .navbar-brand .img-responsive {
+    height: 56px; }
+
 .iconrow-lg {
   margin-top: 100px; }
   .iconrow-lg .icon {
@@ -25,19 +30,16 @@ body {
 .modelrange .row a .modelitem span {
   margin-top: -12px; }
 
-.carousel-inner .item:hover {
-  background-color: #E8E9EA; }
-
 .modelitem.active {
-  background-color: #E8E9EA;
-  border-bottom: 2px solid #D2001E; }
+  background-color: #e8e9ea;
+  border-bottom: 2px solid #d2001e; }
 
 section h1 {
-  border-bottom: 1px solid #C9C9C9;
+  border-bottom: 1px solid #c9c9c9;
   text-align: center; }
 
 .promotion h5 {
-  border-bottom: 1px solid #C9C9C9;
+  border-bottom: 1px solid #c9c9c9;
   margin-top: 30px; }
 
 .buttons {
@@ -45,7 +47,7 @@ section h1 {
   padding-bottom: 20px; }
 
 .navbar-fixed-top.navbar-inverse {
-  background: #1E2A32; }
+  background: #1e2a32; }
   .navbar-fixed-top.navbar-inverse .breadcrumb li.active > a,
   .navbar-fixed-top.navbar-inverse .breadcrumb li.active > a:hover {
     color: #fff; }
@@ -86,14 +88,23 @@ p {
   opacity: 1;
   padding: 0 10px; }
 
-.carousel-indicators li:hover {
-  background-color: #E8E9EA; }
+.carousel-indicators li:hover,
+.item:hover {
+  background-color: #e8e9ea;
+  cursor: pointer; }
+
+.item {
+  padding-top: 30px; }
+  .item.current {
+    background-color: #e8e9ea;
+    border-bottom: 2px solid #d2001e; }
+  .item img {
+    padding: 0 15px; }
 
 .carousel-indicators .active {
   width: 130px;
   height: auto;
-  background-color: #E8E9EA;
-  border-bottom: 2px solid #D2001E; }
+  background-color: #e8e9ea; }
 
 .carousel-indicators li.active img {
   opacity: 0.5;
@@ -105,5 +116,29 @@ p {
 .carousel-outer {
   position: relative; }
 
-.open > .dropdown-menu {
-  display: block !important; }
+.desc {
+  text-indent: 0; }
+  .desc .price {
+    font-family: toyotatext_bd; }
+    .desc .price.new-price {
+      color: #f07f0a;
+      margin-right: 5px;
+      margin-left: 5px; }
+    .desc .price.old-price {
+      text-decoration: line-through; }
+  .desc span {
+    padding-right: 5px;
+    padding-left: 5px; }
+  .desc i {
+    color: #f07f0a; }
+  .desc .avantage {
+    font-family: toyotatext_bd;
+    color: #E50000;
+    font-size: 13px;
+    font-size: 1.3rem; }
+
+#models-data header {
+  margin-top: 40px; }
+
+hr {
+  border-bottom: 1px solid #c9c9c9; }

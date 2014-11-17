@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="col-xs-12">
+    <div id='carousel-carid' class='carousel slide' data-ride='carousel' data-interval="false">
+      <div class="placeholder-rav4"></div>
+
+        <script type="text/x-handlebars-template" class="rav4-template">
+          <div class='carousel-outer'>
+            <div class='carousel-inner'>
+            {{#slice VehicleDTO offset="0" limit="4"}}
+              <div class='row item {{class}}'>
+                <div class="col-sm-4">
+                  <img alt="{{ImageBaseURL}}" src="http://images.toyota-europe.com/lt/{{ImageBaseURL}}/width/308/height/190/exterior-32_{{ExtColour}}.png">
+                </div>
+                <div class="col-sm-8 promotions">
+                  <h5>{{Model.Name}}
+                    {{#if Model.GoodPrice }}
+                    <i class="icon-tag"></i>
+                    {{/if}}
+                  </h5>
+                <hr>
+                <p class="desc">
+                  <span class="price {{#if Model.GoodPrice }} old-price {{/if}} " >{{Price}} €</span> 
+                  {{#if Model.GoodPrice }}
+                    <span class="price new-price">{{Model.GoodPrice}} €</span>
+                    <span class="avantage">Save 19% by buying this car</span>
+                  {{/if}}
+                    |  <span>Interior color: {{IntColour}}</span>  |  <span>Exterior color: {{ExtColour}}</span>
+                {{#if Options}}
+                  <br>
+                  <i class="icon-info-sign"></i> Extras: {{Options.string}}
+                {{/if}}
+                </p>
+              </div>
+            </div>
+            {{/slice}}
+          </div>
+        </div>
+        <ol class='carousel-indicators mCustomScrollbar'>
+          {{#slice VehicleDTO offset="0" limit="4"}}
+          <li data-target='#carousel-carid' data-slide-to='{{no}}' class='{{class}}'>
+            <img alt="{{ImageBaseURL}}" src="http://images.toyota-europe.com/lt/{{ImageBaseURL}}/width/150/height/95/exterior-32_{{ExtColour}}.png">
+          </li>
+          {{/slice}}
+        </ol>
+        <hr>
+      </script>
+
+    </div>
+  </div>
+</div>

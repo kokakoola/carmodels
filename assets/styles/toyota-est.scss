@@ -2,6 +2,12 @@
     'base'
     ;
 
+$bordergray: #C9C9C9;
+$bg-gray: #E8E9EA;
+$accent-red: #D2001E;
+$orange: #F07F0A;
+$darkgray: #1E2A32;
+
 html {
   position: relative;
   min-height: 100%;
@@ -14,8 +20,13 @@ body {
   background: linear-gradient(to right, #DDD 0%, #FFF 20%, #FFF 80%, #DDD 100%);
   // margin-bottom: 85px;
   margin-top: 56px;
+}
 
-
+.navbar-brand {
+  padding: 0;
+  .img-responsive {
+    height: 56px;
+  }
 }
 
 .iconrow-lg {
@@ -39,22 +50,18 @@ body {
   margin-top: -12px;
 }
 
-.carousel-inner .item:hover {
-  background-color: #E8E9EA;
-}
-
 .modelitem.active {
-  background-color: #E8E9EA;
-  border-bottom: 2px solid #D2001E;
+  background-color: $bg-gray;
+  border-bottom: 2px solid $accent-red;
 }
 
 section h1 {
-  border-bottom: 1px solid #C9C9C9;
+  border-bottom: 1px solid $bordergray;
   text-align: center;
 }
 
 .promotion h5 {
-  border-bottom: 1px solid #C9C9C9;
+  border-bottom: 1px solid $bordergray;
   margin-top: 30px;
 }
 .buttons {
@@ -67,7 +74,7 @@ section h1 {
 // }
 
 .navbar-fixed-top.navbar-inverse {
-  background: #1E2A32;
+  background: $darkgray;
   .breadcrumb li.active > a,
   .breadcrumb li.active > a:hover {
     color: #fff;
@@ -109,7 +116,6 @@ p {
 
 .carousel-indicators {
     margin: 10px 0 0;
-
     overflow: auto;
     position: static;
     text-align: left;
@@ -131,14 +137,27 @@ p {
     padding: 0 10px;
 }
 
-.carousel-indicators li:hover {
-  background-color: #E8E9EA;
+.carousel-indicators li:hover,
+.item:hover {
+  background-color: $bg-gray;
+  cursor: pointer;
 }
+
+.item {
+  padding-top: 30px;
+  &.current {
+      background-color: $bg-gray;
+  border-bottom: 2px solid $accent-red;
+  }
+  img {
+    padding: 0 15px;
+  }
+}
+
 .carousel-indicators .active {
   width: 130px;
   height: auto;
-  background-color: #E8E9EA;
-  border-bottom: 2px solid #D2001E;
+  background-color: $bg-gray;
 }
 .carousel-indicators li.active img {
     opacity: 0.5;
@@ -151,6 +170,39 @@ p {
     position: relative;
 }
 
-.open>.dropdown-menu {
-  display: block !important;
+.desc {
+  text-indent: 0;
+  .price {
+    font-family: toyotatext_bd; 
+    &.new-price {
+      color: $orange;
+      margin-right: 5px;
+      margin-left: 5px;
+    }
+    &.old-price {
+      text-decoration: line-through;
+    }
+  }
+  span { 
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+  i {
+    color: $orange;
+  }
+  .avantage {
+    font-family: toyotatext_bd;
+    color: #E50000;
+    font-size: 13px;
+    font-size: 1.3rem;
+  }
 }
+
+#models-data header {
+  margin-top: 40px;
+}
+hr {
+  border-bottom: 1px solid $bordergray;
+}
+
+

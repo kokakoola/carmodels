@@ -46,9 +46,13 @@
     
 
     <div class="nav navbar-nav navbar-left">
-      <a href="index.html" id="logo-small" class="logo-link visible-xs visible-sm logo-logo-xs"></a>
-      <a href="index.html" id="logo-medium" class="logo-link hidden-xs hidden-sm logo-logo-sm"></a>
-      <a href="index.html" id="logo-big" class="logo-link hidden-xs hidden-sm logo-logo-md-red"></a>
+<!--       <a href="index.html" id="logo-small" class="logo-link visible-xs visible-sm logo-logo-xs"></a> -->
+      <div class="navbar-header">
+        <a href="index.html" class="navbar-brand">
+          <img class="img-responsive" src=" assets/images/sprites/logo.png" alt="">
+        </a>
+      </div>
+<!--       <a href="index.html" id="logo-big" class="logo-link hidden-xs hidden-sm logo-logo-md-red"></a> -->
       <ol id="menu-breadcrumb" class="breadcrumb">
   <li><a href="model-menu.html">Model menu</a><i class="sprite-menu-white-arrow"></i><i>/</i></li>
   <li class="current active"><a class='current' href="model-data.html">Model Data</a><i class="sprite-menu-white-arrow"></i><i>/</i></li>
@@ -59,7 +63,7 @@
       <a href="model-menu.html" class="btn btn-small btn-dark">
         <span>Previous</span>
       </a>
-      <a href="view-car.html" class="btn btn-small btn-red  empty" id="nextPage">
+      <a href="view-car.html" class="btn btn-small btn-red  hidden" id="nextPage">
         <span>View my Car</span><i class="icon-chevron-right"></i>
       </a>
     </div>
@@ -185,7 +189,7 @@
       </div>
 
       <div class="col-xs-12 col-sm-6 carconfig-mini-preview">
-        <img class="image-result" src="http://images.toyota-europe.com/lt/rav4/width/308/height/190/exterior-32_1G3.png" />
+        <img class="image-result" src="http://images.toyota-europe.com/lt/rav4/width/620/height/380/exterior-32_1G3.png" />
         <div class="carconfig-mini-actions">
           <a class="btn btn-dark btn-reset">Reset<i class="icon-repeat"></i></a>
           <a class="current btn btn-grey btn-my-toyota" href="model-data.html">Save to MyToyota</a>
@@ -198,109 +202,193 @@
 </section>
 
 
-<section id="model-carousel">
+<section id="models-data">
   <!-- source: http://jsfiddle.net/ivanarvizu/JS6JV/16/light/ -->
   <div class="container">
     <header>
-        <h1>Exact Match</h1>
-        <div id="placeholder-rav4-in-stock"></div>
-        
-          <script type="text/x-handlebars-template" id="rav4-in-stock-template">
-          {{#VehicleDTO }}
-            <div class="row item">
-              <div class="col-sm-4">
-                <img class="img-responsive" alt="{{ImageBaseURL}}" src="http://images.toyota-europe.com/lt/{{ImageBaseURL}}/width/308/height/190/exterior-32_{{ExtColour}}.png">
-              </div>
-              <div class="col-sm-8 promotion">
-                <h5>{{Model.Name}}</h5>
-                    <p class="desc">
-                      <span class="price">{{Price}} €</span> 
-                      {{#if SpecialPrice }}
-                        {{#unless true}}
-  
-                        <span class="price special-price">{{SpecialPrice}} €</span>
-                        {{/unless}}
-                      {{/if}}
-                      <span>Interior color: {{IntColour}}</span><span>Exterior color: {{ExtColour}}</span>
-                      </p>
-                      {{#if Options}}
-                      <p>
-                      Extras: {{Options.string}}
-                      </p>
-                      {{/if}}
-              </div>
-            </div>
-          {{/VehicleDTO}}
-          </script>
+      <h1>Exact Match</h1>
     </header>
-    <header>
-        <h1>Stock In-House</h1>
-    </header>
-    <header>
-        <h1>Stock In Toyo</h1>
-    </header>
-    <header>
-        <h1>Stock in Network</h1>
-    </header>
-    <div class="row">
-      <div class="col-xs-12">
-        <div id='carousel-carid' class='carousel slide' data-ride='carousel' data-interval="false">
-          <div id="placeholder-rav4"></div>
-        
-          <script type="text/x-handlebars-template" id="rav4-template">
-           
-            <div class='carousel-outer'>
-  
-              <div class='carousel-inner'>
-              {{#VehicleDTO}}
-                <div class='row item {{class}}'>
-                  <div class="col-sm-4">
-                    <img alt="{{ImageBaseURL}}" src="http://images.toyota-europe.com/lt/{{ImageBaseURL}}/width/308/height/190/exterior-32_{{ExtColour}}.png">
-                  </div>
-                  <div class="col-sm-8 promotion">
-                    <h5>{{Model.Name}}</h5>
-                    <p class="desc">
-                      <span class="price">{{Price}} €</span> 
-                      {{#if SpecialPrice }}
-                        {{#unless true}}
-  
-                        <span class="price special-price">{{SpecialPrice}} €</span>
-                        {{/unless}}
-                      {{/if}}
-                      <span>Interior color: {{IntColour}}</span><span>Exterior color: {{ExtColour}}</span>
-                      </p>
-                      {{#if Options}}
-                      <p>
-                      Extras: {{Options.string}}
-                      </p>
-                      {{/if}}
+    <section>
+<div class="row">
+  <div class="col-xs-12">
+    <div id='carousel-carid' class='carousel slide' data-ride='carousel' data-interval="false">
+      <div class="placeholder-rav4"></div>
 
-                  </div>
+        <script type="text/x-handlebars-template" class="rav4-template">
+          <div class='carousel-outer'>
+            <div class='carousel-inner'>
+            {{#slice VehicleDTO offset="0" limit="4"}}
+              <div class='row item {{class}}'>
+                <div class="col-sm-4">
+                  <img alt="{{ImageBaseURL}}" src="http://images.toyota-europe.com/lt/{{ImageBaseURL}}/width/308/height/190/exterior-32_{{ExtColour}}.png">
                 </div>
-                {{/VehicleDTO}}
+                <div class="col-sm-8 promotions">
+                  <h5>{{Model.Name}}
+                    {{#if Model.GoodPrice }}
+                    <i class="icon-tag"></i>
+                    {{/if}}
+                  </h5>
+                <hr>
+                <p class="desc">
+                  <span class="price {{#if Model.GoodPrice }} old-price {{/if}} " >{{Price}} €</span> 
+                  {{#if Model.GoodPrice }}
+                    <span class="price new-price">{{Model.GoodPrice}} €</span>
+                    <span class="avantage">Save 19% by buying this car</span>
+                  {{/if}}
+                    |  <span>Interior color: {{IntColour}}</span>  |  <span>Exterior color: {{ExtColour}}</span>
+                {{#if Options}}
+                  <br>
+                  <i class="icon-info-sign"></i> Extras: {{Options.string}}
+                {{/if}}
+                </p>
               </div>
             </div>
-  
-            <ol class='carousel-indicators mCustomScrollbar'>
-              {{#VehicleDTO}}
-              <li data-target='#carousel-carid' data-slide-to='{{no}}' class='{{class}}'>
-                <img alt="{{ImageBaseURL}}" src="http://images.toyota-europe.com/lt/{{ImageBaseURL}}/width/150/height/95/exterior-32_{{ExtColour}}.png">
-              </li>
-              {{/VehicleDTO}}
-            </ol>
-            <hr>
-          
-          </script>
-  
+            {{/slice}}
+          </div>
         </div>
-      </div>
-  
-  
+        <ol class='carousel-indicators mCustomScrollbar'>
+          {{#slice VehicleDTO offset="0" limit="4"}}
+          <li data-target='#carousel-carid' data-slide-to='{{no}}' class='{{class}}'>
+            <img alt="{{ImageBaseURL}}" src="http://images.toyota-europe.com/lt/{{ImageBaseURL}}/width/150/height/95/exterior-32_{{ExtColour}}.png">
+          </li>
+          {{/slice}}
+        </ol>
+        <hr>
+      </script>
+
     </div>
   </div>
+</div>
+    </section>
+    <header>
+      <h1>Stock In-House</h1>
+    </header>
+    <section>
+<div class="placeholder-rav4-in-stock"></div>
+<script type="text/x-handlebars-template" class="rav4-in-stock-template">
+
+{{#slice VehicleDTO offset="18" limit="7"}}
+  <div class="row item">
+    <div class="col-sm-4">
+      <img class="img-responsive" alt="{{ImageBaseURL}}" src="http://images.toyota-europe.com/lt/{{ImageBaseURL}}/width/308/height/190/exterior-32_{{ExtColour}}.png">
+    </div>
+    <div class="col-sm-8 promotions">
+      <h5>{{Model.Name}}
+        {{#if Model.GoodPrice }}
+        <i class="icon-tag"></i>
+        {{/if}}
+      </h5>
+      <hr>
+      <p class="desc">
+        <span class="price {{#if Model.GoodPrice }} old-price {{/if}} " >{{Price}} €</span> 
+        {{#if Model.GoodPrice }}
+          <span class="price new-price">{{Model.GoodPrice}} €</span>
+          <span class="avantage">Save 19% by buying this car</span> <br> 
+        {{/if}}
+            <span>Interior color: {{IntColour}}</span>  |  <span>Exterior color: {{ExtColour}}</span>
+      {{#if Options}}
+        <br>
+        <i class="icon-info-sign"></i> Extras: {{Options.string}}
+      {{/if}}
+      </p>
+    </div>
+  </div>
+{{/slice}}
+</script>
+    </section>
+    <header>
+      <h1>Stock In Toyota</h1>
+    </header>
+    <section>
+<div class="placeholder-rav4-in-stock"></div>
+<script type="text/x-handlebars-template" class="rav4-in-stock-template">
+
+{{#slice VehicleDTO offset="18" limit="7"}}
+  <div class="row item">
+    <div class="col-sm-4">
+      <img class="img-responsive" alt="{{ImageBaseURL}}" src="http://images.toyota-europe.com/lt/{{ImageBaseURL}}/width/308/height/190/exterior-32_{{ExtColour}}.png">
+    </div>
+    <div class="col-sm-8 promotions">
+      <h5>{{Model.Name}}
+        {{#if Model.GoodPrice }}
+        <i class="icon-tag"></i>
+        {{/if}}
+      </h5>
+      <hr>
+      <p class="desc">
+        <span class="price {{#if Model.GoodPrice }} old-price {{/if}} " >{{Price}} €</span> 
+        {{#if Model.GoodPrice }}
+          <span class="price new-price">{{Model.GoodPrice}} €</span>
+          <span class="avantage">Save 19% by buying this car</span> <br> 
+        {{/if}}
+            <span>Interior color: {{IntColour}}</span>  |  <span>Exterior color: {{ExtColour}}</span>
+      {{#if Options}}
+        <br>
+        <i class="icon-info-sign"></i> Extras: {{Options.string}}
+      {{/if}}
+      </p>
+    </div>
+  </div>
+{{/slice}}
+</script>
+    </section>
+    <header>
+      <h1>Stock in Network</h1>
+    </header>
+    <section>
+<div class="row">
+  <div class="col-xs-12">
+    <div id='carousel-carid' class='carousel slide' data-ride='carousel' data-interval="false">
+      <div class="placeholder-rav4"></div>
+
+        <script type="text/x-handlebars-template" class="rav4-template">
+          <div class='carousel-outer'>
+            <div class='carousel-inner'>
+            {{#slice VehicleDTO offset="0" limit="4"}}
+              <div class='row item {{class}}'>
+                <div class="col-sm-4">
+                  <img alt="{{ImageBaseURL}}" src="http://images.toyota-europe.com/lt/{{ImageBaseURL}}/width/308/height/190/exterior-32_{{ExtColour}}.png">
+                </div>
+                <div class="col-sm-8 promotions">
+                  <h5>{{Model.Name}}
+                    {{#if Model.GoodPrice }}
+                    <i class="icon-tag"></i>
+                    {{/if}}
+                  </h5>
+                <hr>
+                <p class="desc">
+                  <span class="price {{#if Model.GoodPrice }} old-price {{/if}} " >{{Price}} €</span> 
+                  {{#if Model.GoodPrice }}
+                    <span class="price new-price">{{Model.GoodPrice}} €</span>
+                    <span class="avantage">Save 19% by buying this car</span>
+                  {{/if}}
+                    |  <span>Interior color: {{IntColour}}</span>  |  <span>Exterior color: {{ExtColour}}</span>
+                {{#if Options}}
+                  <br>
+                  <i class="icon-info-sign"></i> Extras: {{Options.string}}
+                {{/if}}
+                </p>
+              </div>
+            </div>
+            {{/slice}}
+          </div>
+        </div>
+        <ol class='carousel-indicators mCustomScrollbar'>
+          {{#slice VehicleDTO offset="0" limit="4"}}
+          <li data-target='#carousel-carid' data-slide-to='{{no}}' class='{{class}}'>
+            <img alt="{{ImageBaseURL}}" src="http://images.toyota-europe.com/lt/{{ImageBaseURL}}/width/150/height/95/exterior-32_{{ExtColour}}.png">
+          </li>
+          {{/slice}}
+        </ol>
+        <hr>
+      </script>
+
+    </div>
+  </div>
+</div>
+    </section>
+  </div>
 </section>
-
-
 
 
 <!--     <section class="spotlights navy footer">
@@ -335,11 +423,16 @@
 <script>
     jQuery(function(){
 
-  // jQuery('.selectpicker').selectpicker();
-
   jQuery('.modelitem').click(function(){
     jQuery('.modelitem').removeClass('active');
     jQuery(this).addClass('active');
+    jQuery('#nextPage').removeClass('hidden');
+    return false;
+  });
+
+  jQuery('.item').click(function(){
+    jQuery('.item').removeClass('current');
+    jQuery(this).addClass('current');
     jQuery('#nextPage').removeClass('hidden');
     return false;
   });
