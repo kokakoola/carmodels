@@ -8,7 +8,7 @@ body {
   background: -webkit-linear-gradient(left, #dddddd 0%, white 20%, white 80%, #dddddd 100%);
   background: -o-linear-gradient(left, #dddddd 0%, white 20%, white 80%, #dddddd 100%);
   background: linear-gradient(to right, #dddddd 0%, white 20%, white 80%, #dddddd 100%);
-  margin-top: 56px; }
+  margin-top: 70px; }
 
 .navbar-brand {
   padding: 0; }
@@ -56,6 +56,25 @@ section h1 {
     display: inline-block; }
     .navbar-fixed-top.navbar-inverse .button-wrapper .btn {
       margin: 10px 10px 10px 0; }
+
+@media (min-width: 1200px) {
+  .breadcrumb {
+    width: 700px; } }
+.view-car header {
+  margin-top: 30px;
+  margin-bottom: 40px; }
+.view-car section.leasing-calc {
+  margin-top: 80px;
+  background: #1C2830;
+  color: #fff; }
+  .view-car section.leasing-calc h5 {
+    margin-bottom: 5px; }
+.view-car .leasing-result {
+  margin-top: 40px;
+  padding-bottom: 30px; }
+.view-car .special-price {
+  color: #f07f0a;
+  font-family: toyotatext_bd; }
 
 h4 {
   margin: 20px 10px 10px; }
