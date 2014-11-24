@@ -14,6 +14,8 @@
         <link href="favicon.ico" rel="shortcut icon">
         
         <link rel='stylesheet' href='assets/styles/toyota-est.css'>
+<link rel='stylesheet' href='assets/styles/blueimp-gallery.css'>
+<link rel='stylesheet' href='assets/styles/bootstrap-image-gallery.css'>
         
         <!-- Hammer reload -->
           <script>
@@ -270,7 +272,7 @@
 {{#slice VehicleDTO offset="18" limit="7"}}
   <div class="row item">
     <div class="col-sm-4">
-      <img class="img-responsive" alt="{{ImageBaseURL}}" src="http://images.toyota-europe.com/lt/{{ImageBaseURL}}/width/308/height/190/exterior-32_{{ExtColour}}.png">
+      <img class="img-responsive" alt="{{ImageBaseURL}}" data-original="http://images.toyota-europe.com/lt/{{ImageBaseURL}}/width/308/height/190/exterior-32_{{ExtColour}}.png">
     </div>
     <div class="col-sm-8 promotions">
       <h5>{{Model.Name}}
@@ -306,7 +308,7 @@
 {{#slice VehicleDTO offset="18" limit="7"}}
   <div class="row item">
     <div class="col-sm-4">
-      <img class="img-responsive" alt="{{ImageBaseURL}}" src="http://images.toyota-europe.com/lt/{{ImageBaseURL}}/width/308/height/190/exterior-32_{{ExtColour}}.png">
+      <img class="img-responsive" alt="{{ImageBaseURL}}" data-original="http://images.toyota-europe.com/lt/{{ImageBaseURL}}/width/308/height/190/exterior-32_{{ExtColour}}.png">
     </div>
     <div class="col-sm-8 promotions">
       <h5>{{Model.Name}}
@@ -414,30 +416,48 @@
 <script src='assets/scripts/vendor/handlebars.js'></script>
 <script src='assets/scripts/vendor/jquery.js'></script>
 <script src='assets/scripts/vendor/bootstrap.js'></script>
-<script src='assets/scripts/vendor/iscroll.js'></script>
+<script src='assets/scripts/vendor/jquery.blueimp-gallery.min.js'></script>
+<script src='assets/scripts/vendor/bootstrap-image-gallery.js'></script>
+<script src='assets/scripts/vendor/jquery.lazyload.js'></script>
 
 <script src="data/model-list.json"></script>
 <script src="data/model-data.json"></script>
 <script src="data/rav4-stock.json"></script>
+<script src="data/model-gallery.json"></script>
 
 <script>
-    jQuery(function(){
+  jQuery(function(){
 
-  jQuery('.modelitem').click(function(){
-    jQuery('.modelitem').removeClass('active');
-    jQuery(this).addClass('active');
-    jQuery('#nextPage').removeClass('hidden');
-    return false;
+      // lazyload pics
+  // --------
+    $(".lazy").lazyload({
+      placeholder: 'assets/images/loader.svg',
+      threshold : 200, 
+      effect : "fadeIn"
+    });
+
+    $(".img-responsive").lazyload({
+      placeholder: 'assets/images/loader.svg',
+      threshold : 200, 
+      effect : "fadeIn"
+    });
+
+
+    jQuery('.modelitem').click(function(){
+      jQuery('.modelitem').removeClass('active');
+      jQuery(this).addClass('active');
+      jQuery('#nextPage').removeClass('hidden');
+      return false;
+    });
+
+    jQuery('.item').click(function(){
+      jQuery('.item').removeClass('current');
+      jQuery(this).addClass('current');
+      jQuery('#nextPage').removeClass('hidden');
+      return false;
+    });
+
   });
-
-  jQuery('.item').click(function(){
-    jQuery('.item').removeClass('current');
-    jQuery(this).addClass('current');
-    jQuery('#nextPage').removeClass('hidden');
-    return false;
-  });
-
-});
 </script>
 
 

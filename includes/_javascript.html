@@ -1,26 +1,42 @@
 <!-- scripts -->
-<!-- @javascript handlebars jquery bootstrap iscroll -->
+<!-- @javascript handlebars jquery bootstrap jquery.blueimp-gallery.min bootstrap-image-gallery jquery.lazyload -->
 
 <script src="data/model-list.json"></script>
 <script src="data/model-data.json"></script>
 <script src="data/rav4-stock.json"></script>
+<script src="data/model-gallery.json"></script>
 
 <script>
-    jQuery(function(){
+  jQuery(function(){
 
-  jQuery('.modelitem').click(function(){
-    jQuery('.modelitem').removeClass('active');
-    jQuery(this).addClass('active');
-    jQuery('#nextPage').removeClass('hidden');
-    return false;
+      // lazyload pics
+  // --------
+    $(".lazy").lazyload({
+      placeholder: 'assets/images/loader.svg',
+      threshold : 200, 
+      effect : "fadeIn"
+    });
+
+    $(".img-responsive").lazyload({
+      placeholder: 'assets/images/loader.svg',
+      threshold : 200, 
+      effect : "fadeIn"
+    });
+
+
+    jQuery('.modelitem').click(function(){
+      jQuery('.modelitem').removeClass('active');
+      jQuery(this).addClass('active');
+      jQuery('#nextPage').removeClass('hidden');
+      return false;
+    });
+
+    jQuery('.item').click(function(){
+      jQuery('.item').removeClass('current');
+      jQuery(this).addClass('current');
+      jQuery('#nextPage').removeClass('hidden');
+      return false;
+    });
+
   });
-
-  jQuery('.item').click(function(){
-    jQuery('.item').removeClass('current');
-    jQuery(this).addClass('current');
-    jQuery('#nextPage').removeClass('hidden');
-    return false;
-  });
-
-});
 </script>

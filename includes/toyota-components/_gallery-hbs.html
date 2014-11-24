@@ -1,0 +1,33 @@
+<div class="row gallery-horizontal">
+    <div id="placeholder-modelpics"></div>
+
+  <script type="text/x-handlebars-template" id="modelpics-template">
+  {{#images}} 
+    <a class=" item-link" href="javascript:void(0)" style="padding: 0;">
+      {{#if angle}}
+      <div class="gallery-item" style="background-color: #ccc; ">
+      
+        <img  alt="" src="http://images.toyota-europe.com/lt/rav4/width/308/height/190/exterior-{{angle}}.png">
+        
+
+
+      <span class="border-hover"></span>
+      <i class="icon-search"></i>
+      </div>
+      {{else}}
+      {{#if no }}
+      <div class="gallery-item" style="background-color: #ccc; ">
+
+        <img  alt="" src="http://images.toyota-europe.com/ee/Avensis/interior-{{no}}.jpg">
+        {{/if}}
+      {{/if}}
+
+      <span class="border-hover"></span>
+      <i class="icon-search"></i>
+      </div>
+    </a>
+
+      
+  {{/images}}
+  </script>
+</div>

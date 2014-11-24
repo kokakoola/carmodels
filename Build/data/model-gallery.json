@@ -1,0 +1,26 @@
+  var source   = $("#modelpics-template").html();
+  var template = Handlebars.compile(source); 
+
+
+  var data = { images: [
+    {
+      angle: "02"
+    },
+    {
+      angle: "06"
+    },
+    {
+      angle: "08"
+    },
+    {
+      angle: "13"
+    },
+    {
+      angle: "18"
+    },
+    {
+      no: "0"
+    },
+    ]};
+
+  $("#placeholder-modelpics").html(template(data));

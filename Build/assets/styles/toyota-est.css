@@ -68,13 +68,37 @@ section h1 {
   background: #1C2830;
   color: #fff; }
   .view-car section.leasing-calc h5 {
-    margin-bottom: 5px; }
+    margin-bottom: 5px;
+    margin-top: 10px; }
 .view-car .leasing-result {
-  margin-top: 40px;
+  margin-top: 20px;
   padding-bottom: 30px; }
 .view-car .special-price {
   color: #f07f0a;
   font-family: toyotatext_bd; }
+
+dl.dl-horizontal {
+  font-family: toyotatext_rg,Verdana,Geneva,Arial,Helvetica,sans-serif;
+  font-size: 14.5px;
+  font-size: 1.45rem;
+  line-height: 17px;
+  line-height: 1.7rem;
+  color: #6C7073;
+  text-indent: 3em;
+  margin-bottom: 30px; }
+  dl.dl-horizontal strong {
+    font-size: 1.2em; }
+
+.gallery-horizontal {
+  background: #ccc; }
+
+.gallery-horizontal .gallery-item {
+  width: 33.3333%; }
+  .gallery-horizontal .gallery-item.car {
+    padding: 20px; }
+  .gallery-horizontal .gallery-item.sm img {
+    max-height: 180px;
+    width: auto; }
 
 h4 {
   margin: 20px 10px 10px; }
@@ -161,3 +185,6 @@ p {
 
 hr {
   border-bottom: 1px solid #c9c9c9; }
+
+.blueimp-gallery > .slides > .slide > .slide-content {
+  background: #fff; }

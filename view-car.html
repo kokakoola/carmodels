@@ -1,5 +1,5 @@
 <!-- $next view-car -->
-<!-- $nextname Send to automast -->
+<!-- $nextname Send to automaster -->
 <!-- $prev model-data -->
 <!-- $prevname Model data -->
 <!-- $current view-car -->
@@ -15,17 +15,13 @@
     <header>
       <h1>RAV4 2.0 Valvematic Premium Plus 4WD Multidrive S
       </h1>
-<!--       <h5 class="desc text-center">
-          <span class="price  ">18980 €</span>
-          |  <span>Interior color: 21</span>  |  <span>Exterior color: SILVER METALLIC                                                 </span>
-      </h5> -->
     </header>
     <div class="col-sm-6">
       <dl class="dl-horizontal">
         <dt class="price">Price</dt>
-        <dd>22 990 €</dd>
+        <dd><strong>22 990 €</strong></dd>
         <dt>Special price</dt>
-        <dd class="price special-price">21 900 €</dd>
+        <dd class="price special-price"><strong>21 1536 €</strong></dd>
         <dt>Options</dt>
         <dd>This</dd>
         <dd>That</dd>
@@ -35,33 +31,73 @@
   </div>
 </section>
 
-<div class="row">
-<!-- @include gallery -->
+
+
+<div class="row gallery-horizontal" id="links">
+
+  <a class="item-link" href="http://images.toyota-europe.com/lt/rav4/width/2048/height/1536/exterior-02.png" data-gallery>
+    <div class="gallery-item car" style="background-color: #eee; ">
+      <img  class="lazy" alt="" data-original="http://images.toyota-europe.com/lt/rav4/width/610/height/380/exterior-02.png">
+      <span class="border-hover"></span>
+      <i class="icon-search"></i>
+    </div>
+  </a>
+  <a class="item-link" href="http://images.toyota-europe.com/lt/rav4/width/2048/height/1536/exterior-06.png" data-gallery>
+    <div class="gallery-item car" style="background-color: #fff; ">
+      <img class="lazy" alt="" data-original="http://images.toyota-europe.com/lt/rav4/width/610/height/380/exterior-06.png">
+      <span class="border-hover"></span>
+      <i class="icon-search"></i>
+    </div>
+  </a>
+  <a class=" item-link" href="http://images.toyota-europe.com/ee/Avensis/interior-2.jpg" data-gallery>
+    <div class="gallery-item">
+      <img class="lazy" alt="" data-original="http://images.toyota-europe.com/ee/Avensis/interior-2.jpg">
+      <span class="border-hover"></span>
+      <i class="icon-search"></i>
+    </div>
+  </a>
+  <a class=" item-link" href="http://images.toyota-europe.com/ee/Avensis/interior-0.jpg" data-gallery>
+    <div class="gallery-item" style="background-color: #D2001E;">
+      <img  class="lazy" alt="" data-original="http://images.toyota-europe.com/ee/Avensis/interior-0.jpg">
+      <span class="border-hover"></span>
+      <i class="icon-search"></i>
+    </div>
+  </a>
+  <a class="item-link" href="http://images.toyota-europe.com/lt/rav4/width/2048/height/1536/exterior-08.png" data-gallery>
+    <div class="gallery-item car sm" style="background-color: #fff;">
+      <img class="lazy" alt="" data-original="http://images.toyota-europe.com/lt/rav4/width/610/height/380/exterior-08.png">
+      <span class="border-hover"></span>
+      <i class="icon-search"></i>
+    </div>
+  </a>
+    <a class="item-link" href="http://images.toyota-europe.com/lt/rav4/width/2048/height/1536/exterior-13.png" data-gallery>
+    <div class="gallery-item car sm">
+      <img class="lazy" alt="" data-original="http://images.toyota-europe.com/lt/rav4/width/610/height/380/exterior-13.png">
+      <span class="border-hover"></span>
+      <i class="icon-search"></i>
+    </div>
+  </a>
+  <a class="item-link" href="http://images.toyota-europe.com/lt/rav4/width/2048/height/1536/exterior-18.png" data-gallery>
+    <div class="gallery-item car sm" style="background-color: #ccc;">
+      <img class="lazy" alt="" data-original="http://images.toyota-europe.com/lt/rav4/width/610/height/380/exterior-18.png">
+      <span class="border-hover"></span>
+      <i class="icon-search"></i>
+    </div>
+  </a>
+
+
 </div>
+
+<!-- @include lightbox-component -->
+
 <section class="leasing-calc">
   <div class="container clearfix">
     <header>
       <h1>Toyota leasing calculator</h1>
     </header>
     <div class="row">
-      <div class="col-sm-3">
+      <div class="col-md-3 col-sm-4 carconfig-mini">
         <h5>Rent type</h5>
-      </div>
-      <div class="col-sm-2">
-        <h5>Downpayment</h5>
-      </div>
-      <div class="col-sm-2">
-        <h5>Interest</h5>
-      </div>
-      <div class="col-sm-3">
-        <h5>Period</h5>
-      </div>
-      <div class="col-sm-2">
-        <h5>Residual value</h5>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-3 carconfig-mini">
         <div class="carconfig-mini-form">
           <ul class="carconfig-mini-select">
             <li class="dropdown " data-step="">
@@ -78,7 +114,8 @@
           </ul>
         </div>
       </div>
-        <div class="col-sm-2 carconfig-mini">
+        <div class="col-md-2 col-sm-4 carconfig-mini">
+          <h5>Downpayment</h5>
         <div class="carconfig-mini-form">
           <ul class="carconfig-mini-select">
             <li class="dropdown " data-step="">
@@ -93,8 +130,9 @@
           </ul>
         </div>
       </div>
-            <div class="col-sm-2 carconfig-mini">
+            <div class="col-md-2 col-sm-4 carconfig-mini">
         <div class="carconfig-mini-form">
+          <h5>Interest</h5>
           <ul class="carconfig-mini-select">
             <li class="dropdown " data-step="">
               <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="model-data.html"><span>1.20%</span><i class="icon-chevron-down"></i></a>
@@ -108,8 +146,9 @@
           </ul>
         </div>
       </div>
-            <div class="col-sm-3 carconfig-mini">
+            <div class="col-md-3 col-sm-4 carconfig-mini">
         <div class="carconfig-mini-form">
+          <h5>Period</h5>
           <ul class="carconfig-mini-select">
             <li class="dropdown " data-step="">
               <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="model-data.html"><span>5 years</span><i class="icon-chevron-down"></i></a>
@@ -123,8 +162,9 @@
           </ul>
         </div>
       </div>
-            <div class="col-sm-2 carconfig-mini">
+            <div class="col-md-2 col-sm-4 carconfig-mini">
         <div class="carconfig-mini-form">
+          <h5>Residual value</h5>
           <ul class="carconfig-mini-select">
             <li class="dropdown " data-step="">
               <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="model-data.html"><span>20%</span><i class="icon-chevron-down"></i></a>
@@ -143,7 +183,7 @@
     
     
     <div class="row leasing-result">
-      <div class="col-xs-12 col-sm-6 ">
+      <div class="col-xs-12 ">
         <h4>Leasing price for this car is <span class="special-price">359 €/month</span>.</h4>
       </div>
       
