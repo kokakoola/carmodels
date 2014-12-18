@@ -188,3 +188,16 @@ hr {
 
 .blueimp-gallery > .slides > .slide > .slide-content {
   background: #fff; }
+
+.input-group-btn button.btn {
+  padding: 16px 14px 11px;
+  cursor: pointer; }
+  .input-group-btn button.btn:hover {
+    text-decoration: none; }
+
+input.form-control {
+  font-family: toyotatext_rg,Verdana,Geneva,Arial,Helvetica,sans-serif;
+  color: #1E2A32;
+  font-size: 19px;
+  font-size: 1.9rem;
+  height: 46px; }
