@@ -7,11 +7,8 @@ module.exports = function(grunt){
 
     uncss: {
       dist: {
-        src: ['build/model-data.html', 'build/index.html'],
-        dest: 'build/assets/styles/toyota-estest.css',
-        options: {
-          report:'min'
-        }
+        src: ['Build/model-data.html', 'Build/index.html', 'Build/model-menu.html', 'Build/view-car.html'],
+        dest: 'assets/styles/toyota-estest.css'
       }
     }
   });

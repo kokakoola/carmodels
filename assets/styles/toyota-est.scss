@@ -1,6 +1,6 @@
-@import 
-    'base'
-    ;
+/* @include _T1-style.css */
+/* @include _blueimp-gallery.css */
+/* @include _bootstrap-image-gallery.css */
 
 $bordergray: #C9C9C9;
 $bg-gray: #E8E9EA;
@@ -285,4 +285,9 @@ input.form-control {
   font-size: 1.9rem;
   height: 46px;
   
+}
+
+.alert-warning {
+  background: $orange;
+  color: #fff; 
 }

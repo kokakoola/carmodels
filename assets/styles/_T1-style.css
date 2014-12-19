@@ -14947,9 +14947,9 @@ section.carconfig-mini-cta .container .buttons {
     text-align: center;
     border-radius: 2px;
 }
-.modelrange .row a:nth-child(2n+1) {
+/*.modelrange .row a:nth-child(2n+1) {
     clear: left;
-}
+}*/
 .modelrange .row a:hover {
     text-decoration: none;
 }
@@ -15009,21 +15009,21 @@ section.carconfig-mini-cta .container .buttons {
     .modelrange .row a: nth-child(2n+1) {
     clear: none;
 }
-.modelrange .row a:nth-child(4n+1) {
+/*.modelrange .row a:nth-child(4n+1) {
     clear: left;
-}
+}*/
 .modelrange .row a .modelitem span, .modelrange .row a .modelitem span strong {
     font-size: 15px;
     font-size: 1.5rem;
 }
 }
-@media (min-width:992px) {
+/*@media (min-width:992px) {
     .modelrange .row a: nth-child(4n+1) {
     clear: none;
-}
-.modelrange .row a:nth-child(6n+1) {
+}*/
+/*.modelrange .row a:nth-child(6n+1) {
     clear: left;
-}
+}*/
 .modelrange .row a .modelitem .model-decoration {
     top: 50px;
     left: 5px;
