@@ -18721,9 +18721,11 @@ body {
 .modelrange .row a .modelitem span {
   margin-top: -12px; }
 
-.modelitem.active {
-  background-color: #e8e9ea;
-  border-bottom: 2px solid #d2001e; }
+.modelitem {
+  border-bottom: 2px solid transparent; }
+  .modelitem.active {
+    background-color: #e8e9ea;
+    border-bottom: 2px solid #d2001e; }
 
 section h1 {
   border-bottom: 1px solid #c9c9c9;

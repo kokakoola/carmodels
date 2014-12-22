@@ -50,9 +50,12 @@ body {
   margin-top: -12px;
 }
 
-.modelitem.active {
-  background-color: $bg-gray;
-  border-bottom: 2px solid $accent-red;
+.modelitem {
+  border-bottom: 2px solid transparent;
+  &.active {
+    background-color: $bg-gray;
+    border-bottom: 2px solid $accent-red;
+  }
 }
 
 section h1 {
