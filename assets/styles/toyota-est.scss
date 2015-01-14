@@ -30,7 +30,7 @@ body {
 }
 
 .iconrow-lg {
-  margin-top: 100px;
+  margin-top: 0;
   .icon {
     font-size: 64px;
   }
@@ -43,6 +43,12 @@ body {
   input {
     margin-top: 20px;
     margin-bottom: 40px;
+  }
+}
+
+@media (min-width: 768px) {
+  .iconrow-lg {
+    margin-top: 100px;
   }
 }
 
@@ -90,6 +96,25 @@ section h1 {
       margin: 10px 10px 10px 0;
     }
   }
+}
+
+
+.navbar-fixed-top > .container {
+  padding-left: 15px;
+}
+
+@media (min-width: 768px) {
+  .navbar-fixed-top > .container {
+    padding-left: 0;
+  }
+}
+
+.navbar-left {
+  float: left;
+}
+
+.navbar-right {
+  float: right;
 }
 
 @media (min-width: 1200px) {
