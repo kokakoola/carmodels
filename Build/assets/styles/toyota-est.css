@@ -6982,7 +6982,7 @@ section.footer .sitemap ul.list-title-orange .footer-list-title {
 }
 .navbar-fixed-top>.container {
     padding-left: 15px;
-    padding-right: 105px;
+    padding-right: 15px;
 }
 .navbar-fixed-top .logo-link {
     position: fixed;
@@ -18699,7 +18699,10 @@ body {
   background: -webkit-linear-gradient(left, #dddddd 0%, white 20%, white 80%, #dddddd 100%);
   background: -o-linear-gradient(left, #dddddd 0%, white 20%, white 80%, #dddddd 100%);
   background: linear-gradient(to right, #dddddd 0%, white 20%, white 80%, #dddddd 100%);
-  margin-top: 56px; }
+  margin-top: 70px; }
+  @media (max-width: 991px) {
+    body {
+      margin-top: 56px; } }
 
 .navbar-brand {
   padding: 0; }
@@ -18752,6 +18755,9 @@ section h1 {
     display: inline-block; }
     .navbar-fixed-top.navbar-inverse .button-wrapper .btn {
       margin: 10px 10px 10px 0; }
+      @media (min-width: 992px) {
+        .navbar-fixed-top.navbar-inverse .button-wrapper .btn {
+          margin: 17px 10px 17px 0; } }
 
 .navbar-fixed-top > .container {
   padding-left: 15px; }
@@ -18913,3 +18919,50 @@ input.form-control {
 .alert-warning {
   background: #f07f0a;
   color: #fff; }
+
+.key-features p {
+  text-indent: 0;
+  margin: 10px 0; }
+.key-features h3 {
+  margin: 20px 0 10px;
+  padding: 0 0 5px;
+  border-bottom: 1px solid #c9c9c9; }
+.key-features h4 {
+  margin: 20px 0 10px; }
+.key-features ul,
+.key-features ol {
+  color: #6c7073;
+  padding-left: 30px; }
+
+.modelrange .section-title {
+  margin-top: 0;
+  margin-bottom: 20px; }
+  @media (min-width: 992px) {
+    .modelrange .section-title {
+      margin-top: 30px;
+      margin-bottom: 40px; } }
+
+.register-leads .section-title {
+  margin-top: 0;
+  margin-bottom: 20px; }
+  @media (min-width: 992px) {
+    .register-leads .section-title {
+      margin-top: 30px;
+      margin-bottom: 40px; } }
+.register-leads h3 {
+  margin: 10px 0; }
+  .register-leads h3 i {
+    color: #E50000;
+    margin-left: 15px; }
+.register-leads .btn-link {
+  padding-right: 0; }
+.register-leads .car-list-item {
+  margin-top: 20px; }
+  .register-leads .car-list-item h4 {
+    margin: 20px 0 10px; }
+  .register-leads .car-list-item p {
+    text-indent: 0;
+    margin: 0 0 5px; }
+
+#identify-customer form label:before {
+  border: none; }

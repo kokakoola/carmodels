@@ -39,7 +39,7 @@
         <!-- /Hammer reload -->
       
     </head>
-    <body class="model-menu">
+    <body class="identify-customer">
     
 
 <nav id="nav-primary" class="navbar navbar-inverse navbar-fixed-top">
@@ -55,52 +55,72 @@
       </div>
 <!--       <a href="index.html" id="logo-big" class="logo-link hidden-xs hidden-sm logo-logo-md-red"></a> -->
       <ol id="menu-breadcrumb" class="breadcrumb">
-  <li><a href="customer-needs.html">Identify customer needs</a><i class="sprite-menu-white-arrow"></i><i>/</i></li>
-  <li class="current active"><a class='current' href="model-menu.html">Model Menu</a><i class="sprite-menu-white-arrow"></i><i>/</i></li>
+  <li><a href="index.html">Start</a><i class="sprite-menu-white-arrow"></i><i>/</i></li>
+  <li class="current active"><a class='current' href="identify-customer.html">Identify Customer</a><i class="sprite-menu-white-arrow"></i><i>/</i></li>
 </ol>
     </div>
 
     <div class="button-wrapper navbar-right">
-      <a href="customer-needs.html" class="btn btn-small btn-dark">
+      <a href="index.html" class="btn btn-small btn-dark">
         <span>Previous</span>
       </a>
-      <a href="model-data.html" class="btn btn-small btn-red  hidden" id="nextPage">
-        <span>Model data</span><i class="icon-chevron-right"></i>
+      <a href="customer-needs.html" class="btn btn-small btn-red  """ id="nextPage">
+        <span>Identify customer needs</span><i class="icon-chevron-right"></i>
       </a>
     </div>
   </div>
 </nav>
 
-<section id="modelrange" class="modelrange">
-  <div class="container">
-    <div>
-      <header class="section-title">
-        <h1>Model menu</h1>
-      <!--       <h2>Tutvu Toyota mudelivalikuga</h2> -->
-      </header>
-      <div class="row">
-        <div id="placeholder-modellist"></div>
-      
-        <script type="text/x-handlebars-template" id="modellist-template">
-        {{#images}} 
-          <a class="col-xs-6 col-sm-3 col-md-2" href="javascript:void(0)">
-            <div class="modelitem">
-              <img alt="{{id}}" src="http://images.toyota-europe.com/lt/{{id}}/width/308/height/190/exterior-32.png">
-              <span>
-                <strong class="">{{caption}}</strong></span>
-                {{#if hybrid}}
-                  <div class="model-decoration hybrid">{{hybrid}}</div>
-                {{/if}}
-                
-                
-              </div>
-            </a>
-        {{/images}}
-        </script>
-      
-      </div>
-    </div>
-  </div>
+<section id="identify-customer" class="register-leads">
+	<div class="container">
+		<header class="section-title">
+			<h1>Identify customer</h1>
+		</header>
+		<div class="row">
+			<div class="col-md-10 col-md-offset-1">
+				<form action="" class="form-horizontal">
+					<div class="form-group">
+						<label class="col-sm-3 col-md-3 control-label" for="textinput">Name</label>  
+						<div class="col-sm-8 col-md-6">
+							<input id="textinput" name="textinput" type="text" placeholder="Required" class="form-control input-md" value="Sven Peekmann">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-3 col-md-3 control-label" for="textinput-1">Company</label>  
+						<div class="col-sm-8 col-md-6">
+							<input id="textinput-1" name="textinput-1" type="text" placeholder="Optional" class="form-control input-md">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-3 col-md-3 control-label" for="textinput-2">Email</label>  
+						<div class="col-sm-8 col-md-6">
+							<input id="textinput-2" name="textinput-2" type="text" placeholder="Required" class="form-control input-md">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-3 col-md-3 control-label" for="textinput-3">Phone</label>  
+						<div class="col-sm-8 col-md-6">
+							<input id="textinput-3" name="textinput-3" type="text" placeholder="Optional" class="form-control input-md">
+						</div>
+					</div>
+				</form>
+
+				<div class="row">
+					<div class="col-md-8 col-md-offset-3 col-sm-offset-3">
+						<h3><i class="glyphicon glyphicon-ok"></i> Sven Peekmann is found in the client list.</h3>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6 col-md-offset-3 col-sm-offset-3">
+						<a href="customer-card.html" class="btn btn-link pull-right">Go to Sven record <i class="glyphicon glyphicon-chevron-right"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </section>
 
 <!--     <section class="spotlights navy footer">

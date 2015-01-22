@@ -39,7 +39,7 @@
         <!-- /Hammer reload -->
       
     </head>
-    <body class="model-menu">
+    <body class="customer-card">
     
 
 <nav id="nav-primary" class="navbar navbar-inverse navbar-fixed-top">
@@ -55,52 +55,76 @@
       </div>
 <!--       <a href="index.html" id="logo-big" class="logo-link hidden-xs hidden-sm logo-logo-md-red"></a> -->
       <ol id="menu-breadcrumb" class="breadcrumb">
-  <li><a href="customer-needs.html">Identify customer needs</a><i class="sprite-menu-white-arrow"></i><i>/</i></li>
-  <li class="current active"><a class='current' href="model-menu.html">Model Menu</a><i class="sprite-menu-white-arrow"></i><i>/</i></li>
+  <li><a href="identify-customer.html">Identify Customer</a><i class="sprite-menu-white-arrow"></i><i>/</i></li>
+  <li class="current active"><a class='current' href="customer-card.html">Customer card</a><i class="sprite-menu-white-arrow"></i><i>/</i></li>
 </ol>
     </div>
 
     <div class="button-wrapper navbar-right">
-      <a href="customer-needs.html" class="btn btn-small btn-dark">
+      <a href="identify-customer.html" class="btn btn-small btn-dark">
         <span>Previous</span>
       </a>
-      <a href="model-data.html" class="btn btn-small btn-red  hidden" id="nextPage">
-        <span>Model data</span><i class="icon-chevron-right"></i>
+      <a href="customer-needs.html" class="btn btn-small btn-red  """ id="nextPage">
+        <span>Identify customer needs</span><i class="icon-chevron-right"></i>
       </a>
     </div>
   </div>
 </nav>
 
-<section id="modelrange" class="modelrange">
-  <div class="container">
-    <div>
-      <header class="section-title">
-        <h1>Model menu</h1>
-      <!--       <h2>Tutvu Toyota mudelivalikuga</h2> -->
-      </header>
-      <div class="row">
-        <div id="placeholder-modellist"></div>
-      
-        <script type="text/x-handlebars-template" id="modellist-template">
-        {{#images}} 
-          <a class="col-xs-6 col-sm-3 col-md-2" href="javascript:void(0)">
-            <div class="modelitem">
-              <img alt="{{id}}" src="http://images.toyota-europe.com/lt/{{id}}/width/308/height/190/exterior-32.png">
-              <span>
-                <strong class="">{{caption}}</strong></span>
-                {{#if hybrid}}
-                  <div class="model-decoration hybrid">{{hybrid}}</div>
-                {{/if}}
-                
-                
-              </div>
-            </a>
-        {{/images}}
-        </script>
-      
-      </div>
-    </div>
-  </div>
+<section id="customer-card" class="register-leads">
+	<div class="container">
+		<header class="section-title">
+			<h1>Customer card</h1>
+		</header>
+		<div class="row">
+			<div class="col-md-8 col-md-offset-3 col-sm-offset-3">
+				<div class="row">
+					<div class="col-sm-3">
+						<h3>Name</h3>
+					</div>
+					<div class="col-sm-9">
+						<h3><strong>Sven Peekmann</strong></h3>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-3">
+						<h3>Company</h3>
+					</div>
+					<div class="col-sm-9">
+						<h3><strong>Net Group</strong></h3>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-3">
+						<h3>Email</h3>
+					</div>
+					<div class="col-sm-9">
+						<h3><strong>sven.peekmann@netgroup.ee</strong></h3>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-3">
+						<h3>Phone</h3>
+					</div>
+					<div class="col-sm-9">
+						<h3><strong></strong></h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-8 col-md-offset-3 col-sm-offset-3 car-list-item">
+				<h4>Toyota GT86 2,0 D-4S bokser 200hj 6 M/T Bensiin</h4>
+				<p>reg. date 01.01.2015</p>
+				<p>mileage 125 0000</p>
+			</div>
+
+			<div class="col-md-8 col-md-offset-3 col-sm-offset-3 car-list-item">
+				<h4>Avensis 1.8 Valvematic Linea Sol Plus FWD Multidrive S</h4>
+				<p>reg. date 23.12.2014</p>
+				<p>mileage 58 0000</p>
+			</div>
+		</div>
+	</div>
 </section>
 
 <!--     <section class="spotlights navy footer">

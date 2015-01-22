@@ -39,7 +39,7 @@
         <!-- /Hammer reload -->
       
     </head>
-    <body class="model-menu">
+    <body class="customer-needs">
     
 
 <nav id="nav-primary" class="navbar navbar-inverse navbar-fixed-top">
@@ -55,52 +55,74 @@
       </div>
 <!--       <a href="index.html" id="logo-big" class="logo-link hidden-xs hidden-sm logo-logo-md-red"></a> -->
       <ol id="menu-breadcrumb" class="breadcrumb">
-  <li><a href="customer-needs.html">Identify customer needs</a><i class="sprite-menu-white-arrow"></i><i>/</i></li>
-  <li class="current active"><a class='current' href="model-menu.html">Model Menu</a><i class="sprite-menu-white-arrow"></i><i>/</i></li>
+  <li><a href="identify-customer.html">Identify Customer</a><i class="sprite-menu-white-arrow"></i><i>/</i></li>
+  <li class="current active"><a class='current' href="customer-needs.html">Customer needs</a><i class="sprite-menu-white-arrow"></i><i>/</i></li>
 </ol>
     </div>
 
     <div class="button-wrapper navbar-right">
-      <a href="customer-needs.html" class="btn btn-small btn-dark">
+      <a href="identify-customer.html" class="btn btn-small btn-dark">
         <span>Previous</span>
       </a>
-      <a href="model-data.html" class="btn btn-small btn-red  hidden" id="nextPage">
-        <span>Model data</span><i class="icon-chevron-right"></i>
+      <a href="model-menu.html" class="btn btn-small btn-red  """ id="nextPage">
+        <span>Model menu</span><i class="icon-chevron-right"></i>
       </a>
     </div>
   </div>
 </nav>
 
-<section id="modelrange" class="modelrange">
-  <div class="container">
-    <div>
-      <header class="section-title">
-        <h1>Model menu</h1>
-      <!--       <h2>Tutvu Toyota mudelivalikuga</h2> -->
-      </header>
-      <div class="row">
-        <div id="placeholder-modellist"></div>
-      
-        <script type="text/x-handlebars-template" id="modellist-template">
-        {{#images}} 
-          <a class="col-xs-6 col-sm-3 col-md-2" href="javascript:void(0)">
-            <div class="modelitem">
-              <img alt="{{id}}" src="http://images.toyota-europe.com/lt/{{id}}/width/308/height/190/exterior-32.png">
-              <span>
-                <strong class="">{{caption}}</strong></span>
-                {{#if hybrid}}
-                  <div class="model-decoration hybrid">{{hybrid}}</div>
-                {{/if}}
-                
-                
-              </div>
-            </a>
-        {{/images}}
-        </script>
-      
-      </div>
-    </div>
-  </div>
+<section id="customer-needs" class="register-leads">
+	<div class="container">
+		<header class="section-title">
+			<h1>Identification of customer needs</h1>
+		</header>
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<form action="" class="form-horizontal">
+					<div class="form-group">
+						<div class="col-md-12">
+							<div class="checkbox">
+								<input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
+								<label for="checkboxes-0">
+									What do you normally use a car for?
+								</label>
+							</div>
+							<div class="checkbox">
+								<input type="checkbox" name="checkboxes" id="checkboxes-1" value="2" checked>
+								<label for="checkboxes-1">
+									Which kind of passengers/loads are you carrying?
+								</label>
+							</div>
+							<div class="checkbox">
+								<input type="checkbox" name="checkboxes" id="checkboxes-2" value="2" checked>
+								<label for="checkboxes-2">
+									What annual mileage and type of driving you do?
+								</label>
+							</div>
+							<div class="checkbox">
+								<input type="checkbox" name="checkboxes" id="checkboxes-3" value="2">
+								<label for="checkboxes-3">
+									What car do you drive at the moment?
+								</label>
+							</div>
+							<div class="checkbox">
+								<input type="checkbox" name="checkboxes" id="checkboxes-4" value="2" checked>
+								<label for="checkboxes-4">
+									Suggest high customer value options that will assist vehicle resale later?
+								</label>
+							</div>
+							<div class="checkbox">
+								<input type="checkbox" name="checkboxes" id="checkboxes-5" value="2">
+								<label for="checkboxes-5">
+									Ask which "leisure" equipment you normally carry around in your car with you (eq. bicycle, CDs, surfboards?)
+								</label>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
 </section>
 
 <!--     <section class="spotlights navy footer">
