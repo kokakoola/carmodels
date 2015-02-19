@@ -1,0 +1,63 @@
+<section id="testdrive" class="register-leads">
+	<div class="container">
+		<header class="section-title">
+			<h1>Book a testdrive</h1>
+			<p class="text-center">Choose a car</p>
+		</header>
+		<section>
+			<!-- @include _testdrive-cars-list -->
+		</section>
+	</div>
+</section>
+<section class="test-drive-timepick">
+	<div class="container">
+		<header class="section-title">
+			<h1>Pick a time</h1>
+		</header>
+		<div class="row picktime">
+			<div class="col-xs-12 col-md-10 col-md-offset-2">
+				<div class="row">
+					<div class="col-sm-5"><div class="datepicker" data-date-format="MM/DD/YYYY"></div></div>
+					<div class="col-sm-7">
+						<h4>Kuupäev:</h4>
+						<h3 id="datepicker_value"></h3>
+						<h4>Kellaaeg:</h4>
+						<div class="row ee-top-20">
+							<div class="col-sm-4">
+								<div class="input-group pull-right">
+									<span class="input-group-btn">
+										<button type="button" class="btn btn-default btn-number" data-type="minus" data-field="quant[1]">
+											<span class="icon-minus"></span>
+										</button>
+									</span>
+									<input type="text" name="quant[1]" class="form-control input-number ee-default" value="14" min="9" max="17">
+									<span class="input-group-btn">
+										<button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]">
+											<span class="icon-plus"></span>
+										</button>
+									</span>
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="input-group pull-right">
+									<span class="input-group-btn">
+										<button type="button" class="btn btn-default btn-number" data-type="minus" data-field="quant[1]">
+											<span class="icon-minus"></span>
+										</button>
+									</span>
+									<input type="text" name="quant[1]" class="form-control input-number ee-default" value="30" min="00" max="59">
+									<span class="input-group-btn">
+										<button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]">
+											<span class="icon-plus"></span>
+										</button>
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

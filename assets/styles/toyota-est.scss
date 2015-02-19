@@ -90,7 +90,7 @@ section h1 {
   .breadcrumb li.active > a,
   .breadcrumb li.active > a:hover {
     color: #fff;
-    }
+  }
   .button-wrapper {
     width: auto;
     display: inline-block;
@@ -125,7 +125,7 @@ section h1 {
 
 @media (min-width: 1200px) {
   .breadcrumb {
-  width: 700px;
+    width: 700px;
   }
 }
 
@@ -138,7 +138,7 @@ section h1 {
     margin-top: 80px;
     background: #1C2830;
     color: #fff;
-      h5 {
+    h5 {
       margin-bottom: 5px;
       margin-top: 10px;
     }
@@ -147,10 +147,10 @@ section h1 {
     margin-top: 20px;
     padding-bottom: 30px;
   }
-      .special-price {
-      color: $orange;
-      font-family: toyotatext_bd;
-    }
+  .special-price {
+    color: $orange;
+    font-family: toyotatext_bd;
+  }
 }
 
 dl.dl-horizontal {
@@ -197,10 +197,10 @@ dl.dl-horizontal {
 
 // carousel
 h4 {
-    margin: 20px 10px 10px;
+  margin: 20px 10px 10px;
 }
 p {
-    margin: 10px;
+  margin: 10px;
 }
 
 .carconfig-mini .carconfig-mini-preview {
@@ -208,26 +208,26 @@ p {
 }
 
 .carousel-indicators {
-    margin: 10px 0 0;
-    overflow: auto;
-    position: static;
-    text-align: left;
-    white-space: nowrap;
-    width: 100%;
+  margin: 10px 0 0;
+  overflow: auto;
+  position: static;
+  text-align: left;
+  white-space: nowrap;
+  width: 100%;
 }
 .carousel-indicators li {
-    background-color: transparent;
-    border: none;
-    border-radius: 0;
-    display: inline-block;
-    height: auto;
-    margin: 0 !important;
-    width: 130px;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  display: inline-block;
+  height: auto;
+  margin: 0 !important;
+  width: 130px;
 }
 .carousel-indicators li img {
-    display: block;
-    opacity: 1;
-    padding: 0 10px;
+  display: block;
+  opacity: 1;
+  padding: 0 10px;
 }
 
 .carousel-indicators li:hover,
@@ -238,9 +238,10 @@ p {
 
 .item {
   padding-top: 30px;
+  border-bottom: 2px solid transparent;
   &.current {
-      background-color: $bg-gray;
-  border-bottom: 2px solid $accent-red;
+    background-color: $bg-gray;
+    border-bottom: 2px solid $accent-red;
   }
   img {
     padding: 0 15px;
@@ -253,14 +254,14 @@ p {
   background-color: $bg-gray;
 }
 .carousel-indicators li.active img {
-    opacity: 0.5;
-    display: block;
+  opacity: 0.5;
+  display: block;
 }
 .carousel-indicators li:hover img {
-    opacity: 0.75;
+  opacity: 0.75;
 }
 .carousel-outer {
-    position: relative;
+  position: relative;
 }
 
 .desc {
@@ -355,15 +356,25 @@ input.form-control {
     }
   }
 }
-.register-leads {
-  .section-title {
-    margin-top: 0;
-    margin-bottom: 20px;
-    @media (min-width: 992px) {
-      margin-top: 30px;
-      margin-bottom: 40px;
-    }
+.section-title {
+  margin-top: 0;
+  margin-bottom: 20px;
+  @media (min-width: 992px) {
+    margin-top: 30px;
+    margin-bottom: 40px;
   }
+  p {
+    font-size: 24px;
+    font-size: 2.4rem;
+    line-height: 28px;
+    line-height: 2.8rem;
+    text-indent: 0;
+    color: #1e2a32;
+    margin-bottom: 40px;
+  }
+}
+.register-leads {
+  h4,
   h3 {
     margin: 10px 0;
     i {
@@ -389,5 +400,20 @@ input.form-control {
 #identify-customer {
   form label:before {
     border: none;
+  }
+}
+
+.test-drive {
+  section.test-drive-timepick {
+    background: #1C2830;
+    color: #fff;
+  }
+  .datepicker {
+    font-size: 18px;
+  }
+  .picktime {
+    h4 {
+      margin: 10px 0;
+    }
   }
 }

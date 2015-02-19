@@ -1,0 +1,1731 @@
+// a iterate over a specific portion of a list.
+// usage: {{#slice items offset="1" limit="5"}}{{name}}{{/slice}} : items 1 thru 6
+// usage: {{#slice items limit="10"}}{{name}}{{/slice}} : items 0 thru 9
+// usage: {{#slice items offset="3"}}{{name}}{{/slice}} : items 3 thru context.length
+// defaults are offset=0, limit=5
+// todo: combine parameters into single string like python or ruby slice ("start:length" or "start,length")
+Handlebars.registerHelper('slice', function(context, block) {
+  var ret = "",
+      offset = parseInt(block.hash.offset) || 0,
+      limit = parseInt(block.hash.limit) || 5,
+      i = (offset < context.length) ? offset : 0,
+      j = ((limit + offset) < context.length) ? (limit + offset) : context.length;
+ 
+  for(i,j; i<j; i++) {
+    ret += block.fn(context[i]);
+  }
+
+  return ret;
+});
+
+
+var data = {
+  "VehicleDTO": [
+    { 
+      class: "active",
+      no: "0",
+      Model: {
+        "ID": "2095",
+        "ModelFamilyID": "23",
+        "Name": "RAV4 2.0 Valvematic Luxury 4WD Multidrive S",
+        NormalPrice: "0",
+      GoodPrice: "22360",
+        SpecialPrice: {
+          "@nil": "true"
+        },
+        "BodyType": {
+          "ID": "24",
+          "Name": "SUV"
+        },
+        "Equipment": {
+          "ID": "9",
+          "Name": "Luxury"
+        },
+        "Transmission": {
+          "ID": "6",
+          "Name": "Multidrive S"
+        },
+        "Displacement": "2.0"
+      },
+      "Price": "26360",
+      "SpecialPrice": {
+        "@nil": "true"
+      },
+      "ImageBaseURL": "rav4",
+      "IntColour": "20",
+      "ExtColour": "4T3",
+      "ETA": {
+        "@nil": "true"
+      },
+      "Options": {
+           "string": [
+          "Toyota Touch 2 with Go", 
+          "Leather seats"
+        ]
+      },
+      "Retailer": {
+        "ID": "5",
+        "Name": "Wess AS"
+      }
+    },
+    {
+      no: "1",
+      Model: {
+        "ID": "2096",
+        "ModelFamilyID": "23",
+        "Name": "RAV4 2.0 D-4D Luxury FWD M/T",
+        "NormalPrice": "0",
+        "SpecialPrice": {
+          "@nil": "true"
+        },
+        "BodyType": {
+          "ID": "24",
+          "Name": "SUV"
+        },
+        "Equipment": {
+          "ID": "9",
+          "Name": "Luxury"
+        },
+        "Transmission": {
+          "ID": "2",
+          "Name": "M/T"
+        },
+        "Displacement": "2.0"
+      },
+      Price: "27410",
+      SpecialPrice: {
+        "@nil": "true"
+      },
+      "ImageBaseURL": "rav4",
+      "IntColour": "20",
+      "ExtColour": "4T3",
+      "ETA": {
+        "@nil": "true"
+      },
+      "Options": {
+        "string": "Leather seats"
+      },
+      "Retailer": {
+        "ID": "14",
+        "Name": "Sovli UAB"
+      }
+    },
+    {
+      no: "2",
+      Model: {
+        "ID": "2097",
+        "ModelFamilyID": "23",
+        "Name": "RAV4 2.0 Valvematic Standard 4WD Multidrive S",
+        "NormalPrice": "0",
+        "SpecialPrice": {
+          "@nil": "true"
+        },
+        "BodyType": {
+          "ID": "24",
+          "Name": "SUV"
+        },
+        "Equipment": {
+          "ID": "13",
+          "Name": "Standard"
+        },
+        "Transmission": {
+          "ID": "6",
+          "Name": "Multidrive S"
+        },
+        "Displacement": "2.0"
+      },
+      "Price": "24250",
+      "SpecialPrice": {
+        "@nil": "true"
+      },
+      "ImageBaseURL": "rav4",
+      "IntColour": "20",
+      "ExtColour": "040",
+      "ETA": {
+        "@nil": "true"
+      },
+      "Retailer": {
+        "ID": "8",
+        "Name": "Amserv Motors SIA"
+      }
+    },
+    {
+      no: "3",
+      Model: {
+        "ID": "2098",
+        "ModelFamilyID": "23",
+        "Name": "RAV4 2.0 Valvematic Standard 4WD M/T",
+        "NormalPrice": "0",
+        "SpecialPrice": {
+          "@nil": "true"
+        },
+        "BodyType": {
+          "ID": "24",
+          "Name": "SUV"
+        },
+        "Equipment": {
+          "ID": "13",
+          "Name": "Standard"
+        },
+        "Transmission": {
+          "ID": "2",
+          "Name": "M/T"
+        },
+        "Displacement": "2.0"
+      },
+      "Price": "22520",
+      "SpecialPrice": {
+        "@nil": "true"
+      },
+      "ImageBaseURL": "rav4",
+      "IntColour": "20",
+      "ExtColour": "1G3",
+      "ETA": {
+        "@nil": "true"
+      },
+      "Retailer": {
+        "ID": "2",
+        "Name": "Elke Auto AS"
+      }
+    },
+    {
+      no: "4",
+      Model: {
+        "ID": "2098",
+        "ModelFamilyID": "23",
+        "Name": "RAV4 2.0 Valvematic Standard 4WD M/T",
+        "NormalPrice": "0",
+        "GoodPrice": "42000",
+        "BodyType": {
+          "ID": "24",
+          "Name": "SUV"
+        },
+        "Equipment": {
+          "ID": "13",
+          "Name": "Standard"
+        },
+        "Transmission": {
+          "ID": "2",
+          "Name": "M/T"
+        },
+        "Displacement": "2.0"
+      },
+      "Price": "22520",
+      "SpecialPrice": {
+        "@nil": "true"
+      },
+      "ImageBaseURL": "rav4",
+      "IntColour": "20",
+      "ExtColour": "1G3",
+      "ETA": {
+        "@nil": "true"
+      },
+      "Retailer": {
+        "ID": "7",
+        "Name": "Autotoja UAB"
+      }
+    },
+    {
+      no: "5",
+      Model: {
+        "ID": "2099",
+        "ModelFamilyID": "23",
+        "Name": "RAV4 2.0 D-4D Standard 4WD M/T",
+        "NormalPrice": "0",
+        "SpecialPrice": {
+          "@nil": "true"
+        },
+        "BodyType": {
+          "ID": "24",
+          "Name": "SUV"
+        },
+        "Equipment": {
+          "ID": "13",
+          "Name": "Standard"
+        },
+        "Transmission": {
+          "ID": "2",
+          "Name": "M/T"
+        },
+        "Displacement": "2.0"
+      },
+      "Price": "26070",
+      "SpecialPrice": {
+        "@nil": "true"
+      },
+      "ImageBaseURL": "rav4",
+      "IntColour": "20",
+      "ExtColour": "1F7",
+      "ETA": {
+        "@nil": "true"
+      },
+      "Retailer": {
+        "ID": "11",
+        "Name": "Solorina UAB"
+      }
+    },
+    {
+      no: "6",
+      Model: {
+        "ID": "2096",
+        "ModelFamilyID": "23",
+        "Name": "RAV4 2.0 D-4D Luxury FWD M/T",
+        "NormalPrice": "0",
+        "SpecialPrice": {
+          "@nil": "true"
+        },
+        "BodyType": {
+          "ID": "24",
+          "Name": "SUV"
+        },
+        "Equipment": {
+          "ID": "9",
+          "Name": "Luxury"
+        },
+        "Transmission": {
+          "ID": "2",
+          "Name": "M/T"
+        },
+        "Displacement": "2.0"
+      },
+      "Price": "26050",
+      "SpecialPrice": {
+        "@nil": "true"
+      },
+      "ImageBaseURL": "rav4",
+      "IntColour": "20",
+      "ExtColour": "209",
+      "ETA": {
+        "@nil": "true"
+      },
+      "Retailer": {
+        "ID": "8",
+        "Name": "Amserv Motors SIA"
+      }
+    },
+    {
+      no: "7",
+      Model: {
+        "ID": "2100",
+        "ModelFamilyID": "23",
+        "Name": "RAV4 2.0 D-4D Luxury 4WD M/T",
+        "NormalPrice": "0",
+        "SpecialPrice": {
+          "@nil": "true"
+        },
+        "BodyType": {
+          "ID": "24",
+          "Name": "SUV"
+        },
+        "Equipment": {
+          "ID": "9",
+          "Name": "Luxury"
+        },
+        "Transmission": {
+          "ID": "2",
+          "Name": "M/T"
+        },
+        "Displacement": "2.0"
+      },
+      "Price": "28180",
+      "SpecialPrice": {
+        "@nil": "true"
+      },
+      "ImageBaseURL": "rav4",
+      "IntColour": "20",
+      "ExtColour": "1G3",
+      "ETA": {
+        "@nil": "true"
+      },
+      "Retailer": {
+        "ID": "2",
+        "Name": "Elke Auto AS"
+      }
+    },
+    {
+      no: "8",
+      Model: {
+        "ID": "2101",
+        "ModelFamilyID": "23",
+        "Name": "RAV4 2.2 D-4D Luxury 4WD M/T",
+        "NormalPrice": "0",
+        "SpecialPrice": {
+          "@nil": "true"
+        },
+        "BodyType": {
+          "ID": "24",
+          "Name": "SUV"
+        },
+        "Equipment": {
+          "ID": "9",
+          "Name": "Luxury"
+        },
+        "Transmission": {
+          "ID": "2",
+          "Name": "M/T"
+        },
+        "Displacement": "2.2"
+      },
+      "Price": "29160",
+      "SpecialPrice": {
+        "@nil": "true"
+      },
+      "ImageBaseURL": "rav4",
+      "IntColour": "20",
+      "ExtColour": "1G3",
+      "ETA": {
+        "@nil": "true"
+      },
+      "Retailer": {
+        "ID": "11",
+        "Name": "Solorina UAB"
+      }
+    },
+    {
+      "Model": {
+        "ID": "2097",
+        "ModelFamilyID": "23",
+        "Name": "RAV4 2.0 Valvematic Standard 4WD Multidrive S",
+        "NormalPrice": "0",
+        "SpecialPrice": {
+          "@nil": "true"
+        },
+        "BodyType": {
+          "ID": "24",
+          "Name": "SUV"
+        },
+        "Equipment": {
+          "ID": "13",
+          "Name": "Standard"
+        },
+        "Transmission": {
+          "ID": "6",
+          "Name": "Multidrive S"
+        },
+        "Displacement": "2.0"
+      },
+      "Price": "24250",
+      "SpecialPrice": {
+        "@nil": "true"
+      },
+      "ImageBaseURL": "rav4",
+      "IntColour": "20",
+      "ExtColour": "1G3",
+      "ETA": {
+        "@nil": "true"
+      },
+      "Retailer": {
+        "ID": "2",
+        "Name": "Elke Auto AS"
+      }
+    },
+    {
+      "Model": {
+        "ID": "2102",
+        "ModelFamilyID": "23",
+        "Name": "RAV4 2.0 Valvematic Luxury 4WD M/T",
+        "NormalPrice": "0",
+        "SpecialPrice": {
+          "@nil": "true"
+        },
+        "BodyType": {
+          "ID": "24",
+          "Name": "SUV"
+        },
+        "Equipment": {
+          "ID": "9",
+          "Name": "Luxury"
+        },
+        "Transmission": {
+          "ID": "2",
+          "Name": "M/T"
+        },
+        "Displacement": "2.0"
+      },
+      "Price": "24640",
+      "SpecialPrice": {
+        "@nil": "true"
+      },
+      "ImageBaseURL": "rav4",
+      "IntColour": "20",
+      "ExtColour": "1F7",
+      "ETA": {
+        "@nil": "true"
+      },
+      "Retailer": {
+        "ID": "19",
+        "Name": "Mototoja UAB"
+      }
+    },
+    {
+      "Model": {
+        "ID": "2103",
+        "ModelFamilyID": "23",
+        "Name": "RAV4 2.0 D-4D Standard FWD M/T",
+        "NormalPrice": "0",
+        "SpecialPrice": {
+          "@nil": "true"
+        },
+        "BodyType": {
+          "ID": "24",
+          "Name": "SUV"
+        },
+        "Equipment": {
+          "ID": "13",
+          "Name": "Standard"
+        },
+        "Transmission": {
+          "ID": "2",
+          "Name": "M/T"
+        },
+        "Displacement": "2.0"
+      },
+      "Price": "23940",
+      "SpecialPrice": {
+        "@nil": "true"
+      },
+      "ImageBaseURL": "rav4",
+      "IntColour": "20",
+      "ExtColour": "209",
+      "ETA": {
+        "@nil": "true"
+      },
+      "Retailer": {
+        "ID": "34",
+        "Name": "Auresa UAB"
+      }
+    },
+    {
+      "Model": {
+        "ID": "2104",
+        "ModelFamilyID": "23",
+        "Name": "RAV4 2.2 D-CAT Premium Plus 4WD A/T",
+        "NormalPrice": "0",
+        "SpecialPrice": {
+          "@nil": "true"
+        },
+        "BodyType": {
+          "ID": "24",
+          "Name": "SUV"
+        },
+        "Equipment": {
+          "ID": "82",
+          "Name": "Premium Plus"
+        },
+        "Transmission": {
+          "ID": "1",
+          "Name": "A/T"
+        },
+        "Displacement": "2.2"
+      },
+      "Price": "37100",
+      "SpecialPrice": {
+        "@nil": "true"
+      },
+      "ImageBaseURL": "rav4",
+      "IntColour": "40",
+      "ExtColour": "070",
+      "ETA": {
+        "@nil": "true"
+      },
+      "Retailer": {
+        "ID": "3",
+        "Name": "Amserv Auto AS"
+      }
+    },
+    {
+      "Model": {
+        "ID": "2105",
+        "ModelFamilyID": "23",
+        "Name": "RAV4 2.0 Valvematic Premium Plus 4WD Multidrive S",
+        "NormalPrice": "0",
+        "SpecialPrice": {
+          "@nil": "true"
+        },
+        "BodyType": {
+          "ID": "24",
+          "Name": "SUV"
+        },
+        "Equipment": {
+          "ID": "82",
+          "Name": "Premium Plus"
+        },
+        "Transmission": {
+          "ID": "6",
+          "Name": "Multidrive S"
+        },
+        "Displacement": "2.0"
+      },
+      "Price": "32880",
+      "SpecialPrice": {
+        "@nil": "true"
+      },
+      "ImageBaseURL": "rav4",
+      "IntColour": "40",
+      "ExtColour": "070",
+      "ETA": {
+        "@nil": "true"
+      },
+      "Retailer": {
+        "ID": "5",
+        "Name": "Wess AS"
+      }
+    },
+    {
+      "Model": {
+        "ID": "2098",
+        "ModelFamilyID": "23",
+        "Name": "RAV4 2.0 Valvematic Standard 4WD M/T",
+        "NormalPrice": "0",
+        "SpecialPrice": {
+          "@nil": "true"
+        },
+        "BodyType": {
+          "ID": "24",
+          "Name": "SUV"
+        },
+        "Equipment": {
+          "ID": "13",
+          "Name": "Standard"
+        },
+        "Transmission": {
+          "ID": "2",
+          "Name": "M/T"
+        },
+        "Displacement": "2.0"
+      },
+      "Price": "22520",
+      "SpecialPrice": {
+        "@nil": "true"
+      },
+      "ImageBaseURL": "rav4",
+      "IntColour": "20",
+      "ExtColour": "4T3",
+      "ETA": {
+        "@nil": "true"
+      },
+      "Retailer": {
+        "ID": "6",
+        "Name": "Tokvila UAB"
+      }
+    },
+    {
+      "Model": {
+        "ID": "2096",
+        "ModelFamilyID": "23",
+        "Name": "RAV4 2.0 D-4D Luxury FWD M/T",
+        "NormalPrice": "0",
+        "SpecialPrice": {
+          "@nil": "true"
+        },
+        "BodyType": {
+          "ID": "24",
+          "Name": "SUV"
+        },
+        "Equipment": {
+          "ID": "9",
+          "Name": "Luxury"
+        },
+        "Transmission": {
+          "ID": "2",
+          "Name": "M/T"
+        },
+        "Displacement": "2.0"
+      },
+      "Price": "26050",
+      "SpecialPrice": {
+        "@nil": "true"
+      },
+      "ImageBaseURL": "rav4",
+      "IntColour": "20",
+      "ExtColour": "4T3",
+      "ETA": {
+        "@nil": "true"
+      },
+      "Retailer": {
+        "ID": "7",
+        "Name": "Autotoja UAB"
+      }
+    },
+    {
+      "Model": {
+        "ID": "2105",
+        "ModelFamilyID": "23",
+        "Name": "RAV4 2.0 Valvematic Premium Plus 4WD Multidrive S",
+        "NormalPrice": "0",
+        "SpecialPrice": {
+          "@nil": "true"
+        },
+        "BodyType": {
+          "ID": "24",
+          "Name": "SUV"
+        },
+        "Equipment": {
+          "ID": "82",
+          "Name": "Premium Plus"
+        },
+        "Transmission": {
+          "ID": "6",
+          "Name": "Multidrive S"
+        },
+        "Displacement": "2.0"
+      },
+      "Price": "32880",
+      "SpecialPrice": {
+        "@nil": "true"
+      },
+      "ImageBaseURL": "rav4",
+      "IntColour": "10",
+      "ExtColour": "1F7",
+      "ETA": {
+        "@nil": "true"
+      },
+      "Retailer": {
+        "ID": "3",
+        "Name": "Amserv Auto AS"
+      }
+    },
+    {
+      "Model": {
+        "ID": "2103",
+        "ModelFamilyID": "23",
+        "Name": "RAV4 2.0 D-4D Standard FWD M/T",
+        "NormalPrice": "0",
+        "SpecialPrice": {
+          "@nil": "true"
+        },
+        "BodyType": {
+          "ID": "24",
+          "Name": "SUV"
+        },
+        "Equipment": {
+          "ID": "13",
+          "Name": "Standard"
+        },
+        "Transmission": {
+          "ID": "2",
+          "Name": "M/T"
+        },
+        "Displacement": "2.0"
+      },
+      "Price": "23940",
+      "SpecialPrice": {
+        "@nil": "true"
+      },
+      "ImageBaseURL": "rav4",
+      "IntColour": "20",
+      "ExtColour": "209",
+      "ETA": {
+        "@nil": "true"
+      },
+      "Retailer": {
+        "ID": "17",
+        "Name": "Mustakivi Auto AS"
+      }
+    },
+    {
+      no: "11",
+      class: "active",
+      "Model": {
+        "ID": "2095",
+        "ModelFamilyID": "23",
+        "Name": "RAV4 2.0 Valvematic Luxury 4WD Multidrive S",
+        "NormalPrice": "0",
+        "SpecialPrice": {
+          "@nil": "true"
+        },
+        "BodyType": {
+          "ID": "24",
+          "Name": "SUV"
+        },
+        "Equipment": {
+          "ID": "9",
+          "Name": "Luxury"
+        },
+        "Transmission": {
+          "ID": "6",
+          "Name": "Multidrive S"
+        },
+        "Displacement": "2.0"
+      },
+      "Price": "26360",
+      "SpecialPrice": {
+        "@nil": "true"
+      },
+      "ImageBaseURL": "rav4",
+      "IntColour": "20",
+      "ExtColour": "209",
+      "ETA": {
+        "@nil": "true"
+      },
+      "Retailer": {
+        "ID": "3",
+        "Name": "Amserv Auto AS"
+      }
+    },
+    {
+      no: "12",
+      "Model": {
+        "ID": "2105",
+        "ModelFamilyID": "23",
+        "Name": "RAV4 2.0 Valvematic Premium Plus 4WD Multidrive S",
+        "NormalPrice": "0",
+GoodPrice: "22360",
+        "SpecialPrice": {
+          "@nil": "true"
+        },
+        "BodyType": {
+          "ID": "24",
+          "Name": "SUV"
+        },
+        "Equipment": {
+          "ID": "82",
+          "Name": "Premium Plus"
+        },
+        "Transmission": {
+          "ID": "6",
+          "Name": "Multidrive S"
+        },
+        "Displacement": "2.0"
+      },
+      "Price": "32880",
+      "SpecialPrice": {
+        "@nil": "true"
+      },
+      "ImageBaseURL": "rav4",
+      "IntColour": "20",
+      "ExtColour": "4T3",
+      "ETA": {
+        "@nil": "true"
+      },
+      "Retailer": {
+        "ID": "18",
+        "Name": "WESS II"
+      }
+    },
+    {
+      no: "13",
+      "Model": {
+        "ID": "2110",
+        "ModelFamilyID": "23",
+        "Name": "RAV4 2.0 Valvematic Luxury Plus 4WD Multidrive S",
+        "NormalPrice": "0",
+GoodPrice: "22360",
+        "SpecialPrice": {
+          "@nil": "true"
+        },
+        "BodyType": {
+          "ID": "24",
+          "Name": "SUV"
+        },
+        "Equipment": {
+          "ID": "81",
+          "Name": "Luxury Plus"
+        },
+        "Transmission": {
+          "ID": "6",
+          "Name": "Multidrive S"
+        },
+        "Displacement": "2.0"
+      },
+      "Price": "30890",
+      "SpecialPrice": {
+        "@nil": "true"
+      },
+      "ImageBaseURL": "rav4",
+      "IntColour": "20",
+      "ExtColour": "1H2",
+      "ETA": {
+        "@nil": "true"
+      },
+      "Options": {
+        "string": [
+          "Toyota Touch 2 with Go",
+          "Leather seats"
+        ]
+      },
+      "Retailer": {
+        "ID": "3",
+        "Name": "Amserv Auto AS"
+      }
+    },
+    {
+      no: "14",
+      "Model": {
+        "ID": "2094",
+        "ModelFamilyID": "23",
+        "Name": "RAV4 2.2 D-CAT Luxury Plus 4WD A/T",
+        "NormalPrice": "0",
+        "SpecialPrice": {
+          "@nil": "true"
+        },
+        "BodyType": {
+          "ID": "24",
+          "Name": "SUV"
+        },
+        "Equipment": {
+          "ID": "81",
+          "Name": "Luxury Plus"
+        },
+        "Transmission": {
+          "ID": "1",
+          "Name": "A/T"
+        },
+        "Displacement": "2.2"
+      },
+      "Price": "34620",
+      "SpecialPrice": {
+        "@nil": "true"
+      },
+      "ImageBaseURL": "rav4",
+      "IntColour": "20",
+      "ExtColour": "3R3",
+      "ETA": {
+        "@nil": "true"
+      },
+      "Options": {
+        "string": "Leather seats"
+      },
+      "Retailer": {
+        "ID": "2",
+        "Name": "Elke Auto AS"
+      }
+    },
+    {
+      "Model": {
+        "ID": "2094",
+        "ModelFamilyID": "23",
+        "Name": "RAV4 2.2 D-CAT Luxury Plus 4WD A/T",
+        "NormalPrice": "0",
+        "SpecialPrice": {
+          "@nil": "true"
+        },
+        "BodyType": {
+          "ID": "24",
+          "Name": "SUV"
+        },
+        "Equipment": {
+          "ID": "81",
+          "Name": "Luxury Plus"
+        },
+        "Transmission": {
+          "ID": "1",
+          "Name": "A/T"
+        },
+        "Displacement": "2.2"
+      },
+      "Price": "33260",
+      "SpecialPrice": {
+        "@nil": "true"
+      },
+      "ImageBaseURL": "rav4",
+      "IntColour": "20",
+      "ExtColour": "3R3",
+      "ETA": {
+        "@nil": "true"
+      },
+      "Retailer": {
+        "ID": "2",
+        "Name": "Elke Auto AS"
+      }
+    },
+    {
+      "Model": {
+        "ID": "2106",
+        "ModelFamilyID": "23",
+        "Name": "RAV4 2.0 Valvematic Luxury Plus 4WD M/T",
+        "NormalPrice": "0",
+        "SpecialPrice": {
+          "@nil": "true"
+        },
+        "BodyType": {
+          "ID": "24",
+          "Name": "SUV"
+        },
+        "Equipment": {
+          "ID": "81",
+          "Name": "Luxury Plus"
+        },
+        "Transmission": {
+          "ID": "2",
+          "Name": "M/T"
+        },
+        "Displacement": "2.0"
+      },
+      "Price": "28530",
+      "SpecialPrice": {
+        "@nil": "true"
+      },
+      "ImageBaseURL": "rav4",
+      "IntColour": "20",
+      "ExtColour": "3R3",
+      "ETA": {
+        "@nil": "true"
+      },
+      "Options": {
+        "string": "Leather seats"
+      },
+      "Retailer": {
+        "ID": "19",
+        "Name": "Mototoja UAB"
+      }
+    },
+    {
+      "Model": {
+        "ID": "2101",
+        "ModelFamilyID": "23",
+        "Name": "RAV4 2.2 D-4D Luxury 4WD M/T",
+        "NormalPrice": "0",
+        "SpecialPrice": {
+          "@nil": "true"
+        },
+        "BodyType": {
+          "ID": "24",
+          "Name": "SUV"
+        },
+        "Equipment": {
+          "ID": "9",
+          "Name": "Luxury"
+        },
+        "Transmission": {
+          "ID": "2",
+          "Name": "M/T"
+        },
+        "Displacement": "2.2"
+      },
+      "Price": "29800",
+      "SpecialPrice": {
+        "@nil": "true"
+      },
+      "ImageBaseURL": "rav4",
+      "IntColour": "20",
+      "ExtColour": "4T3",
+      "ETA": {
+        "@nil": "true"
+      },
+      "Options": {
+        "string": "Toyota Touch 2 with Go"
+      },
+      "Retailer": {
+        "ID": "19",
+        "Name": "Mototoja UAB"
+      }
+    },
+    {
+      "Model": {
+        "ID": "2095",
+        "ModelFamilyID": "23",
+        "Name": "RAV4 2.0 Valvematic Luxury 4WD Multidrive S",
+        "NormalPrice": "0",
+        "SpecialPrice": {
+          "@nil": "true"
+        },
+        "BodyType": {
+          "ID": "24",
+          "Name": "SUV"
+        },
+        "Equipment": {
+          "ID": "9",
+          "Name": "Luxury"
+        },
+        "Transmission": {
+          "ID": "6",
+          "Name": "Multidrive S"
+        },
+        "Displacement": "2.0"
+      },
+      "Price": "26360",
+      "SpecialPrice": {
+        "@nil": "true"
+      },
+      "ImageBaseURL": "rav4",
+      "IntColour": "20",
+      "ExtColour": "1F7",
+      "ETA": {
+        "@nil": "true"
+      },
+      "Retailer": {
+        "ID": "3",
+        "Name": "Amserv Auto AS"
+      }
+    },
+    {
+      "Model": {
+        "ID": "2094",
+        "ModelFamilyID": "23",
+        "Name": "RAV4 2.2 D-CAT Luxury Plus 4WD A/T",
+        "NormalPrice": "0",
+        "SpecialPrice": {
+          "@nil": "true"
+        },
+        "BodyType": {
+          "ID": "24",
+          "Name": "SUV"
+        },
+        "Equipment": {
+          "ID": "81",
+          "Name": "Luxury Plus"
+        },
+        "Transmission": {
+          "ID": "1",
+          "Name": "A/T"
+        },
+        "Displacement": "2.2"
+      },
+      "Price": "33260",
+      "SpecialPrice": {
+        "@nil": "true"
+      },
+      "ImageBaseURL": "rav4",
+      "IntColour": "20",
+      "ExtColour": "209",
+      "ETA": {
+        "@nil": "true"
+      },
+      "Retailer": {
+        "ID": "3",
+        "Name": "Amserv Auto AS"
+      }
+    },
+    {
+      "Model": {
+        "ID": "2100",
+        "ModelFamilyID": "23",
+        "Name": "RAV4 2.0 D-4D Luxury 4WD M/T",
+        "NormalPrice": "0",
+        "SpecialPrice": {
+          "@nil": "true"
+        },
+        "BodyType": {
+          "ID": "24",
+          "Name": "SUV"
+        },
+        "Equipment": {
+          "ID": "9",
+          "Name": "Luxury"
+        },
+        "Transmission": {
+          "ID": "2",
+          "Name": "M/T"
+        },
+        "Displacement": "2.0"
+      },
+      "Price": "28180",
+      "SpecialPrice": {
+        "@nil": "true"
+      },
+      "ImageBaseURL": "rav4",
+      "IntColour": "20",
+      "ExtColour": "4T3",
+      "ETA": {
+        "@nil": "true"
+      },
+      "Retailer": {
+        "ID": "9",
+        "Name": "HAT-Auto AS"
+      }
+    },
+    {
+      "Model": {
+        "ID": "2094",
+        "ModelFamilyID": "23",
+        "Name": "RAV4 2.2 D-CAT Luxury Plus 4WD A/T",
+        "NormalPrice": "0",
+        "SpecialPrice": {
+          "@nil": "true"
+        },
+        "BodyType": {
+          "ID": "24",
+          "Name": "SUV"
+        },
+        "Equipment": {
+          "ID": "81",
+          "Name": "Luxury Plus"
+        },
+        "Transmission": {
+          "ID": "1",
+          "Name": "A/T"
+        },
+        "Displacement": "2.2"
+      },
+      "Price": "33260",
+      "SpecialPrice": {
+        "@nil": "true"
+      },
+      "ImageBaseURL": "rav4",
+      "IntColour": "20",
+      "ExtColour": "070",
+      "ETA": {
+        "@nil": "true"
+      },
+      "Retailer": {
+        "ID": "3",
+        "Name": "Amserv Auto AS"
+      }
+    },
+    {
+      "Model": {
+        "ID": "2110",
+        "ModelFamilyID": "23",
+        "Name": "RAV4 2.0 Valvematic Luxury Plus 4WD Multidrive S",
+        "NormalPrice": "0",
+        "SpecialPrice": {
+          "@nil": "true"
+        },
+        "BodyType": {
+          "ID": "24",
+          "Name": "SUV"
+        },
+        "Equipment": {
+          "ID": "81",
+          "Name": "Luxury Plus"
+        },
+        "Transmission": {
+          "ID": "6",
+          "Name": "Multidrive S"
+        },
+        "Displacement": "2.0"
+      },
+      "Price": "28890",
+      "SpecialPrice": {
+        "@nil": "true"
+      },
+      "ImageBaseURL": "rav4",
+      "IntColour": "20",
+      "ExtColour": "4T3",
+      "ETA": {
+        "@nil": "true"
+      },
+      "Retailer": {
+        "ID": "9",
+        "Name": "HAT-Auto AS"
+      }
+    },
+    {
+      "Model": {
+        "ID": "2110",
+        "ModelFamilyID": "23",
+        "Name": "RAV4 2.0 Valvematic Luxury Plus 4WD Multidrive S",
+        "NormalPrice": "0",
+        "SpecialPrice": {
+          "@nil": "true"
+        },
+        "BodyType": {
+          "ID": "24",
+          "Name": "SUV"
+        },
+        "Equipment": {
+          "ID": "81",
+          "Name": "Luxury Plus"
+        },
+        "Transmission": {
+          "ID": "6",
+          "Name": "Multidrive S"
+        },
+        "Displacement": "2.0"
+      },
+      "Price": "29810",
+      "SpecialPrice": {
+        "@nil": "true"
+      },
+      "ImageBaseURL": "rav4",
+      "IntColour": "20",
+      "ExtColour": "4U5",
+      "ETA": {
+        "@nil": "true"
+      },
+      "Options": {
+        "string": "Toyota Touch 2 with Go Plus"
+      },
+      "Retailer": {
+        "ID": "9",
+        "Name": "HAT-Auto AS"
+      }
+    },
+    {
+      "Model": {
+        "ID": "2094",
+        "ModelFamilyID": "23",
+        "Name": "RAV4 2.2 D-CAT Luxury Plus 4WD A/T",
+        "NormalPrice": "0",
+        "SpecialPrice": {
+          "@nil": "true"
+        },
+        "BodyType": {
+          "ID": "24",
+          "Name": "SUV"
+        },
+        "Equipment": {
+          "ID": "81",
+          "Name": "Luxury Plus"
+        },
+        "Transmission": {
+          "ID": "1",
+          "Name": "A/T"
+        },
+        "Displacement": "2.2"
+      },
+      "Price": "33900",
+      "SpecialPrice": {
+        "@nil": "true"
+      },
+      "ImageBaseURL": "rav4",
+      "IntColour": "20",
+      "ExtColour": "1F7",
+      "ETA": {
+        "@nil": "true"
+      },
+      "Options": {
+        "string": "Toyota Touch 2 with Go"
+      },
+      "Retailer": {
+        "ID": "17",
+        "Name": "Mustakivi Auto AS"
+      }
+    },
+    {
+      "Model": {
+        "ID": "2110",
+        "ModelFamilyID": "23",
+        "Name": "RAV4 2.0 Valvematic Luxury Plus 4WD Multidrive S",
+        "NormalPrice": "0",
+        "SpecialPrice": {
+          "@nil": "true"
+        },
+        "BodyType": {
+          "ID": "24",
+          "Name": "SUV"
+        },
+        "Equipment": {
+          "ID": "81",
+          "Name": "Luxury Plus"
+        },
+        "Transmission": {
+          "ID": "6",
+          "Name": "Multidrive S"
+        },
+        "Displacement": "2.0"
+      },
+      "Price": "30890",
+      "SpecialPrice": {
+        "@nil": "true"
+      },
+      "ImageBaseURL": "rav4",
+      "IntColour": "20",
+      "ExtColour": "3R3",
+      "ETA": {
+        "@nil": "true"
+      },
+      "Options": {
+        "string": [
+          "Toyota Touch 2 with Go",
+          "Leather seats"
+        ]
+      },
+      "Retailer": {
+        "ID": "15",
+        "Name": "Amserv Viljandi"
+      }
+    },
+    {
+      "Model": {
+        "ID": "2110",
+        "ModelFamilyID": "23",
+        "Name": "RAV4 2.0 Valvematic Luxury Plus 4WD Multidrive S",
+        "NormalPrice": "0",
+        "SpecialPrice": {
+          "@nil": "true"
+        },
+        "BodyType": {
+          "ID": "24",
+          "Name": "SUV"
+        },
+        "Equipment": {
+          "ID": "81",
+          "Name": "Luxury Plus"
+        },
+        "Transmission": {
+          "ID": "6",
+          "Name": "Multidrive S"
+        },
+        "Displacement": "2.0"
+      },
+      "Price": "28890",
+      "SpecialPrice": {
+        "@nil": "true"
+      },
+      "ImageBaseURL": "rav4",
+      "IntColour": "20",
+      "ExtColour": "4U5",
+      "ETA": {
+        "@nil": "true"
+      },
+      "Retailer": {
+        "ID": "17",
+        "Name": "Mustakivi Auto AS"
+      }
+    },
+    {
+      "Model": {
+        "ID": "2110",
+        "ModelFamilyID": "23",
+        "Name": "RAV4 2.0 Valvematic Luxury Plus 4WD Multidrive S",
+        "NormalPrice": "0",
+        "SpecialPrice": {
+          "@nil": "true"
+        },
+        "BodyType": {
+          "ID": "24",
+          "Name": "SUV"
+        },
+        "Equipment": {
+          "ID": "81",
+          "Name": "Luxury Plus"
+        },
+        "Transmission": {
+          "ID": "6",
+          "Name": "Multidrive S"
+        },
+        "Displacement": "2.0"
+      },
+      "Price": "30250",
+      "SpecialPrice": {
+        "@nil": "true"
+      },
+      "ImageBaseURL": "rav4",
+      "IntColour": "20",
+      "ExtColour": "4T3",
+      "ETA": {
+        "@nil": "true"
+      },
+      "Options": {
+        "string": "Leather seats"
+      },
+      "Retailer": {
+        "ID": "17",
+        "Name": "Mustakivi Auto AS"
+      }
+    },
+    {
+      "Model": {
+        "ID": "2110",
+        "ModelFamilyID": "23",
+        "Name": "RAV4 2.0 Valvematic Luxury Plus 4WD Multidrive S",
+        "NormalPrice": "0",
+        "SpecialPrice": {
+          "@nil": "true"
+        },
+        "BodyType": {
+          "ID": "24",
+          "Name": "SUV"
+        },
+        "Equipment": {
+          "ID": "81",
+          "Name": "Luxury Plus"
+        },
+        "Transmission": {
+          "ID": "6",
+          "Name": "Multidrive S"
+        },
+        "Displacement": "2.0"
+      },
+      "Price": "28890",
+      "SpecialPrice": {
+        "@nil": "true"
+      },
+      "ImageBaseURL": "rav4",
+      "IntColour": "20",
+      "ExtColour": "4T3",
+      "ETA": {
+        "@nil": "true"
+      },
+      "Retailer": {
+        "ID": "11",
+        "Name": "Solorina UAB"
+      }
+    },
+    {
+      "Model": {
+        "ID": "2106",
+        "ModelFamilyID": "23",
+        "Name": "RAV4 2.0 Valvematic Luxury Plus 4WD M/T",
+        "NormalPrice": "0",
+        "SpecialPrice": {
+          "@nil": "true"
+        },
+        "BodyType": {
+          "ID": "24",
+          "Name": "SUV"
+        },
+        "Equipment": {
+          "ID": "81",
+          "Name": "Luxury Plus"
+        },
+        "Transmission": {
+          "ID": "2",
+          "Name": "M/T"
+        },
+        "Displacement": "2.0"
+      },
+      "Price": "28530",
+      "SpecialPrice": {
+        "@nil": "true"
+      },
+      "ImageBaseURL": "rav4",
+      "IntColour": "20",
+      "ExtColour": "1F7",
+      "ETA": {
+        "@nil": "true"
+      },
+      "Options": {
+        "string": "Leather seats"
+      },
+      "Retailer": {
+        "ID": "3",
+        "Name": "Amserv Auto AS"
+      }
+    },
+    {
+      "Model": {
+        "ID": "2110",
+        "ModelFamilyID": "23",
+        "Name": "RAV4 2.0 Valvematic Luxury Plus 4WD Multidrive S",
+        "NormalPrice": "0",
+        "SpecialPrice": {
+          "@nil": "true"
+        },
+        "BodyType": {
+          "ID": "24",
+          "Name": "SUV"
+        },
+        "Equipment": {
+          "ID": "81",
+          "Name": "Luxury Plus"
+        },
+        "Transmission": {
+          "ID": "6",
+          "Name": "Multidrive S"
+        },
+        "Displacement": "2.0"
+      },
+      "Price": "28890",
+      "SpecialPrice": {
+        "@nil": "true"
+      },
+      "ImageBaseURL": "rav4",
+      "IntColour": "20",
+      "ExtColour": "4T3",
+      "ETA": {
+        "@nil": "true"
+      },
+      "Retailer": {
+        "ID": "3",
+        "Name": "Amserv Auto AS"
+      }
+    },
+    {
+      "Model": {
+        "ID": "2110",
+        "ModelFamilyID": "23",
+        "Name": "RAV4 2.0 Valvematic Luxury Plus 4WD Multidrive S",
+        "NormalPrice": "0",
+        "SpecialPrice": {
+          "@nil": "true"
+        },
+        "BodyType": {
+          "ID": "24",
+          "Name": "SUV"
+        },
+        "Equipment": {
+          "ID": "81",
+          "Name": "Luxury Plus"
+        },
+        "Transmission": {
+          "ID": "6",
+          "Name": "Multidrive S"
+        },
+        "Displacement": "2.0"
+      },
+      "Price": "28890",
+      "SpecialPrice": {
+        "@nil": "true"
+      },
+      "ImageBaseURL": "rav4",
+      "IntColour": "20",
+      "ExtColour": "1G3",
+      "ETA": {
+        "@nil": "true"
+      },
+      "Retailer": {
+        "ID": "23",
+        "Name": "Favorit West"
+      }
+    },
+    {
+      "Model": {
+        "ID": "2110",
+        "ModelFamilyID": "23",
+        "Name": "RAV4 2.0 Valvematic Luxury Plus 4WD Multidrive S",
+        "NormalPrice": "0",
+        "SpecialPrice": {
+          "@nil": "true"
+        },
+        "BodyType": {
+          "ID": "24",
+          "Name": "SUV"
+        },
+        "Equipment": {
+          "ID": "81",
+          "Name": "Luxury Plus"
+        },
+        "Transmission": {
+          "ID": "6",
+          "Name": "Multidrive S"
+        },
+        "Displacement": "2.0"
+      },
+      "Price": "30890",
+      "SpecialPrice": {
+        "@nil": "true"
+      },
+      "ImageBaseURL": "rav4",
+      "IntColour": "20",
+      "ExtColour": "209",
+      "ETA": {
+        "@nil": "true"
+      },
+      "Options": {
+        "string": [
+          "Toyota Touch 2 with Go",
+          "Leather seats"
+        ]
+      },
+      "Retailer": {
+        "ID": "15",
+        "Name": "Amserv Viljandi"
+      }
+    },
+    {
+      "Model": {
+        "ID": "2110",
+        "ModelFamilyID": "23",
+        "Name": "RAV4 2.0 Valvematic Luxury Plus 4WD Multidrive S",
+        "NormalPrice": "0",
+        "SpecialPrice": {
+          "@nil": "true"
+        },
+        "BodyType": {
+          "ID": "24",
+          "Name": "SUV"
+        },
+        "Equipment": {
+          "ID": "81",
+          "Name": "Luxury Plus"
+        },
+        "Transmission": {
+          "ID": "6",
+          "Name": "Multidrive S"
+        },
+        "Displacement": "2.0"
+      },
+      "Price": "30250",
+      "SpecialPrice": {
+        "@nil": "true"
+      },
+      "ImageBaseURL": "rav4",
+      "IntColour": "20",
+      "ExtColour": "4T3",
+      "ETA": {
+        "@nil": "true"
+      },
+      "Options": {
+        "string": "Leather seats"
+      },
+      "Retailer": {
+        "ID": "12",
+        "Name": "Amserv Pärnu AS"
+      }
+    },
+    {
+      "Model": {
+        "ID": "2097",
+        "ModelFamilyID": "23",
+        "Name": "RAV4 2.0 Valvematic Standard 4WD Multidrive S",
+        "NormalPrice": "0",
+        "SpecialPrice": {
+          "@nil": "true"
+        },
+        "BodyType": {
+          "ID": "24",
+          "Name": "SUV"
+        },
+        "Equipment": {
+          "ID": "13",
+          "Name": "Standard"
+        },
+        "Transmission": {
+          "ID": "6",
+          "Name": "Multidrive S"
+        },
+        "Displacement": "2.0"
+      },
+      "Price": "24250",
+      "SpecialPrice": {
+        "@nil": "true"
+      },
+      "ImageBaseURL": "rav4",
+      "IntColour": "20",
+      "ExtColour": "209",
+      "ETA": {
+        "@nil": "true"
+      },
+      "Retailer": {
+        "ID": "1",
+        "Name": "Toyota Baltic AS"
+      }
+    },
+    {
+      "Model": {
+        "ID": "2120",
+        "ModelFamilyID": "23",
+        "Name": "RAV4 2.2 D-CAT Luxury 4WD A/T",
+        "NormalPrice": "0",
+        "SpecialPrice": {
+          "@nil": "true"
+        },
+        "BodyType": {
+          "ID": "24",
+          "Name": "SUV"
+        },
+        "Equipment": {
+          "ID": "9",
+          "Name": "Luxury"
+        },
+        "Transmission": {
+          "ID": "1",
+          "Name": "A/T"
+        },
+        "Displacement": "2.2"
+      },
+      "Price": "30730",
+      "SpecialPrice": {
+        "@nil": "true"
+      },
+      "ImageBaseURL": "rav4",
+      "IntColour": "20",
+      "ExtColour": "209",
+      "ETA": {
+        "@nil": "true"
+      },
+      "Retailer": {
+        "ID": "1",
+        "Name": "Toyota Baltic AS"
+      }
+    }
+  ]
+}
+
+var source   = $(".testdrive-in-stock-template").html();
+var template = Handlebars.compile(source); 
+
+$(".placeholder-testdrive-in-stock").html(template(data));

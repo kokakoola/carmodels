@@ -39,7 +39,7 @@
         <!-- /Hammer reload -->
       
     </head>
-    <body class="customer-card">
+    <body class="test-drive">
     
 
 <nav id="nav-primary" class="navbar navbar-inverse navbar-fixed-top">
@@ -55,73 +55,111 @@
       </div>
 <!--       <a href="index.html" id="logo-big" class="logo-link hidden-xs hidden-sm logo-logo-md-red"></a> -->
       <ol id="menu-breadcrumb" class="breadcrumb">
-  <li><a href="identify-customer.html">Identify Customer</a><i class="sprite-menu-white-arrow"></i><i>/</i></li>
-  <li class="current active"><a class='current' href="customer-card.html">Customer card</a><i class="sprite-menu-white-arrow"></i><i>/</i></li>
+  <li><a href="view-car.html">View my car</a><i class="sprite-menu-white-arrow"></i><i>/</i></li>
+  <li class="current active"><a class='current' href="test-drive.html">Testdrive</a><i class="sprite-menu-white-arrow"></i><i>/</i></li>
 </ol>
     </div>
 
     <div class="button-wrapper navbar-right">
-      <a href="identify-customer.html" class="btn btn-small btn-dark">
+      <a href="view-car.html" class="btn btn-small btn-dark">
         <span>Previous</span>
       </a>
-      <a href="customer-needs.html" class="btn btn-small btn-red  """ id="nextPage">
-        <span>Identify customer needs</span><i class="icon-chevron-right"></i>
+      <a href="index.html" class="btn btn-small btn-red  hidden" id="nextPage">
+        <span>Start</span><i class="icon-chevron-right"></i>
       </a>
     </div>
   </div>
 </nav>
 
-<section id="customer-card" class="register-leads">
+<section id="testdrive" class="register-leads">
 	<div class="container">
 		<header class="section-title">
-			<h1>Customer card</h1>
+			<h1>Book a testdrive</h1>
+			<p class="text-center">Choose a car</p>
 		</header>
-		<div class="row">
-			<div class="col-md-8 col-md-offset-3 col-sm-offset-3">
-				<div class="row">
-					<div class="col-sm-3">
-						<h4>Name</h4>
-					</div>
-					<div class="col-sm-9">
-						<h3><strong>Sven Peekmann</strong></h3>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-sm-3">
-						<h4>Company</h4>
-					</div>
-					<div class="col-sm-9">
-						<h3><strong>Net Group</strong></h3>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-sm-3">
-						<h4>Email</h4>
-					</div>
-					<div class="col-sm-9">
-						<h3><strong>sven.peekmann@netgroup.ee</strong></h3>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-sm-3">
-						<h4>Phone</h4>
-					</div>
-					<div class="col-sm-9">
-						<h3><strong></strong></h3>
-					</div>
-				</div>
-			</div>
+		<section>
+			<div class="placeholder-testdrive-in-stock"></div>
+<script type="text/x-handlebars-template" class="testdrive-in-stock-template">
 
-			<div class="col-md-8 col-md-offset-3 col-sm-offset-3 car-list-item">
-				<h4>Toyota GT86 2,0 D-4S bokser 200hj 6 M/T Bensiin</h4>
-				<p>reg. date 01.01.2015</p>
-				<p>mileage 125 0000</p>
-			</div>
+{{#slice VehicleDTO offset="18" limit="2"}}
+  <div class="row item">
+    <div class="col-sm-4">
+      <img class="img-responsive" alt="{{ImageBaseURL}}" data-original="http://images.toyota-europe.com/lt/{{ImageBaseURL}}/width/308/height/190/exterior-32_{{ExtColour}}.png">
+    </div>
+    <div class="col-sm-8 promotions">
+      <h5>{{Model.Name}}
+        {{#if Model.GoodPrice }}
+        <i class="icon-tag"></i>
+        {{/if}}
+      </h5>
+      <hr>
+      <p class="desc">
+        <span class="price {{#if Model.GoodPrice }} old-price {{/if}} " >{{Price}} €</span> 
+        {{#if Model.GoodPrice }}
+          <span class="price new-price">{{Model.GoodPrice}} €</span>
+          <span class="avantage">Save 19% by buying this car</span> <br> 
+        {{/if}}
+            <span>Interior color: {{IntColour}}</span>  |  <span>Exterior color: {{ExtColour}}</span>
+      {{#if Options}}
+        <br>
+        <i class="icon-info-sign"></i> Extras: {{Options.string}}
+      {{/if}}
+      </p>
+    </div>
+  </div>
+{{/slice}}
+</script>
+		</section>
+	</div>
+</section>
+<section class="test-drive-timepick">
+	<div class="container">
+		<header class="section-title">
+			<h1>Pick a time</h1>
+		</header>
+		<div class="row picktime">
+			<div class="col-xs-12 col-md-10 col-md-offset-2">
+				<div class="row">
+					<div class="col-sm-5"><div class="datepicker" data-date-format="MM/DD/YYYY"></div></div>
+					<div class="col-sm-7">
+						<h4>Kuupäev:</h4>
+						<h3 id="datepicker_value"></h3>
+						<h4>Kellaaeg:</h4>
+						<div class="row ee-top-20">
+							<div class="col-sm-4">
+								<div class="input-group pull-right">
+									<span class="input-group-btn">
+										<button type="button" class="btn btn-default btn-number" data-type="minus" data-field="quant[1]">
+											<span class="icon-minus"></span>
+										</button>
+									</span>
+									<input type="text" name="quant[1]" class="form-control input-number ee-default" value="14" min="9" max="17">
+									<span class="input-group-btn">
+										<button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]">
+											<span class="icon-plus"></span>
+										</button>
+									</span>
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="input-group pull-right">
+									<span class="input-group-btn">
+										<button type="button" class="btn btn-default btn-number" data-type="minus" data-field="quant[1]">
+											<span class="icon-minus"></span>
+										</button>
+									</span>
+									<input type="text" name="quant[1]" class="form-control input-number ee-default" value="30" min="00" max="59">
+									<span class="input-group-btn">
+										<button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]">
+											<span class="icon-plus"></span>
+										</button>
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
 
-			<div class="col-md-8 col-md-offset-3 col-sm-offset-3 car-list-item">
-				<h4>Avensis 1.8 Valvematic Linea Sol Plus FWD Multidrive S</h4>
-				<p>reg. date 23.12.2014</p>
-				<p>mileage 58 0000</p>
+				</div>
 			</div>
 		</div>
 	</div>

@@ -18851,7 +18851,8 @@ p {
   cursor: pointer; }
 
 .item {
-  padding-top: 30px; }
+  padding-top: 30px;
+  border-bottom: 2px solid transparent; }
   .item.current {
     background-color: #e8e9ea;
     border-bottom: 2px solid #d2001e; }
@@ -18942,15 +18943,26 @@ input.form-control {
       margin-top: 30px;
       margin-bottom: 40px; } }
 
-.register-leads .section-title {
+.section-title {
   margin-top: 0;
   margin-bottom: 20px; }
   @media (min-width: 992px) {
-    .register-leads .section-title {
+    .section-title {
       margin-top: 30px;
       margin-bottom: 40px; } }
+  .section-title p {
+    font-size: 24px;
+    font-size: 2.4rem;
+    line-height: 28px;
+    line-height: 2.8rem;
+    text-indent: 0;
+    color: #1e2a32;
+    margin-bottom: 40px; }
+
+.register-leads h4,
 .register-leads h3 {
   margin: 10px 0; }
+  .register-leads h4 i,
   .register-leads h3 i {
     color: #E50000;
     margin-left: 15px; }
@@ -18966,3 +18978,11 @@ input.form-control {
 
 #identify-customer form label:before {
   border: none; }
+
+.test-drive section.test-drive-timepick {
+  background: #1C2830;
+  color: #fff; }
+.test-drive .datepicker {
+  font-size: 18px; }
+.test-drive .picktime h4 {
+  margin: 10px 0; }

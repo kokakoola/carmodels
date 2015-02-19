@@ -1,0 +1,31 @@
+<div class="placeholder-testdrive-in-stock"></div>
+<script type="text/x-handlebars-template" class="testdrive-in-stock-template">
+
+{{#slice VehicleDTO offset="18" limit="2"}}
+  <div class="row item">
+    <div class="col-sm-4">
+      <img class="img-responsive" alt="{{ImageBaseURL}}" data-original="http://images.toyota-europe.com/lt/{{ImageBaseURL}}/width/308/height/190/exterior-32_{{ExtColour}}.png">
+    </div>
+    <div class="col-sm-8 promotions">
+      <h5>{{Model.Name}}
+        {{#if Model.GoodPrice }}
+        <i class="icon-tag"></i>
+        {{/if}}
+      </h5>
+      <hr>
+      <p class="desc">
+        <span class="price {{#if Model.GoodPrice }} old-price {{/if}} " >{{Price}} €</span> 
+        {{#if Model.GoodPrice }}
+          <span class="price new-price">{{Model.GoodPrice}} €</span>
+          <span class="avantage">Save 19% by buying this car</span> <br> 
+        {{/if}}
+            <span>Interior color: {{IntColour}}</span>  |  <span>Exterior color: {{ExtColour}}</span>
+      {{#if Options}}
+        <br>
+        <i class="icon-info-sign"></i> Extras: {{Options.string}}
+      {{/if}}
+      </p>
+    </div>
+  </div>
+{{/slice}}
+</script>
