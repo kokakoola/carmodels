@@ -1,0 +1,62 @@
+/* =============================================================================
+ * lists
+ * ========================================================================== */
+.list1 {
+	list-style-type: none;
+	padding: 0;
+	margin: 10px 0;
+	line-height: _em(20px);
+	&:last-child {
+		margin-bottom: 0;
+	}
+	li {
+		margin:8px 0;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	a {
+		text-decoration: none;
+		color: $colour-default-grey-2;
+		&:hover {
+			text-decoration: underline;
+			color: $colour-default-grey-2;
+		}
+	}
+	strong {
+		color: $colour-default-grey-1;
+	}
+}
+.list2 {
+	@include clearfix;
+	list-style-type: none;
+	padding: 0;
+	&:last-child {
+		margin-bottom: 0;
+	}
+	li {
+
+		float:left;
+		margin: 8px 6px 8px 0;
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+	a {
+		display:block;
+	}
+}
+
+// (article) bulleted list
+.list-bullet ul {
+	line-height: _em(20px);
+	padding: 10px 0 10px 20px;
+	margin: 20px 0;
+	border-top: 1px solid $colour-paragraph-border;
+	border-bottom: 1px solid $colour-paragraph-border;
+	color: $colour-default-grey-2;
+	li {
+		margin: 10px 0;
+		@include font-size(15, 2);
+	}
+}

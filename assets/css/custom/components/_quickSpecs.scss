@@ -1,0 +1,375 @@
+.quickspec-section {
+	position: relative;
+}
+/* Carousel on top */
+div.quickspec-caption {
+	left: 0;
+	right: 0;
+
+	.icon-play {
+		@include trans(bg, $colour-default-black, 0.66);
+		border-radius: 3px 3px 3px 3px;
+		color: $colour-default-white;
+		@include font-size(32);
+	  	top: auto;
+	  	left: auto;
+		position: absolute;
+		z-index: 11;
+		padding: 11px 16px;
+	  	margin-top: 27px;
+	  	margin-left: -28.5px;
+		opacity: 0.8;
+		&:hover{
+			opacity: 1.0;
+		}
+	}
+}
+.carousel .quickspec-caption {
+	padding: 5px;
+	h1 {
+		padding-top: 0 !important;
+	}
+}
+/* Quick specs*/
+.quickspec-wrapper {
+	margin-top: 15px;
+	text-shadow: none;
+	> .row:first-child {
+		> div + div {
+			.view-prices {
+				display: none;
+			}
+		}
+	}
+}
+.review-wrapper + .quickspec-wrapper {
+	margin-top: 0;
+}
+.quick-spec {
+	min-height: 123px;
+	padding: 9px;
+	margin-bottom: 10px;
+	min-width: 215px;
+	border-radius: 2px;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, .4);
+
+	> .row:first-child {
+		padding-bottom: 10px;
+		& + .row {
+			margin: 0 -6px;
+			> div {
+				border-right: solid 1px $colour-default-white;
+				border-right: solid 1px rgba(255, 255, 255, .3);
+
+				&:last-child {
+					border-right: none;
+				}
+
+				padding: 0 6px;
+				> .row {
+					
+					&:first-child {
+						min-height: 26px;
+					}
+					
+					margin: 0 -6px;
+					> .col-xs-12 {
+						padding: 0 6px;
+					}
+				}
+			}
+		}
+	}
+	@include trans(bg, $colour-vi-cyan-1, .9);
+	&.prices {
+		@include trans(bg, $colour-default-grey-1, .9);
+
+		> .row:first-child{
+			& + .row { 
+				> div {
+					border-right: solid 1px $colour-default-grey-2;
+					border-right: solid 1px rgba(6, 6, 6, .5);
+					&:last-child {
+						border-right: none;
+					}
+				}
+			}
+		}
+
+		p {
+			@include trans(color, $colour-default-white, .7);
+		}
+	}
+	&.promo {
+		@include trans(bg, $colour-promo-1, .9);
+		> .row:first-child{
+			padding-bottom: 16px;
+
+			> div:last-child {
+				padding: 0;
+				.btn-simple {
+					float: right;
+					margin-right: 15px;
+				}
+			}
+
+			& + .row { 
+				.row:first-child{
+					min-height: inherit;
+				}
+			}
+		}
+
+		p {
+			color: $colour-default-black;
+			&.title {
+				color: $colour-default-black;
+			}
+		}
+	}
+
+	p {
+		@include trans(color, $colour-default-white, .5);
+		font-family: $font-toyota-text-regular;
+		@include font-size(13, 1.3);
+		text-indent: 0;
+		text-align: left;
+		&.title {
+			color: $colour-default-white;
+			font-family: $font-toyota-text-bold;
+			@include font-size(18, 2.2);
+			white-space: nowrap;
+		}
+		&.quickspec-label {
+			min-height: 26px;
+		}
+		&.metric {
+			color: $colour-default-white;
+			font-family: $font-toyota-text-bold;
+			@include font-size(20,3.0);
+			a {
+				color: $colour-default-white;
+			}
+		}
+		&.unit {
+			white-space: nowrap;
+		}
+		&.from {
+			line-height: 20px;
+		}
+	}
+
+	.col-xs-4 {
+		padding: 0;
+	}
+
+	.col-number {
+		width: auto;
+	}
+
+	.view-prices {
+		color: $colour-default-white;
+		font-family: $font-toyota-text-bold;
+		@include font-size(12);
+		text-align: right;
+		padding-right: 17px;
+		text-decoration: none;
+		white-space: nowrap;
+		display: none;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	.btn-simple {
+		padding: 4px 5px;
+		@include trans(bg, $colour-default-black, .2);
+		&:hover {
+			text-decoration: none;
+			@include trans(bg, $colour-default-black, .4);
+		}
+	}
+
+	// here reversing an extremely generic rule that probably shouldn't exist:
+	.col-xs-12, .col-sm-12 {
+		padding-bottom: 0;
+	}
+}
+
+.quickspec-disclaimer {
+	padding-bottom: 0;
+}
+.disclaimer {
+  	margin-bottom: 10px;
+	padding: 8px 10px;
+	float:left;
+	border-radius: 2px;
+	font-family: $font-toyota-text-regular;
+	border: none;
+	box-shadow: none;
+	text-decoration: none;
+	@include trans(bg, $colour-default-black, 0.4);
+	color:$colour-default-white;
+	@include clearfix;
+	a {
+		color:$colour-default-white;
+	}
+}
+.js .disclaimer {
+	display: none;
+}
+.disclaimer-text {
+	@include font-size(13, 2);
+	text-align: left;
+}
+.disclaimer-close {
+	@include font-size(12, 1.6);
+	font-family: $font-toyota-text-bold;
+	text-decoration: none;
+	color:$colour-default-white;
+	float: left;
+	margin: 5px;
+	display: none;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+.js .disclaimer-close {
+	display: block;
+}
+.disclaimer-view {
+	display: none;
+	margin-bottom: 10px;
+}
+.js .disclaimer-view {
+	display: block;
+	float: left;
+}
+
+@media (min-width: $screen-sm) and (max-width: $screen-sm) {
+	.disclaimer {
+		min-height: 123px;
+	}
+}
+
+@media (min-width: $screen-sm) {
+	.carousel .quickspec-caption {
+		padding: 15px;
+	}
+
+  	div.quickspec-caption {
+	  	.icon-play {
+		  	left: 80%;
+		  	margin: 0;
+		  	padding: 20px 26px;
+		}
+	}
+
+	.quick-spec {
+		margin-bottom: 0;
+		&.promo {
+			> .row:first-child > div:last-child {
+				padding: 0;
+				.btn-simple {
+					float: none;
+					margin-right: auto;
+				}
+			}
+		}
+		p {
+			&.metric {
+				@include font-size(26,3.4);
+			}
+		}
+		.view-prices {
+			display: block;
+		}
+	}
+	.disclaimer {
+		float:none;
+	}
+}
+
+@media (min-width: $screen-md) {
+	/* Quick specs*/
+	div.quickspec-caption {
+		top:40px !important;
+	}
+	.review-quickspec-wrapper {
+		left: 50%;
+		margin-left: -(($container-md/2));
+		position: absolute;
+		top: 380px;
+	}
+	.carousel + .review-quickspec-wrapper {
+		top: 180px;
+	}
+	.quickspec-wrapper {
+		position: relative;
+		z-index: 10;
+		top: 109px;
+		right: 0;
+		left: 0;
+		margin-top: 0;
+		&:only-child {
+			top: 50px;
+		}
+	}
+	div.col-quick-spec {
+		width: auto;
+	}
+	.disclaimer {
+		margin-top: -10px;
+	}
+	.js .disclaimer-view {
+		margin-top: -10px;
+	}
+}
+
+@media (min-width: $screen-md) and (max-width: $screen-lg - 1) {
+	/* Carousel */
+	#mainfocus .quickspec-caption {
+		h1 {
+			@include font-size(50);
+		}
+	}
+}
+
+/* recalculating the margin left for different width of container */
+@media (min-width: $screen-lg) {
+	div.quickspec-caption {
+		top: 100px !important;
+	}
+	.review-quickspec-wrapper {
+		margin-left: -($container-lg/2);
+	}
+	.carousel + .review-quickspec-wrapper {
+		top: 240px;
+	}
+}
+
+@media (min-width: $screen-lg) and (max-width: $screen-xl - 1) {
+	.quickspec-section .carousel .carouselNav .carousel-control {
+		bottom: 0;
+		&.right {
+			right: 5px;
+		}
+		&.left {
+			left: 5px;
+		}
+	}
+}
+
+@media (min-width: $screen-xl) {
+	.review-quickspec-wrapper {
+		top: 425px;
+	}
+	.carousel + .review-quickspec-wrapper {
+		top: 425px;
+	}
+	.quickspec-wrapper {
+		&:only-child{
+			top: 175px;
+		}
+	}
+}

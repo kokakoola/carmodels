@@ -1,0 +1,6 @@
+@media (min-width: $screen-sm-min) {
+	.intro-text {
+		@include box-shadow(0 200px 190px -200px rgba(0, 0, 0, 0.3) inset);
+		margin-bottom: 25px;
+	}
+}

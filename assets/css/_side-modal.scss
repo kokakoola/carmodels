@@ -1,0 +1,123 @@
+// directional modal
+//http://jsfiddle.net/daverogers/mu5mvba0/
+.modal.fade:not(.in).left .modal-dialog {
+  -webkit-transform: translate3d(-25%, 0, 0);
+  transform: translate3d(-25%, 0, 0);
+}
+.modal.fade:not(.in).right .modal-dialog {
+  -webkit-transform: translate3d(125%, 0, 0);
+  transform: translate3d(125%, 0, 0);
+  -webkit-transition-duration: all 10s ease-in-out;
+  transition-duration: all 10s ease-in-out;
+  z-index: 1060;
+}
+.modal.fade:not(.in).bottom .modal-dialog {
+  -webkit-transform: translate3d(0, 125%, 0);
+  transform: translate3d(0, 125%, 0);
+}
+
+.modal-dialog.fullscreen {
+
+  width: 100%;
+  margin: $height-navbar-top+14px 0 0 0;
+  height: 100vh;
+  .toolbar {
+    width: 70px;
+    float: left;
+    background-color: $colour-default-grey-1;
+    height: 100vh;
+    display: inline-block;
+    z-index: $pageoverlayer-toolbar-zindex;
+    // top: 0 px\9;
+    // bottom: 0 px\9;
+    // left: 0 px\9;
+    text-align: center;
+    a {
+      &:hover {
+        cursor: pointer;
+        span {
+          color: $colour-btn-red-2;
+        }
+        text-decoration: none;
+        .btn-back {
+          .btn-graphic {
+            background-image: none;
+            background-color: #ffffff
+          }
+        }
+      }
+    }
+    span {
+      color: $colour-default-white;
+    }
+    .close-icon {
+      display: block;
+      @include font-size(20);
+      padding: 14px 0;
+      position: absolute;
+      text-align: center;
+    }
+    .btn-back {
+      margin: 15px;
+      width: $pageoverlayer-toolbarsize-mobile;
+      height: $pageoverlayer-toolbarsize-mobile;
+      line-height: 0.2;
+
+
+      .btn-graphic {
+        padding: 8px 16px 8px 14px;
+        line-height: 1;
+        position: relative;
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        @include font-size(24);
+        background-color: #e9eaec;
+        background-image: linear-gradient(180deg, #fff 0%, #e9eaec 100%);
+        @include border-radius(3px);
+      }
+    }
+    .back-text {
+      display: block;
+      font-family: toyotatext_rg;
+      @include font-size(15);
+      text-align: left;
+      white-space: nowrap;
+      -moz-transform: rotate(270deg);
+      -ms-transform: rotate(270deg);
+      -webkit-transform: rotate(270deg);
+      transform: rotate(270deg);
+      bottom: 45px;
+      left: 19px;
+      padding-left: 20px;
+      transform-origin: 0 0 0;
+      -webkit-transform-origin: 0 0 0;
+      -ms-transform-origin: 0 0;
+      -o-transform-origin: 0 0 0;
+      position: absolute;
+    top: 180px;
+
+    }
+    .close-link {
+      display: block;
+      position: fixed;
+      //position: absolute;
+    }
+  }
+}
+.modal-content {
+  border-radius: 0;
+  border: none;
+  display: inline-block;
+  width: 100%;
+  .modal-body {
+    padding: 0;
+  }
+  .in-modal {
+    float: right;
+    width: -moz-calc(100% - 70px);
+    width: -webkit-calc(100% - 70px);
+    width: calc(100% - 70px);
+  }
+}
+// end modal

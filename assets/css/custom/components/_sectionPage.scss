@@ -1,0 +1,172 @@
+#mainfocus .hero-unit.articles-list-section-title{
+	height: 180px;
+	header {
+		padding-top: 5px;
+	}
+}
+
+.articles-list {
+	padding-bottom: 10px;
+	.section-title {
+		.filter-title {
+			margin-bottom: 30px;
+		}
+		.no-padding {
+			padding-bottom: 0px;
+		}
+		.category-tag {
+			cursor: pointer;
+		}
+	}
+	h2 {
+		font-family: $font-toyota-display-bold;
+	  	@include font-size(26);
+	}
+	h2, h3 {
+		padding: 0;
+		margin: 0;
+		color: $colour-default-grey-1;
+		text-align: center;
+	}
+
+	.category-tag {
+		padding: 5px;
+		color: $colour-default-white;
+		margin-right: 8px;
+		border-radius: 3px;
+		display: inline-block;
+		input[type=checkbox] {
+			+ label {
+				&:before {
+					border-color: $colour-default-white;
+					background-color: transparent;
+				}
+				&:after {
+					border-color: $colour-default-white;
+				}
+			}
+		}
+		&.stories {
+			background: $colour-promo-3;
+		}
+		&.news {
+			background: $colour-vi-red-1;
+		}
+		&.events {
+			background: $colour-vi-navy-1;
+		}
+		&.unchecked {
+			background: none;
+			color: $colour-default-grey-2;
+			input[type=checkbox] {
+				+ label {
+					&:before {
+						border-color: $colour-default-grey-2;
+					}
+					&:after {
+						border-color: $colour-default-grey-2;
+					}
+				}
+			}
+		}
+		label {
+			margin: 0;
+			cursor: pointer;
+		  	letter-spacing: 0;
+		  	font-weight: normal;
+		}
+	}
+	.list-buttons {
+		width: 100%;
+		border-bottom: none;
+	  	display: inline-table;
+		margin-bottom: 30px;
+		text-align: center;
+		height: 24px;
+		.buttons-background {
+			display: block;
+			padding: 0;
+			background: none;
+		  	.btn {
+			  	width: 100%;
+			}
+		}
+	}
+	.spotlights {
+		padding: 0;
+		min-height: 0;
+		.section-title {
+			margin: 45px 0 25px;
+		}
+	}
+	.section-latest-articles:nth-child(2) {
+		background: $colour-default-grey-5;
+	}
+}
+
+.about-spotlight {
+	padding-top: 50px;
+	padding-bottom: 0px;
+	background: $colour-default-grey-5;
+}
+.lt-ie9 {
+	.articles-list {
+		padding-bottom: 10px;
+		.top-margin {
+			margin-top: 60px;
+			margin-bottom: 90px;
+		}
+	}
+}
+
+@media (max-width: $screen-xs-max) {
+	.articles-list {
+  		.list-buttons {
+		  	.buttons-background {
+			  	.jump-top {
+					box-shadow: none;
+					border: none;
+					background: none;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $screen-sm) {
+	#mainfocus .hero-unit.articles-list-section-title{
+		height: 430px;
+		header {
+		  	padding-top: 130px;
+		}
+	}
+	.articles-list {
+	  	padding-bottom: 60px;
+		@include box-shadow(inset 0 0 200px rgba(108,112,115,.2));
+		
+		.section-latest-articles:nth-child(2) {
+			background: transparent;
+		}
+	  	h2 {
+		  	@include font-size(34);
+		}
+	  	.list-buttons {
+		  	display: block;
+		  	border-bottom: 1px solid $colour-share-grey-separator;
+		  	.buttons-background {
+				padding: 0 10px;
+				background: $colour-default-white;
+				display: inline-block;
+			  	.btn {
+				  	width: auto;
+				}
+			  	.jump-top {
+				  	display: none;
+				}
+			}
+		}
+	}
+	.about-spotlight {
+		background: transparent;
+	}
+}

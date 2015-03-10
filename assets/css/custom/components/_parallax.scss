@@ -1,0 +1,371 @@
+/* =============================================================================
+ * parallax v0.6
+ * KGH: fix background size medium header
+ * ========================================================================== */
+.bg-image-hero {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+	position: relative;
+}
+.parallax-dark {
+	h1, h2 {
+		color: $colour-default-grey-1;
+	}
+}
+.parallax-light{
+	h1, h2 {
+		color: $colour-default-white;
+		text-shadow: 0 1px $colour-shadow-text-dark;
+	}
+}
+.hero-fill {
+	text-align: center;
+	margin-bottom: 40px;
+}
+.content-hero {
+	padding-top: 50px;
+	a {
+		text-decoration: none;
+	}
+	.sprite-videoplayer-start-button{
+		cursor: pointer;
+		margin-top: 40px;
+	}
+}
+.parallax {
+	width: 100%;
+	&.top {
+		top: 56px;
+	}
+	&.bottom {
+		bottom: 0;
+		padding: 0;
+		z-index: 8;
+	}
+}
+.skrollable {
+	@include hardware-acceleration();
+}
+
+#mainfocus {
+	.hero-unit {
+		height: 240px;
+		background-size: cover;
+		background-position: center center;
+		&.hero-small {
+			height: auto;
+			img {
+				display: block;
+				width: 100%;
+			}
+			header {
+				padding-top: 20px;
+				h1, h2 {
+					color: #000;
+				}
+				h1 {
+					padding-top: 0px;
+				}
+			}
+			&.no-image {
+				header {
+					padding-top: 50px;
+				}
+			}
+		}
+		&.hero-medium {
+			margin-bottom: 20px;
+			img {
+				display: block;
+				width: 100%;
+			}
+
+			header {
+				height: 100%;
+				padding-top: 90px;
+
+			}
+
+			&.header-below{
+				margin-bottom:0px;
+				min-height: 420px !important;
+				height:auto;
+				header{
+					padding-top: 20px;
+					position:relative;
+					min-height: 0;
+					height:auto;
+				}
+			}
+
+		}
+
+	}
+}
+.fleet{
+	#mainfocus {
+		.hero-unit.hero-medium.fullwidth {
+			margin-bottom:0px;
+		}
+	}
+}
+
+#footfocus {
+	.hero-unit {
+		min-height: 285px;
+		.foot-menu {
+			list-style-type: none;
+			padding: 0;
+			text-align: center;
+			margin: 0;
+			background: #333;
+			background: rgba(0,0,0,0.3);
+			li {
+				margin: 0;
+				a {
+					text-shadow: 0 1px rgba(2, 3, 3, 0.2);
+					text-decoration: none;
+					font-family: $font-toyota-text-bold;
+					@include font-size(14, 5);
+					color: $colour-default-white;
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+	}
+}
+.article-container-foot-clickable {
+	&:hover{
+		text-decoration: none;
+	}
+}
+.article-header-foot-parallax {
+	padding-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.page-disclaimer {
+	img {
+		width: 100%;
+	}
+}
+
+.lt-ie9 {
+	#footfocus .hero-unit {
+		background-position: center top;
+	}
+}
+
+@media (min-width: 480px) {
+	#mainfocus {
+		.hero-unit {
+			height: 300px;
+		}
+	}
+}
+
+@media (max-width: $screen-xs-max) {
+	.content-hero {
+		padding:0;
+		h1 {
+			@include font-size(32);
+			padding: 20px 0;
+		}
+		h2 {
+			@include font-size(14);
+		}
+	}
+}
+
+@media (min-width: $screen-sm-min) {
+	.bg-image-hero {
+		max-height: 680px;
+		&.content-hero {
+			height: 480px;
+		}
+	}
+	.article-header-foot-parallax  {
+		width: $container-sm;
+		padding-top: 100px;
+	}
+	#mainfocus {
+		.hero-unit {
+			height: 480px;
+			header{
+				padding-top: 170px;
+			}
+			&.hero-small {
+				height: auto;
+				background-size: 720px auto;
+				background-repeat: no-repeat;
+			  	background-position: center top;
+				margin-bottom: 0;
+				min-height: 160px;
+			}
+			&.hero-medium {
+				height: 265px;
+				background-size: 720px auto;
+				background-repeat: no-repeat;
+			  	background-position: center top;
+				header {
+					padding-top: 100px !important;
+				}
+				&.header-below{
+					height:auto;
+				}
+			}
+
+		  	&.fullwidth{
+		  		height: 420px !important;
+		  		background-size: 100% auto !important;
+		  		background-position: center center !important;
+		  	}
+
+		}
+	}
+	#footfocus {
+		.hero-unit {
+			height: 480px;
+		}
+	}
+
+	.fleet{
+		#mainfocus {
+			.hero-unit.hero-medium.fullwidth {
+				margin-bottom:0px;
+			}
+		}
+	}
+	
+}
+
+@media (max-width: $screen-sm-max) {
+	.content-hero {
+		.sprite-videoplayer-start-button{
+			margin-top: 20px;
+			margin-bottom: 40px;
+		}
+	}
+}
+
+@media (min-width: $screen-md-min) {
+	.bg-image-hero {
+		height: 680px;
+		max-height: none;
+		&.content-hero {
+			height: 500px;
+		}
+	}
+	.parallax {
+		&.top {
+			top: 70px;
+		}
+	}
+	#mainfocus {
+		.hero-unit {
+			height: 680px;
+			header {
+				padding-top: 170px;
+			}
+			&.hero-small {
+				background-size: 940px auto;
+				min-height: 254px;
+				header {
+					padding-top: 50px;
+					padding-bottom: 70px;
+				}
+				&.no-image {
+					height: auto;
+					header {
+						padding-top: 120px;
+					}
+				}
+			}
+
+			&.hero-medium {
+				height: 346px;
+				background-size: 940px auto;
+				margin-bottom: 40px;
+				header {
+					height: 420px;
+					padding-top: 170px;
+				}
+				h1 {
+					padding-top: 0px;
+				}
+				&.header-below{
+					height:auto;
+					header{
+						position:relative;
+						padding-top: 50px;
+						padding-bottom: 70px;
+						min-height: 0;
+						height:auto;
+					}
+				}
+			}
+
+
+			&.hero-unit-half {
+				height: 370px;
+			}
+		}
+	}
+	#footfocus {
+		.hero-unit {
+			position: relative;
+			height: 720px;
+			.foot-menu {
+				width: 100%;
+				z-index: 6;
+				position: fixed;
+				bottom: 0;
+				li {
+					display: inline;
+					margin: 0 10px;
+					a {
+						line-height: 70px;
+					}
+				}
+			}
+		}
+	}
+	.article-header-foot-parallax  {
+		width: $container-md;
+	}
+
+	.fleet{
+		#mainfocus {
+			.hero-unit.hero-medium.fullwidth {
+				margin-bottom:0px;
+			}
+		}
+	}
+
+}
+
+@media (min-width: $screen-lg-min) {
+	#mainfocus, #footfocus {
+		.hero-unit {
+			height: 909px;
+			height: 93vh;
+			&.hero-small {
+				background-size: 1140px auto;
+			}
+			&.hero-medium {
+				height: 420px;
+				background-size: 1140px auto;
+		  	}
+
+
+		}
+	}
+	.article-header-foot-parallax  {
+		width: $container-lg;
+	}
+}

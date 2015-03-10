@@ -1,0 +1,112 @@
+#searchcomponent{
+	.search-title{
+		.section-title{
+			.heading1{
+
+			}
+		}
+	}
+	.search-component{
+		.search-form{
+			padding: 0;
+			.search-filter-options{
+				position: relative;
+				.dropdown-border{
+					width: 100%;
+				}
+				.search-filter-options-inner{
+					padding: 25px 15px;
+					margin: 0;
+					position: absolute;
+					right: 0;
+					top: 28px;
+					width: 206%;
+				}
+				.search-result-selected-update-button{
+					float: right;
+					padding: 11px 36px 16px;
+				}
+			}
+
+			.search-result-counts,.search-no-results{
+				display:none;
+				text-align: center;
+				margin: 20px auto;
+				@include font-size(24);
+			}
+			.search-result-selected-filters{
+				padding-bottom: 5px;
+				border-bottom: 1px solid $colour-paragraph-border;
+				.filter-prefix{
+					display:none;
+				}
+				.search-result-selected-filter{
+					font-family: $font-toyota-text-bold;
+					margin: 0 5px;
+					i{
+						background: $colour-default-grey-3;
+						margin-left: 5px;
+						padding: 0 1px 1px 1px;
+						@include font-size(10);
+						cursor: pointer;
+					}
+				}
+			}
+		}
+		.search-results{
+			.search-results-inner{
+				.search-result-node{
+					padding: 20px 5px;
+					border-bottom: 1px solid $colour-paragraph-border;
+					text-decoration: none;
+					display: block;
+					.search-result-title{
+						font-family: $font-toyota-text-bold;
+					}
+					.search-result-date{
+						@include font-size(12);
+					}
+					.search-result-body{
+						color: $colour-default-grey-2;
+						highlight{
+							background-color: $search-result-highlight-color;
+						}
+					}
+					&:hover{
+						background: $search-result-background-color;
+						.search-result-title{
+							color: $colour-default-red;
+						}
+						.search-result-date{
+							color: $colour-default-grey-1;
+						}
+						.search-result-body{
+							color: $colour-default-grey-1;
+						}
+					}
+				}
+				.search-result-active-node{
+					background: $colour-default-grey-3;
+					.search-result-title{
+						color: $colour-default-red;
+					}
+				}
+			}
+		}
+	}
+}
+.lt-ie9{
+	.overlayerWrapper{
+		.overlayerContent{
+			.search-component{
+				.search-form{
+					.spotlights-filter{
+						.dropdown{
+							height: 44px !important;
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,918 @@
+/**=============================================================================
+ * navigation
+ * version 1.1
+ * KGH: remove hw acc
+ * ========================================================================== */
+.navbar {
+	margin-bottom: 0 !important;
+	.float-left {
+		float: left;
+		padding-left: 0;
+	}
+	.float-right {
+		position:relative;
+		float: right;
+	}
+	ul, ol {
+		list-style-type: none;
+	}
+}
+
+#nav-secondary-level {
+	width: 100%;
+	max-height: 60px;
+	overflow: hidden;
+	position: fixed;
+	top: $height-navbar-top-md;
+	z-index: $navbar-fixed-top-zindex;
+	background-color: rgba(30, 42, 50, .9);
+	box-shadow: 0 2px 2px rgba(2, 2, 2, .15);
+	.container {
+		padding-right: 105px;
+		padding-left: 15px;
+	}
+	ul li {
+		position: relative;
+		display: inline-table;
+		transition: background-color 0.66s ease-out;
+		margin-right: -3px;
+		&.active {
+			background-color: $colour-navbar-active-secondary;
+		}
+		&:hover {
+			background-color: $colour-navbar-active-secondary;
+		}
+		a {
+			display: block;
+			color: $colour-second-level-menu;
+			padding: 19px 20px 20px 20px;
+			text-decoration: none;
+			&:hover {
+				text-decoration: none;
+			}
+		}
+		&.dropdown {
+			display: none;
+			width: auto;
+		}
+		> a{
+			i.icon-chevron-down{
+				padding-left: 3px;
+			}
+		}
+		> .sub-menu {
+			height: 0;
+			overflow: hidden;
+			right: 0;
+			border: 0px;
+			position: absolute;
+			top: 100%;
+			background: rgba(30, 42, 50, 0.98);
+			transition: opacity 0.66s ease;
+			@include opacity(0);
+			border-radius: 0;
+			// @include single-box-shadow(none);
+			> li {
+				white-space: nowrap;
+				display: block;
+				margin-right: 0px;
+				text-align: left;
+			}
+		}
+		&:hover {
+			> .sub-menu {
+				height: auto;
+				overflow: auto;
+				@include opacity(1);
+			}
+		}
+	}
+}
+
+.navbar-fixed-top {
+	background: $colour-default-white;
+	@include gradient-vertical($colour-default-grey-3, $colour-default-white);
+	filter: none;
+	box-shadow: 0 2px 2px $colour-shadow-box-dark;
+	height: $height-navbar-top;
+	overflow: visible;
+	width: 100%;
+	position: absolute !important;
+	border-bottom: none;
+	> .container {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.large-nav {
+		> a {
+			// mobile
+			.hidden-xs {
+				float: left;
+			}
+			.visible-xs {
+				@include font-size(21);
+			}
+			i {
+				margin-left: 3px;
+				line-height: 18px;
+			}
+			background-color: rgba(255, 255, 255, 0);
+			border-right: 1px solid $colour-navbar-border;
+			display: block;
+			float: left;
+			height: $height-navbar-top;
+			padding: 24px 20px 10px;
+			font-family: toyotatext_bd;
+			text-decoration: none;
+			transition: background-color 0.66s ease;
+			&.active {
+				background-color: $colour-navbar-active;
+				color: $colour-default-white;
+				a {
+					color: $colour-default-white;
+				}
+			}
+		}
+	}
+	.logo-link {
+		display: block;
+		transition: all 0.66s ease;
+		&#logo-medium {
+			opacity: 0;
+			margin-left: 15px;
+			box-shadow: none;
+		}
+		&#logo-big {
+			z-index: 10000;
+		}
+	}
+	.my-toyota {
+		a {
+			font-family: inherit;
+		}
+	}
+	.open {
+		> a.dropdown-toggle {
+			background-color: $colour-navbar-active !important;
+			color: $colour-default-white;
+			&:hover {
+				color: $colour-default-white !important;
+			}
+		}
+	}
+}
+
+.nav-tabs {
+	a {
+		text-decoration: none;
+	}
+}
+
+.dropdown-menu {
+	padding: 0;
+	border: none;
+	min-width: 0px !important;
+	@include hardware-acceleration();
+	&#dropdown-menu-car {
+		background-color: $colour-navbar-active;
+		display: block !important;
+		margin-top: 0;
+		left: 0;
+		right: 0;
+		border-radius: 0;
+		z-index: 10000;
+		box-shadow: none;
+
+		.maincontainer > .navigation-menu {
+			padding: 20px 0;
+			a {
+				color: $colour-default-white;
+				&:hover {
+					text-decoration: none;
+				}
+			}
+			&.visible-xs {
+				> ul {
+					margin-bottom: 10px;
+					> li > a {
+						&.btn {
+							margin: 0 10px 10px;
+						}
+						&.raw-btn {
+							height: 48px;
+							font-family: $font-toyota-text-bold;
+							@include font-size(17);
+							padding: 10px 19px 0;
+							border-top: 1px solid $colour-navbar-menu-border;
+							border-bottom: 1px solid $colour-vi-coolgrey11-2;
+						}
+						.icon-share-alt {
+							margin-left: 5px;
+						}
+					}
+					.input-search {
+						padding: 0px 10px;
+						input[type=text] {
+							width: 100%;
+							margin: 0 0 10px 0;
+						}
+					}
+					.share-button .share-box .share-options {
+						a {
+							height: auto;
+							display: inline-block;
+							border: none;
+							&.separator {
+								border: none;
+								border-bottom: 1px solid $colour-share-grey-separator;
+							}
+							color: $colour-default-grey-1;
+						}
+					}
+					.social-media-links{
+						margin-top: 10px;
+					}
+					&:last-of-type {
+						margin-bottom: 0;
+					}
+				}
+			}
+			.model-list {
+				a {
+					height: auto;
+					padding: 0;
+					border-radius: 2px;
+					@include font-size(13, 1.7);
+					border-bottom: 1px solid #2B373E;
+					margin: -5px 0 10px 0;
+					padding: 5px 0 10px 5px;
+					transition: background-color 0.25s ease-out 0s;
+					&:hover {
+						background-color: rgba(0, 0, 0, 0.25);
+					}
+					span {
+						display: block;
+						margin-top: -30px;
+						opacity: 0.8;
+						transition: opacity 0.25s ease-out 0s;
+						color: $colour-default-grey-6;
+						strong {
+							display: block;
+							color: $colour-default-white;
+							@include font-size(15);
+						}
+					}
+					div.hybrid{
+						background: #00a0f0;
+						position: absolute;
+						font-family: toyotatext_bd;
+						@include font-size(11);
+						opacity: 0.9 !important;
+						top:46px;
+						line-height:15px;
+						background: $colour-vi-cyan-1;
+						border-radius: $border-radius-small;
+						color: $colour-default-white !important;
+						padding: 2px 4px;
+					}
+
+				}
+				.disclaimer {
+					background: none;
+					padding: 0;
+					margin-top: 30px;
+					margin-left: -15px;
+					color: $colour-default-grey-6;
+					@include font-size(17);
+					a {
+						color: $colour-promo-2;
+						@include font-size(17);
+						&:hover {
+							background: none;
+							text-decoration: underline;
+						}
+					}
+				}
+			}
+			.link-list {
+				color: $colour-default-grey-6;
+				float: right;
+				@include font-size(15);
+				> li {
+					font-family: toyotatext_bd;
+					margin: 0 0 10px;
+					padding: 10px;
+					ul li {
+						background-color: rgba(0, 0, 0, 0);
+						font-family: toyotatext_rg, Verdana, Geneva, Arial, Helvetica, sans-serif;
+						margin: 8px 0;
+						&.social-media-item {
+							margin: 0;
+						}
+						a {
+							color: $colour-default-grey-6;
+							&:hover {
+								color: $colour-default-white;
+							}
+						}
+					}
+					&.link-block {
+						background-color: $colour-default-grey-1;
+						border-radius: 2px;
+						transition: background-color 0.25s ease-out 0s;
+					}
+					&.link-block-cta {
+						@include gradient-vertical($colour-default-red, $colour-default-red-2);
+						border-radius: 2px;
+						box-shadow: 0 0 1px rgba(30, 42, 50, 0.4) inset;
+						padding-top: 2px;
+						a {
+							font-family: toyotatext_bd;
+							color: $colour-default-white;
+							&:hover {
+								span{
+									text-decoration: underline;
+								}
+								i.icon-chevron-right {
+									text-decoration: none;
+								}
+							}
+						}
+					}
+					&.social-media-white {
+						padding-top: 0;
+					}
+				}
+			}
+		}
+	}
+	&#menu-search {
+		width: 0px !important;
+		height: $height-navbar-top;
+		float: left;
+		margin-top: 0;
+		@include transition(width 0.4s ease);
+		background-color: $colour-navbar-active;
+		border: medium none;
+		border-radius: 0px;
+		overflow: hidden;
+		z-index: 10001;
+	}
+}
+
+.input-search {
+	box-shadow: none;
+	input[type=text] {
+		float: left;
+		background-color: $colour-bg-grey-textfield;
+		border: 0 none;
+		border-radius: 4px;
+		color: $colour-default-white;
+		font-family: toyotatext_rg;
+		@include font-size(15);
+		margin: 10px 10px;
+		padding: 8px 50px 10px 15px;
+		width: 95%;
+		right: 10px;
+	}
+	a {
+		border: none !important;
+		width: 35px !important;
+		height: 35px !important;
+		opacity: 0.8;
+		display: inline;
+		&:hover {
+			opacity: 1;
+		}
+	}
+	.icon-search {
+		display: block;
+		@include font-size(20);
+		right: 10px;
+		position: absolute;
+		width: 35px;
+		padding-top: 10px;
+	}
+}
+
+.breadcrumb {
+	position: absolute;
+	top: $height-navbar-top;
+	left: 0px;
+	height: $height-navbar-top;
+	width: 100vw;
+	@include font-size(13);
+	text-align: left;
+	color: $colour-default-white;
+	background: $colour-default-grey-1;
+	padding-left: 15px;
+	@include transition(all 0.4s ease);
+	vertical-align: left;
+	width: 100%;
+	li {
+		display: inline-block;
+		color: $colour-default-grey-2;
+		padding-right: 5px;
+		&.active {
+			font-family: toyotatext_bd;
+			> a, > a:hover {
+				color: $colour-default-grey-1;
+				cursor: default;
+			}
+			i {
+				display: none;
+				&.sprite-menu-dark-arrow {
+					display: inline-block;
+					padding-left: 0;
+					position: absolute;
+					bottom: 0px;
+					left: 50%;
+					height: 11px;
+					width: 26px;
+				  	background-position: 0 -41px;
+				}
+			}
+		}
+		a {
+			display: inline-block;
+			&:hover {
+				color: $colour-default-red;
+				text-decoration: none;
+			}
+		}
+		i {
+			display: inline-block;
+			padding-left: 5px;
+			&.sprite-menu-dark-arrow {
+				display: none;
+			}
+		}
+	}
+}
+
+
+#second-level-buttons {
+	width: 100%;
+	margin: 10px 0;
+	.btn {
+		margin: 0 10px 6px 10px;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+// ie8 fixes
+.lt-ie9 {
+	.navbar {
+		.dropdown-menu {
+			display: none !important;
+
+			&#dropdown-menu-car {
+				background-color: transparent;
+
+				.maincontainer > .navigation-menu > .row {
+					display: none !important;
+				}
+			}
+		}
+		.open {
+			> .dropdown-menu {
+				display: block !important;
+
+				&#dropdown-menu-car {
+					background-color: $colour-navbar-active;
+
+					.maincontainer > .navigation-menu > .row {
+						display: block !important;
+					}
+				}
+			}
+		}
+	}
+	#nav-secondary-level {
+		background-color: #1E2A32;
+		ul li {
+			> .sub-menu {
+				background-color: #1E2A32;
+			}
+		}
+	}
+	.breadcrumb {
+		left: -1000px;
+	}
+}
+
+// touch fixes
+.touch {
+	#nav-secondary-level {
+		ul li {
+			&:hover {
+				> .sub-menu {
+					display: none;
+					@include opacity(0);
+				}
+			}
+		}
+	}
+	.navbar-fixed-top {
+		.large-nav {
+			> a {
+				&:hover {
+					background-color: rgba(255, 255, 255, 0);
+					color: $colour-default-grey-1;
+				}
+			}
+		}
+	}
+}
+
+// smartphones specific rules
+@media (max-width: $screen-xs-max) {
+	.navbar-fixed-top {
+		.dropdown {
+			position: absolute;
+			width: 100%;
+		}
+		.large-nav {
+			> a {
+				padding-top: 20px;
+			}
+		}
+		#logo-small {
+		  	position:absolute;
+		  	right:0;
+		}
+	}
+	.dropdown-menu {
+		width: 100%;
+		&#dropdown-menu-car {
+			width: 100%;
+			left: -100%;
+			overflow: hidden;
+			background: none;
+			height: auto !important;
+			transition-delay: 0s;
+			@include transition(left 0.1s 0.4s);
+
+			.maincontainer {
+				width: 100%;
+				position: relative;
+				top: -1200px;
+				margin-bottom: 12px;
+				background-color: $colour-navbar-active;
+				@include transition(all 0.4s ease-out);
+				@include box-shadow(0 6px 12px rgba(0, 0, 0, 0.175));
+			}
+		}
+	}
+	.open {
+		.dropdown-menu {
+			width: 100%;
+			&#dropdown-menu-car {
+				width: 100%;
+				transition-delay: 0s;
+				-webkit-transition-delay: 0s;
+				left: 0px;
+				.maincontainer {
+					width: 100%;
+					top: 0px;
+				}
+			}
+		}
+	}
+	.breadcrumb {
+		margin: 0px;
+		padding-top: 13px;
+		padding-bottom: 13px;
+		max-height: 45px;
+		li.active {
+			color: $colour-default-white;
+			i {
+				display: none;
+			}
+			> a, > a:hover {
+				color: $colour-default-white;
+			}
+		}
+		a {
+			color: $colour-default-white;
+		}
+	}
+	.homepage{
+		.breadcrumb {
+			display:none;
+		}
+	}
+}
+
+// tablet (portrait) specific rules
+@media (min-width: $screen-sm) {
+	.navbar-fixed-top {
+		position: fixed !important;
+		z-index: $navbar-fixed-my-toyota-zindex;
+		.container {
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+		.large-nav {
+			> a {
+				&:first-child {
+					border-left: 1px solid $colour-navbar-border;
+				}
+				&:hover {
+					background-color: $colour-default-grey-1;
+					color: $colour-default-white;
+				}
+			}
+		}
+		.dropdown {
+			position: relative;
+			width: auto;
+		}
+	}
+	.dropdown-menu {
+		&#dropdown-menu-car {
+			position: fixed;
+			top: $height-navbar-top;
+		//	width: 102%;
+			height: 0px;
+			padding: 0;
+			overflow-y: hidden;
+			@include transition(height 0.4s ease-out);
+
+			scrollbar-base-color: $colour-btn-dark-2;
+			scrollbar-face-color: $colour-btn-dark-2;
+			scrollbar-3dlight-color: $colour-bg-navy;
+			scrollbar-highlight-color: $colour-bg-navy;
+			scrollbar-track-color: $colour-bg-grey-textfield;
+			scrollbar-arrow-color: $colour-bg-grey-light;
+			scrollbar-shadow-color: $colour-btn-dark-2;
+			scrollbar-dark-shadow-color: $colour-bg-navy;
+
+			&::-webkit-scrollbar {
+				background-color: $colour-btn-dark-2;
+			}
+			&::-webkit-scrollbar-button {
+				color: $colour-bg-grey-light;
+				background-color: $colour-btn-dark-2;
+			}
+			&::-webkit-scrollbar-track {
+				background-color: $colour-bg-grey-textfield;
+			}
+			&::-webkit-scrollbar-track-piece {
+				background-color: $colour-bg-grey-textfield;
+			}
+			&::-webkit-scrollbar-thumb {
+				background-color: $colour-btn-dark-2;
+			}
+			&::-webkit-scrollbar-corner {
+				background-color: $colour-btn-dark-2;
+			}
+			&::-webkit-resizer {
+				background-color: $colour-btn-dark-1;
+			}
+			.maincontainer > .navigation-menu {
+				margin-top: 30px;
+				opacity: 0;
+				@include transition(all 0.25s ease);
+				> ul li {
+					a, input {
+						width: 100%;
+					}
+				}
+				.model-list {
+					padding-left: 25px;
+				  	a:nth-child(4n+1) {
+					  	clear: left;
+					}
+				}
+				.link-list {
+					float: right;
+				}
+			}
+		}
+		&#menu-search {
+			width: 0 !important;
+			overflow: hidden;
+			position: relative;
+			&.input-search {
+				input[type=text] {
+					display: none;
+				}
+			}
+
+		}
+		&#dropdown-menu-my-toyota {
+			@include transition(height 0.4s ease-out);
+			height: 0;
+			overflow-y: hidden;
+			position: absolute;
+			top: $height-navbar-top;
+			right: 1px;
+			left: auto;
+			display: block !important;
+			background-color: transparent;
+			border-radius: 0;
+			margin: 0;
+			@include box-shadow(none);
+			z-index: $navbar-fixed-my-toyota-zindex;
+			nav {
+				padding: 0;
+
+				div {
+					float: right;
+					min-width: 250px;
+
+					a, li {
+						display: block;
+						background-color: $colour-navbar-active;
+						color: $colour-default-white;
+						padding: 10px;
+						border-bottom: 1px solid $colour-navbar-menu-border;
+
+						&:first-child {
+							border-radius: 4px 0 0 0;
+						}
+
+						&:last-child {
+							border-radius: 0 0 4px 4px;
+							border-bottom: none;
+						}
+
+						&:after {
+							content: "\f105";
+							float: right;
+							font-weight: bold;
+							margin: -2px 0 0 10px;
+							@include font-size(24);
+						}
+					}
+				}
+			}
+		}
+	}
+	.input-search {
+		input[type=text] {
+			width: 0px;
+			margin: 6px 6px 0;
+			right: 45px;
+		}
+		> a {
+			color: $colour-default-white;
+			margin-top: 12px;
+		}
+		.icon-search {
+			@include font-size(26);
+			color: $colour-default-white;
+			left: 320px;
+			padding-top: 12px;
+		}
+	}
+	.breadcrumb {
+		position: static;
+		display: table-cell;
+		vertical-align: middle;
+		background: transparent;
+		width: 390px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		opacity: 1;
+		li.active {
+			color: $colour-default-grey-1;
+		}
+		a {
+			color: $colour-default-grey-2;
+		}
+	}
+	.open {
+		.dropdown-menu {
+			&#dropdown-menu-car {
+				padding-bottom: 80px;
+				height: 800px; // keep height prop for animation
+				overflow-y: scroll;
+				.maincontainer > .navigation-menu {
+					opacity: 1;
+				}
+			}
+			&#menu-search {
+				width: 368px !important;
+			}
+			&.input-search {
+				input[type=text] {
+					width: 345px;
+				}
+			}
+		}
+		.breadcrumb {
+			opacity: 0;
+		}
+	}
+}
+
+// tablet (portrait) specific rules
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+	#nav-secondary-level {
+		top: $height-navbar-top;
+		.container {
+			padding-right: 15px;
+		}
+	}
+	.dropdown-menu {
+		&#dropdown-menu-car {
+
+			.maincontainer > .navigation-menu {
+				padding: 0 15px;
+			}
+		}
+	}
+	.navbar-fixed-top {
+		.large-nav {
+			> a {
+				padding-top: 16px;
+			}
+		}
+	}
+}
+
+// desktop specific rules
+@media (min-width: $screen-md) {
+	.navbar-fixed-top {
+		height: $height-navbar-top-md;
+		.large-nav {
+			> a {
+				height: $height-navbar-top-md;
+			}
+		}
+		> .container {
+			padding-left: 15px;
+			padding-right: 105px;
+		}
+		.logo-link {
+			position: fixed;
+			top: 0;
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+		}
+	}
+	.dropdown-menu {
+		&#dropdown-menu-car {
+			top: $height-navbar-top-md;
+			.maincontainer > .navigation-menu {
+				padding-left: 35px;
+				padding-right: 15px;
+				.model-list {
+					padding-left: 15px;
+				  	a {
+					  	&:nth-child(4n+1) {
+						  	clear: none;
+						}
+						&:nth-child(3n+1) {
+						  	clear: left;
+						}
+					}
+				}
+				.link-list {
+					float: left;
+				}
+			}
+		}
+		&#menu-search {
+			height: $height-navbar-top-md;
+			input[type=text] {
+				margin: 10px 10px 0;
+				padding: 13px 50px 17px 15px;
+			}
+			.icon-search {
+				top: 19px;
+			}
+		}
+		&#dropdown-menu-my-toyota {
+			top: $height-navbar-top-md;
+		}
+	}
+	.input-search {
+		.icon-search {
+			padding-top: 0;
+		}
+	}
+	.breadcrumb {
+		height: $height-navbar-top-md;
+		//fix value for md to fit both breadcrumb and my toyota
+		width: 570px;
+	}
+	#nav-secondary-level {
+		top: $height-navbar-top-md;
+		.container {
+			padding-right: 105px;
+		}
+	}
+}
+
+// desktop large specific rules
+@media (min-width: $screen-lg) {
+	.breadcrumb {
+		//fix value for lg to fit both breadcrumb and my toyota
+		width: 770px;
+	}
+
+}

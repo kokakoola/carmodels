@@ -1,0 +1,132 @@
+/**=============================================================================
+* inpage cta
+* version 0.1
+*
+*
+* ========================================================================== */
+
+
+.inpage-cta {
+	width: 100%;
+	height: 250px;
+	padding-top: 0 !important;
+
+	box-shadow: inset 0 0 2px rgba(0,0,0,.15);
+	.container {
+		background-repeat: no-repeat;
+		height: 100%;
+		position: relative;
+		.arrow {
+			padding-left: 0;
+			position: absolute;
+			top: -19px;
+			border-left: 20px solid transparent;
+			border-right: 20px solid transparent;
+			border-bottom: 20px solid;
+			z-index: 10;
+
+		  	&.left-aligned {
+			  	left:30px;
+			  	right:auto !important;
+			}
+		}
+		&.left-aligned {
+			text-align: left;
+			background-position: top right;
+			.spacer {
+				display: none !important;
+			}
+		 	.arrow {
+				left:30px;
+			}
+		}
+		&.right-aligned {
+			text-align: right;
+			background-position: top left;
+			.spacer {
+				display: block !important;
+			}
+			.arrow {
+				right:30px;
+			}
+			.buttons, .description{
+				text-align: right;
+			}
+		}
+		.buttons {
+			padding-top: 40px;
+			padding-bottom: 40px;
+		}
+		.description {
+			color: $colour-cta-grey-1;
+			@include font-size(24, 3);
+		}
+	}
+	.btn-red {
+		margin-right: 6px;
+	  	margin-bottom: 6px;
+		&.last {
+			margin-right: 0;
+		}
+	}
+	+ article {
+		margin-top: 20px;
+	}
+}
+
+@media (min-width: $screen-md) {
+	.inpage-cta {
+		+ article {
+			margin-top: 40px;
+		}
+	}
+}
+
+@media (max-width: $screen-xs-max){
+	// cta
+	.inpage-cta {
+		border: none;
+		background: $colour-navbar-active !important;
+		padding-top: 22px !important;
+		padding: 22px 10px 9px;
+	  	box-shadow: none;
+
+		.container{
+			.buttons {
+				padding: 0;
+				a {
+					display: block;
+					margin-bottom: 13px;
+					span {
+						width: 85%;
+						text-align: left;
+						display: inline-block;
+					  	white-space: normal;
+					}
+					i {
+						width: 14%;
+						text-align: right;
+						display: inline-block;
+					}
+				}
+			}
+		}
+		.btn-red {
+			margin-right: 0;
+		}
+	}
+}
+
+@media (max-width: $screen-sm-max){
+	.inpage-cta {
+		height: auto;
+	  	box-shadow: none;
+
+		.container{
+			background: none !important;
+			&.right-aligned {
+				text-align: left;
+			}
+		}
+	}
+}

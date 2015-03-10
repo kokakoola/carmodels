@@ -1,0 +1,628 @@
+/**=============================================================================
+ * in page dealer finder
+ * version 1.2
+ * KGH: next steps dealerfinder
+ * ========================================================================== */
+
+.dealer-step {
+	display: none;
+	&.active {
+		display: block;
+	}
+	&.dealer-step-3 {
+		.search-form {
+			display: none;
+		}
+	}
+}
+
+.container#pane-dealer {
+	padding-left: 0;
+	padding-right: 0;
+	position: relative;
+	.btn-back {
+		display: none;
+		clear: both;
+		height: 47px;
+		i, span {
+			float: right;
+			width: auto;
+		}
+		i {
+			padding-right: 5px;
+		}
+	}
+	a.btn-call {
+		display: block;
+		text-decoration: none;
+		padding: 17px;
+		margin-bottom: 18px;
+		font-family: $font-toyota-text-bold;
+		border: 1px solid $colour-default-grey-1;
+		background: $colour-default-grey-1;
+		box-shadow: inset 0 20px 40px $colour-default-grey-9;
+		color: $colour-default-white;
+	}
+}
+
+.dealer-finder {
+	&.navy {
+		background: $colour-bg-navy;
+		h3 {
+			color: $colour-default-white;
+		}
+	}
+	.row {
+		margin: 0;
+		> .col-xs-12 {
+			padding-left: 0;
+			padding-right: 0;
+			> h5, > span {
+				padding-left: 6px;
+			}
+		}
+		> .col-padding-6 {
+			padding-left: 6px;
+			padding-right: 6px;
+		}
+	}
+	ul {
+		list-style-type: none;
+	}
+	.search-form {
+		h3.error-message {
+			margin-bottom: 15px;
+		}
+		h5, span {
+			padding-left: 0 !important;
+		}
+	}
+
+	// TODO: remove when functionalities present
+	.btn-gps, .btn-print, .btn-email {
+		display: none !important;
+	}
+
+	.bubble-gps {
+		.bubble-dark {
+		}
+	}
+	.hint {
+		padding-top: 10px;
+		color: $colour-default-grey-2;
+	}
+	.search-options {
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+		h5 {
+			border-bottom: solid 1px $colour-default-grey-8;
+		}
+		> .row {
+			> .col-xs-12 {
+				padding: 0 !important;
+			}
+		}
+		ul {
+			li {
+				border-bottom: solid 1px $colour-default-grey-8;
+				padding: 12px 6px;
+			}
+		}
+	}
+	.map {
+		height: 320px;
+		margin: 0 1px 6px 1px;
+		border: none;
+
+	}
+
+	.list-dealers {
+		> ul {
+			li {
+				display: block;
+				a {
+					display: block;
+					width: 100%;
+					padding: 12px 8px;
+					background: $colour-default-grey-10;
+					border-top: solid 1px $colour-default-white;
+					border-bottom: solid 1px $colour-default-grey-8;
+					position: relative;
+					div {
+						display: table;
+						table-layout: fixed;
+						width: 100%;
+						> * {
+							display: table-cell;
+						}
+						span {
+							width: 25px;
+							color: $colour-default-grey-2;
+							& + span {
+								width: auto;
+							}
+						}
+						b {
+							width: 70px;
+							text-align: right;
+							color: $colour-default-grey-1;
+						}
+						i {
+							width: 15px;
+							text-align: right;
+						}
+					}
+				}
+				&.active {
+					a {
+						div {
+							span {
+								color: $colour-default-grey-1;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.icon-car2 {
+		float: left;
+		margin-right: 5px;
+	}
+	.dealer-detail {
+		.row {
+			padding-bottom: 20px;
+			&.hidden-xs {
+				> h5 {
+					margin-left: 15px;
+					margin-bottom: 10px;
+					border-bottom: 1px solid #dddfe0;
+				}
+				.logo-link {
+					top: -9px !important;
+				}
+				.col-sm-6 img {
+					width: auto;
+				}
+			}
+			&.dealer-services {
+				padding-bottom: 10px;
+				color: $colour-default-grey-2;
+				div[class^='col'] {
+					padding-bottom: 10px;
+				}
+			}
+			&.dealer-contact-detail {
+				.dealer-contact, .dealer-hours {
+					color: $colour-default-grey-2;
+					b, strong {
+						color: $colour-default-grey-1;
+					}
+					a {
+						color: $colour-default-grey-2;
+					}
+				}
+
+			}
+		}
+		a.inline {
+			display: inline;
+			padding: 0;
+		}
+
+	}
+	.dealer-hours {
+		// show hardcoded breaks (fix for TGR)
+		/*
+		br {
+			display: none;
+		}
+		*/
+		font {
+			font-family: $font-toyota-text-regular;
+			font-size: inherit;
+			b {
+				color: $colour-default-grey-1;
+			}
+		}
+		div {
+			div{
+				div{
+					div{
+						ul{
+							li{
+								div{
+									display: table;
+									table-layout: fixed;
+									width: 100%;
+									> span, b {
+										display: table-cell;
+									}
+									> span {
+										text-align: right;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+
+		}
+	}
+
+	.detail-dark {
+		background: $colour-default-grey-1;
+		color: $colour-default-white;
+		border-radius: $border-radius-default;
+		padding: 7px 5px;
+		margin: 0 6px;
+		.dealer-hours{
+			color: $colour-default-grey-2;
+		}
+		ul {
+			margin-bottom: 14px;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+		a.inline {
+			color: $colour-default-white;
+		}
+	}
+}
+
+.dealer-print {
+	.navbar {
+		text-align: right;
+		.btn-grey i {
+			margin-left: 5px;
+		}
+	}
+	.map-dealers {
+		iframe {
+			width: 100%;
+			height: 100%;
+			border: 0;
+		}
+	}
+}
+
+.no-geolocation .dealer-finder a.geo-location {
+	display: none;
+}
+
+@media print {
+	.dealer-print {
+		.navbar {
+			display: none;
+		}
+	}
+}
+
+@media (min-width: $screen-sm) {
+	.container#pane-dealer {
+		padding-left: 15px;
+		padding-right: 15px;
+		.btn-back {
+			max-width: 200px;
+			float: right;
+			padding-left: 30px;
+			margin-top: 30px;
+			border-radius: $border-radius-default;
+			i {
+				top: 14px;
+				left: 15px !important;
+				right: auto;
+			}
+		}
+	}
+
+	.dealer-finder {
+		&.in-page {
+			.forms {
+				background: 0;
+			}
+			.row {
+				> .col-xs-12 {
+					padding-left: 0;
+					padding-right: 0;
+					&.form, &.search-form {
+						padding-right: 15px;
+					}
+				}
+			}
+			.input-search .icon-search {
+				right: 10px !important;
+			}
+			.search-options {
+				margin-top: 20px;
+				ul {
+					margin-left: -15px;
+					margin-right: -15px;
+					li {
+						padding-bottom: 5px;
+					}
+				}
+			}
+			.dealer-next-steps {
+				h3 {
+					margin-bottom: 65px;
+				}
+				.btn-red {
+					margin-right: 6px;
+					&:last-child {
+						margin-right: 0;
+					}
+				}
+			}
+		}
+		.row {
+			> .col-padding-6 {
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+		.dealer-detail {
+			> div {
+				padding-left: 6px;
+				padding-right: 0;
+			}
+		}
+		.dealer-contact-detail, .dealer-services {
+			> * {
+				padding-left: 0;
+				margin-left: 0 !important;
+			}
+		}
+		.list-dealers {
+			> ul {
+				li {
+					&:nth-child(even) {
+						background: $colour-default-grey-10;
+					}
+					&.active {
+						font-family: $font-toyota-text-bold;
+					}
+					a {
+						padding: 10px 8px;
+						background: none;
+						border: none;
+						div {
+							i {
+								display: none;
+							}
+						}
+					}
+				}
+			}
+		}
+		.search-options {
+			h5 {
+				padding-left: 0;
+				border: 0;
+			}
+			.row {
+				padding-left: 6px;
+			}
+			ul {
+				li {
+					border: 0;
+					padding: 0;
+				}
+			}
+		}
+		.map {
+			height: 470px;
+		}
+		.cta-save {
+			padding-right: 0;
+			padding-top: 20px;
+			a {
+				float: right;
+			}
+		}
+		.directions {
+			margin: -10px 0 10px 6px;
+		}
+		.directions-cta {
+			text-align: right;
+		}
+	}
+	.my-toyota {
+		.dealer-finder {
+			&.in-page {
+				.search-options {
+					margin-top: 0;
+					ul {
+						margin-left: 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* common */
+
+.dealer-finder, #dealer-details {
+	.geo-location {
+		text-decoration: none;
+		display: none;
+		padding-top: 8px;
+		span {
+			text-decoration: underline;
+		}
+		.icon-map-marker {
+			@include font-size(21);
+			margin-right: 5px;
+		}
+	}
+
+	.bubble-search, .bubble-direction {
+		width: 99%;
+		.bubble-dark {
+			min-height: 75px;
+		}
+		.geo-location {
+			padding-left: 10px;
+			padding-bottom: 6px;
+			background: $colour-default-grey-1;
+			> * {
+				color: $colour-default-white;
+			}
+		}
+	}
+
+	.input-search {
+		margin-left: 0;
+		height: 45px;
+		input[type=text] {
+			@include font-size(19);
+			background: $colour-table-header;
+			border: 1px solid $colour-default-grey-6;
+			border-radius: 3px;
+			height: 46px;
+			font-family: $font-toyota-text-bold;
+			color: $colour-default-grey-1;
+			margin: 0;
+			width: 100%;
+			@include placeholder {
+				@include trans(color, $colour-default-grey-1, 0.6);
+			}
+			&::-ms-clear {
+				display: none;
+			}
+		}
+		.icon-search {
+			color: $colour-default-grey-1;
+			left: auto !important;
+			right: 5px !important;
+		}
+	}
+
+	.directions {
+		/*
+		 * google proprietary
+		 */
+		table {
+			&.adp-directions {
+				word-wrap: break-word;
+				width: 100%;
+				table-layout: fixed;
+				border-spacing: 0;
+				tr {
+					td {
+						color: $colour-default-grey-1;
+						font-family: $font-toyota-text-regular;
+						&:first-child {
+							width: 30px;
+							+ td {
+								width: 30px;
+							}
+						}
+						&:last-child {
+							text-align: right;
+							width: 60px;
+						}
+						&.adp-substep {
+							border-top: 1px solid $colour-default-grey-6;
+							b {
+								font-family: $font-toyota-text-bold;
+								font-weight: normal;
+							}
+						}
+					}
+				}
+			}
+			&.adp-placemark {
+				border-radius: $border-radius-default;
+				box-shadow: 0 0 2px rgba(0, 0, 0, .5);
+				background: $colour-default-grey-5;
+				border: 0;
+			}
+		}
+		.adp-summary {
+			span {
+				font-family: $font-toyota-text-bold;
+			}
+		}
+		.adp-placemark {
+			padding-left: 6px;
+			img {
+				visibility: hidden;
+			}
+			td {
+				font-family: $font-toyota-text-bold;
+				&:first-child {
+					background: url('/images/dealer_finder/marker00.png') no-repeat;
+					margin-left: 6px;
+					width: 30px;
+					display: block
+				}
+			}
+		}
+		#adp-placemark {
+			td:first-child {
+				background: url('/images/dealer_finder/marker99.png') no-repeat;
+			}
+		}
+	}
+}
+
+.lt-ie9 {
+	.directions {
+		.adp-marker {
+			width: auto;
+			padding-left: 10px;
+		}
+	}
+}
+
+.eq-ie9 {
+	.directions {
+		.adp {
+			.adp-placemark {
+				td {
+
+				}
+				.adp-text {
+					width: 95% !important;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $screen-sm) {
+	.dealer-finder, #dealer-details {
+		.dealer-CTA {
+			margin-left: 5px;
+			margin-bottom: 20px;
+			padding: 10px !important;
+			background: $colour-default-grey-5;
+			b {
+				display: block;
+				margin-bottom: 6px;
+			}
+		}
+
+		.input-search {
+			.icon-search {
+				padding-top: 7px;
+			}
+		}
+	}
+}
+
+@media (min-width: $screen-md) {
+	.dealer-finder {
+		.map {
+			margin: 0 15px 6px 1px;
+		}
+	}
+}
+
+.map-dealers img {
+	max-width: none;
+}

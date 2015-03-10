@@ -1,0 +1,110 @@
+/* CSS rule for the Toyota Worldwide component */
+.toyota-worldwide {
+
+	a {
+		border-bottom: 1px solid $colour-btn-dark-2;
+		border-top: 1px solid $colour-btn-dark-2;
+		color: $colour-default-grey-8;
+		display: block;
+		padding-left: 5px;
+		margin-top: -1px; /* this avoid double border */
+
+		&:hover {
+			color: $colour-default-grey-8;
+			text-decoration: none;
+			background-color: $colour-btn-dark-2;
+		}
+	}
+
+	.country {
+		line-height: 2.6em;
+	}
+
+	&.spotlights .row {
+		padding-left: 0;
+	}
+}
+
+/** styling of the popup **/
+
+
+.expansion-content.external-links {
+	width: auto;
+	max-width: none;
+
+	.expansion-inner {
+		background-color: $colour-default-white;
+		color: $colour-default-grey-1;
+		font-size: 2em;
+		height: 55px;
+		padding: 10px;
+		width: auto;
+		max-width: none;
+		text-align: left;
+		box-shadow:0 1px 1px rgba(0,0,0,.1);
+		display:table;
+	}
+
+	.expansion-arrow {
+		border-top-color: $colour-default-white;
+	}
+	&.bottom {
+		.expansion-arrow {
+			border-bottom-color: $colour-default-white;
+			border-top: 0;
+		}
+	}
+	&.top {
+		.expansion-arrow {
+			border-top-color: $colour-default-white;
+			bottom: -5px;
+			left: 22px;
+		}
+	}
+
+	i {
+		display: block;
+		&.icon-facebook {
+			padding-left: 20px;
+		}
+		&.icon-desktop{
+			display:block;
+			margin-top:2px;
+		}
+	}
+
+	a {
+		display:table-cell;
+		vertical-align: middle;
+	  	padding: 0 10px;
+
+	  	&:first-child{
+	  		padding: 0 20px 0px 10px;
+	  	}
+		&:hover {
+			text-decoration: none;
+		}
+		&.customlink{
+			img {
+				display: block;
+				height:100%;
+				max-height: 34px;
+			}
+
+		}
+	}
+
+	.separator {
+		&:before {
+			content: " ";
+			width: 1px;
+			background: lightgrey;
+			height: 84%;
+			margin-top: -10px;
+			position: absolute;
+		}
+	}
+	img {
+	  	vertical-align: baseline;
+	}
+}

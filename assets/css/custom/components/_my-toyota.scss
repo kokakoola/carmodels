@@ -1,0 +1,701 @@
+#forms {
+  	/* my toyota & dealer selected car */
+
+  	&.my-toyota, .selected-car {
+		.car-details, .list-details {
+			list-style-type: none;
+
+			.title {
+			  color:$colour-default-grey-1;
+			}
+
+			.desc, .desc a, .code, .date {
+			  color:$colour-default-grey-2;
+			  @include font-size(13);
+			}
+
+			.price{
+				font-family: $font-toyota-text-bold;
+			}
+
+			.saved {
+			  color:$colour-default-red;
+			  margin-right:5px;
+			}
+
+			* {
+			  line-height:16px;
+			}
+		}
+
+
+		.img_with_label {
+		  	position:relative;
+		}
+
+		.label {
+			&.hybrid{
+				position:absolute;
+				bottom:5px;
+				left:5px;
+				background-color:$colour-btn-blue-2;
+			}
+		}
+	}
+
+  	/* selected car */
+
+  	.selected-car {
+	  	display:none;
+	  	margin-top:-15px;
+	  	margin-bottom:15px;
+
+	  	.error {
+			color: $colour-default-red;
+		}
+	}
+
+  	/* my toyota */
+
+  	&.my-toyota {
+	  	p {
+		  	text-indent:0;
+		}
+
+		form {
+			&.error-form {
+				.form-error-msg, .error-message {
+				  	display:block;
+				}
+			}
+
+			&.form-success {
+				#searchCarResult, .search-result-info{
+				  	display:block;
+				}
+
+				#searchCarInfo{
+				  	display:none;
+				}
+			}
+		}
+
+	  	/* identity */
+
+		.logged-in-block {
+		  	display:none;
+		}
+
+		.logged-out-block {
+		  	display:block;
+		}
+
+	  	&.authenticated {
+		  	.logged-in-block {
+			  	display:block;
+			}
+
+		  	.logged-out-block {
+			  display:none;
+			}
+	  	}
+
+		/*#my-toyota-login, #my-toyota-logout {
+		  	float:right;
+		}*/
+
+		h2{
+		  	font-family: $font-toyota-text-regular;
+		}
+
+		.top-box{
+		  	@include font-size(12);
+		  	color:$colour-default-grey-2;
+		}
+
+		.actions-block{
+		  	line-height:48px;
+
+		  	a{
+				&:hover{
+					text-decoration:underline;
+				}
+
+			  	&:not(:first-child) {
+				  	margin-left:5px;
+				}
+
+			  	&.btn-cancel {
+				  	margin-left:0;
+				}
+
+			  	&:not(.btn-submit) {
+				  	color:$colour-default-grey-2;
+				}
+
+			  	&:not(.btn) {
+				  	padding:0;
+				}
+
+			  	&.btn{
+				  	float:right;
+				}
+			}
+		}
+
+	  	.input-row {
+			margin-bottom:15px;
+
+			.row {
+		  		padding-top:15px;
+			}
+	  	}
+
+	  	#pane-register-result, #pane-forgotten-password-result {
+		  	a.tab-link {
+				text-decoration:underline;
+			}
+		}
+
+	  	/* save my cars - not logged in */
+
+	  	#form-login-save-car{
+			.input-row {
+			  background-color:$colour-default-grey-4;
+			  border-radius:0 0 $border-radius-small $border-radius-small;
+			}
+		  	>.row{
+				&:first-child {
+				  background-color:$colour-default-grey-4;
+					border-radius:$border-radius-small $border-radius-small 0 0;
+
+					> div {
+						padding-top:10px;
+						padding-bottom:0px;
+					}
+				}
+			}
+		}
+
+	  	#form-save-car{
+		  	.input-row {
+		  		background-color:$colour-default-grey-4;
+		  		border-radius:$border-radius-small $border-radius-small;
+			  	margin-bottom:0;
+
+			  	.form-btn {
+				  	padding-left:5px;
+
+				  	a {
+					  	float:none;
+					}
+				}
+		  	}
+		}
+
+	  	/*my cars*/
+
+		.search-result-info, .form-error-msg {
+			display:none;
+		}
+
+		#myCars{
+			#form-my-cars {
+				background-color:$colour-default-grey-4;
+				border-radius:$border-radius-small;
+				padding:10px;
+
+				.form-btn{
+				 	clear:both;
+
+					a {
+						float:left;
+						margin-left:8px;
+						margin-right: 0px;
+						margin-top:8px;
+
+						&.btn-submit{
+							margin-left:0px;
+						}
+						&.btn-save{
+							margin-left:15px;
+						}
+					}
+				}
+
+			  	#searchCarResult, .search-result-info{
+				  	display:none;
+				}
+
+				.search-result-info, .form-error-msg {
+					  margin-top:10px;
+				}
+
+				&.form-success {
+					#searchCarResult, .search-result-info{
+						display:block;
+					}
+
+					#searchCarInfo{
+						display:none;
+					}
+				}
+			}
+
+		}
+
+		#myCars, #myDealers {
+			footer {
+				 margin-top:30px;
+				 margin-bottom:20px;
+
+				 h3 {
+					 a {
+					   	font-size:100%;
+					   	text-decoration:underline;
+
+					   	&:hover {
+							color: $colour-default-red;
+						}
+					 }
+				 }
+			 }
+		}
+
+		#recentlyViewedCars {
+			.obj-desc {
+				margin: 0;
+				div[class^='col']:first-child{
+					padding-left:5px;
+					padding-right:5px;
+				}
+				ul.list-details {
+					margin-bottom:5px;
+				}
+			}
+		}
+
+		#recentlyViewedDealers{
+			.btn-details{
+				margin-top:10px;
+			}
+		}
+
+		#recentlyViewedCars, #recentlyViewedDealers, .form-btn, .list-details {
+			a:not(.btn), .btn-link {
+				text-decoration: underline;
+
+				&:hover {
+					color: $colour-default-red;
+				}
+			}
+		}
+
+	  	/* my search car result */
+
+		#searchCarResult {
+		  	.form-btn {
+				margin-top:15px;
+			}
+
+			> .row {
+			  	border-left:1px solid $colour-btn-grey-1;
+			}
+		}
+
+	  	/* saved cars */
+
+	  	#savedCars {
+		  	.form-btn {
+				.share-button .btn {
+				  	margin-left:10px;
+				}
+			}
+		}
+
+	  	#savedCars, #savedDealers {
+		  	.form-btn {
+				a {
+			  		margin-top:10px;
+			  		float:none;
+
+				  	&:first-child{
+					  	margin-left:0;
+					}
+				}
+
+			  	.btn-details {
+				  	margin-right:10px;
+				}
+			}
+
+		  	.obj-desc {
+			  	padding-top:20px;
+			  	padding-bottom:10px;
+			}
+		}
+
+	  	#savedCarsExtender {
+			margin-top:40px;
+
+			.btn-less {
+			  	display:none;
+			}
+
+		  	.fb-inner {
+			  	a:hover {
+				  i.count {
+					  text-decoration:underline;
+				  }
+				}
+			}
+
+			&.extended {
+			  	.btn-all {
+					display:none;
+				}
+
+			  	.btn-less {
+				  	display:inline-block;
+				}
+			}
+	  	}
+
+	  	/* recently viewed cars/dealers & saved cars */
+
+	  	#recentlyViewedCars, #savedCars, #recentlyViewedDealers, #savedDealers {
+		  	header {
+			  	margin-bottom:60px;
+
+				h2 {
+					padding-top:40px;
+				}
+
+				p {
+					margin-top:20px;
+				}
+			}
+
+			.template {
+			  	display:none;
+			}
+
+			> .row {
+			  	padding-top:15px;
+				border-top:1px solid $colour-btn-grey-1;
+
+				> div {
+				  	margin-bottom:15px;
+				  	padding-bottom:0;
+
+				  	&:first-child {
+				  		border-right:1px solid $colour-btn-grey-1;
+					}
+				}
+
+			  	&:first-child {
+				  	border-top:none;
+				}
+
+			  	&.extendable {
+				  	display:none;
+				}
+
+			  	.del-ovl {
+					@include trans(bg, black, 0.6);
+					position:absolute;
+					left:15px;
+					right:15px;
+					top:0;
+					bottom:0;
+				  	min-height:105px;
+					border-radius:$border-radius-small;
+					text-align:center;
+					padding-top:30px;
+				  	z-index:11;
+
+					p{
+						color:$colour-default-white;
+						margin-bottom:20px;
+					}
+
+					h5 {
+					  	color:$colour-default-red;
+					  	font-family: $font-toyota-text-regular;
+					  	margin-top:10px;
+					  	display:none;
+					}
+
+				  	&.error {
+					  	h5 {
+						  	display:block;
+						}
+					}
+				}
+			}
+		}
+
+	  	#recentlyViewedCars, #recentlyViewedDealers {
+			*:nth-child(2){
+				border-top:none;
+			}
+
+			>.row {
+				> div, .del-ovl {
+				  	padding-top:10px;
+				}
+			}
+		}
+
+	  	/* recently viewed dealers & saved dealers */
+
+		#recentlyViewedDealers, #savedDealers {
+			header {
+			  	margin-bottom:10px;
+			}
+
+		  	.list-details {
+			  	p {
+				  	color:$colour-default-grey-1;
+				  	line-height: 18px;
+				}
+
+			  	.name {
+				  	margin-bottom:5px;
+				  	line-height: 20px;
+				  	font-family: $font-toyota-text-bold;
+				}
+
+			  	.website {
+				  	margin-top:5px;
+				  	display:block;
+				  	line-height: 18px;
+				  	@include font-size(13); 	
+					text-decoration: none;
+					span{
+						text-decoration: underline;
+					}
+
+				  	&:before{
+					  	content: "\f108";
+						font-family: 'toyotaicons';
+					}
+				
+				}
+			}
+		}
+
+		/* saved dealers */
+
+		#savedDealers {
+			> .row {
+			  	border-top:none;
+			  	border-bottom:1px solid $colour-btn-grey-1;
+			}
+
+		  	.obj-desc {
+			  	img {
+				  	width:230px;
+				}
+			}
+
+			.form-btn {
+			  	padding-left:15px;
+			  	padding-right:15px;
+			}
+		}
+
+	  	/* Owners area */
+
+	  	#pane-owners-area {
+		  	a{
+			  	&:hover {
+				  	text-decoration:none;
+
+				  	h5 {
+					  	color:$colour-default-grey-1;
+					}
+				}
+
+			  	img {
+				  	margin-bottom:15px;
+				}
+
+				.icon-external-link {
+					vertical-align:top;
+				}
+			}
+		}
+
+	  	/* globals */
+
+		.btn-link{
+		  	text-decoration: underline;
+		}
+	}
+}
+
+
+
+@media (min-width: $screen-lg){
+	#forms.my-toyota #recentlyViewedCars {
+		.obj-desc {
+			margin:0 -15px;
+			div[class^='col']:first-child{
+				padding-left:15px;
+				padding-right:15px;
+			}
+		}
+	}
+}
+
+
+/* small size */
+
+@media (max-width: $screen-sm-max){
+	#forms {
+		&.my-toyota {
+
+			/* my cars */
+
+			footer {
+			  	h3 {
+					@include font-size(20, 2.5);
+				}
+			}
+
+			.form-error-msg, .error-message {
+			  	@include font-size(20);
+			}
+
+		  	#recentlyViewedCars, #savedCars, #recentlyViewedDealers, #savedDealers {
+		  		>.row {
+					.del-ovl {
+					  	padding-top:10px;
+					}
+				}
+
+			  	.form-btn {
+					.btn:first-child{
+						margin-left:0;
+					}
+
+					.btn, .share-button .btn {
+						@include font-size(13);
+						margin-left:5px;
+					 }
+				}
+			}
+
+		  	#recentlyViewedDealers, #savedDealers {
+				.btn {
+				  	margin-top:10px;
+				}
+		  	}
+
+			#savedDealers {
+				.obj-desc {
+					img {
+						margin-bottom:10px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: $screen-xs-max){
+	#forms {
+		&.my-toyota {
+
+		  	/* my cars */
+
+			#myCars {
+				.form-btn {
+				  	text-align:right;
+				  	margin-top:10px;
+				}
+
+			  	.row {
+					.form-btn {
+					  	padding:0 15px;
+					}
+				}
+			}
+
+		  	#myCars, #myDealers {
+				footer {
+					h3 {
+					  	@include font-size(18, 2.3);
+					}
+				}
+			}
+
+			/* my search car result */
+
+			#searchCarResult {
+				> .row {
+				  	border-left:none;
+				}
+			}
+
+		  	/* recently viewed cars */
+
+			#recentlyViewedCars, #savedCars, #recentlyViewedDealers, #savedDealers {
+				header {
+				  	margin-bottom:30px;
+
+					h2 {
+					  	padding-top:30px;
+					}
+				}
+
+				> .row {
+					border-top:none;
+
+					> div {
+						border-right:none;
+					 	border-bottom:1px solid $colour-btn-grey-1;
+					  	padding-bottom:20px;
+					}
+
+				  	&:last-child {
+					  	> div:last-child {
+						  	border-bottom:none;
+						}
+					}
+				}
+			}
+
+		  	/* globals */
+
+			.list-details {
+			  	margin:10px 0 10px 0;
+			}
+
+			.img_with_label {
+				.label {
+					&.hybrid{
+					  	left:0;
+					  	bottom:0;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* IE8 fixes */
+.lt-ie9 {
+  #savedDealers {
+	.obj-desc {
+	  a{
+		padding:0;
+
+		img {
+		  max-width:230px;
+		}
+	  }
+	}
+  }
+}

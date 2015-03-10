@@ -1,0 +1,100 @@
+.cta-bar {
+	display: none;
+	position: fixed;
+	right: 0;
+	z-index: $cta-cc-zindex;
+	text-align: center;
+
+	a {
+		background-color: rgba(30, 42, 50, 1);
+		position: relative;
+		display: block;
+		width: 54px;
+		color: $colour-default-white;
+		@include font-size(11);
+		border-top: 1px solid rgba(255, 255, 255, 0.3);
+
+		&.first {
+			border-radius: $border-radius-large 0 0 0;
+		}
+
+		&.last {
+			border-radius: 0 0 0 $border-radius-large;
+		}
+
+		i {
+			@include font-size(24);
+			display: block;
+			padding: 16px 5px;
+			background-color: rgba(30, 42, 50, 1);
+
+			&.custom {
+				margin-left: auto;
+				margin-right: auto;
+				padding: 28px 0;
+				background-size: 28px 28px;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+		}
+
+		span {
+			display: block;
+			border-radius: $border-radius-default 0 0 $border-radius-default;
+			position: absolute;
+			padding: 10px 10px;
+			white-space: nowrap;
+			min-width: 200px;
+			overflow: visible;
+			top: 0;
+			bottom: 0;
+			right: 54px;
+			background-color: $colour-vi-red-1;
+			text-align: left;
+			line-height: 32px;
+			@include font-size(13);
+			z-index: -1;
+			box-shadow: inset 0 0 1px rgba(30, 42, 50, .3);
+			@include opacity(0.94);
+		}
+
+		&:hover {
+			text-decoration: none;
+		}
+
+		&.expanded{
+			i {
+				border-radius: 0 0 0 0 !important;
+			}
+		}
+
+		&:first-child {
+			border-top: none;
+		}
+	}
+
+	&.contracted {
+		border-radius: $border-radius-large 0 0 $border-radius-large;
+		a {
+			@include opacity(0.9);
+
+			&:hover {
+				@include opacity(1);
+			}
+
+			i {
+				border-radius: $border-radius-large 0 0 $border-radius-large;
+			}
+
+			span {
+				display: none;
+			}
+
+			&.expanded {
+				span {
+					display: block;
+				}
+			}
+		}
+	}
+}

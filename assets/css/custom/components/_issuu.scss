@@ -1,0 +1,12 @@
+.issuu {
+	.issuu-control-wrapper{
+		width: 525px;
+		z-index: 30000000;
+		height: 50px;
+	}
+	.issuu-controls{position: relative; width: 100%}
+	.fl-left {float: left;}
+	.fl-center {position: absolute;left: 50%;margin-left: -64px}
+	.fl-right {float: right;}
+	.inline {display: inline;}
+}

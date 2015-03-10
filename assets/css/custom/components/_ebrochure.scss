@@ -1,0 +1,87 @@
+.ebrochure {
+	padding-top:40px;
+
+	.ebrochure-control-wrapper{
+		width: 525px;
+		z-index: 30000000;
+		height: 50px;
+		margin: 0 auto;
+	}
+	.ebrochure-controls{position: relative; width: 100%}
+	.fl-left {float: left;}
+	.fl-center {position: absolute;left: 50%;margin-left: -64px}
+	.fl-right {float: right;}
+	.inline {display: inline;}
+	.ebrochure-ebook {margin: 0 auto;}
+	.hardCover {
+		background-color: $colour-default-grey-2;
+		color: $colour-default-white;
+		font-family: $font-toyota-text-bold;
+		text-align: center;
+		font-size: $font-size-h4;
+	}
+	.index-thumbnails {
+		margin-top: 30px;
+		height: 243px;
+		overflow-x: hidden;
+		position: relative;
+		.thumbnails {
+			@include transition(all 0.2s ease 0s);
+			margin-top: 30px;
+			position: absolute;
+			.pageHolder {display: inline;}
+			&:hover {
+				.pageHolder img {
+					height: 115px;
+				}
+			}
+			.pageHolder {
+				@include transition(all 0.2s ease 0s);
+				img {height: 131px;}
+				&:hover {
+					vertical-align: auto;
+					img {height: 162px;}
+					border: 1px solid $colour-default-grey-0;
+					cursor: pointer;
+				}
+			}
+		}
+		.control {
+			border-radius: 25px;
+			width: 45px;
+			height: 45px;
+			text-decoration: none;
+			z-index: 5;
+			transition: position 0.33s linear;
+			display: inline-block;
+			@include trans(bg, rgb(73, 82, 88), 0.5);
+			filter: none;
+			opacity: 1;
+			color: $colour-default-white;
+			@include font-size(36, 3.6);
+			text-align: center;
+			vertical-align: middle;
+			background-image: none;
+			padding: 2px;
+			position: absolute;
+			cursor: pointer;
+			i {
+				margin: 0;
+			}
+			&:hover {
+				@include trans(bg, rgb(73, 82, 88), 0.7);
+			}
+		}
+		.control.left i {
+			margin-right: 5px;
+		}
+		.control.right i {
+			margin-left: 5px;
+		}
+		.left { left: 5px; }
+		.right { right: 5px; }
+	}
+	.fs-wrapper {
+		z-index: $expansion-content-zindex;
+	}
+}

@@ -1,0 +1,294 @@
+//show compare only in the mobile page
+.overlayerWrapper{
+	.mobile-compare{
+		display: block !important;
+	}
+}
+//mobile compare styles
+.mobile-compare{
+	display: none;
+	padding: 36px 0 0 0;
+	.ecm-container{
+		position: relative;
+		min-height: 85%;
+		.ecm-button-container{
+			margin: 20px 0 0 0;
+			padding-left: 18px;
+			width: 100%;
+			.btn{
+				width: 50%;
+			}
+			.active{
+				z-index: 0;
+			}
+		}
+		.ecm-sub-container{
+			display: none;
+			padding: 10px;
+			.section-title{
+				margin: 0 auto;
+				.ecm-component-main-title{
+					padding-top: 20px;
+				}
+				h4{
+					margin-top: 10px;
+					text-align: center;
+					.ecm-model-promotions-title{
+						color: $colour-vi-orange-1;
+					}
+				}
+			}
+			.ecm-promotions-holder-body{
+				h4{
+					text-align: center;
+					color: $colour-vi-orange-1;
+					padding-top: 10px;
+				}
+				.ecm-promotions-node{
+					text-decoration: none;
+					display: block;
+					position: relative;
+					height: 100px;
+					padding: 5px 5px 5px 168px;
+					img{
+						max-width: 50%;
+						position: absolute;
+						top: 5px;
+						left: 5px;
+						width:160px;
+					}
+					.ecm-promotions-special-offer{
+						color: $colour-default-white;
+						background-color: $colour-vi-orange-1;
+						bottom: 20px;
+						left: 20px;
+						position: absolute;
+						border-radius: $border-radius-default;
+						@include font-size(12);
+						i{
+							color: $colour-vi-orange-1;
+							//margin-right: -40px;
+							@include font-size(20);
+							right: -20px;
+							top: 4px;
+						}
+					}
+					.ecm-promotions-title{
+						@include font-size(18);
+						text-align:left;
+						color: $colour-default-black;
+					}
+					.ecm-promotions-sub-title{
+						font-family: $font-toyota-text-bold;
+					}
+					.ecm-promotions-payments {
+						display: inline-block;
+					  	width: 100%;
+					  	text-align: left;
+					  	color: $colour-default-grey-7;
+					}
+					.finance-rate{
+						text-align: left;
+						@include font-size(11);
+						color: $colour-default-grey-7;
+					}
+					i{
+						position: absolute;
+						top: 40px;
+						right: 5px;
+					}
+				}
+			}
+			.ecm-grid-container{
+				.ecm-body-info-table{
+					border-bottom: 1px solid $colour-btn-grey-1;
+					table-layout: fixed;
+					.ecm-body-info-row{
+						td{
+							overflow: hidden;
+							text-overflow: ellipsis;
+						}
+						.ecm-body-info-cell-name{
+							border-left: 1px solid $colour-btn-grey-1;
+						}
+						.ecm-body-info-cell-value{
+							border-left: 1px solid $colour-btn-grey-1;
+							border-right: 1px solid $colour-btn-grey-1;
+						}
+						.ecm-body-info-header{
+							font-family: $font-toyota-display-bold;
+							border-left: 1px solid $colour-btn-grey-1;
+							border-right: 1px solid $colour-btn-grey-1;
+						}
+					}
+				}
+			}
+		}
+		.ecm-engine-container{
+			.section-title{
+				margin: 0 auto;
+				.ecm-component-main-title{
+					padding-top: 20px;
+				}
+				h4{
+					margin-top: 10px;
+					text-align: center;
+					.ecm-engine-promotions-title{
+						color: $colour-vi-orange-1;
+					}
+				}
+			}
+			ul{
+				margin: 20px 0 0 0;
+				padding: 0;
+				li{
+					margin: 0;
+					padding: 10px;
+					height: 114px;
+					list-style: none;
+					list-style-position: inside;
+					border-bottom: 1px solid $colour-btn-grey-1;
+					border-left: 1px solid $colour-btn-grey-1;
+					border-right: 1px solid $colour-btn-grey-1;
+					position: relative;
+					&:first-child{
+						border-top: 1px solid $colour-btn-grey-1;
+					}
+					h4{
+						@include font-size(15);
+						margin-left: 110px;
+						margin-right: 24px;
+					}
+					.thumb{
+						position: relative;
+						img{
+							position: absolute;
+							top: 0;
+							left: 0;
+						}
+						.label{
+							position: absolute;
+							left: 0;
+							top: 75px;
+							border-radius: $three-px-radius;
+							color: $colour-default-white;
+							i{
+								display: inline;
+								color: $colour-vi-orange-1;
+								font-size: 16px;
+								right: -16px;
+								top: 1px;
+							}
+						}
+						.promolabel{
+							background-color: $colour-vi-orange-1;
+							display: none;
+						}
+					}
+					i{
+						position: absolute;
+						right: 10px;
+						top: 20px;
+						color: $colour-ecm-gray-icon;
+					}
+				}
+			}
+		}
+		.ecm-data-container{
+			display: none;
+		}
+	}
+}
+
+
+.overlayerContent{
+	.ecm-data-container{
+		display: block;
+		background: $colour-default-white;
+		.ecm-data-head{
+			padding: 10px;
+			.ecm-back-button{
+				margin-top: 24px;
+				width: 100%;
+			}
+			.ecm-selected-title{
+				@include font-size(18);
+				text-align: center;
+				color: $colour-default-grey-0;
+				padding-top: 10px;
+			}
+			.ecm-promo-count{
+				color: $colour-vi-orange-1;
+				padding-top: 10px;
+				padding-bottom: 10px;
+				border-bottom: 1px solid $colour-btn-grey-1;
+				i{
+					padding-left: 5px;
+				}
+			}
+		}
+		.ecm-promotions-holder-engine{
+			.ecm-promotions-node{
+				text-decoration: none;
+				display: block;
+				position: relative;
+				height: 100px;
+				padding: 5px 5px 5px 160px;
+				img{
+					max-width: 50%;
+					position: absolute;
+					top: 5px;
+					left: 5px;
+				}
+				.ecm-promotions-special-offer{
+					color: $colour-default-white;
+					background-color: $colour-vi-orange-1;
+					bottom: 20px;
+					left: 20px;
+					position: absolute;
+					border-radius: $border-radius-default;
+					@include font-size(12);
+					i{
+						color: $colour-vi-orange-1;
+						//margin-right: -40px;
+						@include font-size(20);
+						right: -20px;
+						top: 4px;
+					}
+				}
+				.ecm-promotions-title{
+
+				}
+				.ecm-promotions-sub-title{
+					font-family: $font-toyota-text-bold;
+				}
+				i{
+					position: absolute;
+					top: 40px;
+					right: 5px;
+				}
+			}
+		}
+		.ecm-data-table{
+			padding: 10px;
+			.ecm-selected-specs-table{
+				table-layout: fixed;
+				border-bottom: 1px solid $colour-btn-grey-1;
+				tr{
+					td{
+						text-align: left;
+						overflow: hidden;
+						text-overflow: ellipsis;
+					}
+					.ecm-specs-cell-name{
+						border-left: 1px solid $colour-btn-grey-1;
+					}
+					.ecm-specs-cell-value{
+						border-left: 1px solid $colour-btn-grey-1;
+						border-right: 1px solid $colour-btn-grey-1;
+					}
+				}
+			}
+		}
+	}
+}

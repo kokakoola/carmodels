@@ -1,0 +1,331 @@
+/* =============================================================================
+ * containers/grid
+ * ========================================================================== */
+
+.fluid {
+	width: 100%;
+	&.scroll {
+		z-index: 9;
+		position: relative;
+	}
+}
+.col-xs-center {
+	text-align: center;
+}
+.col-xs-12, .col-sm-12 {
+	padding-bottom: 24px;
+	iframe, img {
+		max-width: 100%;
+		margin: 0 auto;
+	}
+}
+.row{
+	&.nopadding {
+		&.vertical{
+			[class*="col-"] {
+				padding-bottom: 0px;
+				padding-top: 0px;
+			}
+		}
+		&.horizontal{
+			[class*="col-"] {
+				padding-bottom: 0px;
+				padding-top: 0px;
+			}
+		}
+	}
+}
+
+.homepage{
+	#pagecontent {
+		margin-top: 56px;
+	}
+}
+
+#pagecontent {
+	margin-top: $margin-pagecontent-xs;
+	&.nomargin{
+		margin-top:0px !important;
+	}
+}
+
+#nav-secondary-level + #pagecontent .section-title {
+	margin-top: 45px;
+}
+
+.maincontent {
+	width: 100%;
+	section {
+		padding-top: 20px;
+		clear: both;
+	}
+	h1 {
+		//margin: 0 10px;
+	}
+	ul {
+		font-family: $font-toyota-text-regular;
+		font-size: $font-size-base;
+	}
+	table {
+		font-family: $font-toyota-text-regular;
+		font-size: $font-size-base;
+		line-height: _em(20px);
+		color: $colour-default-grey-2;
+	}
+  	&.article-v2{
+	  	.col-xs-12, .col-sm-12{
+			padding-left: 15px;
+		  	padding-right: 15px;
+		  	padding-bottom: 0px;
+	  	}
+
+		#intro{
+			padding-bottom: 40px;
+			padding-top: 40px;
+
+			.intro {
+			  	padding-top:0px;
+			  	margin-bottom: 0px;
+				&.intro-v2 {
+					text-align: left;
+					margin: 0px;
+					line-height: 1.3em;
+				}
+			}
+		}
+		article{
+		  	padding-bottom: 24px;
+			&.container {
+				header {
+					&.section-title {
+					  	h1 {
+							text-align: left;
+							padding: 0px;
+							line-height: 2.4rem;
+						  	font-size: 2.4rem;
+					  	}
+					  	padding-bottom: 15px;
+					  	margin: 0px;
+					}
+				}
+		  		section {
+					padding: 0px;
+					p {
+					  	padding-bottom: 2rem;
+					  	text-indent: 0px;
+					}
+				  	ul, ol{
+					  	padding-left: 20px;
+					  	padding-bottom: 2rem;
+					  	padding-top: 2rem;
+					  	margin-top:2rem;
+						margin-bottom:2rem;
+					  	color: $colour-default-grey-2;
+					  	border-top: 1px solid $colour-default-grey-2;
+					  	border-bottom: 1px solid $colour-default-grey-2;
+					}
+				}
+			  	.spotlight{
+				  	figcaption{
+				  		&.support-text{
+							padding-bottom: 15px;
+						}
+					}
+				}
+		  		.col-xs-12.col-sm-8.col-md-9{
+				  	blockquote {
+					  	&.quote3 {
+						  	p {
+							  	padding: 20px 0px 40px 0px;
+							}
+						}
+					}
+				}
+		  		blockquote {
+					&.quote3 {
+					  	p {
+							line-height: 1.3em;
+						  	padding-bottom: 20px;
+						  	font-size: 1.9rem;
+					  	}
+					}
+				}
+			}
+		}
+	}
+}
+
+// tablet specific
+@media (min-width: $screen-sm) {
+
+	#pagecontent {
+		margin-top: 56px;
+	}
+  	.maincontent{
+		&.article-v2{
+		  	article{
+			  	&.container {
+
+					header {
+					  	&.section-title {
+							h1 {
+							  	line-height: 3.4rem;
+							  	font-size: 3.4rem;
+							}
+							padding-bottom: 20px;
+					  	}
+					}
+					blockquote {
+					  	&.quote3 {
+							p {
+								font-size: 1.9rem;
+							}
+					  	}
+					}
+			  	}
+		  	}
+	  	}
+	}
+}
+
+// desktop specific
+@media (min-width: $screen-md) {
+
+  	.maincontent{
+	  	&.article-v2{
+		  	#intro{
+				padding-bottom: 50px;
+				padding-top: 50px;
+				.intro {
+					&.intro-v2 {
+					  	line-height: 1.3em;
+				  	}
+				}
+			}
+		  	article{
+				&.container {
+					header {
+						&.section-title {
+							h1 {
+								line-height: 4.4rem;
+								font-size: 4.4rem;
+							}
+						padding-bottom: 30px;
+						}
+					}
+					.col-xs-12.col-sm-8.col-md-9{
+						blockquote {
+							&.quote3 {
+								p{
+								  	line-height: 1.3em;
+								  	padding: 40px 0px 60px 0px;
+								}
+							}
+						}
+					}
+					blockquote {
+						&.quote3 {
+							p {
+								font-size: 2.4rem;
+							  	padding-bottom: 30px;
+							}
+						}
+					}
+				}
+	  		}
+		}
+  	}
+
+	.col-xs-center {
+		text-align: left;
+	}
+	.col-xs-12 {
+		&.col-sm-3, &.col-sm-6, &.col-md-6 {
+			img {
+				width: 100%;
+			}
+			iframe {
+				width: 100%;
+			}
+		}
+	}
+	.row {
+		padding-bottom: $padding-bottom-row;
+	}
+	#pagecontent {
+		margin-top: $height-navbar-top-md;
+	}
+
+	#nav-secondary-level + #pagecontent .section-title {
+		margin-top: 80px;
+	}
+
+	.car-chapter, .article {
+		#pagecontent {
+			margin-top: $height-navbar-top-md-2l;
+		}
+		#nav-secondary-level {
+			display: block !important;
+		}
+	}
+	.maincontent {
+		section {
+			padding-top: 40px;
+		}
+	}
+}
+
+//fix for lack of border for .btn class on ie8 and ie9
+.lt-ie9{
+	.btn{
+		border: 1px solid $colour-paragraph-border;
+	}
+}
+.eq-ie9{
+	overflow-x: hidden;
+	#pagecontent{
+		width: 100%;
+	}
+	.btn{
+		border: 1px solid $colour-paragraph-border;
+	}
+	.mobile-compare{
+		display: none;
+	}
+	#hybrid-spotlights{
+		.row{
+			.spotlight{
+				p{
+					strong{
+						display: block;
+						margin-right: 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $screen-lg) {
+
+	#pagecontent {
+		@include box-shadow(250px 0 190px -250px rgba(108,112,115,.3) inset, -250px 0 190px -250px rgba(108,112,115,.3) inset);
+	}
+
+	/* Chrome box-shadow bug fix. To be removed once fixed:
+	 * https://code.google.com/p/chromium/issues/detail?can=2&start=0&num=100&q=box-shadow&colspec=ID%20Pri%20M%20Iteration%20ReleaseBlock%20Cr%20Status%20Owner%20Summary%20OS%20Modified&groupby=&sort=&id=437128
+	 */
+	@media (-webkit-min-device-pixel-ratio:0) {
+		#pagecontent {
+			@include box-shadow(none);
+			background: linear-gradient(to right, rgba(108,112,115,.4) -400px, rgba(255,255,255,.8) 130px),
+			linear-gradient(to left, rgba(108,112,115,.4) 0px, rgba(255,255,255,.8) 130px);
+		}
+	}
+
+	.homepage{
+		#pagecontent {
+			margin-top: 70px;
+		}
+	}
+}

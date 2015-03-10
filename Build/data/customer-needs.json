@@ -1,0 +1,39 @@
+  var source   = $("#needs-template").html();
+  var template = Handlebars.compile(source); 
+
+
+  var data = { "needs": [
+    {
+      "caption": "Customer Interest",
+      "question": [
+      "What do you like and dislike about your existing car?",
+      "Why are you planning to replace your current car?",
+      "What features are important for you in the new car you are looking for?",
+      "What vehicles options and accessories are you interested in?",
+      "What do you know about the benefits of hybrid technology?",
+      "By when do you need the new car?"
+      ]
+    },
+    {
+      "caption": "Customer needs",
+      "question": [
+      "How many km per year do you drive?",
+      " Where do you mainly drive: in city or outside?",
+      "What do you typically use your car for?",
+      "Who else other than yourself will drive the new car car?",
+      "What is the trunk space required?",
+      "What is your opinion about automatic transmission?"
+      ]
+    },
+      {
+      "caption": "Funding and costs",
+      "question": [
+      "Do you plan to use finance to purchase the new car?",
+      "What are your expected monthly leasing costs including insurance?",
+      "Would you like to receive a purchase offer / evaluation for your current car?",
+      "What are your expectation about fuel consumption?"
+      ]
+    }
+    ]};
+
+  $("#placeholder-needs").html(template(data));

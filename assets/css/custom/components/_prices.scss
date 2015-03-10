@@ -1,0 +1,59 @@
+.prices-component {
+	.promo-highlighting, .promo-highlighting a {
+		color: $colour-promo-2;
+	}
+
+	.promos {
+		th.tablesorter-headerDesc, th.tablesorter-headerAsc {
+			color: $colour-promo-2;
+		}
+	}
+
+	.promo-details {
+		@include font-size(13, 1.8);
+		padding: 30px 0;
+		.promo-highlighting {
+			margin-bottom: 13px;
+		}
+		p {
+			@include font-size(13, 1.8);
+		}
+	}
+
+	.no-indent {
+		text-indent: 0px;
+		p {
+			text-indent: 0;
+		}
+	}
+
+	a.btn i{
+		padding: 0;
+		margin: 0;
+	}
+
+}
+
+.js .fc-group.prices-group {
+	display: none;
+}
+
+.prices.inpage-cta {
+	height: auto !important;
+	background-color: $colour-btn-grey-1;
+	.arrow {
+		border-bottom-color: $colour-btn-grey-1;
+	}
+	.container .buttons {
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+}
+
+@media (min-width: $screen-md)  {
+	.prices-component {
+		a.btn i{
+			padding-left: 5px;
+		}
+	}
+}

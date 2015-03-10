@@ -1,0 +1,193 @@
+/* =============================================================================
+ * custom mixins v1.1
+ * KGH: add hardware acceleration mixin
+ * ========================================================================== */
+
+// columns
+@mixin columns-fixed($fixedWidth, $amountOfColumns, $gap) {
+	columns: $fixedWidth $amountOfColumns;
+	-webkit-columns: $fixedWidth $amountOfColumns;
+	-moz-columns: $fixedWidth $amountOfColumns;
+	column-gap: $gap;
+	-moz-column-gap: $gap;
+	-webkit-column-gap: $gap;
+}
+
+@mixin columns-fluid($amountOfColumns, $gap) {
+	columns: (floor(100/$amountOfColumns) * 1%) $amountOfColumns;
+	-webkit-columns: (floor(100/$amountOfColumns) * 1%) $amountOfColumns;
+	-moz-columns: (floor(100/$amountOfColumns) * 1%) $amountOfColumns;
+	column-gap: $gap;
+	-moz-column-gap: $gap;
+	-webkit-column-gap: $gap;
+}
+
+// transitions/effects
+@mixin hardware-acceleration() {
+		-webkit-transform: translate3d(0, 0, 0);
+		-moz-transform: translate3d(0, 0, 0);
+		-ms-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+
+		-webkit-backface-visibility: hidden;
+		-moz-backface-visibility: hidden;
+		-ms-backface-visibility: hidden;
+		backface-visibility: hidden;
+
+		-webkit-perspective: 1000;
+		-moz-perspective: 1000;
+		-ms-perspective: 1000;
+		perspective: 1000;
+}
+
+@mixin transition-linear($type1, $time1a, $time1b, $type2, $time2) {
+	-webkit-transition: $type1 ($time1a + s) linear ($time1b + s), $type2 ($time2 + s) linear;
+	-moz-transition: $type1 ($time1a + s) linear ($time1b + s), $type2 ($time2 + s) linear;
+	-ms-transition: $type1 ($time1a + s) linear ($time1b + s), $type2 ($time2 + s) linear;
+	-o-transition: $type1 ($time1a + s) linear ($time1b + s), $type2 ($time2 + s) linear;
+	transition: $type1 ($time1a + s) linear ($time1b + s), $type2 ($time2 + s) linear;
+}
+@mixin -transform-origin($origin) {
+	-webkit-transform-origin: $origin;
+	-moz-transform-origin: $origin;
+	-o-transform-origin: $origin;
+	-ms-transform-origin: $origin;
+	transform-origin: $origin;
+}
+@mixin -animation-fill-mode($fillmode) {
+	-webkit-animation-fill-mode: $fillmode;
+	-moz-animation-fill-mode: $fillmode;
+	-ms-animation-fill-mode: $fillmode;
+	-o-animation-fill-mode: $fillmode;
+	animation-fill-mode: $fillmode;
+}
+
+@mixin vjs-spinner-ball($opacity, $left, $top) {
+	opacity: $opacity;
+	position: absolute;
+	left: $left;
+	top: $top;
+	width: 13px;
+	height: 13px;
+	background: #fff;
+	border-radius: 13px;
+	-webkit-border-radius: 13px;
+	-moz-border-radius: 13px;
+	border: 1px solid #ccc;
+}
+
+@mixin border-radius($radius){
+  	border-radius: $radius;
+  	-webkit-border-radius: $radius;
+  	-moz-border-radius: $radius;
+}
+
+// override
+@mixin filter-gradient($start-color, $end-color, $orientation: 0) {
+	@include has-layout;
+	$gradient-type: $orientation;
+	@if $legacy-support-for-ie6 or $legacy-support-for-ie7 or $legacy-support-for-ie8 {
+		filter: progid:DXImageTransform.Microsoft.gradient(gradientType=#{$gradient-type}, startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}');
+	}
+}
+
+@mixin trans($type, $color, $percentage) {
+	@if $type == color {
+		color: mix(#fff, $color, $percentage);
+		color: rgba($color, $percentage);
+	}
+	@if $type == bg {
+		background-color: mix(#fff, $color, $percentage);
+		background-color: rgba($color, $percentage);
+	}
+}
+
+// fonts
+// deprecated
+@function _em($pixelvalue, $base: $font-size-base) {
+	@return ($pixelvalue / $base) * 1em;
+}
+
+@mixin font-size($pixelvalue, $linevalue: '') {
+	font-size: $pixelvalue + px;
+	font-size: ($pixelvalue / 10) + rem;
+	@if $linevalue != '' {
+		line-height: ($linevalue * 10) + px;
+		line-height: $linevalue + rem;
+	}
+}
+
+/* make elements unselectable */
+@mixin unselectable {
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-o-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+/* toyota-tab */
+@mixin toyota-tab {
+	display: inline-block;
+	padding: 15px 15px 25px;
+	font-family: $font-toyota-text-regular;
+	@include font-size(15);
+	&.active {
+		  background: $colour-default-white;
+		  font-family: $font-toyota-text-bold;
+		  border-top-left-radius: 2px;
+		  border-top-right-radius: 2px;
+	}
+	&:hover {
+		text-decoration: none;
+	  	background: $colour-default-white;
+		border-top-left-radius: 2px;
+		border-top-right-radius: 2px;
+	}
+}
+
+@mixin placeholder {
+	&::-webkit-input-placeholder	{@content}
+	&:-moz-placeholder				{@content}
+	&::-moz-placeholder				{@content}
+	&:-ms-input-placeholder			{@content}
+}
+
+@mixin multiline-text-overflow($width: 2em, $padding-right: 0.5em, $line-height: 1.5em, $selector: "*") {
+	// $width - width of "ellipsis element" (shows up on the end of text); increasing this value can helps if you have problem with line wrapping, but it decrease "accuracy of detecting" the last word
+	// $padding-right - simply right padding of "ellipsis element"
+	// $line-height - should be absolute value (in px, ems etc.) and fit to line-height of cutting text
+	// $selector - container for text (in example it's paragraph); quotes required!
+	// you can use @content block to style "ellipsis element"
+
+	overflow: hidden;
+	position: relative;
+
+	&:before {
+		content: "";
+		float: left;
+		height: 100%;
+		width: $padding-right;
+	}
+
+	&:after {
+		content: "\02026";
+		float: right;
+		left: 100%;
+		margin-left: -$width;
+		padding-right: $padding-right;
+		position: relative;
+		text-align: center;
+		top: -$line-height;
+		width: $width;
+		box-sizing: content-box;
+		@content;
+	}
+
+	& > #{$selector}:first-child {
+	  float: right;
+	  width: 100%;
+	  margin-left: -$padding-right;
+	}
+}

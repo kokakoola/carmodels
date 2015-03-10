@@ -1,0 +1,1616 @@
+&.tmxcc-v6-container {
+    @include font-size(1.4);
+    min-width: 923px;
+}
+
+/* HEADER -> primary
+========================================================== */
+
+header.cc-primary {
+    margin: 0;
+    padding: 15px 20px;
+    height: 60px;
+    background-color: $primaryNavBgColor;
+
+    .cc-actions {
+        position: absolute;
+        top: -3px;
+        right: 0;
+    }
+}
+
+/* HEADER -> secondary
+========================================================== */
+
+header.cc-secondary {
+    padding: 12px 0;
+
+    h1 {
+        float: left;
+        @include font-size(3.6);
+    }
+
+    .cc-actions {
+        float: right;
+    }
+}
+
+/* HEADER -> secondary
+========================================================== */
+
+header.cc-tertiary {
+    padding-bottom: 20px;
+
+    h1 {
+        float: left;
+    }
+
+    .cc-actions {
+        float: right;
+    }
+}
+
+.cc-padding-top {
+    padding-top: 12px;
+}
+
+/* CONTAINER
+========================================================== */
+
+.cc-container {
+    position: relative;
+    width: 923px !important;
+    margin: 0 auto;
+    padding: 0;
+}
+
+
+/* HEADER -> actions
+========================================================== */
+
+.cc-header-actions {
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    margin-left: -463px;
+    width: 100%;
+    z-index: 200;
+
+    .cc-actions {
+        float: right;
+    }
+
+    .cc-btn-close {
+        display: none;
+    }
+
+    .cc-btn {
+        margin-left: 6px;
+        @include font-size(1.2);
+    }
+}
+
+
+/* NAVIGATION -> primary
+========================================================== */
+
+nav.cc-primary {
+    margin-top: 12px;
+    height: 48px;
+    @include font-size(1.5);
+    
+    ul {        
+        list-style: none;
+    }
+
+    li {
+        float: left;
+    }
+
+    li a {
+        float: left;
+        padding: 8px 10px 22px;
+        line-height: 18px;
+    }
+
+    a {
+        color: #ced3d6;
+
+        &:hover {
+            text-decoration: none;
+            color: #fff;
+        }
+    }
+
+    a.current,
+    a.cc-selected {
+        color: #1f2c35;
+        background-color: #fff;
+
+        @include vendorize(border-radius, 2px 2px 0 0);
+    }
+}
+
+nav.cc-primary-bottom {
+    margin-top: 0;
+
+    li a {
+        padding: 18px 10px 12px;
+    }
+
+    a.current,
+    a.cc-selected {
+        color: #fff;
+        @include gradient(#18232a,#141516);
+        @include vendorize(border-radius, 0 0 2px 2px);
+    }
+
+    .cc-btn {
+        margin-top: 12px;
+    }
+}
+
+.cc-panel {
+    position: relative;
+    //margin-bottom: 12px;
+    min-height: 60px;
+    z-index: 101;
+    background-color: #334048;
+
+    h1 {
+        float: left;
+        @include font-size(2);
+        line-height: 30px;
+        font-family: 'toyotatext_bd';
+        color: #fff;
+    }
+}
+
+/* PROMOTIONS PANEL
+========================================================== */
+
+.cc-panel-promotions {
+    background-color: #f5f5f6;
+    z-index: 200;
+
+    h1 {
+        padding: 20px 0 40px 0;
+        float: none;
+        @include font-size(6.6);
+        line-height: 1em;
+        text-align: center;
+        color: #1e2a32;
+    }
+
+    h2,
+    h3,
+    h4 {
+        font-family: 'toyotatext_bd';
+    }
+
+    h2 {
+        margin: 0 0 10px 0;
+        @include font-size(2.4);
+        color: #364147;
+    }
+
+    h3 {
+        margin: 0 0 18px 0;
+        @include font-size(1.9);
+        
+        &,
+        a {
+            color: #ef9109;
+        }
+    }
+
+    h4 {
+        margin-bottom: 10px;
+        @include font-size(1.5);
+        color: #1e2a32;
+    }
+
+    header i {
+        float: none;
+        margin-left: 5px;
+        color: #ef9109;
+    }
+
+    p,
+    ul {
+        @include font-size(1.5);
+    }
+
+    a.cc-toggle {
+        @include font-size(1.3);
+        color: #6c7073;
+    }
+
+    .cc-panel-footer {
+        margin-bottom: 20px;
+
+        .cc-page-nav a {
+            top: 220px;
+        }
+
+        a.cc-prev {
+            left: 10px;
+        }
+
+        a.cc-next {
+            right: 10px;
+        }
+    }
+}
+
+.cc-promotions {
+    overflow: visible;
+    overflow-y: visible;
+
+    .cc-page-wrapper {
+        margin: 0 100px;
+        overflow-x: hidden;
+    }
+
+    .cc-page {
+        float: left;
+        width: 730px;
+    }
+
+    ul {
+        padding-bottom: 30px;
+        list-style: none;
+    }
+
+    li {
+        margin-bottom: 5px;
+    }
+
+    .cc-action .cc-popup {
+        width: 726px;
+        left: 0;
+
+        &:before {
+            left: 35px;
+        }
+
+        .cc-contents {
+            padding: 20px 90px 20px 20px;
+
+            p {
+                @include font-size(1.3);
+                color: #fff;
+            }
+        }
+    }
+}
+
+/* DISCLAIMERS
+========================================================== */
+
+.cc-disclaimers {
+    position: relative;
+    padding: 15px 50px 10px 235px;
+    background-color: #fff;
+
+    h2 {
+        position: absolute;
+        top: 25px;
+        left: 10px;
+        @include font-size(1.4);
+        font-family: 'toyotatext_bd';
+        color: #71767a;
+    }
+
+}
+
+/* DISCLAIMER */
+.cc-disclaimer {
+    position: relative;
+    padding: 10px 0;
+    @include vendorize(border-radius, 2px);
+
+    h3 {
+        margin-bottom: 10px;
+        font-family: 'toyotatext_bd';
+        @include font-size(1.5);
+        color: #71767a;
+    }
+}
+
+/* SPECS PANEL
+========================================================== */
+
+.cc-panel-specs {
+    background-color: #fff;
+}
+
+.cc-specs {
+    padding: 0;
+    list-style: none;
+
+    header {
+        position: relative;
+
+        h1 {
+            float: none;
+            padding: 5px 0 6px 12px;
+            @include font-size(2.8);
+            color: #1e2a32;
+        }
+    }
+
+    table {
+        width: 100%;
+        border-top: 1px solid #e3e4e5;
+
+        a {
+            color: #74787c;
+        }
+    }
+
+    th,
+    td {
+        vertical-align: top;
+        padding: 9px 10px 10px 12px;
+        line-height: 1em;
+        border-bottom: 1px solid #e3e4e5;
+    }
+
+    th {
+        padding-left: 12px;
+        font-family: 'toyotatext_bd';
+        font-weight: normal;
+    }
+
+    td {
+        @include font-size(1.5);
+    }
+
+    tr.cc-trigger {
+        th { cursor: pointer; }
+    }
+
+    tr.highlight {
+        td,
+        th {
+            background-color: #f5f5f6;
+        }
+
+        .cc-price {
+            font-family: 'toyotatext_bd';            
+        }
+    }
+
+    th.cc-col-icon {
+        width: 12px;
+        padding: 0 0 0 12px;
+        text-align: center;
+
+        .cc-icon {
+            float: none;
+            margin-top: 8px;
+            margin-right: 0;
+        }
+    }
+
+    footer {
+        margin-bottom: 50px;
+        padding: 10px;
+        background-color: #f5f5f6;
+
+        .cc-pricing {
+            margin: 5px 0 25px;
+            text-align: right;    
+        }
+
+    }
+
+    .cc-pricing {
+        margin-bottom: 0;
+
+        .cc-icon {
+            float: none;
+            margin: 0 3px 0;
+        }
+
+        .cc-number {
+            position: relative;
+            top: -1px;
+        }
+    }
+
+    .cc-savings {
+        color: #ef9109;
+    }
+
+    .cc-price-total {
+        .cc-price {
+            font-family: 'toyotatext_bd';
+            @include font-size(2.4);
+            color: #1e2a32;
+        }
+    }
+
+    .cc-actions {
+        position: absolute;
+        top: 12px;
+        right: 0;
+
+        .btn-group {
+            float: left;
+
+            .cc-btn {
+                margin-left: 0;
+                padding-right: 16px;
+            }
+        }
+
+        .cc-btn {
+            position: relative;
+            margin-left: 6px;
+            padding-right: 28px;
+
+            .cc-icon {
+                position: absolute;
+                top: 10px;
+                right: 0;
+            }
+        }
+    }
+
+    .cc-list-thumbs {
+        margin: 0 -12px;
+        padding: 0;
+        width: 923px;
+        @include font-size(1.4);
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            margin-bottom: 26px;
+        }
+
+        li:nth-of-type(6n) {
+            margin-right: 0;
+        }
+
+        li:nth-of-type(6n+1) {
+            clear: left;
+        }
+
+        .cc-meta {
+            color: #1e2a32;
+        }
+
+        .cc-thumb {
+            padding-bottom: 0;
+        }
+    }
+
+    .cc-pack {
+        th, td {
+            border-bottom: none;            
+        }
+    }
+
+    .cc-pack-contents {
+        td {
+            padding: 0 0 18px 10px;
+        }
+
+        .cc-table-wrapper {
+            border: 1px solid #E3E4E5;
+            border-bottom: none;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        table {
+
+            border-top: none;
+
+            td {
+                padding: 9px 10px 10px 12px;
+                background-color: transparent;
+            }
+        }
+    }
+
+    .cc-box-note {
+        top: 0;
+        margin-bottom: 20px;
+
+        .cc-contents {
+            padding-left: 32px;
+        }
+
+        .cc-checkbox {
+            position: absolute;
+            top: 13px;
+            left: 10px;
+        }
+
+        label {
+            margin-bottom: 0;
+            font-weight: normal;
+            color: #1e2a32;
+        }
+
+        p {
+            margin-bottom: 0;
+            color: #8b8f93;
+        }
+
+        &:before {
+            display: none;
+        }
+    }
+}
+
+.cc-panel-grey {
+    background-color: #f0f0f1;
+
+    .cc-container {
+        padding: 20px 12px;
+    }
+
+    .cc-btn {
+        margin-bottom: 30px;
+    }
+}
+
+.cc-right {
+    text-align: right;
+}
+
+.cc-box-code {
+    position: absolute;
+    left: 0;
+    bottom: 13px;
+    padding: 10px 10px 18px;
+    width: 302px;
+    color: #fff;
+    background-color: rgba(40,52,60,.7);
+
+    header {
+        margin: 12px 0;
+    }
+
+    img {
+        float: left;
+        margin: 0 12px 12px 0;
+        @include vendorize(border-radius, 0);
+    }
+
+    .cc-code {
+        font-family: 'toyotatext_bd';
+    }
+
+    .cc-summary {
+        clear: left;
+    }
+}
+
+/* FILTER RESULTS
+========================================================== */
+
+.cc-filter-results {
+    padding: 0 5px;
+
+    .row {
+        margin-left: -5px;
+        margin-right: -5px;        
+    }
+
+    article {
+        margin-bottom: 10px;
+        padding: 0 5px;
+    }
+
+    .cc-inner {
+        padding: 10px;
+    }
+
+    .cc-selected {
+        background-color: rgba(51,64,72,.08);
+        @include vendorize(border-radius, 2px);
+    }
+
+    header {
+        clear: left;
+        @include font-size(1.4);
+    }
+
+    h1 {
+        @include font-size(1.4);
+    }
+
+    .cc-hybrid .cc-title { color: #00a0f0; }
+
+    .cc-thumb img {
+        width: 100%;
+        height: auto;
+    }
+
+    .cc-icon-info {
+        margin-top: 0;
+    }
+
+    .no-results {
+        margin: 0 auto;
+        padding-top: 100px;
+        width: 540px;
+        text-align: center;
+
+        .icon-car1 {
+            display: inline-block;
+            margin-bottom: 10px;
+            @include font-size(10);
+            color: #d2d4d7;
+        }
+
+        p {
+            margin: 10px 0;
+            @include font-size(2.4);
+            line-height: 35px;
+            color: #1f2c35;
+        }
+    }
+}
+
+.cc-icon-info {
+    position: relative;
+}
+
+/* Create larger hitareas */
+.cc-icon-info:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -22px;
+    margin-top: -22px;
+    width: 44px;
+    height: 44px;
+    content: '';
+}
+
+article.cc-disabled {
+    position: relative;
+
+    &,
+    .cc-price-monthly {
+        color: #B3B3B3;
+    }
+
+    .cc-promotion {
+        background-color: #bbbfc2;
+    }
+
+    .cc-message {
+        position: absolute;
+        top: 115px;
+        left: 0;
+        display: none;
+        width: 100%;
+        color: #fff;
+        background-color: #334048;
+
+        &:before {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            width: 30px;
+            height: 10px;
+            margin-left: -15px;
+            content: '';
+            background-position: -30px -20px;
+        }
+    }
+
+    .cc-contents {
+        padding: 10px;
+    }
+}
+
+/* PRICING
+========================================================== */
+
+.cc-price-from {
+    @include font-size(1.5);
+}
+
+.cc-price-monthly {
+    color: #6c7073;
+}
+
+/* CAR HEADER
+========================================================== */
+
+.cc-car-header {
+    @include font-size(1.5);
+    
+    h1 {
+        color: #fff;
+    }
+
+    .cc-pricing {
+        font-family: 'toyotatext_bd';
+        @include font-size(1.9);
+        color: #959ca0;
+    }
+
+    .cc-price-monthly {
+        color: #fff;
+    }
+
+    .cc-number {
+        margin-top: 4px;
+    }
+
+    a {
+        color: #fff;
+    }
+
+    .cc-icon-info {
+        margin-top: 2px;
+    }
+
+    .cc-actions {
+        display: none; 
+
+        .cc-btn {
+            margin-left: 6px;
+            @include font-size(1.2);
+        }
+    }
+
+    .cc-container {
+        min-height: 100%;
+    }
+}
+
+/* SPINPLAYER
+========================================================== */
+
+.cc-spinplayer {
+    height: 490px;
+    background-image: url(../img/content/spinplayer.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-color: #000;    
+
+
+    .cc-number {
+        margin-right: 5px;
+        color: #18232a;
+    }
+
+    &.fullscreen {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        margin-left: -624px;
+        min-height: 640px;
+        background-image: url(../img/content/spinplayer_fullscreen.jpg);    
+
+        .cc-container {
+            width: 1248px !important;
+        }
+
+        .cc-price-box {
+            display: none;
+        }
+
+        .cc-actions {
+            display: block;
+            position: absolute;
+            top: 12px;
+            right: 0;
+        }
+    }
+}
+
+.cc-aygo-submodel {
+    
+    .cc-car-header {
+        height: 370px;
+
+        background-image: url(../img/content/aygo_submodel.jpg);
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+
+        .cc-actions {
+            display: block;
+        }
+    }
+
+    .cc-col-headings {
+        position: absolute;
+        width: 946px;
+        bottom: 0;
+
+        .cc-col {
+            position: relative;
+            padding-bottom: 25px;
+        }
+
+        .cc-col:before {
+            position: absolute;
+            bottom: 0;
+            left: 28px;
+            margin-left: 0;
+            width: 30px;
+            height: 10px;
+            content: '';
+            background-position: -30px -129px;
+        }
+
+        h2 {
+            font-family: 'toyotatext_bd';
+            @include font-size(1.5);
+            color: #fff;
+        }
+
+        p {
+            @include font-size(1.3);
+            color: #fff;
+        }
+    }
+
+    .cc-panel-models {
+        padding: 30px 0 50px 0;
+        background-color: #fff;
+    }
+
+    .cc-checkbox-small {
+        margin-top: 2px;
+    }
+
+    .cc-checkbox-label {
+        position: relative;
+        padding-left: 23px;
+        display: inline-block;
+        font-family: 'toyotatext_bd';
+        font-weight: normal;
+
+        .cc-checkbox {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    .cc-pricing-right {
+        position: relative;
+
+        .cc-pricing {
+            position: absolute;
+            top: 2px;
+            right: 60px;
+        }
+    }
+
+    .cc-item {
+        padding-bottom: 15px;
+        padding-right: 60px;
+    }
+
+    .cc-thumb {
+        width: 224px;
+    }
+
+    .cc-list-thumbs {
+        position: relative;
+        width: 224px;
+        overflow: visible;
+
+        .cc-list-page-wrapper {
+            position: relative;
+            min-height: 240px;
+            overflow: hidden;
+            width: 224px;
+        }
+
+        .cc-list-page-container {
+            position: absolute;
+        }
+
+        .cc-listitem {
+            margin-right: 0;
+            width: 224px;
+            color: #1f2c35;
+        }
+
+        .cc-checkbox-label {
+            font-family: 'toyotatext_rg';
+        }
+    
+        .cc-pricing {
+            margin-left: 23px;
+        }
+
+        .cc-paging {
+            width: 100%;
+
+            a {
+                top: 100px;
+                width: 30px;
+                height: 30px;
+                @include font-size(2.2);
+                line-height: 30px;
+                @include vendorize(border-radius, 15px);
+                color: #fff;
+
+                i {
+                    top: 4px;
+                }
+            }
+
+            a.cc-prev {
+                left: -35px;
+                
+                i {
+                    left: 9px;
+                }
+            }
+
+            a.cc-next {
+                right: -35px;
+
+                i {
+                    right: 10px;
+                }
+            }
+        }
+    }
+
+    .cc-box-note {
+        margin-right: 60px;
+        margin-left: -30px;
+
+        &:before {
+            left: 50%;
+        }
+
+        .cc-contents {
+            padding: 20px;
+        }
+    }
+
+    .cc-pricing {
+        @include font-size(1.2);
+        color: #626b71;
+    }
+
+
+}
+
+/* MINI HEADER
+========================================================== */
+
+.cc-mini-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    z-index: 50;
+    background-image: url(../img/content/miniheader.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-color: #000;
+}
+
+/* CONTENT BLOCK
+========================================================== */
+
+.cc-content-block {
+    position: relative;
+    z-index: 100;
+    background: url(../../assets/images/carconfigurator/bg_panel.png) no-repeat 50% 0;
+    background-size: 2800px 3000px;
+
+    .cc-number {
+        margin-right: 5px;
+        color: #18232a;
+    }
+}
+
+/* LISTS
+========================================================== */
+
+.cc-list {
+
+    ul {
+        list-style: none;
+    }
+
+    .cc-listitem {
+        position: relative;
+        padding: 10px 0;
+        color: #fff;
+        border-bottom: 1px solid #3a464e;
+    }
+
+    .cc-title {
+        float: left;
+    }
+
+    .cc-disabled {
+        .cc-title {
+            color: #5e656a;
+        }
+    }
+
+    .cc-toggle-features {
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        margin-left: -100px;
+        width: 200px;
+        height: 20px;
+        text-align: center;
+    }
+
+    .cc-title {
+        .cc-toggle-features {
+            position: static;
+            margin-left: 0;
+            font-family: 'toyotatext_bd';
+            font-weight: normal;
+        }
+    }
+
+    .cc-checkbox-label {
+        font-family: 'toyotatext_bd';
+        font-weight: normal;
+    }
+
+    .cc-toggle {
+        color: #ced3d6;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+/* LIST VIEW
+========================================================== */
+
+.cc-list-view {
+    .cc-title {
+        max-width: 380px;
+        padding-left: 40px;        
+    }
+
+    .cc-checkbox {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+
+    .cc-checkbox {
+        background-position: 0 -80px;
+
+        &.cc-checked {
+            background-position: -20px -80px;
+        }
+
+        &.cc-disabled {
+            background-position: -40px -80px;
+        }
+    }
+
+    .cc-checkbox-small {
+        margin-top: 2px;
+        background-position: 0 -155px;
+
+        &.cc-checked {
+            background-position: -20px -155px;
+        }
+
+        &.cc-disabled {
+            background-position: -40px -155px;
+        }
+    }
+
+    .cc-disabled {
+        color: #858b8f;
+    }
+
+    .cc-pricing {
+        float: right;
+        @include font-size(1.3);
+
+        del.cc-price {
+            color: #bbbec0;
+        }
+    }
+}
+
+.cc-list-features {
+    position: relative;
+    padding-top: 10px;
+
+    .cc-list-thumbs {
+        padding-top: 0;
+    }
+
+    .cc-panel-footer {
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        margin: 15px 0 5px;
+        font-family: 'toyotatext_bd';
+        @include font-size(1.5);
+    }
+}
+
+.cc-panel-footer {
+    .cc-wrapper {
+        position: relative;
+    }
+}
+
+.cc-relative {
+    position: relative;
+}
+
+/* THUMB LISTS
+========================================================== */
+
+.cc-list-thumbs {
+    padding: 30px 0 0;
+    width: 770px;
+    overflow: hidden;
+    @include vendorize(box-sizing, content-box);
+
+    &.cc-has-paging {
+        margin: 0 78px;        
+    }
+
+    .cc-listitem {
+        float: left;
+        width: 146px;
+        margin-right: 10px;
+        border-bottom: none;
+    }
+
+    h3 {
+        margin-bottom: 10px;
+        @include font-size(1.2);
+        color: #a8acae;
+    }
+
+    .cc-title {
+        display: block;
+        float: none;
+        padding-left: 0;
+    }
+
+    .cc-meta {
+        position: static;
+        color: #fafafb;
+    }
+
+    .cc-thumb {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+        @include vendorize(border-radius, 4px);
+
+
+        .cc-checkbox {
+            top: 10px;
+            left: 10px;
+            padding: 0;
+            z-index: 100;
+        }
+    }
+
+    .cc-thumb-checked {
+        @include vendorize(box-shadow, 0 0 0 2px #fff);
+    }
+
+    .cc-pricing {
+        @include font-size(1.1);
+    }
+
+    .cc-price {
+        float: none;
+    }
+
+    .cc-tag {
+        position: absolute;
+        right: 0;
+        bottom: -10px;
+        z-index: 100;
+        width: 32px;
+        height: 32px;
+        @include font-size(3.2);
+        color: #ef9109;
+    }
+
+}
+
+/* TABS
+========================================================== */
+
+.cc-tab {
+    padding-bottom: 20px;
+
+    .cc-thumb {
+        padding-bottom: 0;
+    }
+
+    .cc-page-nav {
+        
+        a {
+            top: 62px;
+            background-color: #334048;
+        }
+
+        a:hover { background-color: #526068; }
+
+        a.cc-prev { left: 0; }
+        a.cc-next { right: 0; }
+    }
+}
+
+.cc-colours,
+.cc-tab-colours {
+    .cc-thumb {
+        height: 60px;        
+    }
+
+    .cc-shine {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 146px;
+        height: 20px;
+        background: url(../../assets/images/carconfigurator/shine.png) no-repeat 0 0;
+    }
+}
+
+/* FEATURES BOX
+========================================================== */
+
+.cc-box-feature,
+.cc-box-features {
+    position: relative;
+    clear: both;
+    margin: 0 0 10px;
+    padding: 0 5px;
+    @include vendorize(border-radius, 2px);
+
+    .cc-contents {
+        position: relative;
+        padding: 40px 80px;
+        background-color: #f0f0f1;
+    }
+
+    .cc-title {
+        display: block;
+        float: none;
+        margin-bottom: 10px;
+        @include font-size(1.3);
+        color: #6c7073;
+    }
+
+    .cc-summary {
+        @include font-size(1.3);
+    }
+
+    h1 {
+        margin-bottom: 5px;
+        @include font-size(1.5);
+    }
+
+    .cc-page-nav {
+        a {
+            top: 115px;
+        }
+
+        .cc-prev {
+            left: 10px;
+        }
+
+        .cc-next {
+            right: 10px;
+        }
+    }
+
+    a.cc-icon-close {
+        top: 0;
+        right: 5px;
+        @include font-size(1.6);
+        color: #858788;
+    }
+}
+
+.cc-box-feature {
+
+    .cc-title { 
+        color: #c6cbce; 
+    }
+    
+    p { color: #fff; }
+
+    .cc-contents {
+        padding: 10px;
+        background-color: #334048;
+        @include vendorize(border-radius, 2px);
+    }
+
+}
+
+/* ICONS
+========================================================== */
+
+a.cc-restart {
+    @include font-size(1.3);
+    color: #7a8188;
+
+    &:hover {
+        text-decoration: none;
+        color: #1f2c35;
+    }
+
+    i {
+        @include font-size(1.4);
+        line-height: 22px;
+    }
+}
+
+a.cc-icon-close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    float: right;
+    width: 24px;
+    height: 24px;
+    @include font-size(1.2);
+    text-align: center;
+    line-height: 24px;
+    color: #c6cbce;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+/* BOXES
+========================================================== */
+
+.cc-box {
+    margin-bottom: 10px;
+    border: 1px solid #d2d4d7;
+    @include vendorize(border-radius, 3px);
+    overflow: hidden;
+
+    .cc-contents {
+        padding: 10px;
+    }
+}
+
+.cc-box-note,
+.cc-box-grades {
+    position: relative;
+    top: 10px;
+    color: #656a6f;
+    background-color: #f0f0f1;
+    border: none;
+    overflow: visible;
+
+    &:before {
+        position: absolute;
+        top: -10px;
+        left: 75px;
+        width: 30px;
+        height: 10px;
+        margin-left: -15px;
+        content: '';
+        background-position: 0 -20px;
+    }
+
+    h2 {
+        margin-bottom: 5px;
+        font-family: 'toyotatext_bd';
+    }
+
+    h2,
+    p {
+        @include font-size(1.3);
+    }
+
+}
+
+.cc-box-info {
+    position: relative;
+    border: none;
+
+    .cc-contents {
+        padding: 10px 15px 10px 33px;
+        background-color: #737f85;
+        @include vendorize(border-radius, 2px);        
+    }
+
+    .cc-icon {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+
+    p {
+        margin: 0 0 5px;
+        @include font-size(1.3);
+        color: #fff;
+    }
+}
+
+/* OPTIONAL BOX
+========================================================== */
+
+.cc-box-optional {
+    position: relative;
+
+    padding: 12px 0 10px 156px;
+    background-color: #28343c;
+    border: none;
+
+    h1 {
+        position: absolute;
+        top: 14px;
+        left: 10px;
+        @include font-size(1.5);
+        color: #bdc2c5;
+    }
+}
+
+/* SUGGESTION BOX
+========================================================== */
+
+.cc-box-suggestion {
+    position: relative;
+    margin-bottom: 48px;
+    padding: 40px 78px;
+    color: #fff;
+    background-color: #334048;
+    border: none;
+
+    h1 {
+        margin-bottom: 10px;
+        @include font-size(1.5);
+        font-family: 'toyotatext_bd';
+        font-weight: normal;
+    }
+
+    p {
+        @include font-size(1.3);    
+        line-height: 20px;
+        color: #fff;
+    }
+
+    a.cc-link {
+        color: #c6cbce;
+        
+        i {
+            margin-top: 2px;
+        }
+    }
+
+    div.cc-actions {
+        float: left;
+        padding-top: 25px;
+
+        a {
+            margin-right: 6px;
+        }
+    }
+
+    .cc-icon-close {
+        @include font-size(1.6);
+        top: 10px;
+        right: 10px;
+        color: #c6cbce;
+    }
+}
+
+/* AYGO COLOURS
+========================================================== */
+
+.cc-packs-aygo {
+    .cc-list-thumbs {
+        .cc-page-nav a {
+            top: 35px;
+        }
+    }
+}
+
+.cc-wheels-aygo {
+    padding-top: 10px;
+}
+
+/* PROACE
+========================================================== */
+
+.cc-proace {
+    header.cc-secondary {
+        margin-bottom: 15px;
+        border-bottom: 1px solid #d7d9dc;
+    }
+
+    h1 {
+        margin-bottom: 10px;
+        padding-left: 10px;
+        @include font-size(2.4);
+    }
+
+    .cc-box {
+        padding: 10px;
+        background-color: #f0f0f1;
+        border: none;
+    }
+
+    table {
+        width: 100%;
+
+        td {
+            padding: 5px 0 10px;
+            border-bottom: 1px solid #d2d4d7;
+        }
+
+        .cc-last td {
+            border-bottom: none;
+        }
+    }
+
+    .cc-border {
+        margin-bottom: 15px;
+        padding-bottom: 25px;
+        border-top: none;
+        border-bottom: 1px solid #d7d9dc;
+    }
+
+    .cc-number {
+        margin-right: 5px;
+        background-color: #798086;
+    }
+}
+
+.cc-image {
+    position: relative;
+
+    .cc-btn-enlarge {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 36px;
+        height: 36px;
+        padding: 0;
+        text-align: center;        
+    }
+
+    .icon-search {
+        float: none;
+        margin-right: 0;
+        @include font-size(1.6);
+        width: 36px;
+        line-height: 36px;
+    }
+}
+
+
+/* ASIDE
+========================================================== */
+
+aside.cc-primary {
+    form {
+    }
+}

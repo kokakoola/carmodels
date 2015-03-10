@@ -1,0 +1,806 @@
+/* COLLAPSABLE
+========================================================== */
+
+.cc-collapsable {
+    border-bottom: 1px solid #d2d4d7;
+
+    &.cc-last {
+        border-bottom: none;
+    }
+
+    header {
+        padding: 10px;
+        background-color: #f5f5f6;
+        cursor: pointer;
+
+        h3 {
+            margin-bottom: 0;
+            @include font-size(1.4);
+            font-family: 'toyotatext_bd';
+            line-height: 20px;
+        }
+
+        .cc-icon {
+            margin: 2px 10px 0 0;
+        }
+    }
+
+    .cc-contents {
+        display: none;
+    }
+
+    .cc-action {
+        margin-bottom: 15px;
+    }
+
+    h4 {
+        @include font-size(1.4);
+    }
+
+    .cc-subtitle {
+        margin: 0 0 5px 0;
+        @include font-size(1.2);
+        line-height: 1.5em;
+        color: #626b71;
+    }
+    
+    .cc-specs {
+        margin: 0 0 20px 0;
+        @include font-size(1.1);
+    }
+}
+
+.cc-collapsable-open {
+    header {
+        background-color: transparent;
+    }
+
+    .cc-items {
+        clear: both;
+    }
+
+    .cc-contents {
+        display: block;
+        padding-top: 0;
+    }
+
+    .cc-selection {
+        display: none;
+    }
+}
+
+/* FILTERS
+========================================================== */
+
+.cc-filter-group {
+
+    .cc-selection {
+        list-style: none;
+        @include font-size(1.3);
+    }
+}
+
+/* FILTER BAR
+========================================================== */
+
+.cc-filter-bar {
+    margin: 30px 130px;
+
+    .btn-group {
+        margin-top: -4px;
+    }
+
+    a.btn {
+        padding-top: 6px;
+        padding-bottom: 8px;
+    }
+}
+
+/* TAB NAV
+========================================================== */
+
+.cc-tabs-container {
+
+    .cc-actions {
+        margin-top: -4px;
+        float: right;
+        padding-right: 30px;
+    }
+
+    .cc-icon-toggle {
+        position: absolute;
+        top: 4px;
+        right: 0;
+        width: 24px;
+        height: 24px;
+        line-height: 16px;
+        text-align: center;
+    }
+}
+
+.cc-tab {
+    position: relative;
+}
+
+.cc-tabnav {
+    position: relative;
+    top: 0;
+    padding: 6px 0;
+
+    ul {
+        list-style: none;
+    }
+
+    li {
+        float: left;
+        margin-right: 3px;
+    }
+
+    li a {
+        float: left;
+        padding: 4px 9px 6px;
+        line-height: 20px;
+        @include vendorize(border-radius, 2px);
+
+        &:hover {
+            background-color: #334048;
+        }
+    }
+
+    a {
+        color: #ced3d6;
+
+        &:hover {
+            text-decoration: none;
+            color: #fff;
+        }        
+    }
+
+    .cc-selected {
+        a, a:hover {
+            color: #18232a;
+            background-color: #fff;
+        }
+    }
+}
+
+/* COMPARE TABLE
+========================================================== */
+
+.cc-compare {
+    margin-bottom: 10px;
+    padding-bottom: 48px;
+    background-color: #E8E8E8;
+
+    header {
+        position: relative;
+
+        .cc-icon-close {
+            top: auto;
+            bottom: 0;
+            right: 0;
+            width: 30px;
+            height: 30px;
+            @include font-size(1.6);
+            text-align: center;
+            color: #858788;
+            border: 1px solid #d2d4d7;
+            border-bottom: none;
+            @include vendorize(border-radius, 3px 3px 0 0);
+        }
+    }
+
+    h1 {
+        margin: 0 0 16px 10px;
+        @include font-size(2.4);
+    }
+
+    .cc-highlight-checkbox {
+        position: absolute;
+        top: 0;
+        left: 514px;
+        display: inline-block;
+
+        i {
+            display: inline-block;
+            margin-top: 4px;
+            padding-top: 4px;
+            line-height: 14px;
+            @include font-size(1.4);
+        }
+    }
+
+    table {
+        width: 100%;
+        border: 1px solid #d7d9dc;
+    }
+
+    th,
+    td {
+        padding: 5px 10px;
+        border-left: 1px solid #d7d9dc;
+        border-bottom: 1px solid #d7d9dc;
+    }
+
+    th:first-child,
+    td:first-child {
+        border-left: none;
+    }
+
+    th {
+        padding: 6px 10px;
+        font-weight: normal;
+        font-family: 'toyotatext_bd';
+    }
+
+    .cc-title {
+        padding-left: 23px;
+        @include font-size(1.5);
+    }
+
+    .cc-legend {
+        @include font-size(1.3);
+        color: #626b71;
+
+        .cc-icon {
+            float: left;
+            margin-right: 10px;
+            padding-left: 22px;
+        }
+    }
+
+    .cc-contents {
+        padding: 10px;
+    }
+
+    .cc-compare-data {
+        display: none;
+    }
+
+    .cc-compare-open {
+        display: table-row-group;
+
+        th, td {
+            background-color: #ffffff;
+        }
+    }
+
+    .cc-fixed-col {
+        width: 120px;
+    }
+
+    .cc-highlight td {
+        background-color: #fdf9e6;
+    }
+
+    .cc-indent-title {
+
+    }
+
+    .cc-indent {
+        .cc-title {
+            padding-left: 43px;
+        }
+    }
+
+    .cc-icon {
+        i {
+            float: left;
+            display: inline-block;
+            margin-right: 8px;
+            width: 16px;
+            height: 16px;
+        }
+    }
+
+    .cc-icon-standard i { background-position: -3px -102px; }
+    .cc-icon-unavailable i { background-position: -23px -102px; }
+    .cc-icon-optional i { background-position: -43px -102px; }
+}
+
+/* HORIZON
+========================================================== */
+
+.cc-horizon {
+    padding-top: 35px;
+    padding: 35px 67px;
+    background: url(/images/carconfigurator/bg_horizon.jpg) no-repeat 50% -115px;
+
+    h1 {
+        @include font-size(1.5);
+
+        .cc-title {
+            display: inline-block;
+            padding-top: 2px;
+        }
+    }
+
+    .cc-inner {
+        padding: 20px;
+    }
+}
+
+/* PRICING
+========================================================== */
+
+.cc-number {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    @include font-size(1.1);
+    font-family: 'toyotatext_bd';
+    text-align: center;
+    color: #fff;
+    background-color: #ef9109;
+    @include vendorize(border-radius, 8px);
+}
+
+.cc-pricing {
+    margin-bottom: 5px;
+    @include font-size(1.5);
+}
+
+.cc-promo-price {
+    span.cc-price {
+        color: #ef9109;
+    }
+
+    del.cc-price {
+        color: #6c7073;
+    }
+}
+
+/* BORDERS
+========================================================== */
+
+.cc-border {
+    border-top: 1px solid #e3e4e5;
+}
+
+/* GRADES
+========================================================== */
+
+.cc-box-grades {
+    &:before {
+        left: 50%;
+    }
+
+    h2 {
+        @include font-size(1.5);
+        color: #1e2a32;
+    }
+
+    .cc-toggle-grades-box {
+        display: inline-block;
+        padding: 5px 0;
+        @include font-size(1.5);
+    }
+
+    .icon-info-sign {
+        margin-top: 3px;
+        margin-right: 5px;
+        padding-left: 0;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    .cc-details {
+        display: none;
+        padding: 10px 0 20px 0;
+
+        ul {
+            padding: 10px 0 0;
+        }
+    }
+
+    li {
+        position: relative;
+        left: -10px;
+        padding: 0 10px;
+        width: 100%;
+        @include vendorize(box-sizing, content-box);
+    }
+
+    li li {
+        left: 0;
+        padding: 0;
+    }
+
+    li.active {
+        color: #fff;
+        background-color: #334048;
+
+        a.cc-toggle-grades-box {
+            color: #fff;
+        }
+
+        .cc-details {
+            display: block;
+        }
+    }
+
+    .cc-btn {
+        margin-right: 5px;
+    }
+}
+
+/* THUMBS
+========================================================== */
+
+.cc-thumb {
+    position: relative;
+    padding: 0 0 15px 0;
+
+    .cc-checkbox {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .icon-checkbox-checked {
+        color: #1f2c35;
+    }
+}
+
+/* LABELS
+========================================================== */
+
+.cc-meta {
+    position: absolute;
+    bottom: 5px;
+}
+
+.cc-label,
+.cc-promotion {
+    clear: left;
+    float: left;
+    margin-top: 3px;
+    padding: 1px 4px;
+    @include font-size(1.1);
+    color: #fff;
+    background-color: #00a0f0;
+    @include vendorize(border-radius, 2px);
+}
+
+.cc-promotion {
+    background-color: #ef9109;
+}
+
+.cc-promotion-info {
+    float: left;
+    margin: 10px 0 0 10px;
+    @include font-size(1.2);
+    color: #ef9109;
+}
+
+/* PAGING
+========================================================== */
+
+.cc-pages {
+    text-align: center;
+
+    a {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        margin: 0 3px;
+        background-color: #c4c6c7;
+        @include vendorize(border-radius, 4px);
+    }
+
+    a.selected {
+        background-color: #535f67;
+    }
+}
+
+.cc-page-nav {
+    a {
+        position: absolute;
+        top: 30px;
+        width: 50px;
+        height: 50px;
+        @include font-size(3.6);
+        text-align: center;
+        color: #a8acae;
+        background-color: rgba(198,201,203,1);
+        @include vendorize(border-radius, 25px);
+
+        &:hover {
+            color: #fff;
+            background-color: rgba(158,164,169,1);
+        }
+
+        i {
+            position: absolute;
+            top: 6px;
+        }
+    }
+
+    a.cc-prev {
+        left: -60px;
+
+        i {
+            left: 16px;
+        }
+    }
+
+    a.cc-next {
+        right: -60px;
+
+        i {
+            right: 16px;
+        }
+    }
+
+    a.cc-disabled {
+        &,
+        &:hover {
+            color: #18232a;
+            background-color: rgba(51,64,72,.5);
+        }
+    }
+}
+
+/* ACTIONS
+========================================================== */
+
+.cc-popup {
+    position: absolute;
+    right: 0;
+    top: 50px;
+    display: none;
+    width: 180px;
+    color: #fff;
+    z-index: 100;
+    background-color: #334048;
+    @include vendorize(border-radius, 2px);
+
+    &:before {
+        position: absolute;
+        top: -10px;
+        right: 35px;
+        width: 30px;
+        height: 10px;
+        margin-left: -15px;
+        content: '';
+        background-position: -30px -20px;
+    }
+
+    .cc-contents {
+        padding: 10px;
+    }
+
+    .cc-icon-close { color: #c6cbce; }
+
+    h1 {
+        @include font-size(1.5);
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    li {
+        padding: 0 0 5px 0;
+    }
+
+    p {
+        color: #fff;
+    }
+
+    a {
+        color: #bbbfc2;
+    }
+
+    img {
+        float: right;
+    }
+}
+
+.cc-action {
+    position: relative;
+    float: left;
+
+    .cc-dropdown {
+        position: absolute;
+        left: 0;
+        top: 42px;
+        display: none;
+        font-weight: normal;
+        width: 180px;
+        z-index: 100;
+
+        &:before {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            width: 30px;
+            height: 10px;
+            margin-left: -15px;
+            content: '';
+            background-position: -30px -20px;
+        }
+
+        .cc-contents {
+            padding: 10px;
+            background-color: #334048;
+            @include vendorize(border-radius, 2px);
+        }
+
+        a { color: #fff; }
+
+        ul {
+            list-style: none;
+
+            a {
+                display: inline-block;
+                padding: 5px 0 5px 0;
+                color: #bbbfc2;
+            }
+
+            a.cc-selected,
+            a:hover {
+                color: #fff;
+            }
+        }
+
+        li {
+        }
+
+        .cc-icon-close { color: #fff; }
+    }
+
+    .cc-btn-dropdown {
+        float: left;
+        padding: 5px;
+        width: 120px;
+        color: #626b71;
+        background-color: #f5f5f6;
+        border: 1px solid #dadcdd;
+        @include vendorize(box-sizing, border-box);
+        @include vendorize(border-radius, 3px);
+    }
+}
+
+aside.cc-primary {
+    margin-bottom: 40px;
+
+    .cc-box {
+        overflow: visible;
+    }
+
+    .cc-action,
+    .cc-btn-dropdown,
+    .cc-dropdown {
+        width: 100%;
+    }
+
+    .cc-meta {
+        position: static;
+        margin-bottom: 5px;
+    }
+
+    .cc-specs {
+        clear: left;
+    }
+
+    .cc-icon-info {
+        float: right;
+    }
+
+    .cc-popup {
+        top: -100px;
+        right: -713px;
+        width: 703px;
+
+        &:before {
+            top: 94px;
+            left: 6px;
+            width: 10px;
+            height: 30px;
+            background-position: 0 -120px;
+        }
+
+        .cc-contents {
+            padding: 20px;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+    }
+
+    article {
+        position: relative;
+    }
+}
+
+/* TABLES
+========================================================== */
+
+table {
+    th {
+        padding: 10px 0;
+        text-align: left;
+    }
+
+    td {
+
+    }
+}
+
+.cc-expandable-thumbs {
+    .cc-open th {
+        border-bottom: none;
+    }
+}
+
+/* FULLSCREEN
+========================================================== */
+
+/* Fullscreen link */
+.cc-link-fullscreen { display: none; }
+
+/* DIALOG
+========================================================== */
+
+.cc-dialog {
+    position: absolute;
+    top: 120px;
+    left: 50%;
+    margin-left: -307px;
+    width: 614px;
+    background-color: #fff;
+    z-index: 10000;
+    @include vendorize(border-radius, 2px);
+    overflow: hidden;
+
+    header {
+        &,
+        p {
+            font-family: 'toyotatext_bd';
+            @include font-size(1.5);
+            color: #1e2a32;
+        }
+
+        background-color: #f5f5f6;
+    }
+
+    a.cc-icon-close {
+        color: #6c7073;
+    }
+
+    .cc-contents {
+        padding: 20px;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    li {
+        padding-bottom: 10px;
+    }
+
+    .cc-actions {
+        padding: 20px;
+        text-align: center;
+
+        a {
+            float: none;
+        }
+    }
+}
+
+.cc-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(24,35,42,.9);
+    z-index: 9999;
+}

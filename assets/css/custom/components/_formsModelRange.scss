@@ -1,0 +1,40 @@
+form {
+	.modelrange {
+		.modelitem {
+			text-align: center;
+			div {
+				text-align: left;
+			  	&.title-hybrid {
+				  	color: $colour-vi-cyan-1;
+				}
+			}
+			.btn {
+				margin-top: 6px;
+				label {
+					text-align: left !important;
+					i {
+						width: 1px;
+						height: 43px;
+						border-left: 1px solid rgba(0, 0, 0, 0.15);
+						padding-left: 6px;
+						margin-top: -9px;
+						margin-left: 6px;
+					}
+				}
+			}
+			.btn-dark {
+				label i {
+					border-color: $colour-default-white;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $screen-sm) {
+	.modelitem {
+		.hidden-xs {
+			display: block !important;
+		}
+	}
+}

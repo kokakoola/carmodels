@@ -1,0 +1,53 @@
+.grades-page {
+  	.promo-highlighting {
+	  	color: $colour-promo-2;
+	  	a {
+	  		color: $colour-promo-2;
+		}
+	}
+  	.content-table {
+	  	margin: 0;
+	}
+  	h5 {
+	  	@include font-size(24);
+	  	font-family: $font-toyota-text-regular;
+	  	&.promotion-prices {
+		  	color: $colour-promo-2;
+		  	margin-top: 0;
+		  	+ .table-responsive {
+			  	.sortable-table {
+				  	th.tablesorter-headerAsc, th.tablesorter-headerDesc {
+					  	color: $colour-promo-2;
+					}
+				}
+			}
+		}
+	}
+}
+
+#equipment-list {
+	h5 {
+	  	margin-bottom: 20px;
+	}
+}
+
+#features-list {
+	.feature {
+		&:nth-child(3n+1) {
+			clear: left;
+		}
+	}
+}
+
+@media screen and (min-width: $screen-md) {
+  	#features-list {
+		.feature {
+			&:nth-child(3n+1) {
+				clear: none;
+			}
+			&:nth-child(4n+1) {
+				clear: left;
+			}
+		}
+	}
+}

@@ -1,0 +1,35 @@
+/**
+ *
+ **/
+.toyota-tabs {
+	height: $height-navbar-top-md;
+	padding-top: 10px;
+	background: $colour-bg-beige;
+	a[data-tab] {
+		&:not(.tab-link) {
+		  @include toyota-tab;
+		}
+	}
+}
+.toyota-tabs-content {
+	background: $colour-default-white;
+	.tab-pane {
+		display: none;
+		&.active {
+			display: block;
+		}
+	}
+}
+
+/* IE8 does not support complex css filtering */
+.lt-ie9 {
+	.toyota-tabs {
+		a {
+			@include toyota-tab;
+			&.btn-search {
+				padding: 0;
+				display: inline;
+			}
+		}
+	}
+}

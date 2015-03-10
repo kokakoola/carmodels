@@ -1,0 +1,14 @@
+.toast {
+	color: $colour-default-white;
+	padding: 20px;
+	border-radius: $border-radius-default;
+	@include trans(bg, $colour-default-black, 0.8);
+	box-shadow: $colour-shadow-box-dark;
+	z-index: $expansion-content-zindex;
+	p {
+		color: $colour-default-white;
+	}
+	a {
+		color: $colour-default-grey-6;
+	}
+}

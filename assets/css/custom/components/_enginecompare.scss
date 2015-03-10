@@ -1,0 +1,1250 @@
+.compare-equipment, .compare-models{
+	margin: 0 auto;
+	position: relative;
+	.form{
+		.list-group-item{
+			.btn-dark{
+				label:before{
+					border-color: $colour-default-white;
+				}
+				label:after{
+					border-color: $colour-default-white;
+				}
+			}
+			.btn, .btn-dark{
+				label:before{
+					background-color: transparent;
+				}
+			}
+		}
+	}
+	.list-group-item{
+		background-color: transparent;
+		border: none;
+		padding: 0;
+		.btn{
+			width: 100%;
+			position: relative;
+			margin-bottom: 14px;
+			text-align: left;
+			//padding-bottom: 8px;
+			.icon-chevron-right{
+				color: $colour-default-grey-1;
+				position: absolute;
+				top: 15px;
+				right: 10px;
+			}
+		}
+		.btn-dark{
+			.icon-chevron-right{
+				color: $colour-default-white;
+			}
+		}
+		.btn-grey{
+			.icon-chevron-right{
+				color: $colour-default-grey-1;
+			}
+		}
+		.img_with_label{
+			position: relative;
+			.label {
+				position: absolute;
+				left: 5px;
+			}
+			.new{
+				background: $colour-vi-orange-1;
+			}
+
+			.label-wrapper{
+				position:absolute;
+				bottom:0px;
+				.label{
+					font-family: $font-toyota-text-bold;
+					position: relative;
+					float:left;
+					left:0px;
+				}
+
+				.hybrid{
+					background: $colour-btn-blue-2;
+					margin-right:5px;
+				}
+				.special-offer{
+					background: $colour-vi-orange-1;
+					i{
+						color: $colour-vi-orange-1;
+						position: absolute;
+						top: 0;
+						right: -16px;
+						@include font-size(16);
+					}
+				}
+
+
+			}
+
+		}
+		.config-btn{
+			width: 100%;
+			position: relative;
+			i{
+				position: absolute;
+				top: 15px;
+				right: 5px;
+			}
+		}
+		.specs{
+			position: relative;
+			padding: 6px 74px 6px 6px;
+			@include font-size(13);
+			overflow: hidden;
+			text-overflow: ellipsis;
+			height: 70px;
+			color: $colour-default-grey-2;
+			.item-value {
+				border-left: 1px solid $colour-paragraph-border;
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 70px;
+				height: 100%;
+				background-color: transparent;
+				padding: 10px 64px 10px 10px;
+			}
+		}
+		.specs-odd {
+			background-color: $colour-table-row-odd;
+		}
+		.title2{
+			display: inline;
+			font-family: $font-toyota-text-regular;
+			@include font-size(17);
+			letter-spacing: -0.03em;
+			.icon-info-sign{
+				padding-left: 5px;
+				cursor: pointer;
+			}
+		}
+		.hybrid-title{
+			color: $colour-vi-cyan-1;
+		}
+		.price {
+			font-family: $font-toyota-text-bold;
+			.old-price{
+
+				font-family: $font-toyota-text-bold;
+				color: $colour-default-grey-2;
+				display:inline-block;
+			  	text-decoration: line-through;
+			  		display:none;
+			}
+			.new-price{
+				font-family: $font-toyota-text-bold;
+				color: $colour-vi-orange-1;
+				text-decoration: none !important;
+				margin-right: 5px;
+				display:block;
+				width:100%;
+			}
+		}
+		&:last-child{
+			border-bottom: $colour-table-header;
+		}
+	}
+  	.engine-title {
+		height: 70px;
+		margin-top: 8px;
+  	}
+  	.model-title{
+		height: 66px;
+  	}
+  	.model-price{
+		height:40px;
+	}
+	.finance-rate {
+		color: $colour-default-grey-7;
+
+	  	span {
+		  	display: block;
+		}
+
+	  	a {
+			text-decoration: underline;
+		  	color: inherit;
+		  	display: inline;
+		}
+
+	  	margin-bottom:30px;
+	}
+	/*.item-select{
+		margin-top:30px;
+	}*/
+	.title-hybrid{
+		color: $colour-vi-cyan-1;
+	}
+}
+.finance-disclaimer {
+	p {
+	 	margin-top: 10px;
+	}
+}
+.top-controls{
+	text-align: center;
+	padding: 10px 0;
+	margin-bottom: 20px;
+	.filter-bar{
+		height: 23px;
+		.filter-bar-white-space{
+			background: $colour-default-white;
+			/*width: 250px;*/
+			padding: 0 10px;
+			margin: 0 auto;
+			display: inline;
+			.btn{
+				position: relative;
+				/*width: 230px;*/
+				display: inline-block;
+				padding-right: 28px;
+				i{
+					position: absolute;
+					top: 15px;
+					right: 10px;
+				}
+			}
+		}
+	}
+}
+
+.expansion-content.exceptions {
+	.expansion-inner {
+		text-align:left;
+
+	  	h4 {
+		  	margin-bottom: 5px;
+		}
+	}
+}
+
+.modelcompare_tooltip{
+	.expansion-inner{
+		text-align: left !important;
+		//padding-left: 20px !important;
+		ul{
+			li{
+				list-style-position: outside;
+				margin-left: 15px;
+				@include font-size(13);
+				font-weight: normal;
+			}
+		}
+		.closelink{
+			i{
+				padding-left: 5px;
+			}
+		}
+		.compare-full-details {
+			width: auto;
+			margin-top: 10px;
+			text-decoration: none;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+.modelcompare_tooltip.left{
+	.expansion-arrow{
+		left: 90% !important;
+	}
+}
+.equipmentcompare,.enginecompare {
+  	.car-model {
+	  	.section-title {
+		  	text-align: center;
+		}
+		.finance-rates {
+		  	margin-bottom: 30px;
+		}
+	}
+	.compare-footer{
+		.compare-footer-top{
+			.btn{
+				float: right;
+				margin-bottom: 24px;
+			}
+		}
+		margin-bottom: 24px;
+	}
+}
+.compare-overlay-wrapper{
+	.overlayerContent{
+		background-color: $colour-default-white;
+		@include box-shadow(200px 0 190px -200px rgba(0, 0, 0, 0.3) inset);
+		filter: none;
+	}
+	.compare-from-price {
+	  	@include font-size(13);
+	  	font-family: $font-toyota-text-bold;
+	}
+}
+.compare-data, .compare-model-data{
+	min-height: 100%;
+
+	.scrollcontainer{
+		top:0px;
+		left:0px;
+		width:100%;
+		position:absolute;
+		z-index:$compare-scrollcontainer-zindex;
+	}
+
+	.section-title{
+		text-align: center;
+		margin-bottom: 36px;
+	}
+	.compare-top-controls{
+		padding-bottom: 0;
+
+		.mc-change-compare-btn {
+		  	margin-right: 8px;
+		  	padding-left: 8px;
+		  	padding-right: 8px;
+		}
+		.mc-print-btn{
+			margin-right: 10px;
+			height: 46px;
+			padding: 0 13px 0 8px;
+			i{
+				@include font-size(24);
+			}
+		}
+
+		.engine-model-options{
+			padding-left:0px !important;
+			position: relative;
+			.optioncontainer{
+				display: table;
+				width: 100%;
+				.itemrow{
+					display:table-row;
+					vertical-align: top;
+
+					.img-select-thumb{
+						height:100%;
+						display:table-cell;
+						position: relative;
+						border-right: 1px solid $colour-btn-grey-1;
+						text-align: center;
+						overflow: hidden;
+						text-overflow: ellipsis;
+						padding: 0px 5px;
+						width: 33.33%;
+						vertical-align: top;
+
+						&:first-child{
+							border-left: 1px solid $colour-btn-grey-1;
+						}
+						.img-select-label-container{
+							position: relative;
+							display: inline-block;
+							max-width: 100%;
+							img{
+								margin: 0 auto;
+								height: auto;
+								width: 100%;
+							}
+							.label-wrapper{
+								position: absolute;
+								bottom:-15px;
+								left:0px;
+								&.engine{
+									bottom:0px;
+								}
+
+								.label{
+									position: relative;
+									float:left;
+									font-family: $font-toyota-text-bold;
+								}
+								.hybrid{
+									background: $colour-btn-blue-2;
+									margin-right:3px;
+									margin-bottom:2px;
+
+								}
+								.special-offer{
+									background: $colour-vi-orange-1;
+								}
+							}
+
+						}
+						.infocontainer{
+							padding-top: 15px;
+							text-align: left;
+							display: block;
+							position: relative;
+
+							h4{
+								overflow: hidden;
+								text-overflow: ellipsis;
+								word-break:break-all;
+								text-align: left;
+								@include font-size(12);
+								display: table-cell;
+								font-family: $font-toyota-text-regular;
+								color: $colour-default-grey-1;
+								&.hybrid{
+									color: $colour-btn-blue-2;
+								}
+							}
+							.finance-rate{
+								@include font-size(11);
+								color: $colour-default-grey-7;
+								display: inline-block;
+								margin: 4px 0px;
+							}
+						}
+						.selected-hybrid{
+							color: $colour-btn-blue-2 !important;
+						}
+
+						.icon-remove-container{
+							position: relative;
+							width:0px;
+							height:0px;
+							display:table-cell;
+							float:right;
+							z-index:$compare-icon-remove-container-zindex;
+							i{
+								cursor: pointer;
+								position: absolute;
+								right: 5px;
+								top: 5px;
+							}
+							.icon-remove{
+								top: 0px;
+								color: $colour-default-grey-7;
+								@include opacity(0.4);
+								&:hover{
+									@include opacity(1);
+								}
+							}
+						}
+					}
+				}
+				.buttonrow{
+					display:table-row;
+					.buttoncontainer{
+						display:table-cell;
+						padding:8px 3px 0px 3px;
+						border-right: 1px solid $colour-btn-grey-1;
+						width:33.33%;
+						&:first-child{
+							border-left: 1px solid $colour-btn-grey-1;
+						}
+						.btn{
+							width: 100%;
+							position: relative;
+							text-align: left;
+							@media screen and (max-width: $screen-md){
+								@include font-size(13);
+							}
+							i{
+								position: absolute;
+								right: 10px;
+								top: 14px;
+							}
+						}
+					}
+				}
+			}
+			.toast{
+				position: absolute !important;
+			}
+			.selection-trigger-holder{
+				height: 60px;
+				margin-right: 7px;
+				.btn{
+					float: right;
+					max-width: 60%;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					i{
+						padding-left: 5px;
+					}
+				}
+				.btn-dark{
+					&:hover{
+						background-color: $colour-btn-grey-1;
+						color: $colour-default-grey-0;
+					  	filter: none;
+					}
+				}
+				.half-btn{
+					background: $colour-default-white;
+					border-radius: 3px 3px 0 0;
+					box-shadow: 0 0 0 rgba(0, 0, 0, 0.15), 0 0 0 rgba(30, 42, 50, 0.5) inset;
+					position: relative;
+					z-index: $compare-half-btn-zindex;
+					border-top: 1px solid $colour-collapsible-table-row;
+					border-right: 1px solid $colour-collapsible-table-row;
+					border-left: 1px solid $colour-collapsible-table-row;
+					border-bottom: none;
+				}
+			}
+			.mini-edit-selection-menu{
+				position: absolute;
+				right: -5px;
+				top: 46px;
+				background-color: transparent;
+				z-index: $compare-mini-edit-selection-menu-zindex;
+				border: 1px solid $colour-btn-grey-1;
+				border-radius: $border-radius-default;
+				background-color: $colour-default-white;
+				box-shadow: 0 1px 1px rgba(0,0,0,.4);
+				width: 140%;
+				display: table;
+				@media screen and (max-width: $screen-md) {
+					width: 180%;
+				}
+				@media screen and (min-width: $screen-md) and (max-width: $screen-lg) {
+					width: 150%;
+				}
+				.mini-edit-selection-header{
+					padding-left: 10px;
+					padding-top: 20px;
+					padding-bottom:5px;
+					@include font-size(15);
+				}
+				.itemrow{
+					display:table-row;
+					vertical-align: top;
+					width:100%;
+					.mini-edit-selection-item{
+						padding: 10px 10px 0px 10px;
+						width: 25%;
+						text-align: center;
+						float:left;
+						display: table-cell;
+						vertical-align: top;
+						.img-select-label-container{
+							position: relative;
+							max-width: 100%;
+							vertical-align: top;
+							.label-wrapper {
+								position: absolute;
+								bottom:-15px;
+								left:0px;
+								&.engine{
+									bottom:0px;
+								}
+								.label{
+									position: relative;
+									float: left;
+									font-family: $font-toyota-text-bold;
+									&.hybrid{
+										background: $colour-btn-blue-2;
+										margin-right:5px;
+										margin-bottom:2px;
+									}
+									&.special-offer{
+										background: $colour-vi-orange-1;
+										margin-right:5px;
+									}
+									i{
+										color: $colour-vi-orange-1;
+										position: absolute;
+										top: 3px;
+										right: -16px;
+										@include font-size(16);
+									}
+								}
+							}
+
+							img{
+								height: auto;
+								width: 100%;
+							}
+
+
+						}
+						.infocontainer{
+							padding-top: 15px;
+							text-align: left;
+							display: block;
+							position: relative;
+							h4{
+								@include font-size(15);
+								text-align: left;
+								text-overflow: ellipsis;
+								font-family: $font-toyota-text-regular;
+								word-break: break-all;
+								&.hybrid{
+									color: $colour-btn-blue-2;
+								}
+							}
+							.compare-from-price{
+								margin-top:3px;
+								@include font-size(13);
+								font-family: $font-toyota-text-bold;
+								text-align: left;
+								display:block;
+							}
+						}
+					}
+				}
+				.buttonrow{
+					.mini-edit-selection-button{
+						padding: 10px;
+						width: 25%;
+						display:inline-block;
+						.btn{
+							width: 100%;
+							position: relative;
+							padding-left: 10px;
+							text-align: left;
+							label{
+								margin-bottom: 0px;
+							}
+						}
+						.btn-dark{
+							color: $colour-default-white !important;
+							label{
+								color: $colour-default-white;
+								&:before{
+									background: transparent;
+									border-color: $colour-default-white;
+								}
+								&:after{
+									border-color: $colour-default-white;
+								}
+							}
+						}
+					}
+				}
+				.save-and-close-button, .just-close-button{
+					margin: 10px;
+				}
+			}
+			.img-select-thumb{
+				position: relative;
+				border-right: 1px solid $colour-btn-grey-1;
+				text-align: center;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				&:first-child{
+					border-left: 1px solid $colour-btn-grey-1;
+				}
+				.img-select-label-container{
+					position: relative;
+					padding-top: 0px;
+					display: inline-block;
+					max-width: 100%;
+					img{
+						margin: 0 auto;
+						height: auto;
+						width: auto;
+					}
+					.label{
+						position: absolute;
+						display:block;
+						//bottom: -17px;
+						//right: -2px;
+					}
+					.hybrid{
+						background: $colour-btn-blue-2;
+						//top:5px;
+						//left:5px;
+						//bottom:auto;
+						//right:auto;
+					}
+					.special-offer{
+						background: $colour-vi-orange-1;
+					}
+				}
+				.infocontainer{
+					text-align: left;
+					@include font-size(15);
+					vertical-align: middle;
+					font-family: $font-toyota-text-regular;
+					padding-top: 5px;
+					display: block;
+					position: relative;
+
+					h4{
+						overflow: hidden;
+						text-overflow: ellipsis;
+						text-align: left;
+						@include font-size(12);
+						display: table-cell;
+						font-family: $font-toyota-text-regular;
+						color: $colour-default-grey-1;
+						padding-top: 15px;
+						&.hybrid{
+							color: $colour-btn-blue-2;
+						}
+					}
+					.finance-rate{
+						@include font-size(11);
+						color: $colour-default-grey-7;
+						display: inline-block;
+						margin: 4px 0px;
+					}
+				}
+				.selected-hybrid{
+					color: $colour-btn-blue-2;
+				}
+				.icon-remove{
+					color: $colour-default-grey-7;
+					cursor: pointer;
+					position: absolute;
+					right: 5px;
+					top: 5px;
+				}
+			  	.readMore {
+					display: inline;
+				}
+				.btn{
+					width: 100%;
+					position: relative;
+					text-align: left;
+					i{
+						position: absolute;
+						right: 10px;
+						top: 14px;
+						display: none;
+					}
+				}
+			}
+		}
+		.other-options{
+			.filter-holder{
+				height: 206px;
+				.body-type-filter, .fuel-filter, .grades-filter{
+					height: 50%;
+					padding-left: 0px;
+					h4{
+						padding-left: 0px;
+						font-family: $font-toyota-text-bold;
+					}
+				}
+				.body-type-filter .body-type-label, .fuel-filter .fuel-type-label, .grades-filter .grades-type-label{
+					margin: 20px 10px 0 0px;
+					display: inline-block;
+					font-family: $font-toyota-text-regular;
+					padding-left: 20px;
+					.dark-bt-wrapper{
+						margin-right: 5px;
+						i{
+							color: $colour-vi-coolgrey11-2;
+						}
+					}
+				}
+			}
+		}
+	}
+	.ec-grid-container, .mc-grid-container{
+		padding: 10px 28px;
+
+		.panel-group{
+			.panel{
+				overflow: visible;
+				margin: 0;
+				.panel-heading{
+					height: 54px;
+					position: relative;
+					border-top: 1px solid $colour-collapsible-table-row;
+					border-bottom: 0;
+					border-top-right-radius: 0px;
+					border-top-left-radius: 0px;
+					.panel-title{
+						@include font-size(24);
+						a{
+							display: block;
+							margin-left: 20px;
+							margin-top: 6px;
+						}
+						i{
+							@include font-size(19);
+							position: absolute;
+							left: 10px;
+							top: 18px;
+						}
+					}
+				}
+				.panel-collapse{
+					.panel-body{
+						padding: 0;
+						border-top: 0;
+						.table{
+							table-layout: fixed;
+							border-collapse: collapse;
+							margin: 0;
+							padding: 0;
+							border: none;
+							&.table-prices{
+								table-layout: auto;
+								.title-cell{
+									white-space: normal;
+								}
+							}
+							tr{
+								&.hybrid{
+									td:first-child{
+										color: $colour-vi-cyan-1;
+									}
+								}
+								td{
+									border-color: $colour-collapsible-table-row;
+
+								  	i.readMore.exceptions {
+										background-color: $colour-compare-exception;
+									  	padding: 2px;
+									  	display: inline;
+									  	cursor: pointer;
+									}
+								}
+								.title-cell{
+									//height: 54px;
+									//padding-left: 26px;
+									//padding-top: 14px;
+									text-overflow: ellipsis;
+									white-space: nowrap;
+									text-overflow: ellipsis;
+									overflow: hidden;
+								}
+								.data-cell{
+									overflow: hidden;
+									//height: 54px;
+									border-left: 1px solid $colour-compare-table;
+									padding-top: 14px;
+									text-overflow: ellipsis;
+									white-space: nowrap;
+								  	> i {
+									  	color: $colour-default-grey-2;
+									}
+								}
+								.mc-fuel-type-header{
+									h4{
+										font-family: $font-toyota-text-bold;
+										@include font-size(17);
+										padding-top: 20px;
+									}
+								}
+								&:nth-child(odd){
+									background: $colour-default-grey-10;
+								}
+							}
+						}
+					}
+					&.in, &.collapsing{
+						.table{
+							tr:first-child{
+								td{
+									border-top:0;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	  	.promo span {
+			float:left;
+		    &:after{
+			    display: block;
+		    }
+		  	&.new-price {
+			  color: $colour-vi-orange-1;
+			  i.icon-tag {
+				margin-left:3px;
+			  }
+			}
+		}
+	}
+}
+.compare-overlay-wrapper{
+	.overlayerContent{
+		.ec-select-modal, .mc-select-modal{
+			background: $colour-default-grey-0;
+			left: 0;
+			top: 0;
+			position: fixed;
+			height: 100%;
+			@include opacity(0.3);
+			z-index: 1;
+		}
+		.toast{
+			position: fixed !important;
+		}
+	}
+}
+.eq-ie10{
+	.mini-edit-selection-menu{
+		right: auto !important;
+		left: -44% !important;
+		@media screen and (max-width: $screen-md) {
+			left: -90% !important;
+		}
+		@media screen and (min-width: $screen-md) and (max-width: $screen-lg){
+			left: -55% !important;
+		}
+	}
+}
+.eq-ie9{
+	.ec-change-compare-btn{
+		&:hover{
+			background-color: $colour-btn-dark-1 !important;
+		}
+	}
+	.half-btn{
+		&:hover{
+			background-color: $colour-default-white !important;
+		}
+	}
+	.mini-edit-selection-menu{
+		right: auto !important;
+		left: -44% !important;
+	}
+	.compare-data{
+		.table{
+			border-collapse: separate;
+		}
+	}
+}
+.lt-ie9{
+	//ENGINE FIXES
+	.compare-top-controls{
+		.engine-model-options{
+			.optioncontainer{
+				.itemrow{
+					.img-select-thumb{
+						.img-select-label-container{
+							width: 91px;
+							max-width: 100%;
+						}
+					}
+				}
+			}
+			.mini-edit-selection-menu{
+				right: auto !important;
+				left: -44% !important;
+				.itemrow{
+					.img-select-label-container{
+						width: 91px;
+						max-width: 100%;
+						.label{
+						}
+					}
+				}
+			}
+		}
+		.filter-holder{
+			.body-type-filter, .grades-filter, .fuel-filter{
+				input{
+					float: none !important;
+					display: inline !important;
+					margin: 0 !important;
+					padding: 0 !important;
+				}
+				label{
+					display: inline !important;
+					margin: 0 !important;
+					padding: 0 !important;
+				}
+			}
+		}
+	}
+	.compare-data{
+		.table{
+			border-collapse: separate;
+		}
+	}
+}
+.compare-models{
+	.list-group-item{
+		.dark-bt-wrapper{
+			margin-top: 2px;
+		}
+		.read-more-active {
+			color: $colour-default-red;
+		}
+		.title2{
+			.readMore{
+				cursor: pointer;
+			}
+		}
+	}
+}
+.compare-data{
+	.compare-top-controls{
+		.engine-model-options{
+			.mini-edit-selection-menu{
+				.itemrow{
+					.mini-edit-selection-item
+					.img-select-label-container{
+						margin: 0 auto;
+					}
+				}
+			}
+		}
+	}
+}
+
+.compare-data, .compare-model-data {
+	.cs-legend-exceptions {
+		background-color:$colour-compare-exception;
+	  	padding: 0 2px;
+	  	cursor: pointer;
+	  	display: inline;
+	}
+
+  	.legend-holder >* {
+	  	margin-right: 2px;
+	}
+}
+
+.compare-data .cs-legend-exceptions {
+  	margin-left:0;
+}
+
+/*MODEL COMPARE: DIFFERENCES*/
+.compare-model-data, .compare-data{
+	.compare-top-controls{
+		.engine-model-options{
+			.mini-edit-selection-menu{
+				.itemrow{
+					.mini-edit-selection-item{
+						//width: 180px;
+					}
+				}
+				.buttonrow{
+					.mini-edit-selection-button{
+						//width: 180px;
+					}
+				}
+			}
+		}
+		.other-options{
+			.filter-holder{
+				.body-type-filter, .grades-filter{
+					height: 40%;
+				}
+			}
+			.legend-holder{
+				margin-bottom: 10px;
+				@include font-size(14);
+				color: $colour-default-grey-2;
+				.mc-legend-label{
+					margin-left: 0px;
+					padding-right: 10px;
+					float: left;
+					display: inline-block;
+					width: auto;
+					i{
+						margin: 0;
+						padding: 0 4px 0 0;
+					}
+				}
+				.mc-legend-special-offer{
+					color: $colour-vi-orange-1;
+				}
+			}
+		}
+	}
+}
+
+.mc-grid-container, .ec-grid-container{
+	.panel{
+		border: none;
+		.panel-body{
+			.table{
+				.table-row{
+					img{
+						margin-right: 10px;
+						height: 50px;
+					}
+					h4{
+						display: block;
+						padding-left: 10px;
+						&.hybrid {
+							color:$colour-vi-cyan-1;
+						}
+					}
+					i{
+						padding-left: 10px;
+					}
+				}
+			}
+		}
+	}
+}
+.overlayerWrapper{
+	.overlayerContent{
+		.compare-model-data{
+			.section-title{
+				.heading-container{
+					.heading1{
+						margin-bottom: 35px;
+					}
+				}
+			}
+		}
+	}
+}
+// This is needed for the buttons in Portrait Mode
+@media (max-width: $screen-sm+$pageoverlayer-toolbarsize) {
+	.compare-data {
+		.config-btn {
+			font-size: 1rem;
+			padding-left: 10px;
+		}
+	}
+}
+@media screen and (min-width: $screen-md) {
+	.compare-data, .compare-model-data {
+		.compare-top-controls {
+
+			.mc-print-btn {
+			  	margin-right: 10px;
+			}
+			.mc-change-compare-btn{
+				margin-right: 0px;
+			}
+			.mc-print-btn, .mc-change-compare-btn {
+				padding-left: 14px;
+				padding-right: 14px;
+			}
+
+			.engine-model-options {
+				.optioncontainer{
+					.itemrow{
+						.img-select-thumb {
+							.infocontainer{
+								h4{
+									@include font-size(15);
+								}
+								.finance-rate{
+									@include font-size(13);
+								}
+							}
+						}
+					}
+				}
+				.mini-edit-selection-menu{
+					right:0px;
+				}
+			}
+		}
+	}
+}
+
+
+
+@media screen and (min-width: $screen-sm) and (max-width: $screen-md) {
+	.compare-data, .compare-model-data {
+		.compare-top-controls {
+		  	.engine-model-options {
+				.optioncontainer{
+					.itemrow{
+					  	.img-select-thumb {
+						  	.btn {
+								padding-left: 5px;
+								@include font-size(12);
+							}
+							.img-select-label-container{
+								.label-wrapper{
+									bottom: -30px;
+								}
+							}
+						}
+					}
+				}
+			}
+			.other-options {
+			  	.filter-holder {
+				  	.body-type-filter, .fuel-filter, .grades-filter {
+					  	h4 {
+						  	@include font-size(16);
+						}
+					}
+				  	.body-type-filter .body-type-label, .fuel-filter .fuel-type-label, .grades-filter .grades-type-label {
+					  	@include font-size(14);
+					  	.dark-bt-wrapper {
+						  	padding-top: 5px;
+							&:before{
+								@include font-size(13);
+							}
+						  	i {
+								padding-top: 5px;
+								@include font-size(13);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+  	.compare-model-data {
+	  	.compare-top-controls {
+		  	.other-options {
+			  	.legend-holder {
+				  	@include font-size(12);
+				}
+			}
+		}
+	}
+}
+@media screen and (min-width: $screen-md) and (max-width: $screen-lg) {
+	.compare-model-data {
+		.compare-top-controls {
+			.other-options {
+				.legend-holder {
+				  	@include font-size(13);
+				}
+			}
+		}
+	}
+}
+@media screen and (min-width: $screen-md) {
+  	.compare-data, .compare-model-data {
+	  	.compare-top-controls {
+		  	.engine-model-options {
+				.optioncontainer{
+					.itemrow{
+					  	.img-select-thumb {
+						  	h4 {
+								vertical-align: top;
+								padding-top: 0px;
+							}
+						  	.btn {
+								padding-left: 8px;
+								@include font-size(16);
+							  	i {
+								  	display: block;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (min-width: $screen-lg) {
+	.compare-data, .compare-model-data {
+		.compare-top-controls {
+			.engine-model-options {
+				.mini-edit-selection-menu{
+					right:1px;
+				}
+			}
+		}
+	}
+}
+//fixes for safari and chrome only browsers
+.opera-or-safari{
+	.mini-edit-selection-menu{
+		right: 0 !important;
+	}
+}

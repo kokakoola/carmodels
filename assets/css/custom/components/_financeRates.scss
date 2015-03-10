@@ -1,0 +1,120 @@
+.finance-rate {
+	display:none !important;
+}
+
+//Finance rate information is disabled for now
+body{
+	&.show-finance-rates {
+		.finance-rate {
+			display: block !important;
+			&.inline-block{
+				display: inline-block !important;
+			}
+		}
+		tr.finance-rate {
+			display: table-row !important;
+		}
+		td.finance-rate {
+			display: table-cell !important;
+		}
+	}
+
+  	.tfs-input, .tfs-disclaimer {
+	  	display: none;
+	}
+}
+
+.finance-rates {
+  	display: none;
+
+	.frame{
+		background: $colour-default-grey-3;
+		padding: 15px;
+		label{
+			color: $colour-default-grey-1;
+		}
+		p{
+			text-indent: 0px;
+			@include font-size(14);
+		}
+	}
+}
+
+.finance-config {
+	h4 {
+	  	margin: 20px 0 0 0;
+	  	text-decoration: underline;
+	}
+
+  	h5 {
+	  	margin: 10px 0 0 0;
+	  	padding: 10px 0 10px 0;
+	}
+
+  	.section {
+		.row {
+			margin-left: 0;
+
+			>div {
+				padding-left: 0;
+			}
+
+			&:nth-child(even) {
+			  background-color: $colour-default-grey-10;
+			}
+		}
+
+	  	&.tfs-stack {
+		  	h5 {
+			  	cursor: pointer;
+			  	@include user-select(none);
+
+				.icon-chevron {
+					margin: 0 10px 0 10px;
+
+					&:before {
+					  	content: "\f078";
+					}
+				}
+			}
+
+			&:nth-child(odd) {
+				h5 {
+					background-color: $colour-default-grey-10;
+				}
+			}
+
+		  	.panel {
+			  	display: none;
+			}
+
+			&.active {
+			  	h5 {
+					.icon-chevron:before {
+					  	content: "\f077";
+					}
+				}
+
+			  	.panel {
+				  	display: block;
+				}
+			}
+		}
+
+		pre {
+		  	border: 1px solid #ccc;
+		  	padding: 5px;
+		  	margin: 0;
+
+			.string { color: green; }
+			.number { color: darkorange; }
+			.boolean { color: blue; }
+			.null { color: magenta; }
+			.key { color: red; }
+		}
+	}
+
+  	.template {
+	  	display: none;
+	}
+}

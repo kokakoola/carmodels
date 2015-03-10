@@ -1,0 +1,164 @@
+/* =============================================================================
+ * media overlayer
+ * ========================================================================== */
+.mediaOverlayer{
+	.overlayerContent{
+		overflow:hidden;		
+	}
+	.error {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+	}
+	.error-inner {
+		background-color: rgba(30, 42, 50, 0.8);
+		border: 2px solid $colour-default-grey-1;
+		border-radius: 3px;
+		color: $colour-default-white;
+		height: auto;
+		margin: auto;
+		max-width: 350px;
+		padding: 20px 5px;
+		position: relative;
+		text-align: center;
+		top: 40%;
+	}
+}
+.portrait{
+	#mediaOverlayerCarousel .carouselNav {
+		top: inherit;
+	}
+}
+#mediaOverlayerCarousel {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	.carouselNav{
+		z-index: 1001;
+		bottom: 35px;
+		.carousel-control {
+			display: none;
+			z-index: 1001;
+			top: -15px;
+			&.left {
+				left: 20px;
+			}
+			&.right {
+				right: 20px;
+			}
+			&:hover {
+				background-color: $color-grey-nav-galleries;
+			}
+		}
+	}
+	.carousel-inner {
+		overflow: hidden;
+		top: 0;
+		height: 100%;
+		.item {
+			-ms-touch-action:none;
+			height: inherit;
+		  	overflow: hidden;
+			.noflash {
+				font-family: toyotadisplay_rg;
+				height: 100%;
+				width: 100%;
+				top: 50%;
+				position: absolute;
+				text-align: center;
+				p {
+					color: $colour-default-grey-5;
+					text-indent: 0;
+				}
+				h2 {
+					font-family: toyotadisplay_bd;
+					color: $colour-default-red;
+				}
+				a {
+					color: $colour-default-grey-5;
+					&:hover {
+						color: $colour-default-red;
+					}
+				}
+			}
+		}
+		.item img {
+			display: none;
+			margin: auto;
+			max-width: inherit;
+		}
+	}
+	.loaderLayer {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		background: url('/images/ajax-loader.gif') no-repeat center center;
+	}
+}
+
+
+.eq-ie9 {
+	.overlayerContent {
+		box-sizing: content-box !important; // important or IE will ignore it
+	}
+}
+
+/* FIXES FOR IE8 */
+.lt-ie9, .eq-ie9 {
+	#mediaOverlayerCarousel {
+		.carousel-control {
+			position: fixed;
+			top: 90%;
+			&.left {
+				left: 120px;
+			}
+	}
+  }
+}
+
+/* Dirty fix for Android Browser (the default one that ships with Android hardware) and everything that uses TOUCH */
+.touch {
+	#mediaOverlayerCarousel {
+		.carouselNav{
+			position: fixed !important;
+			top: 90%;
+			.carousel-indicators {
+				width: 75%;
+				left: 10%;
+			}
+		}
+		.carousel-control.right {
+			right: 90px;
+		}
+    }
+}
+
+@media (min-width: $screen-sm){
+	#mediaOverlayerCarousel{
+		.carouselNav{
+			.carousel-control{
+				display:block;
+			}
+		}
+	}
+}
+
+@media (max-width: $screen-sm) {
+	.touch {
+		#mediaOverlayerCarousel {
+			.carouselNav{
+				.carousel-indicators {
+					width: 70%;
+					left: 10%;
+				}
+			}
+		}
+	}
+	.eq-ie9 {
+		.fb-inner {
+			display: block !important; //or IE will ignore it..
+		}
+	}
+}

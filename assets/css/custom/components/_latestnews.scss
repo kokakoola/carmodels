@@ -1,0 +1,18 @@
+.latest-news {
+
+	.filter-bar {
+		height: 24px;
+	}
+
+}
+
+.spotlights.spotlights-press, .spotlights.spotlights-social {
+	.spotlight.direct-link {
+		p {
+			strong {
+				white-space: normal;
+				margin-right: 0;
+			}
+		}
+	}
+}

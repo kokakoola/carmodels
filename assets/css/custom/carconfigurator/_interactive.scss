@@ -1,0 +1,1115 @@
+/* CSS for interactive elements
+========================================================== */
+
+.cc-grade-container,
+.cc-infoitem-container{
+  clear: both;
+  position:relative;
+}
+
+.cc-infoitem-container{
+  overflow:hidden;
+}
+
+.cc-grade-item {
+  width:234px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  position:absolute;
+}
+
+.cc-grade-item.cc-disabled{
+  position:absolute;
+}
+
+.cc-abs-item{
+  position:absolute;
+  width:100%;
+}
+
+.cc-info-item{
+  position:absolute;
+  width:100%;
+  padding-left:10px;
+  padding-bottom: 10px;
+}
+
+.cc-middlecontainer{
+  z-index:6;
+}
+
+.cc-bottomcontainer{
+  overflow:hidden;
+}
+
+.cc-no-overflow{
+  overflow:visible !important;
+}
+
+/* =============================================================================
+Bottom container elements and definitions
+================================================================================ */
+
+.cc-hcontainer{
+  position:relative;
+}
+
+/* =============================================================================
+Top container elements and definitions
+================================================================================ */
+
+.cc-topcontainer{
+  overflow: hidden;
+  display:none;
+  height: 0;
+  background-color: #000000;
+
+  .cc-controls-container{
+    position:relative;
+  }
+
+  .cc-control{
+    z-index:5;
+    position:absolute;
+    width:100%
+  }
+}
+
+.cc-topcontainer.cc-light{
+    background-color: #FFFFFF;
+}
+
+/** Fixes the title of the model to also be visible on the light background **/
+.cc-light .cc-spin-header header.cc-secondary
+{
+    h1,
+    .cc-price-monthly,
+    .cc-disclaimer-button a
+    {
+        color:#303a40;
+    }
+}
+
+/* Make sure the contents of the info panel are white for the HList */
+.cc-hlist{
+    .cc-box-feature{
+        color:#FFF;
+    }
+    .cc-panel-footer{
+        margin-bottom: 28px;
+    }
+    
+  /** Fix the checkbox on the color items inside the Aygo packs **/
+  .cc-checkbox.cc-checked{
+    background-position: -20px -40px;
+  }
+  .cc-checkbox{
+    background-position: 0 -40px;
+  }
+}
+
+.cc-hlist-container{
+  position:relative;
+  left:0px;
+}
+
+.cc-vmask,
+.cc-hmask{
+  overflow:hidden;
+}
+
+/* =============================================================================
+slider definitions
+================================================================================ */
+
+.cc-slider-content{
+
+}
+
+.cc-slider-content{
+  position:relative;
+  top:10px;
+
+  .cc-bg,
+  .cc-bar,
+  .cc-shadowing,
+  .cc-rangebar,
+  .cc-rangebar .cc-fill,
+  .cc-hit,
+  .cc-thumb{
+    height:10px;
+    position:absolute;
+  }
+
+  .cc-bg{
+    border:2px solid #bbbfc2;
+    background-color:#fff;
+    @include corners(4px,4px,4px,4px);
+    z-index:1;
+    width:100%;
+  }
+
+  .cc-bar{
+    border:2px solid #1f2c35;
+    background-color:#1f2c35;
+    @include corners(4px,0,0,4px);
+    z-index:2;
+  }
+
+  .cc-shadowing{
+    top:2px;
+    left:2px;
+    background:url("../../assets/images/carconfigurator/slider_img.png") repeat-x scroll 0 -32px transparent;
+    z-index:3;
+    height:6px;
+    width:100%;
+  }
+
+  .cc-rangebar{
+    z-index:4;
+    height:6px;
+    top:2px;
+    @include corners(4px,4px,4px,4px);
+    background-color:#ffffff;
+
+    .cc-fill{
+      height:100%;
+      @include corners(4px,4px,4px,4px);
+      background-color:#1f2c35;
+    }
+  }
+
+  .cc-hit{
+    @include opacity(0);
+    z-index:5;
+    background-color: #FF00FF;
+    opacity: 0;
+    width:100%;
+    height:50px;
+  }
+
+  .cc-thumb{
+    cursor:pointer;
+    height:26px;
+    top:-8px;
+    width:26px;
+    z-index:6;
+    background:url("../../assets/images/carconfigurator/slider_img.png") no-repeat scroll 0 0 transparent;
+  }
+}
+
+/* =============================================================================
+exteriorspin & interiorspin
+================================================================================ */
+.cc-spin
+{
+    //height: 348px; /* Normally this should be 354, but we keep 6 px for the border of the navigation buttons */
+    //width: 782px;
+    .cc-exterior
+    {
+      z-index:2;
+      position: relative;
+      margin: -158px auto 0;
+      //margin: -150px auto 0 auto;
+      padding: 0;
+      
+      .mask {
+          position:absolute; 
+          z-index:5; 
+          width:100%; 
+          height:100%; 
+          border:1px solid green; 
+          background-color:#00CC00;
+          @include opacity(0);
+          cursor: pointer;
+      }
+  
+      .imgcont {
+          position:absolute; 
+          z-index:3; 
+          width:100%; 
+          height:100%; 
+      }
+      
+      .overlay{
+          width:100%;
+          height:100%;
+          position:absolute;
+          z-index:4;
+          display:block;
+      }
+      .overlay.large
+      {
+          background:url("../../assets/images/carconfigurator/ext_spin_overlay_large.png") no-repeat scroll 0 0 transparent;
+      }
+      .overlay.medium
+      {
+          background:url("../../assets/images/carconfigurator/ext_spin_overlay_medium.png") no-repeat scroll 0 0 transparent;
+      }
+      .overlay.small
+      {
+          background:url("../../assets/images/carconfigurator/ext_spin_overlay_small.png") no-repeat scroll 0 0 transparent;
+      }
+    }
+    
+    .cc-container{
+        margin-top:-158px;
+    }
+    
+    .cc-interior-spin {
+        overflow:hidden;
+        
+        -webkit-perspective: 500px;
+        -moz-perspective: 500px;
+        -o-perspective: 500px;
+        -ms-perspective: 500px; /* Internet Explorer */
+        perspective: 500px;
+        
+        -webkit-backface-visibility: hidden;
+        
+        width: 923px;
+        height: 598px;
+        
+        .image {
+            width: 923px;
+            height: 923px;
+            -webkit-backface-visibility: hidden;
+        }
+        
+        .image.expand{
+            width: 930px;
+            height: 930px;
+        }
+    }
+    
+    .cc-interior-gallery {
+        height: 598px;
+        overflow: hidden;
+        position: relative;
+        width: 923px;
+        
+        img.cc-dynamic{
+            display: block;
+            position: absolute;
+            top: -234px;
+        }
+        
+        img.cc-single{
+            display: block;
+            left: 76px;
+            position: absolute;
+            top: 130px;
+        }
+    }
+}
+
+/** Fixes the visibility of the gradient overlay on a white background **/
+.cc-light .cc-spin .cc-exterior .overlay
+{
+    display:none;
+}
+
+/** Fixes the height to a fixed amount on the spin's header **/
+.cc-spin-header
+{
+    height:158px;
+}
+
+.cc-car-header
+{
+    position:relative;
+    z-index:6;
+}
+
+
+/* =============================================================================
+Mini header properties
+================================================================================ */
+.cc-mini-header
+{
+  background-image:none;
+  position:fixed;
+  height:158px;
+  display:none;
+
+  .cc-img-container
+  {
+    position:relative;
+    width:586px !important;
+  }
+
+  .cc-interior,
+  .cc-exterior
+  {
+    position:absolute;
+  }
+
+  .cc-interior
+  {
+    height:158px;
+    overflow:hidden;
+
+    img
+    {
+      position:relative;
+      top:-304px;
+    }
+  }
+  
+  .cc-interior.cc-single
+    {
+        img
+        {
+            top:-20px;
+        }
+    }
+
+  .cc-overlay
+  {
+    width:586px;
+    height:158px;
+    z-index: 1;
+    background:url("../../assets/images/carconfigurator/ext_top_overlay.png") no-repeat scroll 0 0 transparent;
+  }
+
+  /*.cc-shadow
+  {
+      background: url(../../assets/images/carconfigurator/top_header_shadow.png) repeat-x;
+      width:100%;
+      height:12px;
+      bottom:-12px;
+      position:absolute;
+      display:none;
+      @include opacity(0);
+  }*/
+}
+
+.cc-car-header
+{ 
+  .cc-actions
+  {
+      display:block;
+  }
+  
+  .cc-container
+  {
+      height:auto;
+      min-height:0;
+  }
+  
+  .cc-disclaimer
+  {
+      left: 0;
+      width: 726px;
+      margin: 20px 0;
+      top: 0;
+      position:absolute;
+      
+      table{
+          border: medium none;
+      }
+      
+      td{
+          border-bottom: 1px solid #596871;
+          padding: 5px 0 7px;
+      }
+  }
+  
+  .cc-disclaimer:before
+  {
+      left:35px;
+      background-image:none;
+  }
+} 
+
+/* =============================================================================
+Promo window specific styles
+================================================================================ */
+
+.cc-promotions .cc-popup
+{
+  position:relative;
+  top:0px;
+  margin:20px 0 20px;
+}
+
+/* =============================================================================
+Filter step specific styles
+================================================================================ */
+
+.cc-filtertool .cc-filter-results
+{
+  .cc-thumb
+  {
+    width:149px;
+    height:100px;
+  }
+  .cc-thumb.cc-big
+  {
+    width:209px;
+    height:100px;
+  }
+}
+
+/* =============================================================================
+Summary specific styles
+================================================================================ */
+
+.cc-qr-section
+{
+  color:#334048;
+  font-family:'toyotatext_rg';
+  border-top: 1px solid #E3E4E5;
+  height:124px;
+  /*padding-top: 26px;*/
+  overflow:hidden;
+
+  .cc-qr
+  {
+    float:left;
+    width:322px;
+    margin-top:26px;
+
+    header
+    {
+      @include font-size(1.4);
+      margin: 1px 0;
+      color:#6c7073;
+      .cc-code
+      {
+        @include font-size(2);
+        font-family:'toyotatext_bd';
+        color:#334048;
+      }
+    }
+
+    .cc-qr-image
+    {
+      width:64px;
+      height:64px;
+      margin: -7px 12px 12px;
+      float:left;
+    }
+
+    .cc-preloader
+    {
+      position:relative;
+      left:11px;
+      top:14px;
+    }
+
+    img
+    {
+      margin:0;
+      float:none;
+    }
+  }
+
+  .cc-description
+  {
+    @include font-size(1.5);
+    float:right;
+    text-align:left;
+    width:590px;
+    margin-top:26px;
+  }
+}
+
+/* =============================================================================
+External frame specific styles
+================================================================================ */
+
+.cc-external-frame
+{
+    position:relative;
+    height:2200px;
+}
+
+/* =============================================================================
+Eco section
+================================================================================ */
+.cc-eco-section {
+    background-color: #FFFFFF;
+    padding: 15px 50px 10px 235px;
+    position: relative;
+    
+    h2{
+        color: #71767A;
+        font-family: 'toyotatext_bd';
+        @include font-size(1.4);
+        left: 10px;
+        position: absolute;
+        top: 25px;
+    }
+    
+    table{
+        color: #71767A;
+        margin: 12px 0 12px;
+    }
+    
+    img{
+        height:239px;
+    }
+    
+    td{
+        @include font-size(1.2);
+    }
+    
+    .cc-summary
+    {
+        @include corners(2px,2px,2px,2px);
+        padding: 10px 0;
+        position: relative;
+    }
+}
+
+
+
+/* =============================================================================
+Preloader
+================================================================================ */
+
+.cc-filtertool,
+.cc-disabled-overlay .cc-content,
+.cc-engine-grades
+{
+  .cc-preloader
+  {
+    position:relative;
+    width:60px;
+    height:60px;
+    margin: 0 auto;
+
+    .cc-image
+    {
+      background-image: url(../../assets/images/carconfigurator/preloader.png);
+      width:60px;
+      height:60px;
+    }
+  }
+}
+.cc-btn-next.cc-indent
+{
+    padding-right:29px;
+    .cc-preloader
+    {
+        float:right;
+        left:3px;
+        top:3px;
+        position:relative;
+        .cc-image
+        {
+            background-image: url(../../assets/images/carconfigurator/preloader_tiny.png);
+            width:14px;
+            height:14px;
+        }
+    }
+}
+
+
+.cc-preloader
+{
+    .cc-image 
+    {
+        background-image: url(../../assets/images/carconfigurator/preloader_small.png);
+        background-repeat: no-repeat;
+        background-position: 0px 0px;
+        overflow: hidden;
+        position: absolute;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+
+/* =============================================================================
+Disabled window specific styles
+================================================================================ */
+.cc-disabled-overlay
+{
+    .cc-overlay
+    {
+        position:absolute;
+        border:1px solid green; 
+        background-color:#00CC00;
+        @include opacity(0);
+        z-index:10001;
+    }
+    .cc-content
+    {
+        @include glow(10px, 0, 0, 0, 0.15);
+        position:absolute;
+        width:500px;
+        height:100px;
+        @include corners(4px,4px,4px,4px);
+        background-color:#FFF;
+        z-index:10000;
+        
+        .cc-description
+        {
+            float:left;
+            margin: 0 20px 0 15px;
+            width: 370px;
+        }
+        
+        .cc-preloader 
+        {
+            margin: 20px 0 0 20px;
+            float:left;
+        }
+    }
+}
+
+/** Fixes the underlined disclaimer button on the monthly rate section **/
+.cc-price-monthly
+{
+    @include font-size(1.4);
+    .cc-disclaimer-button
+    {
+        text-decoration:underline;
+    }
+}
+
+/* =============================================================================
+Styles used for the no-results in the HList search functionality
+================================================================================ */
+
+.cc-hlist .no-results{
+    position:absolute;
+    width:770px;
+    top:50px;
+    .cc-wrapper
+    {
+        position:relative;
+        margin:0 auto;
+    }
+    .icon-car1
+    {
+        float:left;
+        /*color: #D2D4D7;*/
+        color:#FFF;
+        @include font-size(8);
+        margin-bottom: 7px;
+    }
+    .cc-description
+    {
+        float:left;
+        color: #CED3D6;
+        display: inline-block;
+        @include font-size(1.6);
+    }
+}
+
+/** Fixes the iPad styling of the button **/
+button.cc-btn.cc-btn-search
+{
+    padding:0;
+}
+
+/* =============================================================================
+Debug window styling
+================================================================================ */
+.cc-debug-content
+{
+    @include font-size(1.3);
+    .cc-box
+    {
+        margin-top:10px;
+        margin-bottom:10px;
+        border:none;
+    }
+    
+    table.cc-fin-parameters
+    {
+        float:right;
+        width:50%;
+        margin-bottom:10px;
+    }
+}
+
+/* =============================================================================
+Show on car image
+================================================================================ */
+
+.cc-show-on-car
+{
+    background-position: -24px -176px;
+    width:34px;
+    height:34px;
+    z-index:100;
+    position:absolute;
+    right:8px;
+    bottom:-9px;
+}
+
+/* =============================================================================
+Overwrites, migrate this to the main scss files
+================================================================================ */
+
+/** Aligns the pricing of the optional pack equipment items to the right **/
+.cc-pack-equipment-price
+{
+    float:right;
+}
+
+.cc-box.cc-box-optional .cc-pack-equipment-price
+{
+    margin-right:14px;
+}
+
+.cc-compare .cc-title
+{
+  display: block;
+}
+
+.cc-filter-results .cc-grade-container .cc-thumb
+{
+  height:109px;
+  width:210px;
+}
+
+.cc-submodels .cc-thumb,
+.cc-bodytypes .cc-thumb
+{
+  height: 195px;
+  width: 371px;
+}
+
+/** Fixes the height of the HList thumbs **/
+.cc-listitem .cc-thumb
+{
+  width:146px;
+  height:146px;
+}
+
+/** Adds the missing_img to the thumb **/
+.cc-listitem .cc-missing
+{
+    @include corners(2px,2px,2px,2px);
+    background-image: url(../../assets/images/carconfigurator/missing_img.jpg);
+    width:144px;
+    height:144px;
+    position:absolute;
+}
+
+/** Selected state of the HList list item **/
+.cc-listitem img.cc-white
+{
+    @include corners(2px,2px,2px,2px);
+    background-color: #FFFFFF;
+    border: 2px solid #FFFFFF;
+}
+
+.cc-tab-colours .cc-listitem .cc-thumb
+{
+  height:60px;
+}
+
+.cc-list-features
+{
+  position:relative;
+}
+
+/** Fixes the disabled list item color for the Aygo extended wheels VList item **/
+.cc-list
+{
+  .cc-disabled
+  {
+    .cc-toggle
+    {
+      color: #5E656A;
+    }
+    /** Fixes the hand cursor mode of the a tag when the item is disabled **/
+    a
+    {
+      cursor:default;
+    }
+  }
+}
+
+.cc-box-features .cc-img-container,
+.cc-box-feature .cc-img-container
+{
+  min-height:215px;
+}
+
+.cc-box-features
+{
+  margin:0;
+  padding-bottom: 10px;
+}
+
+.cc-box {
+  overflow:visible;
+}
+
+.cc-grade-container .cc-grade-item
+{
+  margin-bottom:0px;
+  padding-bottom:10px;
+
+  .cc-pricing
+  {
+    margin-top: 3px;
+  }
+}
+
+.cc-wheels .cc-thumb
+{
+  height:146px;
+}
+
+/** Fixes the height of the image in the aygo wheels **/
+.cc-wheels-aygo .cc-image-big
+{
+  width:923px;
+  height:280px;
+}
+
+/** Required for the hiding of the content when the panel is not visible **/
+.cc-panel-grey{
+  overflow:hidden;
+  .cc-btn
+  {
+    margin:0 0 1em;
+    float:left;
+  }
+
+  p
+  {
+    float:left;
+    width: 100%;
+  }
+}
+
+.cc-car-header h1
+{
+  color:#FFFFFF;
+}
+
+.cc-promotions .cc-page-wrapper
+{
+  overflow:hidden;
+}
+
+.cc-panel-promotions
+{
+  .cc-panel-footer
+  {
+    margin-top:20px;
+  }
+  .cc-number
+  {
+    position:relative;
+    float:left;
+    top:6px;
+    margin-right:6px;
+  }
+}
+
+aside.cc-primary article
+{
+  float:left;
+}
+
+.cc-promo-price
+{
+  div.cc-price
+  {
+    color: #EF9109;
+  }
+
+  del.cc-price
+  {
+    margin-left: 4px;
+  }
+}
+/** Adds some more spacing before the total price so the label does not stick to much to the price **/
+.cc-specs .cc-price-total .cc-price
+{
+    padding-left: 4px;
+}
+
+/** Adds some more spacing before the base price so the label does not stick to much to the price **/
+.cc-specs tr.highlight .cc-price
+{
+    padding-left: 4px;
+}
+
+.cc-specs table a.cc-number
+{
+    color: #FFF;
+}
+
+/** Necessary for the grouping of the equipment items which have a shared parent **/
+.cc-specs tr.no-border td
+{
+    border-bottom: none;
+}
+
+/** Fixes the checkbox on the optional equipment items in the Aygo packs **/
+.cc-list-view .cc-list-features .cc-checkbox.cc-checkbox-small {
+  position:inherit;
+}
+
+/** Fixes the width of the container containing the colors linked to the standard equipment in the Aygo packs **/
+.cc-vmask .cc-list-thumbs{
+  width:auto;
+  padding:0;
+}
+
+/** Adjusts the highlight color on the compare list items highlight **/
+.cc-compare .cc-highlight td{
+    background-color: #fcf9e6;
+}
+
+/** Adds logic so when a primary cta has no icon, the text gets centered **/
+.cc-specs .cc-actions .cc-btn.no-icon{
+    padding-right: 16px;
+}
+
+/** Adds loader gifs to the buttons **/
+.cc-specs .cc-btn
+{
+    .cc-primary,
+    .cc-secondary{
+        background-repeat: no-repeat;
+        width:14px;
+        height:14px;
+        position:relative;
+    }
+    /** cc-primary are the dark buttons, only visible in the summary **/
+    .cc-primary
+    {
+        left:6px;
+        top:2px;
+        background-image: url(../../assets/images/carconfigurator/primary_cta_animation.gif);
+    }
+    /** cc-secondary are the light buttons, visible accross the application **/
+    .cc-secondary
+    {
+        left:6px;
+        top:2px;
+        background-image: url(../../assets/images/carconfigurator/secondary_cta_animation.gif);
+    }
+}
+
+/** Adds an indentation row to the secondary categorization **/
+.cc-specs .cc-indent{
+    padding-left:20px;
+}
+
+/** Fixes the header pricing color **/
+.cc-car-header .cc-pricing{
+    color: #959CA0;
+}
+
+/** Hides the buttons regarding the salesman slave **/
+.cc-sm-slave{
+    display:none !important;
+}
+
+/** Fixes the pages inside the paging components, the colour was misleading **/
+.cc-pages a{
+    background-color:#535F67;
+}
+.cc-pages a.selected{
+    background-color:#C4C6C7;
+}
+
+/** Fixes the word wrapping on the HList items **/
+.cc-list-thumbs .cc-meta{
+    word-wrap:break-word;
+}
+
+/** Fixes the positioning of the engine info image **/
+.cc-popup img{
+    margin-top:-26px;
+}
+
+/** Adds a one pixel line at the bottom of the change model button popup content **/
+.cc-popup{
+    width: 300px;
+    
+    .cc-contents{
+        padding:10px 14px 5px;
+    }
+    .cc-border-bot{
+        border-bottom: 1px solid #67747c;
+    }
+    li{
+        margin-bottom: 2px;
+        padding-bottom: 4px;
+    }
+}
+/** Fixes the hit area of the close button on the interfaceControl **/
+.cc-tabs-container .cc-icon-toggle
+{
+    top:8px;
+    right:14px;
+}
+.cc-tabs-container .cc-hit-area
+{
+    background-color: #313e46;
+    position:absolute;
+    right:-6px;
+    width:50px;
+    height:36px;
+}
+
+/** Increases the hit area for the info icon on the grades **/
+.cc-filter-results header
+{
+    position:relative;
+}
+.cc-filter-results 
+{
+    h1
+    {
+        a{
+            position:absolute;
+            left: 10px;
+            top: 17px;
+        }
+        .cc-hit-area
+        {
+            background-color: #fff;
+            position:absolute;
+            width:28px;
+            height:40px;
+            left: -10px;
+            top: -17px;
+        }
+        .cc-indent.cc-title
+        {
+            margin-left: 20px;
+        }
+    }
+    .cc-promo-price
+    {
+        del.cc-price
+        {
+            margin-left:0; 
+        }
+        .cc-number
+        {
+            margin-right:2px;
+        }
+    }
+}
+
+.cc-filter-results .cc-selected .cc-hit-area
+{
+    background-color: #eff0f0;
+}
+
+/** Fixes the spacing between the sliders of the proace filterstep **/
+div.cc-filter.cc-range-slider{
+    margin-right:10px;
+}
+
+/** Fixes so that the pricing of the secondary accent colors isn't float to the right anymore **/
+.cc-list-thumbs .cc-pricing
+{
+    float:none;
+}

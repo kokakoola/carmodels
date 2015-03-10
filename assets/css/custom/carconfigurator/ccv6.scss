@@ -1,0 +1,38 @@
+/**
+ * TOYOTA CAR CONFIG v6
+ *
+ * Main styling
+ *
+ * @author          Davy De Pauw (davy@marlon.be)
+ * @copyright       Marlon BVBA <http://www.marlon.be>
+ */
+
+$media-queries: true !default;
+
+@media screen {
+
+  @import '_helpers';
+
+  /* DEFINE GLOBAL NAMESPACE */
+  #tmxcc-v6 {
+    @import '_base';
+    @import '_grid';
+    @import '_colours';
+    @import '_sprites';
+    
+    @import '_layout';
+    @import '_forms';
+    @import '_ui';
+    @import '_interactive';
+    @import '_proace';
+  }
+
+  .fullscreen #tmxcc-v6 .cc-link-fullscreen { display: list-item; }
+  
+} /* end screen */
+
+@media print {
+
+  @import '_print';
+  
+} /* end print */

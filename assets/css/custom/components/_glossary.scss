@@ -1,0 +1,47 @@
+#glossary {
+
+  	header {
+	  	h4 {
+		  	text-align: center;
+		}
+	}
+
+	.index {
+	  	list-style-type: none;
+	  	margin: 30px;
+	  	text-align: center;
+	  	@include font-size(19);
+
+	  	li {
+		  	display: inline-block;
+		  	text-transform: uppercase;
+		  	margin:0 20px;
+		}
+	}
+
+  	.row {
+	  	margin: 40px 0;
+	  
+	  	.glossary-group {
+		  	list-style-type: none;
+		  	@include font-size(17);
+
+		  	li {
+			  	line-height: 30px;
+			}
+		}
+	}
+
+  	a {
+	  	&:hover {
+		  	color: $colour-default-red;
+		}
+	}
+}
+
+.glossary.expansion-inner {
+	> img {
+	  	float: left;
+	 	margin: 0 5px 5px 0;
+	}
+}

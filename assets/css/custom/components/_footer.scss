@@ -1,0 +1,90 @@
+section.footer {
+	padding-top: 20px;
+	box-shadow: inset 0 0px 150px rgba(108, 112, 115, .3);
+	background-color: $colour-default-white;
+	border-top: 1px solid $colour-default-white;
+
+	.container {
+		.footer-legal-content {
+			margin-bottom: 15px;
+			> div[class^="col"] {
+				padding-bottom: 0px;
+			}
+		}
+	}
+
+	ul {
+		list-style-type: none;
+	}
+	ul, a {
+		color: $colour-default-grey-2;
+	}
+	p {
+		@include font-size(13);
+		padding-top: 6px;
+	}
+	i {
+		padding-left: 5px;
+	}
+	.footer-legal-links, .footer-collapsed-links {
+		font-family: toyotatext_bd;
+		@include font-size(13);
+		li {
+			display: inline-block;
+			padding-right: 20px;
+			line-height: 25px;
+		}
+	}
+	.footer-collapsed-links {
+		a {
+			text-decoration: none;
+			&:hover {
+				span {
+					text-decoration: underline;
+				}
+			}
+		}
+		li {
+			display: inline-block;
+		}
+	}
+	.sitemap {
+		padding-top: 35px;
+		ul {
+			margin-bottom: 50px;
+			li {
+				padding-bottom: 15px;
+				&:last-child {
+					padding-bottom: 0;
+				}
+			}
+			.footer-list-title {
+				font-family: toyotatext_bd;
+				padding-bottom: 20px;
+			}
+			.orange-title {
+				color: $colour-btn-yellow-1;
+				font-family: toyotatext_bd;
+			}
+			&.list-title-orange {
+				font-family: toyotatext_bd;
+				.footer-list-title {
+					color: $colour-btn-yellow-1;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $screen-sm) {
+	section.footer {
+		.social-media-links, .footer-collapsed-links {
+			float: right;
+		}
+	}
+	.footer-collapsed-links, .footer-legal-links {
+		li.hidden-xs {
+			display: inline-block !important;
+		}
+	}
+}

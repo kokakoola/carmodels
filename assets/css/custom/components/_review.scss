@@ -1,0 +1,165 @@
+#ThirdParty {
+  	.spotlight {
+	  	color: $colour-default-grey-1;
+	}
+}
+
+#BVFieldRecommendContainerID {
+  	> span {
+	  	float: left;
+	}
+}
+
+.review {
+    color:$colour-default-grey-2;
+    h5 {
+      color: $colour-default-grey-1;
+    }
+    .progress.star-gray,.progress.bigStar-gray-big {
+		width: 60px;
+		height: 12px;
+		background-repeat: repeat-x;
+		background-color: transparent;
+		box-shadow: none;
+		border-radius: 0;
+		margin: 0px 0px 8px 0px;
+	}
+	.progress.bigStar-gray-big {
+		width: 126px;
+		height: 24px;
+	}
+	.progress-bar.star-yellow {
+	    background-repeat: repeat-x;
+	    background-color: transparent;
+	    box-shadow: none;
+	}
+	.progress-bar.bigStar-yellow-big {
+		background-repeat: repeat-x;
+		background-color: transparent;
+		box-shadow: none;
+	}
+	.review-recommended {
+		color: $colour-promo-2;
+	}
+	a {
+		color: #666;
+		font-family: $font-toyota-text-regular;
+		display: block;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	.review-details {
+		margin-top: $twenty-pixels;
+		.read-more {
+			color: $colour-default-grey-1;
+			font-family: $font-toyota-text-bold;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+		.poster-name {
+			// JGMG https://cde.toyota-europe.com/jira/browse/TOYONEGFI-786
+			@include font-size(13);
+		}
+	}
+	.btn.btn-red {
+		color: $colour-default-white;
+	}
+	.btn.btn-link {
+		padding: 0;
+		vertical-align: baseline;
+	}
+}
+
+.reviews-summary,.reviews-individual {
+	margin: 30px 0 20px;
+}
+.spotlight-reviews {
+	header {
+		margin: 20px 0 20px;
+	}
+	a {
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.overlayerContent {
+	.review {
+		background-color: $colour-default-white;
+		overflow-y: hidden;
+		.row {
+			border-bottom: 1px solid $colour-default-grey-5;
+			padding-bottom: 50px;
+			padding-top: 25px;
+		}
+	}
+}
+.rev-show {
+	.overlayerContent {
+		background-color: $colour-default-white;
+		.BVPageBody,.BVBrowserIE8,.BVSectionSubjectInformation,.BVSubmissionTimeout,.BV {
+			width: auto;
+		}
+		.BVMEPopinTip {
+			left: 100%;
+		}
+	}
+}
+.rev-hide {
+	display: none;
+}
+.review-summary-promo {
+	padding: 7px;
+	padding: 5px 6px 10px;
+	opacity: .9;
+	@include box-shadow(0 1px 2px rgba(0,0,0,.1));
+	@include font-size(13,1.4);
+	font-family: $font-toyota-text-bold;
+	color: $colour-default-black;
+	border-radius: 2px;
+	background-color: $colour-default-white;
+	@include gradient-vertical($colour-btn-grey-1, $colour-default-white);
+	text-align: left;
+	text-shadow: none;
+
+	&:hover{
+		opacity: 1;
+	}
+
+	a {
+		font-family: $font-toyota-text-regular;
+		color: $colour-default-grey-2;
+	}
+}
+.car-model {
+	section {
+		padding-top: 0;
+	}
+}
+.review-wrapper {
+	position: relative;
+	margin: 15px 0;
+	max-width: 100%;
+	min-width: 150px;
+	z-index: 10;
+}
+.lt-ie9 {
+	.review {
+		.review-details {
+			.read-more {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+@media (min-width: $screen-md) {
+	.review-wrapper {
+		margin: 0;
+		position: absolute;
+		max-width: 150px;
+	}
+}

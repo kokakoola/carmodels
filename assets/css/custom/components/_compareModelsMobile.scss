@@ -1,0 +1,253 @@
+//show compare only in the mobile page
+.overlayerWrapper {
+	#compareModelsMobile {
+		display: block !important;
+	}
+}
+
+//mobile compare styles
+#compareModelsMobile {
+	display: none;
+	padding: 0;
+
+	h1 {
+		@include font-size(26);
+	}
+
+	.gcm-container {
+		position: relative;
+		min-height: 85%;
+
+		> h1 {
+			text-transform: uppercase;
+		}
+
+		.gcm-button-container {
+			margin: 20px 0 0 0;
+			width: 100%;
+
+			.btn {
+				width: 50%;
+			}
+		}
+
+		.finance-rates {
+			margin-top: 30px;
+		}
+
+		.finance-rate b {
+			font-family: inherit;
+		}
+
+		.gcm-sub-container {
+			display: none;
+
+			&.active {
+				display: block;
+			}
+
+			.section-title {
+				margin: 0 auto;
+
+				.gcm-component-main-title {
+					padding-top: 20px;
+				}
+
+				h4 {
+					margin-top: 10px;
+					text-align: center;
+
+					.gcm-engine-promotions-title {
+						color: $colour-vi-orange-1;
+					}
+				}
+			}
+
+			ul {
+				margin: 20px 0 0 0;
+				padding: 0;
+
+				li {
+					margin: 0;
+					padding: 10px;
+					height: 114px;
+					list-style-type: none;
+					cursor: pointer;
+
+					border-bottom: 1px solid $colour-btn-grey-1;
+					position: relative;
+
+					&:first-child {
+						border-top: 1px solid $colour-btn-grey-1;
+					}
+
+					h4 {
+						@include font-size(15);
+						margin-left: 160px;
+						margin-right: 24px;
+
+						strong, span, i {
+							display: block;
+							position: static;
+						}
+
+						i {
+							@include font-size(13);
+
+							a {
+								text-decoration: underline;
+								color: inherit;
+							}
+						}
+					}
+					.thumb {
+						position: relative;
+
+						img {
+							width: 149px;
+							position: absolute;
+							top: 0;
+							left: 0;
+						}
+
+						.label {
+							position: absolute;
+							left: 0;
+							top: 75px;
+							border-radius: $three-px-radius;
+							color: $colour-default-white;
+							i {
+								display: inline;
+								color: $colour-vi-orange-1;
+								@include font-size(16);
+								right: -16px;
+								top: 1px;
+							}
+						}
+
+						.promolabel {
+							background-color: $colour-vi-orange-1;
+							display: none;
+						}
+					}
+
+					i {
+						position: absolute;
+						right: 10px;
+						top: 20px;
+						color: $colour-ecm-gray-icon;
+					}
+				}
+			}
+		}
+
+		#gcmEquipments {
+			display: none;
+		}
+	}
+
+	.gcm-non-hybrid-container {
+		display: none;
+	}
+}
+
+.overlayerContent {
+	#gcmEquipments {
+		display: block;
+		padding: 0 2px;
+
+		header {
+			&, a.btn {
+				text-align: center;
+			}
+
+			h1 {
+				@include font-size(26);
+			}
+
+			h4 {
+				@include font-size(15);
+
+				&.gcm-promo-count {
+					margin-top: 10px;
+					color: $colour-vi-orange-1;
+
+					i {
+						margin: 0 5px 0 5px;
+					}
+				}
+			}
+
+			p {
+				padding: 20px 0;
+			}
+
+			img {
+				width: 80%;
+				margin-top: 40px;
+			}
+		}
+
+		#gcmFeatures {
+			padding-bottom: 20px;
+
+			h2 {
+				@include font-size(26);
+				padding-top: 40px;
+				font-family: $font-toyota-text-bold;
+			}
+
+			p {
+				text-indent: 0;
+				display: block;
+			}
+
+			> p {
+				text-align: center;
+				padding: 20px 0;
+				@include font-size(21);
+			}
+
+			#topFeatures {
+				.col-xs-6 {
+					margin-top: 20px;
+
+					img {
+						width: 100%;
+					}
+
+					p {
+						margin-top: 5px;
+					}
+
+					&:nth-child(2n+1) {
+						clear: left;
+					}
+				}
+			}
+
+			#standardFeatures {
+				& {
+					border-top: 1px solid $colour-default-grey-10;
+				}
+
+				li {
+					color: $colour-default-grey-2;
+					padding: 10px 20px;
+					border-top: 1px solid $colour-default-grey-10;
+					border-bottom: 1px solid $colour-default-grey-10;
+
+					&:nth-child(2n+1) {
+						background-color: $colour-default-grey-10;
+						border-top: 1px solid $colour-default-white;
+						border-bottom: 1px solid $colour-default-white;
+					}
+				}
+			}
+		}
+	}
+}
+
+.expansion-content .expansion-inner .finance-disclaimer {
+	text-align: left;
+}

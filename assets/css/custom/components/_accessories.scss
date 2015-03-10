@@ -1,0 +1,275 @@
+.accessories{
+	.container .accessories-item:nth-child(4n+1) {
+		clear: left;
+	}
+	-ms-touch-action: pan-y;
+	.hide {
+		display: none;
+	}
+	.switch-view {
+		display: none;
+		&:hover { cursor: pointer; }
+	  	i {
+		  	padding-left: 5px;
+		}
+	}
+	.accessories-filter {
+		margin-top:50px;
+		label {
+			cursor: pointer;
+		}
+	}
+	.accessories-list {
+		margin-top: 20px;
+		.accessories-item {
+			margin-bottom: 20px;
+			padding-bottom: 24px;
+			.desription {
+				color: $colour-default-grey-2;
+			}
+			img {
+				margin-bottom: 8px;
+			}
+			a{
+				color: $colour-default-grey-2;
+				&:hover{
+					color: $colour-default-red;
+				}
+			}
+			strong {
+				display: block;
+			}
+			.col-xs-12 {
+				padding-bottom: 0;
+			}
+			h5{
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+		}
+		//when we have 2 rows, without this fixed height, the page is always "jumping"
+		.carousel-inner {
+			height: 648px;
+		}
+		h5{
+			margin-top: 5px;
+		}
+	}
+	ul {
+		display: inline;
+	}
+	.pane-title {
+		display: inline;
+		@include font-size(25);
+		font-family: $font-toyota-display-regular;
+		margin-right: 10px;
+	}
+	.filter-row {
+		span {
+			float:right;
+		}
+	}
+	//carousel updates (next/prev in the middle of the height)
+	.carousel > .carouselNav {
+		height: 100%;
+		.carousel-indicators{
+			position: absolute;
+		}
+		.carousel-control{
+			top: 50%;
+			margin-top: -20px;
+			&.right{
+				bottom: inherit;
+			}
+			&.left{
+				bottom: inherit;
+			}
+		}
+	}
+
+	.inline-disclaimer {
+		> p {
+			text-align: center;
+			margin-bottom: 20px;
+		}
+
+		p {
+			text-indent: 0;
+		}
+
+		.disclaimer-content {
+			display: none;
+			position: relative;
+			padding-top: 40px;
+			@include transition(opacity, ease-in-out, $readmore-fade-transition);
+
+			.toggleLink {
+				position: absolute;
+				right: 10px;
+				top: 10px;
+				text-decoration: none;
+				&:hover {
+					text-decoration: none;
+					color: $colour-default-red;
+				}
+				i {
+					padding-left: 5px;
+				}
+			}
+		}
+	}
+}
+
+.accessories-all{
+	.overlayerContent{
+		background-color: $colour-default-white;
+	}
+	.accessories {
+		.orig-data-copy {
+			display: block;
+			.accessories-item.col-sm-6{
+				height: 140px;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+			.accessories-item.col-sm-3{
+				height: 370px;
+			}
+		}
+	}
+	.tab-content > .tab-pane{
+		display: inline-block;
+		width: 100%;
+	}
+	.switch-view{
+		display:block;
+	}
+}
+
+.expansion-inner {
+  	.ovl-disclaimer {
+	  	display: none;
+	  	height: 100px;
+	  	overflow-y: auto;
+	}
+
+	.btn-print, .btn-disclaimer {
+		margin-top: 5px;
+	}
+}
+
+/* ============================================================================
+* print feature
+* ========================================================================== */
+
+.print-accessories {
+	background-color: $colour-default-grey-5;
+
+	* {
+	  	color: $colour-default-grey-1;
+	}
+
+	.container {
+	  	background-color: $colour-default-white;
+	  	margin-top: 5px;
+	 	max-width: 770px;
+
+		.logo-link {
+		  	display: block;
+		 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+		}
+
+		.col-md-10 {
+			padding: 15px;
+
+			p {
+			  	text-indent: 0;
+			}
+
+			p, h2 {
+			 	margin-bottom: 10px;
+			}
+
+			img {
+			  	margin: 10px 0 20px 0;
+			}
+
+			h2 {
+			  	@include font-size(21);
+			}
+
+			#price, h2, #accPrice {
+			  	font-family: $font-toyota-display-bold;
+			}
+
+			#disclaimer {
+			  	@include font-size(12);
+			  	font-style: italic;
+			}
+		}
+	}
+}
+
+@media (min-width: $screen-sm) and (max-width: $screen-md) {
+	.list-view {
+		li:first-child {
+		  	padding-bottom: 25%;
+		}
+	}
+	.accessories-all{
+		.col-sm-6{
+			.description-part-number,.description-part-info, .description-read, .description-price{
+			  	padding-left: 75px;
+			}
+		}
+	}
+}
+
+@media (min-width: $screen-md) {
+	.accessories {
+		.accessories-list {
+			.carousel-inner {
+			  	height: 765px;
+			}
+		}
+	}
+}
+
+@media (min-width: $screen-md) and (max-width:$screen-lg) {
+	.list-view {
+		li:first-child {
+		  	padding-bottom: 15%;
+		}
+	}
+	.accessories-all{
+		.col-sm-6{
+			.description-part-number,.description-part-info, .description-read{
+			  	padding-left: 100px;
+			}
+		}
+	}
+}
+
+@media (min-width: $screen-lg) {
+	.list-view {
+		li:first-child {
+			padding-bottom: 0px;
+		}
+	}
+  	.accessories {
+	  	.accessories-list {
+		  	.carousel-inner {
+			  	height: 828px;
+			}
+		}
+	}
+}
+
+.lt-ie9 {
+	.filter-row {
+		padding-bottom: 40px;
+		.switch-view i {
+			padding-left: 5px;
+		}
+	}
+}

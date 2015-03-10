@@ -1,0 +1,39 @@
+.bubble {
+	margin-left: -6px;
+	overflow: hidden;
+	height: 0;
+	opacity: 0;
+	@include hardware-acceleration();
+	@include transition(all 0.4s ease);
+	display: block;
+	position: absolute;
+	z-index: $pageoverlayer-bubble-zindex;
+	@include border-radius(2px);
+	&.active {
+		height: auto;
+		min-height: 50px;
+		max-height: 600px;
+		opacity: 1;
+		.bubble-dark {
+			padding: 15px 10px;
+		}
+	}
+	.triangle-up {
+		position: absolute;
+		left: 50px;
+		width: 0;
+		height: 0;
+		border-left: 12px solid transparent;
+		border-right: 12px solid transparent;
+		border-bottom: 12px solid $colour-default-grey-1;
+	}
+	.bubble-dark {
+		height: auto;
+		margin-top: 12px;
+		margin-bottom: 0;
+		background: $colour-default-grey-1;
+		label, h5 {
+			color: $colour-default-white;
+		}
+	}
+}

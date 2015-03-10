@@ -1,0 +1,406 @@
+/* =============================================================================
+ * headers
+ * ========================================================================== */
+h1, h2, h3, h4, h5 {
+  	letter-spacing:-0.03em;
+  	display: block;
+}
+h1 {
+	font-family: $font-toyota-display-bold;
+	@include font-size(34);
+}
+h2 {
+	font-family: $font-toyota-display-regular;
+	@include font-size(24);
+}
+h3 {
+	font-family: $font-toyota-text-regular;
+	@include font-size(21);
+}
+h4 {
+	font-family: $font-toyota-text-regular;
+	@include font-size(19);
+}
+h5 {
+	font-family: $font-toyota-text-bold;
+	@include font-size(16);
+}
+
+.content {
+	h1, h2 {
+		text-align: center;
+		display: block;
+		&.text-left {
+			text-align: left;
+		}
+	}
+	hr{
+		border-top-color: $colour-share-grey-separator;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	header {
+	  	&.section-title {
+		  	margin: 0 auto 30px;
+		}
+		&.header-dark {
+			h1, h2 {
+				color: $colour-default-grey-1;
+			}
+		}
+		&.header-light {
+			h1, h2 {
+				color: $colour-default-white;
+				text-shadow: 0 1px $colour-shadow-text-dark;
+			}
+		}
+		&.header-center {
+			h1, h2 {
+				text-align: center;
+			}
+		}
+		&.header-left {
+			h1, h2 {
+				text-align: left;
+				padding-left: 2%;
+			}
+		}
+	}
+
+	// hero-title refers to the title right after the navbar, normally inside a hero-unit div
+	.hero-title {
+		color: $colour-default-grey-0 !important;
+		padding-top: $padding-bottom-row-md;
+		padding-bottom: $padding-bottom-row-md;
+	}
+
+	.section-page-title {
+		color: $colour-default-grey-0;
+		padding-top: $padding-bottom-row-md;
+		padding-bottom: $padding-bottom-row-md / 2;
+	}
+}
+
+//disable hover text-decoration if a link is provided in the footer/header focus
+#mainfocus, #footfocus{
+	> a:hover {
+		text-decoration: none;
+	}
+	h1 {
+	//	@include font-size(34, 3.4);
+		padding-top: 20px;
+		padding-bottom: 6px;
+	}
+	/*
+	h2 {
+		@include font-size(24);
+	}
+	*/
+}
+
+// tablet and up rules
+@media (min-width: $screen-sm) {
+	h1 {
+		@include font-size(44, 4.6);
+		padding-top: 20px;
+		padding-bottom: 16px;
+	}
+	h2 {
+		@include font-size(32);
+	}
+	#mainfocus, #footfocus {
+		h1 {
+		//	@include font-size(44, 4.6);
+			//padding-bottom: 0;
+		}
+		/*
+		h2 {
+			@include font-size(32);
+		}
+		*/
+	}
+  	.content {
+	  	header {
+		  	&.section-title {
+			  	margin: 20px auto 30px;
+			}
+		}
+	}
+}
+
+// desktop specific rules
+@media (min-width: $screen-md) {
+	#mainfocus, #footfocus {
+		h1 {
+			@include font-size(66, 6.8);
+			max-width: none;
+		}
+	}
+	h2 {
+		@include font-size(34);
+	}
+	h5 {
+		@include font-size(17);
+	}
+}
+
+/* =============================================================================
+ * paragraph text
+ * ========================================================================== */
+body {
+	font-size: $font-size-base;
+}
+p {
+	font-family: $font-generic-base;
+	@include font-size(14.5, 1.7);
+	color: $colour-default-grey-2;
+	text-indent: 3em;
+	&:first-child {
+		text-indent: 0;
+	}
+}
+img {
+	border-radius: $border-radius-small;
+}
+.text-left {
+	text-align: left;
+}
+.text-right {
+	text-align: right;
+}
+.text-center {
+	text-align: center;
+}
+.text-justify {
+	text-align: justify;
+}
+.col-p-2 {
+	min-height: 100%;
+}
+.col-p-3 {
+	min-height: 100%;
+}
+.intro {
+	color: $colour-default-grey-1;
+	@include font-size(19, 2.6);
+	padding-top: 22px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	margin-bottom: 24px;
+	text-indent: 0;
+	&.alt{
+		color: $colour-default-grey-1;
+		a{
+			text-decoration: underline;
+			&:hover{
+				color: $colour-default-grey-2;
+			}
+		}	
+	}
+
+  	a {
+	  	text-decoration: underline;
+	  	&:hover {
+		  	color: $colour-default-red;
+		}
+	}
+
+}
+.quote3 {
+	margin-left: 0;
+	text-align: center;
+	margin-top: 10px;
+
+	p {
+		color: $colour-default-grey-1;
+		@include font-size(24, 3);
+		text-indent: 0;
+	}
+	cite {
+		color: $colour-default-grey-2;
+		@include font-size(14);
+		font-style: normal;
+	}
+}
+
+.label {
+	padding: 0.3em 0.6em;
+	font-weight: 400;
+}
+
+.support-text {
+	text-align: left;
+	@include font-size(13, 1.6);
+	a.fleet {
+		color: $colour-vi-cyan-1;
+		font-family: $font-toyota-text-bold;
+	}
+}
+
+.external-video {
+	height: 0;
+	overflow: hidden;
+	padding-bottom: 56.25%;
+	padding-top: 30px;
+	position: relative;
+	iframe, embed, object {
+		border: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+@media (min-width: $screen-sm) {
+    .intro {
+      padding-top: 34px;
+    }
+	.support-text {
+		width: 100%;
+		max-width: none;
+		text-align: left;
+	}
+	.col-xs-12 > .support-text {
+		text-align: inherit;
+	}
+	.col-sm-6 > .support-text, .col-sm-5 > .support-text, .col-sm-4 > .support-text, .col-sm-3 > .support-text {
+		text-align: left;
+	}
+	.col-xs-12.col-sm-4 img{
+		width: 100%;
+	}
+	.quote3 {
+		text-align: left;
+		margin-top: 0;
+	}
+}
+
+
+/* =============================================================================
+ * desktop specific
+ * ========================================================================== */
+@media (min-width: $screen-md) {
+	.intro {
+		@include font-size(24, 3);
+		text-overflow: clip;
+		overflow: visible;
+		max-height: none;
+        padding-top: 50px;
+	}
+	p {
+		@include font-size(15, 2);
+	}
+	.support-text {
+		width: 100%;
+		max-width: none;
+	}
+	.col-p-2 {
+		@include columns-fixed($column-width-fixed-2-md, 2, $column-gap-fixed);
+	}
+	.col-p-3 {
+		@include columns-fixed($column-width-fixed-3-md, 3, $column-gap-fixed);
+	}
+}
+
+@media (min-width: $screen-lg) {
+	.col-p-2 {
+		@include columns-fixed($column-width-fixed-2, 2, $column-gap-fixed);
+	}
+	.col-p-3 {
+		@include columns-fixed($column-width-fixed-3, 3, $column-gap-fixed);
+	}
+}
+
+/* =============================================================================
+ * effects
+ * ========================================================================== */
+@media (min-width: $screen-md) {
+	.fadeQuote {
+		transition: opacity 2s ease-out;
+	}
+}
+/* =============================================================================
+ * picture... related?
+ * ========================================================================== */
+article img {
+	border-radius: 2px;
+	& + figcaption {
+		padding-top: 8px; 
+	}
+}
+
+/* =============================================================================
+ * vi colors
+ * ========================================================================== */
+.color-cyan {
+	background: $colour-vi-cyan-1;
+	color: $colour-default-white;
+}
+.color-promo-2 {
+  	background: $colour-promo-2;
+  	color: $colour-default-white;
+}
+.color-promo-3 {
+  	background: $colour-promo-3;
+  	color: $colour-default-white;
+}
+.purple {
+  	background: $colour-vi-purple-1;
+}
+.orange {
+  	background: $colour-vi-orange-1;
+}
+.cyan {
+  	background: $colour-vi-cyan-1;
+}
+
+/* =============================================================================
+ * bootstrap inline fix
+ * ========================================================================== */
+.inline-hidden-xs {
+  display: inline-block !important;
+}
+
+@media (max-width: $screen-xs-max){
+  .inline-hidden-xs {
+	display: none!important;
+  }
+}
+/* =============================================================================
+ * hides elements above xs breakpoint
+ * ========================================================================== */
+.hidden-desktop {
+  	display: block !important;
+}
+
+@media (min-width: $screen-sm) {
+	.hidden-desktop {
+	  	display: none !important;
+	}
+}
+
+/* ===============================================================================
+ * general decorations
+ * ============================================================================ */
+.strike-trough{
+	position: relative;
+}
+.strike-trough:after{
+	position: absolute;
+	content: "";
+	border-top: 2px solid $colour-default-grey-2;
+	left: -5%;
+	right: 0;
+	top: 45%;
+	height: 100%;
+	width: 110%;
+}
+/* ===============================================================================
+ * ie8 fallback bug fix
+ * ============================================================================ */
+
+html.lt-ie9 {
+  font-family: inherit !important;
+}

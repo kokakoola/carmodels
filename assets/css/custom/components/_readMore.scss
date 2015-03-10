@@ -1,0 +1,236 @@
+.readMore.active-state {
+	color: $colour-default-red;
+  	text-decoration: none;
+	span, i {
+		color: $colour-default-red;
+	}
+}
+.readMore {
+	display: block;
+	width: 100%;
+	i {
+	  	padding-left: 5px;
+	}
+}
+
+a.readMore:hover {
+	color: $colour-default-red;
+	text-decoration: none;
+	span {
+		text-decoration: underline;
+	}
+}
+
+.listed-feature {
+  	@include font-size(13);
+	span {
+	  	display: none;
+	}
+	i {
+		position: absolute;
+		right: 4px;
+		top: 10px;
+	}
+}
+.listed-feature.open-state {
+  	i {
+	  	color: #dfe0e0;
+	}
+}
+
+.expansion-pageovelayer-content{
+	z-index: $expansion-pageoverlayer-zindex !important;
+}
+.expansion-content {
+	position: absolute;
+	@include transition(opacity, ease-in-out, $readmore-fade-transition);
+  	display: none;
+	opacity: 0;
+	z-index: $expansion-content-zindex;
+	font-size: $font-size-small;
+	line-height: 1.4;
+  	width: 100%;
+	padding: $tooltip-arrow-width 0;
+	&.active{
+	  	opacity:1
+	}
+	&.right{
+		left: 0;
+		.expansion-arrow{
+			left: 8%;
+		}
+	}
+	&.left{
+		right: 0;
+		.expansion-arrow{
+			left: 8%;
+		}
+	}
+	.expansion-arrow {
+		position: absolute;
+		width: 0;
+		height: 0;
+		border-top: 10px solid rgb(30, 42, 50);
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+	  	border-top: 10px solid rgba(30, 42, 50, 0.96);
+		border-left: 10px solid rgba(0, 0, 0, 0);
+		border-right: 10px solid rgba(0, 0, 0, 0);
+	}
+	&.bottom{
+		.expansion-arrow{
+			top: -4px;
+			border-bottom: 10px solid rgb(30, 42, 50);
+		  	border-bottom: 10px solid rgba(30, 42, 50, 0.96);
+		  	border-top: 0;
+		}
+	}
+	&.top{
+		.expansion-arrow{
+			bottom: -4px;
+			border-top: 10px solid rgb(30, 42, 50);
+		  	border-top: 10px solid rgba(30, 42, 50, 0.96);
+		}
+	}
+	.expansion-inner {
+		max-width: 100%;
+		padding: 35px 10px 10px;
+		color: $colour-default-white;
+		text-align: center;
+		text-decoration: none;
+	  	background-color: rgb(30,42,50);
+		background-color: rgba(30,42,50,0.96);
+		border-radius: 2px;
+	  	box-shadow: 2px 3px 8px $colour-default-grey-1;
+		strong {
+			text-align: left;
+			display: block;
+		}
+		p {
+			font-family: $font-toyota-text-regular;
+			color: $colour-default-white;
+			@include font-size(13);
+			text-align: left;
+			text-indent: 0;
+		}
+		p.title {
+			font-family: $font-toyota-display-bold;
+			margin-bottom: 5px;
+		}
+		.description {
+			text-align: left;
+			margin: 5px 0;
+		}
+		a {
+		  	color: inherit;
+		  	text-decoration: underline;
+		  	&:hover {
+			  	color: $colour-default-red;
+			}
+		}
+
+	  	//carconfig disclaimer
+	  	.carconfig-disclaimer {
+		  	width: 100%;
+		  	overflow: hidden;
+		  	padding: 0 10px 10px 10px;
+		  	 > p {
+			  	margin-bottom: 20px;
+			   	font-family: $font-toyota-text-bold;
+			   	@include font-size(15);
+			}
+		  	ul {
+				float: left;
+			  	width: 40%;
+			  	margin-right: 30px;
+			  	li {
+				  	border-bottom: 1px solid $colour-default-grey-2;
+				  	width: 100%;
+				  	float: left;
+				  	@include font-size(13);
+				  	span {
+					  	float: left;
+					  	width: 50%;
+					  	text-align: left;
+					  	padding: 5px 0;
+					  	&:last-child {
+						  	text-align: right;
+						}
+					}
+				}
+			}
+		  	div {
+			  	float: left;
+			  	width: 50%;
+			  	p {
+				  	margin-bottom: 20px;
+				  	&:first-child {
+					  	padding-top: 5px;
+					}
+				}
+			}
+		  	span {
+			  	&.disclaimer-highlight {
+				  	font-family: $font-toyota-text-bold;
+				}
+			}
+		}
+	}
+	.closelink {
+		position: absolute;
+		right: 10px;
+		top: 10px;
+		color: $colour-default-white;
+		text-decoration: none;
+	  	@include font-size(13);
+		&:hover {
+			text-decoration: none;
+			color: $colour-default-red;
+		}
+	  	i {
+		  	padding-left: 5px;
+		}
+	}
+}
+@media (min-width: $screen-sm) {
+  	.expansion-content {
+	  	width: _em(470px);
+	  	&.right {
+		  	left: 15px;
+		  	.expansion-arrow {
+			  	left: 8%;
+			}
+		}
+	  	&.left {
+		  	right: 15px;
+		  	.expansion-arrow {
+			  	left: 50%;
+			}
+		}
+	}
+}
+
+.lt-ie9{
+	.expansion-content{
+		visibility: hidden;
+		&.active{
+			visibility: visible;
+		}
+	}
+}
+
+/*
+Mobile tooltip
+*/
+.mobile-expansion{
+	position: fixed;
+	display: block;
+	width: 100%;
+	overflow: hidden;
+	bottom: 0;
+	opacity: 1.0;
+  	max-height: 100%;
+  	padding-bottom: 0px;
+  	padding-top: 0px;
+  	overflow-y: scroll;
+}

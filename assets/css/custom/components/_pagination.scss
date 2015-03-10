@@ -1,0 +1,99 @@
+.pagination {
+	margin: 20px 0;
+	ul {
+		display: inline-block;
+		*display: inline;
+		*zoom: 1;
+		li {
+			display: inline;
+			a {
+				float: left;
+				padding: 11px 7px 16px 7px;
+				margin-left: 10px;
+				text-decoration: underline;
+				@include font-size(15);
+				color: $colour-default-grey-2;
+				background: $colour-default-white;
+			}
+			&.active {
+				a, a:hover, a:focus {
+					text-decoration: none;
+					cursor: default;
+					@include opacity(0.5);
+				}
+			}
+		}
+	}
+}
+
+.pagination-centered {
+	text-align: center;
+}
+
+/* =============================================================================
+* IE FIXIES
+* ========================================================================== */
+
+.lt-ie9 {
+	.pagination {
+		ul {
+			li {
+				a {
+					border: 1px solid $colour-default-grey-6;
+				}
+				&.active {
+					a {
+						border: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $screen-xs) {
+	.pagination {
+		ul {
+			li {
+				a {
+					text-decoration: none;
+					padding: 11px 14px 16px 14px;
+					background-image: linear-gradient(to top, $colour-btn-grey-1, $colour-default-white);
+					@include border-radius(3px);
+					-webkit-box-shadow: 0 1px 1px rgba(0,0,0,.15), inset 0 0 1px rgba(30,42,50,.5);
+					-moz-box-shadow: 0 1px 1px rgba(0,0,0,.15), inset 0 0 1px rgba(30,42,50,.5);
+					box-shadow: 0 1px 1px rgba(0,0,0,.15), inset 0 0 1px rgba(30,42,50,.5);
+					&:hover, &:focus {
+						text-decoration: underline;
+						background: $colour-btn-grey-1;
+					}
+					&:active {
+						-webkit-box-shadow: 0 1px 1px #fff, inset 0 0 8px rgba(30,42,50,.6);
+						-moz-box-shadow: 0 1px 1px #fff, inset 0 0 8px rgba(30,42,50,.6);
+						box-shadow: 0 1px 1px #fff, inset 0 0 8px rgba(30,42,50,.6);
+					}
+				}
+				&.active {
+					a, a:hover, a:focus {
+						background-image: linear-gradient(to top, $colour-btn-grey-1, $colour-default-white);
+						@include opacity(1.0);
+						background: transparent;
+						-webkit-box-shadow: none;
+						-moz-box-shadow: none;
+						box-shadow: none;
+					}
+				}
+			}
+			li:first-child, li:last-child {
+				&.active {
+					a, a:hover, a:focus {
+						@include opacity(0.5);
+						-webkit-box-shadow: 0 1px 1px rgba(0,0,0,.15), inset 0 0 1px rgba(30,42,50,.5);
+						-moz-box-shadow: 0 1px 1px rgba(0,0,0,.15), inset 0 0 1px rgba(30,42,50,.5);
+						box-shadow: 0 1px 1px rgba(0,0,0,.15), inset 0 0 1px rgba(30,42,50,.5);
+					}
+				}
+			}
+		}
+	}
+}

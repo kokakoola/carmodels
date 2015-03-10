@@ -1,0 +1,605 @@
+/**=============================================================================
+ * mini carconfigurator
+ * version 0.1
+ * KGH: init
+ * ========================================================================== */
+
+.carconfig-mini {
+	h1 {
+		color: $colour-default-grey-0 !important;
+		text-shadow: none !important;
+		margin-bottom: 15px;
+	}
+
+	> .container > header {
+		p {
+			@include font-size(24,2.8);
+			text-indent: 0;
+			color: $colour-default-grey-1;
+			margin-bottom: 40px;
+		}
+	}
+
+
+	.carconfig-mini-summary {
+		margin: 10px 0;
+		header {
+			@include clearfix;
+			border-bottom: 1px solid $colour-default-grey-9;
+			padding-bottom: 10px;
+			h4 {
+				margin-top: 8px;
+				color: $colour-default-white;
+				font-family: $font-toyota-text-bold;
+			}
+		}
+		.summary-selection {
+			list-style: none;
+			li {
+				color: $colour-default-white;
+				padding: 8px 8px 12px;
+				border-bottom: 1px solid $colour-default-grey-9;
+				margin-bottom: 1px;
+
+				&:nth-child(even) {
+					background: $colour-default-grey-9;
+				}
+			}
+		}
+
+		.summary-selection-nice {
+			position: relative;
+			display: none;
+			@include font-size(19);
+			margin-bottom: 30px;
+
+			h3 {
+				font-family: $font-toyota-text-bold;
+			}
+
+			.bg-gradient{
+				display:block;
+				position: absolute;
+				width: 1165px;
+				//height: 177px;
+				bottom:-15px;
+				img{
+					width:100%;
+				}
+			}
+
+		}
+
+		.summary-price {
+			display: none;
+
+			tr {
+				td {
+					border-top: none;
+					border-bottom: none;
+					padding: 3px 10px 3px 0;
+					background: none;
+					color: $colour-default-grey-2;
+
+					&:first-child {
+						width: 50%;
+						white-space: normal;
+					}
+
+					&:last-child {
+						padding-left: 10px;
+					}
+				}
+
+				&.price-total {
+					td {
+						color: $colour-default-grey-1;
+						font-family: $font-toyota-text-bold;
+						@include font-size(19);
+					}
+				}
+
+				&.price-monthly {
+					td {
+						color: $colour-default-grey-1;
+						@include font-size(15,1.8);
+						.small {
+							@include font-size(13);
+							color: $colour-default-grey-2;
+						}
+						.price-monthly-value {
+							font-family: $font-toyota-display-bold;
+							@include font-size(19);
+						}
+					}
+				}
+			}
+			tr:nth-child(odd){
+				background-color: transparent;
+				border-top: 0;
+			}
+
+
+		}
+	}
+	ul.carconfig-mini-select {
+		list-style-type: none;
+		// select container
+		> li {
+			background: $colour-table-header;
+			border: 1px solid $colour-default-grey-6;
+			border-radius: 3px;
+			@include font-size(11);
+			margin-bottom: 10px;
+			// select link
+			> a {
+				&:hover {
+					background: $colour-table-header !important;
+					color: $colour-default-grey-1;
+				}
+			}
+			a {
+				font-family: $font-toyota-text-regular;
+				color: $colour-default-grey-1;
+				@include font-size(19);
+				display: block;
+				padding: 7px 6px 9px 16px;
+				text-decoration: none;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				// chevron icons
+				i {
+					width: 25px;
+					margin-top: 5px;
+					float: right;
+				}
+			}
+			// dropdowns
+			> ul {
+				width: 100%;
+				border: 1px solid $colour-default-grey-6;
+				margin-top: 0;
+				li {
+					border: none;
+					@media (min-width: $screen-sm){
+						&:nth-child(odd) a {
+							background: $colour-default-grey-4;
+						}
+					}
+				}
+			}
+			&.open {
+				> a {
+					background: $colour-table-header !important;
+					color: $colour-default-grey-1 !important;
+				}
+			}
+			.disabled {
+				color: $colour-default-grey-2;
+				&:hover {
+					cursor: default;
+					color: $colour-default-grey-2;
+				}
+				i {
+					display: none;
+				}
+			}
+		}
+
+	}
+
+	// Car image
+	.carconfig-mini-preview {
+		margin-top: 0;
+
+		img {
+			width: auto;
+		}
+
+		// SM only
+		@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max){
+			// Center image
+			text-align:center;
+		}
+	}
+
+	.carconfig-mini-actions {
+		display: none;
+		margin: 30px 0;
+		.btn {
+			margin-right: 8px;
+			display: inline-block;
+			margin-bottom: 12px;
+
+		  	&.btn-my-toyota {
+				display: none;
+			}
+
+		}
+	}
+
+	.share-button {
+		display: none;
+	}
+
+	// Finance
+	.finance-quote{
+		display: none;
+		margin-bottom: 20px;
+		text-indent: 0;
+		@include font-size(13);
+		&.visible{
+			display:block;
+		}
+		// SM only
+		@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max){
+			// Cancel centering inherited from parent
+			text-align:left;
+		}
+	}
+
+	.price-monthly, .finance-rates{
+		display: none;
+		&.visible{
+			display: table-row;
+		}
+	  	&.hidden{
+		  	display: none !important;
+		}
+	}
+
+	@media (max-width: $screen-xs-max){
+		padding-bottom: 20px;
+
+		h1 {
+			margin-bottom: 0;
+		}
+		> .container > header {
+			p {
+				@include font-size(15,1.7);
+				color: $colour-default-grey-2;
+				margin-top: 10px;
+				margin-bottom: 0;
+			}
+		}
+
+		.carconfig-mini-app {
+			padding-bottom: 0;
+		}
+
+		.carconfig-mini-form {
+			> p {
+				margin: 10px 0;
+			}
+		}
+
+		.carconfig-mini-summary {
+			background: $colour-default-grey-1;
+			padding: 10px;
+			border-radius: 3px;
+
+			.summary-selection-nice {
+				display: none !important;
+			}
+
+			.summary-price {
+				overflow: hidden;
+				tr {
+					td {
+						border: none;
+						color: $colour-default-white;
+						padding: 5px 10px;
+					}
+					&.price-total {
+						td {
+							color: $colour-default-red;
+							@include font-size(15);
+						}
+					}
+					&:nth-child(2n+1) {
+						td {
+							background: transparent;
+							border: none;
+						}
+					}
+					&.price-monthly {
+						display: none;
+
+					  	td {
+					  		color: $colour-default-white;
+						}
+
+						&.visible{
+						  	display: table-row;
+						}
+					}
+				}
+			}
+		}
+
+		.dropdown-menu {
+			position: static;
+			float: none;
+			display:block;
+		}
+
+		ul.carconfig-mini-select {
+			margin-top: 10px;
+			> li {
+				border: none;
+				box-shadow: none;
+				background: transparent;
+				a {
+					margin-bottom: 5px;
+					color: $colour-default-grey-1 !important;
+					font-family: $font-toyota-text-bold;
+					@include font-size(15);
+					i {
+						display: none;
+					}
+				}
+				> a {
+					font-family: $font-toyota-text-bold;
+					@include font-size(24);
+					text-align: center;
+					cursor: text;
+					pointer-events: none;
+					&:hover {
+						background: none !important;
+					}
+				}
+				> ul {
+					border: none;
+					box-shadow: none;
+				}
+
+				&.colours {
+					.dropdown-menu {
+						box-shadow: none;
+						background: none;
+						border: none;
+						margin-top: 6px;
+						li {
+							background: none;
+							border: none;
+							margin-top: 5px;
+							a {
+								text-align: center;
+								padding-left: 6px;
+								border-radius: $border-radius-default;
+							}
+						}
+					}
+
+					a {
+						font-family: $font-toyota-text-regular;
+
+						span {
+							font-family: $font-toyota-text-bold;
+						}
+					}
+				}
+			}
+		}
+
+		.image-result {
+			//background: $colour-default-white;
+			padding-top: 20px;
+			padding-bottom: 10px;
+		}
+
+		.carconfig-mini-actions {
+			display: none !important;
+		}
+
+		.finance {
+			display: none;
+		}
+	}
+}
+
+/* CTA */
+.carconfig-mini-cta {
+	.btn-finance, .btn-insurance {
+		display: none;
+		&.visible {
+			display: inline-block;
+		}
+	}
+}
+
+section.carconfig-mini-cta {
+	display: none;
+	padding-top: 0;
+	.container .buttons {
+		padding-bottom: 35px;
+	}
+}
+
+/* ECO labels */
+
+.carconfig-mini-ecolabels {
+	margin-top: 30px;
+	h4 {
+		margin: 10px 0 40px;
+	}
+	p {
+		text-indent: 0;
+		@include font-size(13);
+	}
+	td+td {
+		width: 31%;
+	}
+	&.hidden {
+		display: none !important;
+	}
+}
+
+/* Mobile CTA & ECO labels */
+@media (max-width: $screen-xs-max){
+	.carconfig-mini-cta {
+		display: none !important;
+	}
+	.carconfig-mini-ecolabels {
+		margin-top: 0;
+		h4 {
+			@include font-size(15);
+		}
+		.eco-table {
+			overflow: hidden;
+			> .table > tbody > tr > td {
+				white-space: normal;
+				width: 50%;
+			}
+		}
+	}
+}
+
+/* Carconfig print page */
+.carconfig-print {
+  	position: relative;
+  	width: 1170px;
+  	margin: 0 auto;
+  	h3 {
+	  	font-family: $font-toyota-text-bold;
+	}
+  	p {
+	  	text-indent: 0;
+	  	margin-bottom: 50px;
+	  	@include font-size(13);
+	  	color: $colour-default-grey-1;
+	  	&.legal-notes {
+		  	margin-top: 50px;
+		}
+	}
+  	.header-car-images {
+	  	width: 100%;
+	  	> div {
+		  	float: left;
+		  	width: 50%;
+		}
+	}
+  	.print-break {
+	  	page-break-after:always;
+	}
+  	img {
+	  	margin-bottom: 20px;
+	}
+  	.carconfig-logo {
+	  	position: absolute;
+	  	top: 0;
+	  	right: 0;
+	  	z-index: 1;
+	  	box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+	}
+  	.toyota-code {
+	  	ul {
+		  	li {
+			  	display: inline-block;
+			}
+		}
+	  	img {
+		  	width: 80px;
+		  	height: 80px;
+		}
+	}
+  	.table-print {
+	  	clear: left;
+	  	border: none;
+	  	border-collapse: separate;
+	  	table-layout: fixed;
+	  	text-align: left;
+	  	width: 100%;
+	  	.table {
+		   	tbody {
+			  	tr {
+				  	&:first-child {
+					  	td {
+						  	border-top: none;
+						}
+					}
+				  	&:nth-child(2n+1) {
+					  	background-color: transparent;
+					}
+				}
+			}
+			td {
+				width: 50%;
+			  	border-right: none;
+			  	border-bottom: 1px solid #ebeced;
+			  	color: #1e2a32;
+			  	vertical-align: top;
+			  	padding: 5px 10px 5px 0;
+			  	@include font-size(14);
+			  	&:first-child {
+				  	border-top: none;
+				  	display: table-cell;
+				}
+			  	&.carconfig-table-title, &.carconfig-price {
+				  	font-family: $font-toyota-text-bold;
+				}
+			}
+		}
+
+	}
+	section.dimensions {
+	  	background-color: transparent;
+	  	.specifications {
+		  	img {
+			  	width: 100%;
+			}
+		}
+	}
+}
+
+
+
+
+@media (min-width: $screen-sm){
+	.carconfig-mini {
+		.carconfig-mini-summary {
+			.summary-selection-nice {
+				.bg-gradient{
+					width: 720px;
+				}
+			}
+
+			.summary-price {
+				tr {
+					.price-monthly-value, .finance-rates-value .readMore {
+					  	color: $colour-default-grey-1;
+					}
+				}
+			}
+		}
+	}
+
+}
+
+
+
+@media (min-width: $screen-md) {
+	.carconfig-mini {
+		.carconfig-mini-summary {
+			.summary-selection-nice {
+				.bg-gradient{
+					width: 920px;
+				}
+			}
+		}
+	}
+}
+
+
+
+@media (min-width: $screen-lg) {
+	.carconfig-mini {
+		.carconfig-mini-summary {
+			.summary-selection-nice {
+				.bg-gradient{
+					width: 1165px;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,195 @@
+.carousel {
+	position: relative;
+
+	.carouselNav {
+		.carousel-control {
+			position: relative;
+			bottom: 0px;
+			top: auto;
+		  	text-shadow: none;
+			&.right {
+				right: 5px;
+			}
+			&.left {
+				left: 5px;
+			}
+		}
+		bottom: 14px;
+		position: absolute;
+		display: block;
+		width: 100%;
+
+		.carousel-control.left, .carousel-control.right {
+			border-radius: 25px;
+			width: 50px;
+			height: 50px;
+			text-decoration: none;
+			z-index: 5;
+			transition: position 0.33s linear;
+			display: none;
+			background-color: #495258;
+			background-color: rgba(73, 82, 88, 0.5);
+			filter: none;
+			opacity: 1;
+			color: #fff;
+			@include font-size(36, 4.6);
+			position: absolute;
+			text-align: center;
+			vertical-align: middle;
+			background-image: none;
+			padding: 2px;
+			i {
+				margin: 0;
+			}
+			&:hover {
+				@include trans(bg, rgb(73, 82, 88), 0.7);
+			}
+		}
+		.carousel-control.left i {
+			margin-right: 5px;
+		}
+		.carousel-control.right i {
+			margin-left: 5px;
+		}
+
+		.carousel-indicators {
+			float: left;
+			width: 70%;
+			margin: 0;
+			position: relative;
+			bottom: 0px;
+			left: 15%;
+			text-align: center;
+			li {
+				margin: 0 5px;
+				background: url("/assets/images/CarouselNav.png") no-repeat scroll -17px 0;
+				height: 8px;
+				width: 8px;
+				border: none;
+				&.active {
+					background-position: 0 0 !important;
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	&.expanded {
+		.carousel-inner > .item {
+			display: block;
+			* {
+				@include hardware-acceleration();
+			}
+		}
+
+		.carouselNav, .carousel-indicators {
+			display: none;
+		}
+	}
+}
+
+.carousel-expander {
+	display: block;
+	text-align: center;
+	margin-top: 10px;
+	@include font-size(19);
+}
+
+.carousel.fade {
+	opacity: 1;
+	.item {
+		@include transition(opacity, ease-in-out, $carousel-fade-transition); 
+		left: 0 !important;
+		opacity: 0;
+		top: 0;
+		position: absolute;
+		width: 100%;
+		display: block !important;
+		z-index: 1;
+		&:first-child {
+			top: auto;
+			position: relative;
+		}
+		&.active {
+			opacity: 1;
+			@include transition(opacity, ease-in-out, $carousel-fade-transition);
+			z-index: 2;
+		}
+	}
+}
+
+.responsive-carousel, .carousel-wrapper {
+	.carousel {
+		.carousel-inner {
+			z-index: $horizontal-gallery-nav-zindex;
+			.item {
+				-ms-touch-action: pan-y;
+			}
+		}
+		.carouselNav {
+			.carousel-control {
+				// JGMG changed from 25px to 5px https://cde.toyota-europe.com/jira/browse/TOYONEGFI-761
+				&.left {
+					left: 5px;
+					bottom: 200px;
+				}
+				&.right {
+					right: 5px;
+					bottom: 200px;
+				}
+			}
+			.carousel-indicators {
+				li {
+					background-color: #c4c6c7;
+					&.active {
+						background-color: $colour-default-grey-2;
+						background-position: center !important;
+					}
+				}
+			}
+		}
+	}
+	.orig-data-copy {
+		display: none;
+	}
+	.carousel-wrapper {
+		display: block;
+	}
+}
+
+
+@media (min-width: $screen-sm) {
+	.carousel {
+		.carouselNav {
+			.carousel-control.left, .carousel-control.right {
+				display: inline-block;
+			}
+		}
+	}
+}
+
+@media (min-width: $screen-lg) {
+	.carousel {
+		.carouselNav {
+			.carousel-control {
+				bottom: 92px;
+				&.right {
+					right: 50px;
+				}
+				&.left {
+					left: 50px;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $screen-xl) {
+	.carousel-inner {
+		.item {
+			.background {
+				background-size: cover;
+			}
+		}
+	}
+}

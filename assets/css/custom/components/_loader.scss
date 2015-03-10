@@ -1,0 +1,12 @@
+.t1-loader {
+	position: absolute;
+	width: 100%;
+	background: $colour-default-white;
+	z-index: 15;
+	@include opacity(0.5);
+	img {
+		display: block;
+		margin: 0 auto;
+		width: 128px;
+	}
+}

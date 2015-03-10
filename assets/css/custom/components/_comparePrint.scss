@@ -1,0 +1,93 @@
+.print-overlay-wrapper {
+	.white {
+	  	height: auto !important;
+	}
+
+	#printModelsCompare, #printEnginesCompare {
+
+	  	.section-title {
+		  	text-align: left;
+		  	min-height: 155px;
+
+		  	.logo {
+			  	float: left;
+			}
+
+		  	h4 {
+			  	padding-top: 10px !important;
+			}
+		}
+
+		.panel-collapse {
+			&.collapse {
+				display: block !important;
+				height: auto !important;
+			}
+		}
+
+	  	.exceptions.panel {
+		  	border: 1px solid $colour-default-grey-3;
+
+		  	.panel-heading {
+			  	height: 44px !important;
+			  	background-color: $colour-default-white;
+
+			  	b {
+					@include font-size(16);
+				}
+			}
+		}
+	}
+
+  	.mc-toggle-head, .ec-toggle-head {
+		&:hover {
+			text-decoration: none !important;
+		  	cursor: text !important;
+		}
+
+	  .icon-chevron-up, .icon-chevron-down {
+		  	display: none !important;
+		}
+	}
+
+  	i.exceptions {
+	  	background-color: #e0e0e0 !important;
+	  	font-style: italic !important;
+	  	cursor: text !important;
+	}
+
+  	.exceptions-panel .row {
+		padding: 8px !important;
+	  	margin:0 !important;
+
+		> div:nth-child(2) {
+			padding-left:8px !important;
+		}
+
+	  	&:nth-child(odd) {
+		  	background-color:$colour-default-grey-10 !important;
+		}
+	}
+}
+
+@media print {
+  	.print-overlay-wrapper {
+	  	overflow:visible;
+	  	position:relative;
+
+	  	>.toolbar {
+		  	display: none !important;
+		}
+
+	  	>.overlayerContent {
+		  	width: 100% !important;
+		  	height: auto !important;
+		  	margin: 0 !important;
+		  	padding: 0 !important;
+
+		  	#printModelsCompare, #printEnginesCompare {
+			  	display: block !important;
+			}
+		}
+	}
+}

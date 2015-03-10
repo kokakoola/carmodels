@@ -1,0 +1,52 @@
+/* ==========================================================
+   imports for all mixins + global project variables
+   ========================================================== */
+
+/* usefull snippets  */
+
+@mixin vendorize($property, $value) {
+    -webkit-#{$property}: $value;
+    -moz-#{$property}: $value;
+    -ms-#{$property}: $value;
+    -o-#{$property}: $value;
+    #{$property}: $value;
+}
+
+@mixin corners($tl, $tr, $br, $bl) {
+    -webkit-border-radius: $tl $tr $br $bl;
+    -moz-border-radius: $tl $tr $br $bl;
+    -ms-border-radius: $tl $tr $br $bl;
+    -o-border-radius: $tl $tr $br $bl;
+    border-radius: $tl $tr $br $bl;
+}
+
+/* fonts */
+
+@mixin font-size($sizeValue) {
+    font-size: ($sizeValue * 10) + px;
+    font-size: $sizeValue + rem;
+}
+
+@mixin opacity($value) {
+    opacity: $value;
+    filter:alpha(opacity=($value*100)); /* For IE8 and earlier */
+}
+
+@mixin gradient($c1, $c2) {
+    background: $c1; /* Old browsers */
+    background: -moz-linear-gradient(top,  $c1 0%, $c2 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$c1), color-stop(100%,$c2)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  $c1 0%,$c2 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  $c1 0%,$c2 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  $c1 0%,$c2 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  $c1 0%,$c2 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$c1}', endColorstr='#{$c2}',GradientType=0 ); /* IE6-9 */
+}
+
+@mixin glow($border, $r, $g, $b, $a)
+{
+    box-shadow: 0 0 $border rgba($r, $g, $b, $a);
+    -webkit-box-shadow: 0 0 $border rgba($r, $g, $b, $a); 
+    -moz-box-shadow: 0 0 $border rgba($r, $g, $b, $a);
+    border:1px solid rgba($r, $g, $b, $a);
+}

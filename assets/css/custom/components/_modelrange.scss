@@ -1,0 +1,165 @@
+.modelrange {
+	margin: 0 auto 45px;
+
+	header {
+		.btn.help {
+			display: block;
+			background-color: $colour-default-grey-4;
+			background-image: none;
+			@include font-size(21);
+			@include box-shadow(none);
+			margin-top: 60px;
+			position: relative;
+			&:hover {
+				text-decoration: none;
+			}
+			&:after {
+				background-color: $colour-default-grey-8;
+				color: $colour-default-white;
+				border-radius: $border-radius-circle;
+				font-family: 'toyotaicons';
+				content: "\f077";
+				width: 25px;
+				height: 25px;
+				line-height: 22px;
+				position: absolute;
+				right: 14px;
+			}
+		}
+	}
+	.row {
+		a {
+			display: block;
+			text-align: center;
+			border-radius: 2px;
+			&:nth-child(2n+1) {
+			  	clear: left;
+			}
+			&:hover{
+				text-decoration: none;
+			}
+			.modelitem{
+			//	width: 120px;
+				width: 156px;
+
+				display:block;
+				margin: -5px auto 10px auto;
+				transition: background-color 0.25s ease-out 0s;
+				//margin: -5px 0 10px 0;
+				padding: 5px 0 10px 5px;
+				position: relative;
+				&:hover {
+					background-color: $colour-btn-grey-1;
+				}
+
+				img {
+					max-width: 100%;
+					margin: 0 auto;
+				}
+				span {
+					color: $colour-default-grey-7;
+					display: block;
+					margin-top: -26px;
+					text-align: left;
+				  	@include font-size(13);
+					strong {
+						color: $colour-default-grey-1;
+						display: block;
+					  	@include font-size(15);
+						&.hybrid-only {
+							color: $colour-btn-blue-2;
+						}
+					}
+				}
+				.model-decoration {
+					/* !important styles used to overwrite other styling on siblings span */
+					font-family: toyotatext_bd;
+					@include font-size(11);
+					opacity: 0.9 !important;
+					position: absolute;
+					top: 50px;
+				//	top: 0px;
+					left:50%;
+					margin-left: -75px;
+					margin-top: 0 !important;
+					&.hybrid {
+						background: $colour-vi-cyan-1;
+						border-radius: $border-radius-small;
+						color: $colour-default-white !important;
+						padding: 2px 4px;
+					}
+				}
+
+			}
+		}
+	}
+
+	.section-title {
+	  	a {
+			color: $colour-promo-2;
+	  	}
+	}
+}
+
+/*
+@media (min-width: $screen-xs) {
+	.modelrange {
+		.row {
+			a {
+				.modelitem {
+					width: 156px;
+				}
+			}
+		}
+	}
+}
+*/
+
+@media (min-width: $screen-sm) {
+	.modelrange {
+		.row {
+			a {
+				&:nth-child(2n+1) {
+					clear: none;
+				}
+				&:nth-child(4n+1) {
+					clear: left;
+				}
+				.modelitem {
+					span {
+						@include font-size(15);
+						strong {
+							@include font-size(15);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $screen-md) {
+	.modelrange {
+		.row {
+			a {
+				&:nth-child(4n+1) {
+					clear: none;
+				}
+				&:nth-child(6n+1) {
+					clear: left;
+				}
+				.modelitem {
+					.model-decoration {
+						top: 50px;
+						left: 5px;
+						margin-left: 0px;
+					}
+					span {
+						text-align: left;
+					}
+				}
+
+			}
+		}
+	}
+}

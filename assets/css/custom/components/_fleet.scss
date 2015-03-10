@@ -1,0 +1,316 @@
+/**=============================================================================
+* fleet
+* version 0.1
+*
+*
+* ========================================================================== */
+
+.fleet {
+  	.icon-plus, article.container:first-of-type h5:first-of-type, .fadeQuote .intro, figcaption a,
+	.promotions .section-title h1 strong, .promotions ul.list-group li.list-group-item a h4,
+	.articles-list h3, .modelrange header h2, .modelrange header strong, .content-moreactions .btn h3 {
+	  	color:$colour-vi-cyan-1 !important;
+	}
+
+  	// article
+  	article.container h5 {
+		color:$colour-default-grey-2;
+	}
+
+  	.text-content {
+		padding-top:0;
+	  	padding-bottom:10px;
+
+		// squared grey background
+		background:
+		  linear-gradient(180deg, $colour-default-white 50%, transparent 0%) 0px 16px,
+		  linear-gradient(90deg, rgba(0, 160, 240, 0.4) 10%, transparent 0%) 8px 0px,
+		  linear-gradient(90deg, $colour-default-white 50%, transparent 0%) 15px 0px,
+		  linear-gradient(180deg, rgba(0, 160, 240, 0.4) 10%, transparent 0%) 0px 9px;
+	  	background-size: 24px 24px;
+		background-color:$colour-default-white;
+		position:relative;
+
+		&:after {
+			content:"";
+			position:absolute;
+			top:0;
+			left:0;
+			right:0;
+			bottom:0;
+		  	@include background-image(linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgb(255, 255, 255) 20%, rgb(255, 255, 255) 80%, rgba(255, 255, 255, 0) 100%));
+		  	@include box-shadow(200px 0 190px -200px rgba(0, 0, 0, 0.3) inset, -200px 0 190px -200px rgba(0, 0, 0, 0.3) inset);
+			z-index:0;
+		}
+
+	  	* {
+			z-index:10;
+		  	position:relative;
+		}
+
+		.external-video {
+			iframe, embed, object {
+				position: absolute;
+			}
+		}
+
+	  	&+.inpage-cta {
+			margin-top:-1px;
+		}
+	}
+
+  	.intro {
+	  	.icon-plus {
+		  	margin-right:5px;
+		  	vertical-align:-2px;
+		}
+	}
+
+  	.fadeQuote {
+		p {
+			padding-top:20px;
+			padding-bottom:44px;
+		}
+	}
+
+	figcaption
+	{
+		a {
+			strong {
+			  	display:inline;
+			}
+		}
+	}
+
+  	.spacer{
+	  	height:30px;
+	}
+
+	.articles-list {
+	  	padding-bottom:60px;
+
+		.container{
+		  	a {
+			  	position:relative;
+
+			  	h3, p {
+				  	padding-left:30px;
+				}
+			}
+		}
+
+		// squared blue background
+		background:
+			linear-gradient(180deg, $colour-default-grey-5 50%, transparent 0%) 0px 16px,
+			linear-gradient(90deg, rgba(0, 160, 240, 0.4) 10%, transparent 0%) 8px 0px,
+			linear-gradient(90deg, $colour-default-grey-5 50%, transparent 0%) 15px 0px,
+			linear-gradient(180deg, rgba(0, 160, 240, 0.4) 10%, transparent 0%) 0px 9px;
+		background-size: 24px 24px;
+		background-color:$colour-default-grey-5;
+		position:relative;
+
+		&:before {
+			content:"";
+			position:absolute;
+			top:0;
+			left:0;
+			right:0;
+			bottom:0;
+		 	@include background-image(radial-gradient( center, ellipse cover, rgba(255,255,255,1) 50%, rgba(246,246,246,0.7) 75%, rgba(237,237,237,0) 100%));
+			z-index:1;
+		}
+
+	  	&:after {
+			content:"";
+			position:absolute;
+			top:0;
+			left:0;
+			right:0;
+			bottom:0;
+		  	@include background-image(linear-gradient(135deg, rgba(230, 231, 232, 0.2) 0%, rgb(230, 231, 232) 30%, rgb(230, 231, 232) 75%, rgba(230, 231, 232, 0) 100%));
+			@include box-shadow(200px 0 190px -200px rgba(0, 0, 0, 0.3) inset, -200px 0 190px -200px rgba(0, 0, 0, 0.3) inset);
+			z-index:0;
+		}
+
+		.container {
+			position:relative;
+			z-index:10;
+		}
+	}
+
+  	// promotions
+  	.promotions {
+	  	padding-bottom:30px;
+
+		.section-title {
+		  	h1 {
+			  	@include font-size(44, 3.4);
+			}
+		}
+
+		h5 {
+			&, i {
+			  	color:$colour-vi-cyan-1;
+			}
+		}
+
+	  	.carousel, .responsive-carousel {
+		  	.list-group-item:nth-child(n+3) {
+				padding-left:30px;
+			}
+		}
+
+	  	a {
+			text-align:left;
+			span.itemtitle{
+				color:$colour-vi-cyan-1;
+				font-family: $font-toyota-text-regular;
+				&:before {
+					font-family: 'toyotaicons';
+					color:$colour-vi-cyan-1;
+					content: "\f067";
+					position:absolute;
+					left:0;
+				}
+			}
+		}
+	}
+
+  	// more actions
+  	.content-moreactions {
+		.right-separator {
+		  	border-color:$colour-default-grey-5;
+		}
+	}
+
+  	// foot focus
+  	#footfocus
+	{
+	  	h1, h2 {
+		  	color:$colour-default-white;
+		}
+	}
+
+  	.promotions .carousel .list-group-item h4, .promotions .responsive-carousel .list-group-item h4, .articles-list h3 {
+		&:before {
+			font-family: 'toyotaicons';
+			color:$colour-vi-cyan-1;
+			content: "\f067";
+			position:absolute;
+			left:0;
+		}
+	}
+
+	// cta
+	.inpage-cta {
+		margin-top:20px;
+	  	background-color:$colour-vi-cyan-1;
+
+		.description {
+			padding-bottom:10px;
+		}
+
+		.description {
+			color: $colour-default-white;
+		}
+
+		.arrow {
+			border-bottom-color:$colour-vi-cyan-1;
+		}
+
+		.container {
+			z-index:10;
+		}
+	}
+
+	// spotlight
+	.spotlights {
+
+	  	// squared dark background
+		background:
+			linear-gradient(180deg, $colour-default-grey-1 50%, transparent 0%) 0px 16px,
+			linear-gradient(90deg, rgba(0, 160, 240, 0.4) 10%, transparent 0%) 8px 0px,
+			linear-gradient(90deg, $colour-default-grey-1 50%, transparent 0%) 15px 0px,
+			linear-gradient(180deg, rgba(0, 160, 240, 0.4) 10%, transparent 0%) 0px 9px;
+		background-size: 24px 24px;
+		background-color:$colour-default-grey-1;
+		position:relative;
+
+		&:after {
+			content:"";
+			position:absolute;
+			top:0;
+			left:0;
+			right:0;
+			bottom:0;
+			@include background-image(linear-gradient(135deg, rgba(30, 42, 50, 0) 0%, rgb(30, 42, 50) 20%, rgb(30, 42, 50) 80%, rgba(30, 42, 50, 0) 100%));
+			z-index:0;
+		}
+
+		.container {
+			position:relative;
+			z-index:10;
+		}
+	}
+}
+
+@media (max-width: $screen-xs-max){
+	.fleet {
+		// cta
+		.inpage-cta {
+			background:none !important;
+			background-color:none !important;
+
+			&:after {
+				background-image: none;
+			}
+		}
+
+		// spotlights
+		.spotlights {
+			background:none;
+			background-color:$colour-default-grey-1;
+
+			&:after {
+				background-image:none;
+			}
+		}
+
+	  	// article
+		.fadeQuote {
+			p {
+				padding-top:0px;
+				padding-bottom:22px;
+			}
+		}
+
+		.articles-list {
+		  	padding-bottom:10px;
+		}
+
+		// promotions
+		.promotions {
+			.section-title {
+				h1 {
+					@include font-size(44, 4.4);
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: $screen-sm-max){
+  	.fleet {
+		.inpage-cta {
+			.container{
+				&.right-aligned {
+					text-align: right;
+				}
+
+				.spacer {
+					display:none !important;
+				}
+			}
+		}
+	}
+}

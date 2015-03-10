@@ -1,0 +1,229 @@
+/* =============================================================================
+ * Bootstrap var overrides
+ * ========================================================================== */
+$font-size-base: 				15px;
+
+
+/* =============================================================================
+ * Typography
+ * ========================================================================== */
+$font-toyota-display-bold:		toyotadisplay_bd;
+$font-toyota-display-regular:	toyotadisplay_rg;
+$font-toyota-text-bold: 		toyotatext_bd;
+$font-toyota-text-regular: 		toyotatext_rg, Verdana, Geneva, Arial, Helvetica, sans-serif;
+$font-generic-sans-serif: 		Verdana, Geneva, Arial, Helvetica, sans-serif;
+$font-generic-base: 			$font-toyota-text-regular;
+$font-toyota-icons:				toyotaicons;
+
+$font-size-navigators:			36px;
+$font-weight-default: 			normal;
+$font-size-top-features: 		24;
+$font-size-base-mixins: 		15;
+
+/* =============================================================================
+ * Colours
+ * ========================================================================== */
+$colour-default-grey-0: 		#222222;
+$colour-default-grey-1: 		#1e2a32;
+$colour-default-grey-2: 		#6c7073;
+$colour-default-grey-3: 		#eff0f1;
+$colour-default-grey-4: 		#f4f4f5;
+$colour-default-grey-5: 		#E6E7E8;
+$colour-default-grey-6: 		#BDBFC0;
+$colour-default-grey-7: 		#888f93;
+$colour-default-grey-8: 		#d2d4d6;
+$colour-default-grey-9: 		#343f46;
+$colour-default-grey-10: 		#f5f5f6;
+$colour-default-grey-11: 		#D9D9D9;
+
+$colour-default-white:			#ffffff;
+$colour-default-black: 			#000000;
+$colour-default-red:			#e50000;
+$colour-default-red-2:			#a60303;
+
+$colour-vi-red-1: 				#d2001e;
+$colour-vi-red-2: 				#73000d;
+$colour-vi-orange-1: 			#f07f0a;
+$colour-vi-orange-2: 			#ef4123;
+$colour-vi-yellow-1: 			#f8ea00;
+$colour-vi-yellow-2: 			#b5751e;
+$colour-vi-purple-1: 			#7a1482;
+$colour-vi-purple-2: 			#420042;
+$colour-vi-green-1: 			#009b3c;
+$colour-vi-green-2: 			#1e4623;
+$colour-vi-navy-1: 				#004297;
+$colour-vi-navy-2: 				#0f0546;
+$colour-vi-coolgrey5-1: 		#969c97;
+$colour-vi-coolgrey5-2: 		$colour-default-grey-1;
+$colour-vi-coolgrey11-1: 		$colour-default-grey-1;
+$colour-vi-coolgrey11-2: 		$colour-default-black;
+
+$colour-vi-cyan-1: 				#00a0f0;
+$colour-vi-cyan-2: 				#005faf;
+$colour-promo-1: 				#efc60a;
+$colour-promo-2: 				#ef9109;
+$colour-promo-3:				#932788;
+
+$colour-btn-grey-1: 			#e8e9ea;
+$colour-btn-grey-2: 			$colour-default-white;
+$colour-btn-dark-1: 			#303a40;
+$colour-btn-dark-2: 			#454e55;
+$colour-btn-blue-1: 			#005faf;
+$colour-btn-blue-2: 			#00a0f0;
+$colour-btn-red-1: 				$colour-vi-red-2;
+$colour-btn-red-2: 				$colour-vi-red-1;
+$colour-btn-yellow-1: 			#ef9109;
+$colour-btn-yellow-2: 			#efc60a;
+
+$colour-navbar-border:			#eff0f1;
+$colour-navbar-active:			#27323a;
+$colour-navbar-active-secondary:	#4e585e;
+$colour-navbar-menu-border:		#354046;
+
+$colour-paragraph-border:		#e2e2e3;
+
+$colour-shadow-box-dark:		rgba(2, 2, 2, .15);
+$colour-shadow-text-dark:		rgba(2, 3, 3, .2);
+//please no rgba in the variables unless shadows
+$color-grey-nav-galleries:  	rgba(73, 82, 88, 0.7);
+$color-grey-nav-galleries-bright:  	rgba(73, 82, 88, 0.3);
+$color-grey-nav-galleries-full:	rgba(73, 82, 88,1);
+
+$colour-table-header:			#ebeced;
+$colour-table-row-odd:			$colour-default-grey-10;
+$colour-compare-table:			#edeeee;
+$colour-compare-exception:		#FF9999;
+$colour-compare-in-evidence:	#FCF9E6;
+
+$colour-table-promo-row-odd:	#fefcf3;
+$colour-table-promo-border:		#f1e4d4;
+
+$colour-bg-navy:				#1c2830;
+$colour-bg-grey-textfield: 		#525B61;
+$colour-bg-grey-light:			#e9eaec;
+$colour-bg-beige:				#f0f2f2;
+$colour-bg-dark-blue-separator:	#303a40;
+
+$colour-share-grey-separator:	#e3e4e5;
+
+$colour-second-level-menu:		#fdfdfd;
+$colour-collapsible-table-row:  #DDDDDD;
+$colour-ecm-gray-icon:          #999999;
+$colour-cta-grey-1:  			#848b90;
+
+$colour-twitter-cyan:			#19C1F7;
+$colour-coockies-xtra-back:		#f2f2f3;
+$colour-dark-grey:				#333333;
+
+$colour-highlighted-star:		#8f9496;
+
+
+$colour-default-select:			$colour-btn-blue-2;
+
+/* =============================================================================
+ * Borders
+ * ========================================================================== */
+$border-radius-default: 	3px;
+$border-radius-small: 		2px;
+$border-radius-large:		10px;
+$border-radius-circle: 		20px;
+
+$border-gallery-navigators: 25px 25px 25px 25px;
+
+/* =============================================================================
+ * Sizes, Margins, Paddings
+ * ========================================================================== */
+$height-navbar-top: 		56px;
+$height-navbar-top-md:		70px;
+$height-navbar-top-md-2l:	130px;
+$height-navbar-eprivacy:	120px;
+
+$width-max-img:				306px;
+$width-max-spotlight:		290px;
+
+// $margin-firstsection: 	($height-navbar-top * -1) - 12px;
+$margin-firstsection: 		0;
+$margin-pagecontent-xs:		101px;
+
+$padding-bottom-row:		0;
+$padding-bottom-row-md:		60px;
+
+$column-width-fixed-2-md:	340px;
+$column-width-fixed-2:		350px;
+$column-width-fixed-3-md:	220px;
+$column-width-fixed-3:		230px;
+$column-width-fixed-4:		355px;
+
+$column-height-fixed-1:		220px;
+$column-gap-fixed:			30px;
+
+$gallery-mobile-thumb-height:	64px;
+$gallery-mobile-thumb-width:	75px;
+
+$screen-xl:					1600px;
+
+/* =============================================================================
+ * Z-indexes
+ * ========================================================================== */
+
+$horizontal-gallery-nav-zindex:				4;
+$compare-icon-remove-container-zindex:		5;
+$flipbook-zindex:							5;
+$compare-scrollcontainer-zindex:			665;
+$compare-mini-edit-selection-menu-zindex:	666;
+$compare-half-btn-zindex:					800;
+$pageoverlayer-inpage-zindex:				1000;
+$pageoverlayer-toolbar-zindex:				1040;
+$expansion-content-zindex:					1050;
+$navbar-fixed-top-zindex:					1051;
+$navbar-fixed-my-toyota-zindex:				1052;
+$pageoverlayer-zindex:						1053;
+$expansion-pageoverlayer-zindex:			1054;
+$video-subtitle-zindex:						1060;
+$cta-cc-zindex:								1061;
+$pageoverlayer-bubble-zindex:				1062;
+
+
+/* =============================================================================
+ * Horizontal Gallery
+ * ========================================================================== */
+$horizontal-gallery-nav:				45px;
+$horizontal-gallery-nav-font-size:		36px;
+$horizontal-gallery-nav-line-height:	45px;
+$horizontal-gallery-nav-margin-top:		-25px;
+$horizontal-gallery-nav-top:			50%;
+$horizontal-gallery-nav-width:			45px;
+
+$horizontal-gallery-item-padding:		10px 10px 40px;
+
+/* Other-Features  */
+$five-pixels: 5px;
+$twenty-pixels: 20px;
+$three-px-radius: 3px 3px 3px 3px;
+$other-features-image-size: 230px;
+
+/* =============================================================================
+ * Carousel
+ * ========================================================================== */
+
+$carousel-fade-transition:				1s;
+
+
+/* =============================================================================
+ * Read more
+ * ========================================================================== */
+$readmore-fade-transition:				0.66s;
+
+
+/* =============================================================================
+ * Pageoverlayer
+ * ========================================================================== */
+$pageoverlayer-toolbarsize-mobile:	58px;
+$pageoverlayer-toolbarsize:			73px;
+
+/* =============================================================================
+ * Search
+ * ========================================================================== */
+
+$search-result-background-color: #f3f4f4;
+$search-result-highlight-color: #ffff00;

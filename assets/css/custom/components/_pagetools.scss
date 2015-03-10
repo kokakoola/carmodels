@@ -1,0 +1,21 @@
+/* =============================================================================
+ * page tools (related, downloads, ...)
+ * ========================================================================== */
+.page-tools {
+	background: $colour-default-grey-4;
+	color: $colour-default-grey-2;
+	margin: 0 0 16px;
+	padding: 18px;
+
+	.list1 +.list2 {
+		margin-top: 25px;
+	}
+
+	.icon-bookmark {
+		padding-right: 5px;
+	}
+
+	.icon-download-alt {
+		padding-right: 5px;
+	}
+}

@@ -1,0 +1,24 @@
+.dropdown-trigger{
+	text-align: left;
+	position: relative;
+	display: block;
+	background: $colour-default-grey-4;
+	i{
+		position: absolute;
+		right: 5px;
+		top: 14px;
+		padding: 0 14px;
+		border-left: 1px solid $colour-paragraph-border;
+		height: 22px;
+	}
+}
+.dropdown-pane{
+	position: absolute;
+	right: 0;
+	top: 60px;
+	width: 100%;
+	background: $colour-default-grey-4;
+	border-radius: $border-radius-default;
+	border: 1px solid $colour-paragraph-border;
+	padding-bottom: 15px;
+}

@@ -1,0 +1,115 @@
+/*
+ * Toyota ONE Styles SASS v0.1
+ * T1-global
+ *
+ * KGH2567: curtain
+ */
+
+/* =============================================================================
+ * global
+ * ========================================================================== */
+html, button, input, select, textarea {
+	color: $colour-default-grey-1;
+}
+body {
+	background: $colour-default-white;
+	color: $colour-default-grey-1;
+	font-family: $font-generic-base;
+	&.noscroll {
+		overflow-y: scroll;
+		position: fixed;
+		// fixes white bar bug in safari for Mac
+		width: 100%;
+	}
+}
+::-moz-selection {
+	background: $colour-default-select;
+	text-shadow: none;
+}
+::selection {
+	background: $colour-default-select;
+	text-shadow: none;
+}
+h1, h2, h3, h4, h5, p {
+	margin: 0;
+	font-weight: normal;
+}
+ul {
+	padding: 0;
+	margin: 0;
+}
+iframe {
+	border: 0;
+}
+i, strong, b {
+	font-style: normal;
+}
+strong, b {
+	font-family: $font-toyota-text-bold;
+    font-weight: normal;
+}
+a {
+	//text-decoration: underline;
+	&:hover {
+		color: $colour-default-grey-1;
+	}
+}
+p {
+  	a {
+	  	color: $colour-default-grey-1;
+	  	text-decoration: underline;
+	  	&:hover {
+		  	color: $colour-default-red;
+		}
+	}
+}
+blockquote {
+	margin: 0;
+  	padding: 0;
+  	border: none;
+}
+.centered {
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+/**
+ * Rule for IE10 Mobile so it can use proper width
+ */
+@-ms-viewport {
+	width: auto;
+}
+/**
+ * Class for spacing the paragraphs within a content block.
+ * Asked by migration team
+ */
+p.pContentSpacerBefore {
+	margin-top: $font-size-base;
+}
+
+p.pContentSpacerAfter {
+	margin-bottom: $font-size-base;
+}
+/*
+* Disable hover effects on touch devices
+*/
+html.touch{
+	*{
+		&:hover{
+			text-decoration: none !important;
+			box-shadow: none !important;
+		}
+	}
+}
+
+img, video {
+	@include hardware-acceleration();
+}
+
+/*
+* remove x icon for search inputs
+*/
+input[type="text"]{
+	&::-ms-clear{
+		display: none !important;
+	}
+}

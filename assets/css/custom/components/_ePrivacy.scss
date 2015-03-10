@@ -1,0 +1,208 @@
+#ePrivacyDisclaimer{
+  position: fixed;
+  display: none;
+  bottom: 0px;
+  width: 100%;
+  min-height:50px;
+  background-color: $colour-default-grey-1;
+  z-index: $navbar-fixed-my-toyota-zindex;
+
+  .container {
+	position: relative;
+	padding-top: 3px;
+	padding-bottom: 3px;
+
+	strong, a, p{
+	  text-indent: 0;
+	  color: $colour-default-white;
+	  @include font-size(13);
+	}
+
+	p{
+	  a {
+		text-decoration: underline;
+	  }
+
+	  &.ePrivacyAutoApproveLink {
+		position: absolute;
+		top: 3px;
+		right: 0;
+
+		&:after {
+		  font-family: 'toyotaicons';
+		  content: "\f00d";
+		  margin: 0 15px 0 5px;
+		  vertical-align: -1px;
+		}
+
+
+		a{
+		  text-decoration: none;
+
+		  &:hover{
+			text-decoration: underline;
+		  }
+		}
+	  }
+	}
+  }
+}
+
+#ePrivacy{
+  display: none;
+}
+
+figure.eprivacy-component {
+  display: none;
+}
+
+.ePrivacy {
+	h1{
+		padding-bottom: 16px;
+	}
+  .overlayerContent {
+	background-color: $colour-default-white;
+
+	#ePrivacy{
+	  display: block;
+	}
+
+	.container {
+	  header {
+		margin: 55px 0 65px 0;
+
+		h1{
+		  padding-top: 0;
+		}
+
+		h1, h4{
+		  color: $colour-default-grey-1;
+		  text-align: center;
+		}
+	  }
+
+	  > p {
+		margin: 0 0 20px -5px;
+	  }
+
+	  p {
+		text-indent: 0;
+		&.desc{
+		  font-family: $font-toyota-display-regular;
+		  @include font-size(19);
+		  color: $colour-default-grey-1;
+		}
+	  }
+
+	  footer {
+		background-color: $colour-coockies-xtra-back;
+		margin-top: 30px;
+		&.xtra {
+		  @include font-size(13);
+		  line-height: 15px;
+		  color: $colour-dark-grey;
+		  padding: 10px;
+		  text-indent: 0;
+		}
+
+		/* checkboxes */
+		&.settings {
+		  @include font-size(15);
+
+		  label {
+			font-family: toyotadisplay_bd;
+			font-weight: normal;
+
+			&:before {
+			  bottom: 1px;
+			}
+		  }
+		}
+	  }
+
+	  #cookie-specs {
+		overflow: hidden;
+
+		h4 {
+		  font-family: toyotadisplay_bd;
+		  margin-bottom: 5px;
+		}
+
+		> li:nth-child(4) {
+		  border-right: none;
+		  text-align: center;
+
+		  footer {
+			background-color: transparent;
+
+			button{
+			  vertical-align: middle;
+			  display: inline-block;
+			}
+		  }
+		}
+	  }
+
+	  li {
+		list-style-type: none;
+		padding:0 10px 30px 10px;
+	  }
+
+	  .actions {
+		li {
+		  margin-top:25px;
+		  padding:0;
+		  color:$colour-dark-grey;
+
+		  p {
+			margin:-22px 0 0 22px;
+		  }
+		}
+
+		li:before {
+		  content: "\f00c";
+		}
+	  }
+	}
+  }
+}
+
+/* min size */
+@media (max-width: $screen-xs-max){
+  .ePrivacy {
+	.overlayerContent {
+	  .container {
+		header {
+		  margin:25px 0 25px 0;
+
+		  h4{
+			@include font-size(19);
+		  }
+		}
+
+		footer {
+		  margin-top:30px !important;
+		  min-height:0px !important;
+
+		  /* checkboxes */
+		  &.settings {
+			label {
+			  margin-bottom:0px;
+			}
+		  }
+		}
+
+		#cookie-specs {
+		  > li:nth-child(4) {
+			text-align:right;
+
+			footer {
+			  margin-top:0px !important;
+			  line-height:48px !important;
+			}
+		  }
+		}
+	  }
+	}
+  }
+}

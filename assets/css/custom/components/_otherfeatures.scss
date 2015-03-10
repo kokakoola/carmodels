@@ -1,0 +1,216 @@
+/* =============================================================================
+* feature containers
+* ========================================================================== */
+.otherfeatures {
+	.section-title{
+		margin: 20px auto 30px;
+		text-align: center;
+	}
+	.fc-group-container {
+		h2{
+			@include font-size(24);
+		}
+		.fc-group-content {
+			margin-top: 20px;
+		}
+		.fc-group {
+			margin-top: 50px;
+			.hybrid{
+				display: none;
+				.hybrid-feature{
+					.feature-cbv {
+						h1 {
+							color: $colour-default-white;
+						}
+					}
+					h1{
+						color: $colour-vi-cyan-1;
+					}
+				}
+			}
+		}
+	}
+	.modal-container {
+		h1 {
+			color: $colour-default-white;
+		}
+	}
+}
+
+/* =============================================================================
+* 1 feature article
+* ========================================================================== */
+.feature {
+	float: left;
+	display: inline;
+	> h1 {
+	  padding-bottom: 0px;
+	  width: 230px;
+	}
+	.icon-play {
+		left: 50%;
+		margin: -30px 0 0 -22px;
+		position: absolute;
+		@include trans(bg, $colour-default-black, .66);
+		border-radius: $three-px-radius;
+		color: $colour-default-white;
+		position: absolute;
+		top: 50%;
+		padding: 8px 16px;
+	}
+
+	.title2 {
+		font-family: toyotatext_rg;
+		letter-spacing:-0.03em;
+		color: $colour-default-grey-1;
+		margin: 0 25px 0 80px;
+		@include font-size(14, 1.7);
+		display: block;
+		text-align: left;
+		padding-top: 0px;
+	}
+
+	.read-more-container {
+		text-align: left;
+		.fade{
+			display: none;
+		}
+		.readMore {
+			color: $colour-default-grey-2;
+			@include font-size(13);
+			text-decoration: none;
+			&:hover {
+				color: $colour-vi-red-1;
+				span {
+					text-decoration: underline;
+				}
+			}
+			&:active, &:focus {
+				color: $colour-vi-red-1;
+			}
+		}
+	}
+}
+
+.feature-poster {
+	position: relative;
+	width: 230px;
+}
+/* =============================================================================
+* feature overlayer styling
+* ========================================================================== */
+.otherFeaturesOverlayer{
+	.overlayerContent{
+		position: relative;
+		background-color: $colour-default-white;
+		.container {
+			// this is a creative fix, ta~da!
+			padding-left: 5px;
+			padding-right: 65px;
+		}
+	}
+}
+
+.allfeatures{
+	background-color: $colour-default-white;
+	overflow-x: hidden;
+	.fc-group{
+		clear:both;
+		width: 100%;
+	}
+}
+
+/* =============================================================================
+* IE FIXIES
+* ========================================================================== */
+.lt-ie9, .eq-ie9 {
+	.fb-group {
+		a {
+			border: thin solid $colour-default-grey-3 !important; //important because for some reason this rule is beeing over-ruled for a rule upstairs. Doesn't work without it.
+		}
+	}
+	.inactivated {
+		background: $colour-vi-cyan-1;
+		color: $colour-default-white;
+	}
+	.activated {
+		color: $colour-vi-cyan-1;
+		background: $colour-default-grey-3;
+	}
+	.col-xs-11 {
+		margin-left: 5%;
+		.filter-bar {
+			height: 23px;
+		}
+	}
+	.allfeatures {
+		.container {
+			.filter-bar {
+				height: 23px;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $screen-xs-max) {
+	.feature {
+		height: 90px;
+		width: 100%;
+		padding: 9px 0;
+		margin-top: -2px;
+		border-color: $colour-btn-grey-1;
+		border-style: solid;
+		border-width: 2px 0;
+		position: relative;
+		.read-more-container{
+			.readMore{
+				span{
+					display: none;
+				}
+				i{
+					position: absolute;
+					right: 4px;
+					top: 10px;
+				}
+			}
+		}
+	  	.title2 {
+			overflow: hidden;
+			text-overflow: ellipsis;
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: 4; /* number of lines to show */
+		}
+	}
+}
+
+@media screen and (min-width: $screen-sm) {
+	.feature-poster {
+		position: static;
+		width: auto;
+	}
+	.feature {
+		position: relative;
+		margin-bottom: $twenty-pixels;
+		margin-top: 0;
+		float: left;
+		.icon-play{
+			left: 50%;
+			margin: -55px 0 0 -25px;
+			font-size: 24px;
+		}
+		.title2{
+			font-size: 15px;
+			margin: 8px 0 2px;
+			width: auto;
+		}
+	}
+}
+
+@media screen and (max-width: $screen-sm-max) {
+	#other-features .btn-group .btn {
+		max-width: 135px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+}

@@ -1,0 +1,29 @@
+.carspin {
+	position: relative;
+	.spin {
+		margin: auto;
+		display: none;
+		margin-bottom: 80px;
+	}
+	.spin.active {
+		display: block;
+		& + .toggle {
+			bottom: 0;
+			right: 0;
+			display: inline-block;
+			position: absolute;
+			margin: 20px;
+		}
+	}
+	.spin.interior {
+		overflow: hidden;
+	}
+	.spritespin-instance {
+		cursor: w-resize;
+		margin: auto;
+	}
+	.toggle {
+		display: none;
+	}
+}
+

@@ -1,0 +1,434 @@
+/* =============================================================================
+ * Toyota Font Definitions
+ * ========================================================================== **/
+
+@include font-face("toyotadisplay_bd", "../fonts/toyotadisplay_bd");
+@include font-face("toyotadisplay_rg", "../fonts/toyotadisplay_rg");
+@include font-face("toyotatext_bd", "../fonts/toyotatext_bd");
+@include font-face("toyotatext_rg", "../fonts/toyotatext_rg");
+@include font-face("toyotaicons", "../fonts/toyotaicons");
+
+
+/* Data attribute methods only */
+[class^="icon"] {
+	font-family: 'toyotaicons' !important;
+	speak: none;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* desktop specific rules */
+@media (min-width: $screen-md) {
+	[class^="icon-"] {
+		display: inline;
+	}
+}
+
+.icon-music,
+.icon-search,
+.icon-heart,
+.icon-star,
+.icon-user,
+.icon-th-large,
+.icon-ok,
+.icon-remove,
+.icon-cog,
+.icon-trash,
+.icon-download-alt,
+.icon-repeat,
+.icon-lock,
+.icon-volume-off, .icon-volume-down, .icon-volume-up,
+.icon-picture, .icon-facetime-video,
+.icon-tag, .icon-bookmark,
+.icon-print,
+.icon-camera,
+.icon-book,
+.icon-map-marker,
+.icon-step-backward, .icon-fast-backward, .icon-backward,
+.icon-play, .icon-pause, .icon-stop,
+.icon-forward, .icon-fast-forward, .icon-step-forward,
+.icon-chevron-left, .icon-chevron-right,
+.icon-question-sign, .icon-info-sign,
+.icon-minus, .icon-plus,
+.icon-resize-small, .icon-resize-full,
+.icon-share-alt, .icon-folder-close,
+.icon-chevron-down, .icon-chevron-up,
+.icon-exclamation-sign,
+.icon-thumbs-up,
+.icon-star-half,
+.icon-external-link,
+.icon-upload-alt,
+.icon-rss, .icon-facebook, .icon-twitter, .icon-google-plus, .icon-youtube,
+.icon-phone,
+.icon-link, .icon-reorder, .icon-list-ul, .icon-envelope-alt,
+.icon-file-alt, .icon-file-pdf,
+.icon-mobile, .icon-tablet, .icon-laptop, .icon-desktop,
+.icon-angle-down, .icon-angle-up, .icon-angle-right, .icon-angle-left,
+.icon-quote-left, .icon-quote-right,
+.icon-reply,
+.icon-ipod,
+.icon-sun-stroke, .icon-rain,
+.icon-un_check, .icon-active_check,
+.icon-usb1, .icon-bluetooth,
+.icon-car2, .icon-car1,
+.icon-snowflake,
+.icon-new2,
+.icon-plug_1,
+.icon-Flickr,
+.icon-menu,
+.icon-radio-checked , .icon-radio-uncheck, .ty-icon:before, .ty-icon:after {
+	font-family: 'toyotaicons';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+
+.icon-service-and-maintenance:before {
+	content: "\e614";
+}
+.icon-hybrid-health-check:before {
+	content: "\e608";
+}
+.icon-genuine-parts:before {
+	content: "\e60f";
+}
+.icon-express-service:before {
+	content: "\e613";
+}
+.icon-walk-around-check:before {
+	content: "\e60e";
+}
+.icon-body-and-paint:before {
+	content: "\e60d";
+}
+.icon-roadside-assistance:before {
+	content: "\e60b";
+}
+.icon-extended-warranty:before {
+	content: "\e60c";
+}
+.icon-warranty:before {
+	content: "\e60a";
+}
+.icon-accessories:before {
+	content: "\e615";
+}
+.icon-brochure:before {
+	content: "\e607";
+}
+.icon-share:before {
+	content: "\e606";
+}
+.icon-radio-uncheck:before {
+	content: "\e605";
+}
+.icon-radio-checked:before {
+	content: "\e604";
+}
+.icon-fin-calculator:before {
+	content: "\e610";
+}
+.icon-ins-calculator:before {
+	content: "\e611";
+}
+.icon-finance:before {
+	content: "\e612";
+}
+.icon-car1:before {
+	content: "\e00a";
+}
+.icon-music:before {
+	content: "\f001";
+}
+.icon-search:before {
+	content: "\f002";
+}
+.icon-heart:before {
+	content: "\f004";
+}
+.icon-star:before {
+	content: "\f005";
+}
+.icon-user:before {
+	content: "\f007";
+}
+.icon-th-large:before {
+	content: "\f009";
+}
+.icon-ok:before {
+	content: "\f00c";
+}
+.icon-remove:before {
+	content: "\f00d";
+}
+.icon-cog:before {
+	content: "\f013";
+}
+.icon-trash:before {
+	content: "\f014";
+}
+.icon-download-alt:before {
+	content: "\f019";
+}
+.icon-repeat:before {
+	content: "\f01e";
+}
+.icon-lock:before {
+	content: "\f023";
+}
+.icon-volume-off:before {
+	content: "\f026";
+}
+.icon-volume-down:before {
+	content: "\f027";
+}
+.icon-volume-up:before {
+	content: "\f028";
+}
+.icon-picture:before {
+	content: "\f03e";
+}
+.icon-facetime-video:before {
+	content: "\f03d";
+}
+.icon-tag:before {
+	content: "\f02b";
+}
+.icon-bookmark:before {
+	content: "\f02e";
+}
+.icon-print:before {
+	content: "\f02f";
+}
+.icon-camera:before {
+	content: "\f030";
+}
+.icon-book:before {
+	content: "\f02d";
+}
+.icon-map-marker:before {
+	content: "\f041";
+}
+.icon-chevron-left:before {
+	content: "\f053";
+}
+.icon-chevron-right:before {
+	content: "\f054";
+}
+.icon-chevron-right {
+	display: inline;
+	vertical-align: middle;
+	padding-left: 5px;
+}
+.icon-chevron-up:before {
+	content: "\f077";
+}
+.collapsed .icon-chevron-up:before {
+	content: "\f078";
+}
+.icon-chevron-down:before {
+	content: "\f078";
+}
+.open .icon-chevron-down:before {
+	content: "\f077";
+}
+.icon-step-forward:before {
+	content: "\f051";
+}
+.icon-star-half:before {
+	content: "\f089";
+}
+.icon-file-alt:before {
+	content: "\f0f6";
+}
+.icon-envelope-alt:before {
+	content: "\f0e0";
+}
+.icon-question-sign:before {
+	content: "\f059";
+}
+.icon-info-sign:before {
+	content: "\f05a";
+}
+.icon-exclamation-sign:before {
+	content: "\f06a";
+}
+.icon-step-backward:before {
+	content: "\f048";
+}
+.icon-fast-backward:before {
+	content: "\f049";
+}
+.icon-backward:before {
+	content: "\f04a";
+}
+.icon-play:before {
+	content: "\f04b";
+}
+.icon-pause:before {
+	content: "\f04c";
+}
+.icon-stop:before {
+	content: "\f04d";
+}
+.icon-forward:before {
+	content: "\f04e";
+}
+.icon-fast-forward:before {
+	content: "\f050";
+}
+.icon-minus:before {
+	content: "\f068";
+}
+.icon-plus:before {
+	content: "\f067";
+}
+.icon-resize-small:before {
+	content: "\f066";
+}
+.icon-resize-full:before {
+	content: "\f065";
+}
+.icon-share-alt:before {
+	content: "\f064";
+}
+.icon-folder-close:before {
+	content: "\f07b";
+}
+.icon-thumbs-up:before {
+	content: "\f087";
+}
+.icon-external-link:before {
+	content: "\f08e";
+}
+.icon-external-link {
+	padding-left: 5px;
+}
+.icon-upload-alt:before {
+	content: "\f093";
+}
+.icon-rss:before {
+	content: "\f09e";
+}
+.icon-facebook:before {
+	content: "\f09a";
+}
+.icon-twitter:before {
+	content: "\f099";
+}
+.icon-phone:before {
+	content: "\f095";
+}
+.icon-link:before {
+	content: "\f0c1";
+}
+.icon-reorder:before, .icon-menu:before {
+	content: "\f0c9";
+}
+.icon-list-ul:before {
+	content: "\f0ca";
+}
+.icon-google-plus:before {
+	content: "\f0d5";
+}
+.icon-mobile:before {
+	content: "\f10b";
+}
+.icon-tablet:before {
+	content: "\f10a";
+}
+.icon-laptop:before {
+	content: "\f109";
+}
+.icon-desktop:before {
+	content: "\f108";
+}
+.icon-angle-down:before {
+	content: "\f107";
+}
+.icon-angle-up:before {
+	content: "\f106";
+}
+.icon-angle-right:before {
+	content: "\f105";
+}
+.icon-angle-left:before {
+	content: "\f104";
+}
+.icon-youtube:before {
+	content: "\f167";
+}
+.icon-quote-left:before {
+	content: "\f10d";
+}
+.icon-quote-right:before {
+	content: "\f10e";
+}
+.icon-reply:before {
+	content: "\f112";
+}
+.icon-file-pdf:before {
+	content: "\e000";
+}
+.icon-ipod:before {
+	content: "\e001";
+}
+.icon-sun-stroke:before {
+	content: "\e003";
+}
+.icon-rain:before {
+	content: "\e004";
+}
+.icon-un_check:before {
+	content: "\e005";
+}
+.icon-active_check:before {
+	content: "\e006";
+}
+.icon-usb1:before {
+	content: "\e007";
+}
+.icon-bluetooth:before {
+	content: "\e008";
+}
+.icon-car2:before {
+	content: "\e009";
+}
+.icon-snowflake:before {
+	content: "\e00b";
+}
+.icon-new2:before {
+	content: "\e00c";
+}
+.icon-plug_1:before {
+	content: "\e00d";
+}
+.icon-Flickr:before {
+	content: "\e00e";
+}
+.icon-arrw:before {
+	content: "\e00f";
+}
+.icon-undo:before {
+	content: "\e600";
+}
+.icon-refresh:before {
+	content: "\e601";
+}
+.icon-calendar:before {
+	content: "\e602";
+}
+.icon-home:before {
+	content: "\e603";
+}
+.icon-key:before {
+	content: "\e609";
+}

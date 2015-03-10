@@ -1,0 +1,33 @@
+.cc-box-note:before,
+.cc-box-grades:before,
+.cc-popup:before,
+.cc-dropdown:before,
+.cc-message:before,
+.cc-checkbox,
+.cc-icon-standard i,
+.cc-icon-unavailable i,
+.cc-icon-optional i,
+.cc-icon-dropdown,
+.cc-show-on-car,
+.cc-col-headings .cc-col:before {
+	background-image: url(../../assets/images/carconfigurator/sprite.png);
+	background-repeat: no-repeat;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+	.cc-box-note:before,
+	.cc-box-grades:before,
+	.cc-popup:before,
+	.cc-dropdown:before,
+	.cc-message:before,
+	.cc-checkbox,
+	.cc-icon-standard i,
+	.cc-icon-unavailable i,
+	.cc-icon-optional i,
+	.cc-icon-dropdown,
+	.cc-show-on-car,
+	.cc-col-headings .cc-col:before {
+		background-image: url(../../assets/images/carconfigurator/sprite_retina.png);
+		background-size: 60px 240px;
+	}
+}
