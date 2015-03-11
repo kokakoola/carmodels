@@ -1,0 +1,32 @@
+  var source   = $("#accessories-template").html();
+  var template = Handlebars.compile(source); 
+
+
+  var data = { "images": [
+    {
+      caption: "Diebstahlsicherung für verschiedene LM-Felgen",
+      id: "1",
+      price: "33,00",
+      monthly: "2,2"
+    },
+    {
+      caption: "iQ Außenspiegelkappen, chrom",
+      id: "2",
+      price: "145,00",
+      monthly: "2,2"
+    },
+    {
+      caption: "iQ Leichtmetallfelge, Aurora 15'' anthrazit",
+      id: "3",
+      price: "165,00",
+      monthly: "2,2"
+    },
+    {
+      caption: "iQ Leichtmetallfelge, Aurora, 15'' silber",
+      id: "4",
+      price: "160,00",
+      monthly: "2,2"
+    }
+    ]};
+
+  $("#placeholder-accessories").html(template(data));

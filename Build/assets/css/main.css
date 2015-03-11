@@ -18000,14 +18000,16 @@ section h1 {
   font-family: toyotatext_bd; }
 
 dl.dl-horizontal {
-  font-family: toyotatext_bd,Verdana,Geneva,Arial,Helvetica,sans-serif;
+  font-family: toyotatext_rg, Verdana, Geneva, Arial, Helvetica, sans-serif;
   font-size: 14.5px;
   font-size: 1.45rem;
   line-height: 17px;
   line-height: 1.7rem;
-  color: #6C7073;
+  color: #1e2a32;
   text-indent: 3em;
   margin-bottom: 30px; }
+  dl.dl-horizontal dt {
+    font-family: toyotatext_bd; }
   dl.dl-horizontal strong {
     font-size: 1.2em; }
 

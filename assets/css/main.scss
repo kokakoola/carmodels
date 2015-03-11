@@ -166,14 +166,17 @@ section h1 {
 }
 
 dl.dl-horizontal {
-  font-family: toyotatext_bd,Verdana,Geneva,Arial,Helvetica,sans-serif;
+  font-family: $font-generic-base;
   font-size: 14.5px;
   font-size: 1.45rem;
   line-height: 17px;
   line-height: 1.7rem;
-  color: #6C7073;
+  color: $colour-default-grey-1;
   text-indent: 3em;
   margin-bottom: 30px;
+  dt {
+    font-family: $font-toyota-text-bold;
+  }
   strong {
     font-size: 1.2em;
   }
