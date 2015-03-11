@@ -281,9 +281,14 @@ $(".input-number").keydown(function (e) {
         }
       });
 // End Plusminus
+});
 
-
-
+// directional modal
+$('#btn-customerModal').click(function() {
+    $('#customerModal')
+        .prop('class', 'modal fade') // revert to default
+        .addClass( $(this).data('direction') );
+    $('#customerModal').modal('show');
 });
 
 

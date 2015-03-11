@@ -73,6 +73,34 @@
   </div>
 </nav>
 
+<div class="quick-spec fixed">
+  <div class="row">
+    <div class="col-xs-12">
+      <p class="title">26.999,00 €</p>
+    </div>
+<!--     <div class="col-xs-4">
+      <a class="view-prices show-sv sv-callback3" href="#example-subview-1" data-startFrom="right">View prices</a>
+    </div> -->
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-number">
+      <p class="quickspec-label">Leasing<br>price</p>
+      <p class="metric">359,45 </p>
+      <p>€/month</p>
+    </div>
+<!--     <div class="col-xs-4 col-number">
+      <p class="quickspec-label">CO2<br>from</p>
+      <p class="metric">171</p>
+      <p>g/km</p>
+    </div>
+    <div class="col-xs-4 col-number">
+      <p class="quickspec-label">Tractie<br>up to</p>
+      <p class="metric">343/1600-2800</p>
+      <p>kg</p>
+    </div> -->
+  </div>
+</div>
+
 <section>
   <div class="container">
     <header>
@@ -112,6 +140,9 @@
         <dt>Boothpace</dt>
         <dd>20</dd>
       </dl>
+      <a class="btn btn-grey right" id="btn-customerModal" href="#customerModal" data-target="#customerModal" data-direction="right">
+        <span>Send offer to client</span>
+      </a>
     </div>
   </div>
 </section>
@@ -203,18 +234,125 @@
   </div>
 </div>
 
+
+
+
+<section class="leasing-calc">
+  <div class="container clearfix">
+    <header>
+      <h1>Toyota leasing calculator</h1>
+    </header>
+    <div class="row">
+      <div class="col-md-3 col-sm-4 carconfig-mini">
+        <h5>Rent type</h5>
+        <div class="carconfig-mini-form">
+          <ul class="carconfig-mini-select">
+            <li class="dropdown " data-step="">
+              <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="model-data.html"><span>Operating lease</span><i class="icon-chevron-down"></i></a>
+              <ul class="dropdown-menu" role="menu">
+                <li>
+                  <a data-id="suv">Operating lease</a>
+                  <a data-id="suv">Higher purchase</a>
+                  <a data-id="suv">Finance lease with VAT</a>
+                  <a data-id="suv">Finance lease without VAT</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+        <div class="col-md-2 col-sm-4 carconfig-mini">
+          <h5>Downpayment</h5>
+        <div class="carconfig-mini-form">
+          <ul class="carconfig-mini-select">
+            <li class="dropdown " data-step="">
+              <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="model-data.html"><span>15%</span><i class="icon-chevron-down"></i></a>
+              <ul class="dropdown-menu" role="menu">
+                <li>
+                  <a data-id="suv">That</a>
+                  <a data-id="suv">TUV</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+            <div class="col-md-2 col-sm-4 carconfig-mini">
+        <div class="carconfig-mini-form">
+          <h5>Interest</h5>
+          <ul class="carconfig-mini-select">
+            <li class="dropdown " data-step="">
+              <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="model-data.html"><span>1.20%</span><i class="icon-chevron-down"></i></a>
+              <ul class="dropdown-menu" role="menu">
+                <li>
+                  <a data-id="suv">That</a>
+                  <a data-id="suv">TUV</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+            <div class="col-md-3 col-sm-4 carconfig-mini">
+        <div class="carconfig-mini-form">
+          <h5>Period</h5>
+          <ul class="carconfig-mini-select">
+            <li class="dropdown " data-step="">
+              <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="model-data.html"><span>5 years</span><i class="icon-chevron-down"></i></a>
+              <ul class="dropdown-menu" role="menu">
+                <li>
+                  <a data-id="suv">That</a>
+                  <a data-id="suv">TUV</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+            <div class="col-md-2 col-sm-4 carconfig-mini">
+        <div class="carconfig-mini-form">
+          <h5>Residual value</h5>
+            <div class="input-group pull-right">
+            <span class="input-group-btn">
+              <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
+                <span class="icon-minus"></span>
+              </button>
+            </span>
+            <input type="text" name="quant[1]" class="form-control input-number ee-default" value="20%" min="1" max="35">
+            <span class="input-group-btn">
+              <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]">
+                <span class="icon-plus"></span>
+              </button>
+            </span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    
+    
+    <div class="row leasing-result">
+      <div class="col-xs-12 ">
+        <h4>Leasing price for this car is <span class="special-price">359 €/month</span>.</h4>
+      </div>
+      
+      
+    </div>
+  </div>
+</section>
+
 <section class="accessories" data-section-title="Accessories"  data-bt-componentname="accessories" >
   <header class="section-title">
-    <h1>Lisavarustus</h1>
+    <h1>Accessories</h1>
   </header>
   <div class="container">
     <div class="row filter-row">
       <div class="filter-bar" data-bt-action="click_tab">
         <div class="btn-group">
-          <a href="iq-index.html#top" class="btn btn-grey active" data-toggle="tab" data-bt-value="top_accessories" data-bt-track="">Populaarseim</a>
+          <a href="iq-index.html#top" class="btn btn-grey active" data-toggle="tab" data-bt-value="top_accessories" data-bt-track="">Popular</a>
           <a href="iq-index.html#ext" class="btn btn-grey" data-open-single="true" data-bt-value="EXT" data-bt-track="">Exterior</a>
           <a href="iq-index.html#int" class="btn btn-grey" data-open-single="true" data-bt-value="INT" data-bt-track="">Interior</a>
-          <button class="btn btn-grey viewall" data-bt-value="view_all" data-bt-track="">Vaata kõiki</button>
+          <button class="btn btn-grey viewall" data-bt-value="view_all" data-bt-track="">All</button>
         </div>
       </div>
       <span class="text-right switch-view"></span>
@@ -684,110 +822,6 @@
 
       </section>
 
-<section class="leasing-calc">
-  <div class="container clearfix">
-    <header>
-      <h1>Toyota leasing calculator</h1>
-    </header>
-    <div class="row">
-      <div class="col-md-3 col-sm-4 carconfig-mini">
-        <h5>Rent type</h5>
-        <div class="carconfig-mini-form">
-          <ul class="carconfig-mini-select">
-            <li class="dropdown " data-step="">
-              <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="model-data.html"><span>Operating lease</span><i class="icon-chevron-down"></i></a>
-              <ul class="dropdown-menu" role="menu">
-                <li>
-                  <a data-id="suv">Operating lease</a>
-                  <a data-id="suv">Higher purchase</a>
-                  <a data-id="suv">Finance lease with VAT</a>
-                  <a data-id="suv">Finance lease without VAT</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-        <div class="col-md-2 col-sm-4 carconfig-mini">
-          <h5>Downpayment</h5>
-        <div class="carconfig-mini-form">
-          <ul class="carconfig-mini-select">
-            <li class="dropdown " data-step="">
-              <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="model-data.html"><span>15%</span><i class="icon-chevron-down"></i></a>
-              <ul class="dropdown-menu" role="menu">
-                <li>
-                  <a data-id="suv">That</a>
-                  <a data-id="suv">TUV</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-            <div class="col-md-2 col-sm-4 carconfig-mini">
-        <div class="carconfig-mini-form">
-          <h5>Interest</h5>
-          <ul class="carconfig-mini-select">
-            <li class="dropdown " data-step="">
-              <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="model-data.html"><span>1.20%</span><i class="icon-chevron-down"></i></a>
-              <ul class="dropdown-menu" role="menu">
-                <li>
-                  <a data-id="suv">That</a>
-                  <a data-id="suv">TUV</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-            <div class="col-md-3 col-sm-4 carconfig-mini">
-        <div class="carconfig-mini-form">
-          <h5>Period</h5>
-          <ul class="carconfig-mini-select">
-            <li class="dropdown " data-step="">
-              <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="model-data.html"><span>5 years</span><i class="icon-chevron-down"></i></a>
-              <ul class="dropdown-menu" role="menu">
-                <li>
-                  <a data-id="suv">That</a>
-                  <a data-id="suv">TUV</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-            <div class="col-md-2 col-sm-4 carconfig-mini">
-        <div class="carconfig-mini-form">
-          <h5>Residual value</h5>
-            <div class="input-group pull-right">
-            <span class="input-group-btn">
-              <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
-                <span class="icon-minus"></span>
-              </button>
-            </span>
-            <input type="text" name="quant[1]" class="form-control input-number ee-default" value="20%" min="1" max="35">
-            <span class="input-group-btn">
-              <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]">
-                <span class="icon-plus"></span>
-              </button>
-            </span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    
-    
-    <div class="row leasing-result">
-      <div class="col-xs-12 ">
-        <h4>Leasing price for this car is <span class="special-price">359 €/month</span>.</h4>
-      </div>
-      
-      
-    </div>
-  </div>
-</section>
-
 <section id="models-data">
   <!-- source: http://jsfiddle.net/ivanarvizu/JS6JV/16/light/ -->
   <div class="container">
@@ -1078,9 +1112,14 @@ $(".input-number").keydown(function (e) {
         }
       });
 // End Plusminus
+});
 
-
-
+// directional modal
+$('#btn-customerModal').click(function() {
+    $('#customerModal')
+        .prop('class', 'modal fade') // revert to default
+        .addClass( $(this).data('direction') );
+    $('#customerModal').modal('show');
 });
 
 
@@ -1089,3 +1128,88 @@ $(".input-number").keydown(function (e) {
 
   </body>
 </html>
+
+<div class="modal fade" id="customerModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog fullscreen">
+    
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="toolbar">
+          <a class="close-link" data-dismiss="modal" aria-label="Close">
+            <div class="btn-back">
+              <div class="btn-graphic" >
+                <i class="icon-angle-left"></i>
+              </div>
+            </div>
+            <span class="back-text">Tagasi <strong>lehele</strong></span>
+          </a>
+        </div>
+         <div class="row in-modal">
+            <div class="container">
+              <div class="col-sm-12">
+                <section id="identify-customer" class="register-leads">
+	<div class="container">
+		<header class="section-title">
+			<h1>Identify customer</h1>
+		</header>
+		<div class="row">
+			<div class="col-md-10 col-md-offset-1">
+				<form action="" class="form-horizontal">
+					<div class="form-group">
+						<label class="col-sm-3 col-md-3 control-label" for="textinput">Name</label>  
+						<div class="col-sm-8 col-md-6">
+							<input id="textinput" name="textinput" type="text" placeholder="Required" class="form-control input-md" value="Sven Peekmann">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-3 col-md-3 control-label" for="textinput-1">Company</label>  
+						<div class="col-sm-8 col-md-6">
+							<input id="textinput-1" name="textinput-1" type="text" placeholder="Optional" class="form-control input-md">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-3 col-md-3 control-label" for="textinput-2">Email</label>  
+						<div class="col-sm-8 col-md-6">
+							<input id="textinput-2" name="textinput-2" type="text" placeholder="Required" class="form-control input-md">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-3 col-md-3 control-label" for="textinput-3">Phone</label>  
+						<div class="col-sm-8 col-md-6">
+							<input id="textinput-3" name="textinput-3" type="text" placeholder="Optional" class="form-control input-md">
+						</div>
+					</div>
+				</form>
+
+				<div class="row">
+					<div class="col-md-8 col-md-offset-3 col-sm-offset-3">
+						<h3><i class="glyphicon glyphicon-ok"></i> Sven Peekmann is found in the client list.</h3>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6 col-md-offset-3 col-sm-offset-3">
+						<a href="customer-card.html" class="btn btn-link pull-right">Go to Sven record <i class="glyphicon glyphicon-chevron-right"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+                <div class="modal-footer">
+                  <button name="cancel" value="cancel" class="btn btn-link" data-dismiss="modal">
+                      Cancel
+                  </button>
+                  <button type="submit" class="btn btn-dark" name="submit" value="submit">
+                      Send
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

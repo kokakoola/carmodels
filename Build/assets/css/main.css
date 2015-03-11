@@ -17950,6 +17950,13 @@ section h1 {
   padding-top: 20px;
   padding-bottom: 20px; }
 
+.quick-spec.fixed {
+  width: 215px;
+  position: fixed;
+  right: 0;
+  bottom: 50px;
+  z-index: 1; }
+
 .navbar-fixed-top.navbar-inverse {
   background: #1e2a32; }
   .navbar-fixed-top.navbar-inverse .breadcrumb li.active > a,
@@ -17973,6 +17980,9 @@ section h1 {
 @media (min-width: 992px) {
   .navbar-fixed-top > .container {
     padding-right: 15px; } }
+.btn.right {
+  float: right; }
+
 .navbar-left {
   float: left; }
 
@@ -17982,6 +17992,8 @@ section h1 {
 @media (min-width: 1200px) {
   .breadcrumb {
     width: 700px; } }
+.view-car #models-data header {
+  margin-bottom: 0; }
 .view-car header {
   margin-top: 30px;
   margin-bottom: 40px; }
@@ -18188,6 +18200,17 @@ input.form-control {
   .register-leads .car-list-item p {
     text-indent: 0;
     margin: 0 0 5px; }
+.register-leads h2 {
+  padding-top: 40px;
+  font-family: toyotadisplay_bd; }
+.register-leads .checkbox label {
+  font-size: 1.9rem;
+  padding-left: 40px;
+  line-height: 3.3rem; }
+  .register-leads .checkbox label:before {
+    margin-top: 6px; }
+  .register-leads .checkbox label:after {
+    margin-top: 6px; }
 
 #identify-customer form label:before {
   border: none; }
@@ -18199,3 +18222,108 @@ input.form-control {
   font-size: 18px; }
 .test-drive .picktime h4 {
   margin: 10px 0; }
+
+.modal.fade:not(.in).left .modal-dialog {
+  -webkit-transform: translate3d(-25%, 0, 0);
+  transform: translate3d(-25%, 0, 0); }
+
+.modal.fade:not(.in).right .modal-dialog {
+  -webkit-transform: translate3d(125%, 0, 0);
+  transform: translate3d(125%, 0, 0);
+  -webkit-transition-duration: all 10s ease-in-out;
+  transition-duration: all 10s ease-in-out;
+  z-index: 1060; }
+
+.modal.fade:not(.in).bottom .modal-dialog {
+  -webkit-transform: translate3d(0, 125%, 0);
+  transform: translate3d(0, 125%, 0); }
+
+.modal-dialog.fullscreen {
+  width: 100%;
+  margin: 56px 0 0 0;
+  height: 100vh-70px; }
+  .modal-dialog.fullscreen .toolbar {
+    width: 70px;
+    float: left;
+    background-color: #1e2a32;
+    height: 100vh;
+    display: inline-block;
+    z-index: 1040;
+    text-align: center; }
+    .modal-dialog.fullscreen .toolbar a:hover {
+      cursor: pointer;
+      text-decoration: none; }
+      .modal-dialog.fullscreen .toolbar a:hover span {
+        color: #d2001e; }
+      .modal-dialog.fullscreen .toolbar a:hover .btn-back .btn-graphic {
+        background-image: none;
+        background-color: white; }
+    .modal-dialog.fullscreen .toolbar span {
+      color: white; }
+    .modal-dialog.fullscreen .toolbar .close-icon {
+      display: block;
+      font-size: 20px;
+      font-size: 2rem;
+      padding: 14px 0;
+      position: absolute;
+      text-align: center; }
+    .modal-dialog.fullscreen .toolbar .btn-back {
+      margin: 15px;
+      width: 58px;
+      height: 58px;
+      line-height: 0.2; }
+      .modal-dialog.fullscreen .toolbar .btn-back .btn-graphic {
+        padding: 8px 16px 8px 14px;
+        line-height: 1;
+        position: relative;
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        font-size: 24px;
+        font-size: 2.4rem;
+        background-color: #e9eaec;
+        background-image: linear-gradient(180deg, white 0%, #e9eaec 100%);
+        border-radius: 3px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px; }
+    .modal-dialog.fullscreen .toolbar .back-text {
+      display: block;
+      font-family: toyotatext_rg;
+      font-size: 15px;
+      font-size: 1.5rem;
+      text-align: left;
+      white-space: nowrap;
+      -moz-transform: rotate(270deg);
+      -ms-transform: rotate(270deg);
+      -webkit-transform: rotate(270deg);
+      transform: rotate(270deg);
+      bottom: 45px;
+      left: 19px;
+      padding-left: 20px;
+      transform-origin: 0 0 0;
+      -webkit-transform-origin: 0 0 0;
+      -ms-transform-origin: 0 0;
+      -o-transform-origin: 0 0 0;
+      position: absolute;
+      top: 180px; }
+    .modal-dialog.fullscreen .toolbar .close-link {
+      display: block;
+      position: fixed; }
+
+.modal-content {
+  border-radius: 0;
+  border: none;
+  display: inline-block;
+  width: 100%; }
+  .modal-content .modal-body {
+    padding: 0; }
+  .modal-content .in-modal {
+    float: right;
+    width: -moz-calc(100% - 70px);
+    width: -webkit-calc(100% - 70px);
+    width: calc(100% - 70px); }
+
+.modal-backdrop.in {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  display: none; }

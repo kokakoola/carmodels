@@ -13,18 +13,7 @@
         {{/if}}
       </h5>
       <hr>
-      <p class="desc">
-        <span class="price {{#if Model.GoodPrice }} old-price {{/if}} " >{{Price}} €</span> 
-        {{#if Model.GoodPrice }}
-          <span class="price new-price">{{Model.GoodPrice}} €</span>
-          <span class="avantage">Save 19% by buying this car</span> <br> 
-        {{/if}}
-            <span>Interior color: {{IntColour}}</span>  |  <span>Exterior color: {{ExtColour}}</span>
-      {{#if Options}}
-        <br>
-        <i class="icon-info-sign"></i> Extras: {{Options.string}}
-      {{/if}}
-      </p>
+      
     </div>
   </div>
 {{/slice}}

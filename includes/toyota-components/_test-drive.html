@@ -14,7 +14,40 @@
 		<header class="section-title">
 			<h1>Pick a time</h1>
 		</header>
-		<div class="row picktime">
+		<div class="row ">
+			<form action="">
+        <!-- date -->
+        <div class="col-xs-12 col-sm-5">
+          <h5 class="form-label">Date</h5>
+          <div class="input-group date">
+            <input type="text" class="form-control" data-validation="length" min-length="5" placeholder="20-03-2015">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+          </div>
+        </div>
+        <!-- time -->
+        <div class="col-xs-12 col-sm-6 col-sm-offset-1">
+          <h5 class="form-label">Time</h5>
+          <div class="dropdown" data-select="time">
+            <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-validation="select" href="forms.html%3Ftab=pane-contact.html#">
+              <span>12:00</span>
+              <i class="icon-chevron-down"></i>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="forms.html%3Ftab=pane-contact.html#" data-value="0900">09:00</a></li>
+              <li><a href="forms.html%3Ftab=pane-contact.html#" data-value="1000">10:00</a></li>
+              <li><a href="forms.html%3Ftab=pane-contact.html#" data-value="1100">11:00</a></li>
+              <li><a href="forms.html%3Ftab=pane-contact.html#" data-value="1200">12:00</a></li>
+              <li><a href="forms.html%3Ftab=pane-contact.html#" data-value="1300">13:00</a></li>
+              <li><a href="forms.html%3Ftab=pane-contact.html#" data-value="1400">14:00</a></li>
+              <li><a href="forms.html%3Ftab=pane-contact.html#" data-value="1500">15:00</a></li>
+              <li><a href="forms.html%3Ftab=pane-contact.html#" data-value="1600">16:00</a></li>
+            </ul>
+          </div>
+        </div>
+        
+    </form>
+      </div>
+		<!-- <div class="row picktime">
 			<div class="col-xs-12 col-md-10 col-md-offset-2">
 				<div class="row">
 					<div class="col-sm-5"><div class="datepicker" data-date-format="MM/DD/YYYY"></div></div>
@@ -58,6 +91,6 @@
 
 				</div>
 			</div>
-		</div>
+		</div> -->
 	</div>
 </section>
