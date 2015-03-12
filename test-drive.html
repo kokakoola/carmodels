@@ -1,7 +1,7 @@
 <!-- $next index -->
-<!-- $nextname Start -->
-<!-- $prev view-car -->
-<!-- $prevname View my car -->
+<!-- $nextname Home -->
+<!-- $prev model-data -->
+<!-- $prevname Select model -->
 <!-- $current test-drive -->
 <!-- $currentname Testdrive -->
 <!-- $hidden hidden -->
@@ -13,3 +13,38 @@
 <!-- @include _test-drive -->
 
 <!-- @include footer -->
+
+<div class="modal fade" id="customerModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog fullscreen">
+    
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="toolbar">
+          <a class="close-link" data-dismiss="modal" aria-label="Close">
+            <div class="btn-back">
+              <div class="btn-graphic" >
+                <i class="icon-angle-left"></i>
+              </div>
+            </div>
+            <span class="back-text">Tagasi <strong>lehele</strong></span>
+          </a>
+        </div>
+         <div class="row in-modal">
+            <div class="container">
+              <div class="col-sm-12">
+                <!-- @include identify-form-norecord -->
+                <div class="modal-footer">
+                  <button name="cancel" value="cancel" class="btn btn-link" data-dismiss="modal">
+                      Cancel
+                  </button>
+                  <button type="submit" class="btn btn-dark" name="submit" value="submit">
+                      <i class="icon icon-key"></i> Book test drive 
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

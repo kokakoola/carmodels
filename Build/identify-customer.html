@@ -57,17 +57,17 @@
       </div>
 <!--       <a href="index.html" id="logo-big" class="logo-link hidden-xs hidden-sm logo-logo-md-red"></a> -->
       <ol id="menu-breadcrumb" class="breadcrumb">
-  <li><a href="index.html">Start</a><i class="sprite-menu-white-arrow"></i><i>/</i></li>
+  <li><a href="view-car.html">Start</a><i class="sprite-menu-white-arrow"></i><i>/</i></li>
   <li class="current active"><a class='current' href="identify-customer.html">Identify Customer</a><i class="sprite-menu-white-arrow"></i><i>/</i></li>
 </ol>
     </div>
 
     <div class="button-wrapper navbar-right">
-      <a href="index.html" class="btn btn-small btn-dark">
+      <a href="view-car.html" class="btn btn-small btn-dark">
         <span>Previous</span>
       </a>
-      <a href="customer-needs.html" class="btn btn-small btn-red  """ id="nextPage">
-        <span>Identify customer needs</span><i class="icon-chevron-right"></i>
+      <a href="index.html" class="btn btn-small btn-red  """ id="nextPage">
+        <span>Start</span><i class="icon-chevron-right"></i>
       </a>
     </div>
   </div>
@@ -110,19 +110,113 @@
 					</div>
 				</form>
 
-				<div class="row">
+				<!-- <div class="row">
 					<div class="col-md-8 col-md-offset-3 col-sm-offset-3">
 						<h3><i class="glyphicon glyphicon-ok"></i> Sven Peekmann is found in the client list.</h3>
 					</div>
+				</div> -->
+				<!-- <div class="row">
+					<div class="col-md-6 col-md-offset-3 col-sm-offset-3">
+						<a id="btn-customerModal" href="#customerModal" data-target="#customerModal" data-direction="right" class="btn btn-link pull-right">View Sven record <i class="icon-chevron-right"></i></a>
+					</div>
+				</div> -->
+			</div>
+		</div>
+		
+	</div>
+
+<!--             <a class="btn btn-red right" id="btn-customerModal" href="#customerModal" data-target="#customerModal" data-direction="right">
+        <span>Send offer to client</span>
+      </a> -->
+
+	<div class="modal fade" id="customerModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog fullscreen">
+    
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="toolbar">
+          <a class="close-link" data-dismiss="modal" aria-label="Close">
+            <div class="btn-back">
+              <div class="btn-graphic" >
+                <i class="icon-angle-left"></i>
+              </div>
+            </div>
+            <span class="back-text">Tagasi <strong>lehele</strong></span>
+          </a>
+        </div>
+         <div class="row in-modal">
+            <div class="container">
+              <div class="col-sm-12">
+                <section id="customer-card" class="register-leads">
+	<div class="container">
+		<header class="section-title">
+			<h1>Customer card</h1>
+		</header>
+		<div class="row">
+			<div class="col-md-8 col-md-offset-3 col-sm-offset-3">
+				<div class="row">
+					<div class="col-sm-3">
+						<h4>Name</h4>
+					</div>
+					<div class="col-sm-9">
+						<h3><strong>Sven Peekmann</strong></h3>
+					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-6 col-md-offset-3 col-sm-offset-3">
-						<a href="customer-card.html" class="btn btn-link pull-right">Go to Sven record <i class="glyphicon glyphicon-chevron-right"></i></a>
+					<div class="col-sm-3">
+						<h4>Company</h4>
+					</div>
+					<div class="col-sm-9">
+						<h3><strong>Net Group</strong></h3>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-3">
+						<h4>Email</h4>
+					</div>
+					<div class="col-sm-9">
+						<h3><strong>sven.peekmann@netgroup.ee</strong></h3>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-3">
+						<h4>Phone</h4>
+					</div>
+					<div class="col-sm-9">
+						<h3><strong></strong></h3>
 					</div>
 				</div>
 			</div>
+
+			<div class="col-md-8 col-md-offset-3 col-sm-offset-3 car-list-item">
+				<h4>Toyota GT86 2,0 D-4S bokser 200hj 6 M/T Bensiin</h4>
+				<p>reg. date 01.01.2015</p>
+				<p>mileage 125 0000</p>
+			</div>
+
+			<div class="col-md-8 col-md-offset-3 col-sm-offset-3 car-list-item">
+				<h4>Avensis 1.8 Valvematic Linea Sol Plus FWD Multidrive S</h4>
+				<p>reg. date 23.12.2014</p>
+				<p>mileage 58 0000</p>
+			</div>
 		</div>
 	</div>
+</section>
+                <div class="modal-footer">
+                  <button name="cancel" value="cancel" class="btn btn-link" data-dismiss="modal">
+                      Cancel
+                  </button>
+                  <button type="submit" class="btn btn-dark" name="submit" value="submit">
+                      Send
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
 </section>
 
 <!--     <section class="spotlights navy footer">

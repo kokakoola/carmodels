@@ -1,5 +1,5 @@
-<!-- $next test-drive -->
-<!-- $nextname Book a testdrive -->
+<!-- $next index -->
+<!-- $nextname Home -->
 <!-- $prev model-data -->
 <!-- $prevname Model data -->
 <!-- $current view-car -->
@@ -11,31 +11,47 @@
 <!-- @include nav -->
 
 <div class="quick-spec fixed">
-  <div class="row">
-    <div class="col-xs-12">
-      <p class="title">26.999,00 €</p>
-    </div>
-<!--     <div class="col-xs-4">
-      <a class="view-prices show-sv sv-callback3" href="#example-subview-1" data-startFrom="right">View prices</a>
-    </div> -->
-  </div>
+  
   <div class="row">
     <div class="col-xs-12 col-number">
-      <p class="quickspec-label">Leasing<br>price</p>
-      <p class="metric">359,45 </p>
+      <p class="quickspec-label">Car<br>price</p>
+      <p class="metric">26.999,00 € </p>
       <p>€/month</p>
     </div>
-<!--     <div class="col-xs-4 col-number">
-      <p class="quickspec-label">CO2<br>from</p>
-      <p class="metric">171</p>
+    <div class="col-xs-4 col-number">
+      <p class="quickspec-label">Accessories<br>price</p>
+      <p class="metric">171,65 €</p>
       <p>g/km</p>
     </div>
-    <div class="col-xs-4 col-number">
+<!--     <div class="col-xs-4 col-number">
       <p class="quickspec-label">Tractie<br>up to</p>
       <p class="metric">343/1600-2800</p>
       <p>kg</p>
     </div> -->
   </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <p class="quickspec-label">Total price</p>
+      <p class="title">26.999,00 €</p>
+    </div>
+    <div class="col-xs-12">
+      <p class="quickspec-label">Monthly fee</p>
+      <p class="title">269,00 €</p>
+    </div>
+    <div class="col-xs-12">
+      <a class="view-prices" href="#example-subview-1" data-startFrom="right">Send offer to Automaster</a>
+    </div>
+        <div class="col-xs-12">
+      <a class="view-prices" href="#example-subview-1" data-startFrom="right">Book a test drive</a>
+    </div>
+  </div>
+<!--     <a class="btn btn-dark right" id="btn-customerModal" href="#customerModal" data-target="#customerModal" data-direction="right">
+      <span>Send offer to Automaster</span>
+    </a>
+    <br>
+    <a class="btn btn-dark" href="test-drive.html">
+      <i class="icon icon-key"></i> <span>Book a test drive </span>
+    </a> -->
 </div>
 
 <section>
@@ -56,10 +72,12 @@
         <dd>J149345596</dd>
         <dt>Model code</dt>
         <dd>VS1BM5-133PECL1M+--</dd>
-        <dt>Details</dt>
-        <dd>200 hp</dd>
-        <dd>110 kW</dd>
-        <dd>Diesel</dd>
+        <dt>DIN hj</dt>
+        <dd>150</dd>
+        <dt>kW / p/min</dt>
+        <dd>110/3600</dd>
+        <dt>Fuel type</dt>
+        <dd>Diisel</dd>
       </dl>
     </div>
     <div class="col-sm-6">
@@ -67,19 +85,20 @@
         <dt>Consumption</dt>
         <dd>4 l/100km</dd>
         <dt>Co2</dt>
-        <dd>10</dd>
+        <dd>170 g/km</dd>
         <dt>Acceleration</dt>
-        <dd>4</dd>
+        <dd>9,8 sekundid</dd>
         <dt>Dimension</dt>
-        <dd>3m x 1m </dd>
+        <dd>1810 x 4780 mm</dd>
         <dt>Wheelbase</dt>
-        <dd>xx</dd>
+        <dd>2700 mm</dd>
         <dt>Boothpace</dt>
         <dd>20</dd>
       </dl>
-      <a class="btn btn-grey right" id="btn-customerModal" href="#customerModal" data-target="#customerModal" data-direction="right">
+<!--       <a class="btn btn-red right" href="identify-customer.html">
         <span>Send offer to client</span>
-      </a>
+      </a> -->
+
     </div>
   </div>
 </section>
@@ -90,7 +109,7 @@
 <!-- @include lightbox-component -->
 
 
-
+<!-- @include accessories -->
 
 <section class="leasing-calc">
   <div class="container clearfix">
@@ -196,7 +215,6 @@
   </div>
 </section>
 
-<!-- @include accessories -->
 
 <section id="models-data">
   <!-- source: http://jsfiddle.net/ivanarvizu/JS6JV/16/light/ -->

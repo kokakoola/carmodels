@@ -1,7 +1,7 @@
 <section id="testdrive" class="register-leads">
 	<div class="container">
 		<header class="section-title">
-			<h1>Book a testdrive</h1>
+			<h1>Select a car</h1>
 			<p class="text-center">Choose a car</p>
 		</header>
 		<section>
@@ -9,27 +9,34 @@
 		</section>
 	</div>
 </section>
-<section class="test-drive-timepick">
+<section class="test-drive-timepick forms">
 	<div class="container">
-		<header class="section-title">
-			<h1>Pick a time</h1>
+		<header>
+			<h2>Book testdrive</h2>
+			<span class="intro">This is the closest available time in our calendar. Feel free to adjust it for your needs.</span>
 		</header>
-		<div class="row ">
+		<div class="row picktime">
 			<form action="">
         <!-- date -->
-        <div class="col-xs-12 col-sm-5">
+        <div class="col-sm-5 col-sm-offset-1"><div class="datepicker" data-date-format="MM/DD/YYYY"></div></div>
+        
+        <!-- <div class="col-xs-12 col-sm-5">
           <h5 class="form-label">Date</h5>
           <div class="input-group date">
             <input type="text" class="form-control" data-validation="length" min-length="5" placeholder="20-03-2015">
             <span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
           </div>
-        </div>
+        </div> -->
         <!-- time -->
-        <div class="col-xs-12 col-sm-6 col-sm-offset-1">
-          <h5 class="form-label">Time</h5>
+        <div class="col-xs-12 col-sm-5">
+        	<br>
+        	<h5 class="form-label">Date</h5>
+        	<h3 id="datepicker_value">20.03.2015</h3>
+        	<br>
+          <h5 class="form-label">Start time</h5>
           <div class="dropdown" data-select="time">
             <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-validation="select" href="forms.html%3Ftab=pane-contact.html#">
-              <span>12:00</span>
+              <span>12:30</span>
               <i class="icon-chevron-down"></i>
             </a>
             <ul class="dropdown-menu" role="menu">
@@ -37,12 +44,43 @@
               <li><a href="forms.html%3Ftab=pane-contact.html#" data-value="1000">10:00</a></li>
               <li><a href="forms.html%3Ftab=pane-contact.html#" data-value="1100">11:00</a></li>
               <li><a href="forms.html%3Ftab=pane-contact.html#" data-value="1200">12:00</a></li>
+              <li><a href="forms.html%3Ftab=pane-contact.html#" data-value="1200">12:30</a></li>
               <li><a href="forms.html%3Ftab=pane-contact.html#" data-value="1300">13:00</a></li>
+              <li><a href="forms.html%3Ftab=pane-contact.html#" data-value="1200">13:30</a></li>
               <li><a href="forms.html%3Ftab=pane-contact.html#" data-value="1400">14:00</a></li>
+              <li><a href="forms.html%3Ftab=pane-contact.html#" data-value="1200">14:30</a></li>
               <li><a href="forms.html%3Ftab=pane-contact.html#" data-value="1500">15:00</a></li>
+              <li><a href="forms.html%3Ftab=pane-contact.html#" data-value="1200">15:30</a></li>
               <li><a href="forms.html%3Ftab=pane-contact.html#" data-value="1600">16:00</a></li>
+              <li><a href="forms.html%3Ftab=pane-contact.html#" data-value="1200">16:30</a></li>
             </ul>
           </div>
+          <h5 class="form-label">End time</h5>
+          <div class="dropdown" data-select="time">
+            <a class="dropdown-toggle" role="button" data-toggle="dropdown" data-validation="select" href="forms.html%3Ftab=pane-contact.html#">
+              <span>13:30</span>
+              <i class="icon-chevron-down"></i>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="forms.html%3Ftab=pane-contact.html#" data-value="0900">09:00</a></li>
+              <li><a href="forms.html%3Ftab=pane-contact.html#" data-value="1000">10:00</a></li>
+              <li><a href="forms.html%3Ftab=pane-contact.html#" data-value="1100">11:00</a></li>
+              <li><a href="forms.html%3Ftab=pane-contact.html#" data-value="1200">12:00</a></li>
+              <li><a href="forms.html%3Ftab=pane-contact.html#" data-value="1200">12:30</a></li>
+              <li><a href="forms.html%3Ftab=pane-contact.html#" data-value="1300">13:00</a></li>
+              <li><a href="forms.html%3Ftab=pane-contact.html#" data-value="1200">13:30</a></li>
+              <li><a href="forms.html%3Ftab=pane-contact.html#" data-value="1400">14:00</a></li>
+              <li><a href="forms.html%3Ftab=pane-contact.html#" data-value="1200">14:30</a></li>
+              <li><a href="forms.html%3Ftab=pane-contact.html#" data-value="1500">15:00</a></li>
+              <li><a href="forms.html%3Ftab=pane-contact.html#" data-value="1200">15:30</a></li>
+              <li><a href="forms.html%3Ftab=pane-contact.html#" data-value="1600">16:00</a></li>
+              <li><a href="forms.html%3Ftab=pane-contact.html#" data-value="1200">16:30</a></li>
+            </ul>
+          </div>
+          <br>
+           <a class="btn btn-red right" id="btn-customerModal" href="#customerModal" data-target="#customerModal" data-direction="right">
+		        <span>Register customer</span>
+		      </a>
         </div>
         
     </form>

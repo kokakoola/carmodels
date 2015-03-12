@@ -17926,9 +17926,7 @@ body {
 
 @media (min-width: 768px) {
   .iconrow-lg {
-    margin-top: 100px; }
-    .iconrow-lg .col-sm-2 {
-      width: 20%; } }
+    margin-top: 100px; } }
 .modelrange .row a .modelitem span {
   margin-top: -12px; }
 
@@ -17955,7 +17953,10 @@ section h1 {
   position: fixed;
   right: 0;
   bottom: 50px;
-  z-index: 1; }
+  z-index: 1061;
+  min-height: 20px; }
+  .quick-spec.fixed p.quickspec-label {
+    min-height: 16px; }
 
 .navbar-fixed-top.navbar-inverse {
   background: #1e2a32; }
@@ -18120,6 +18121,14 @@ p {
     font-size: 13px;
     font-size: 1.3rem; }
 
+.redboxes {
+  margin-top: 40px; }
+  .redboxes h3 {
+    color: #fff;
+    position: absolute;
+    bottom: 20px;
+    margin-left: 20px; }
+
 #models-data header {
   margin-top: 40px; }
 
@@ -18184,6 +18193,9 @@ input.form-control {
     color: #1e2a32;
     margin-bottom: 40px; }
 
+.register-leads header .intro {
+  color: #fff;
+  text-align: center; }
 .register-leads h4,
 .register-leads h3 {
   margin: 10px 0; }
@@ -18216,7 +18228,10 @@ input.form-control {
   border: none; }
 
 .test-drive section.test-drive-timepick {
-  background: #1C2830;
+  background: #1c2830;
+  color: #fff; }
+.test-drive header h2,
+.test-drive .intro {
   color: #fff; }
 .test-drive .datepicker {
   font-size: 18px; }
@@ -18239,7 +18254,7 @@ input.form-control {
   transform: translate3d(0, 125%, 0); }
 
 .modal-dialog.fullscreen {
-  width: 100%;
+  width: 100vh-70px;
   margin: 56px 0 0 0;
   height: 100vh-70px; }
   .modal-dialog.fullscreen .toolbar {

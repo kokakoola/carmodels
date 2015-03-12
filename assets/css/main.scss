@@ -54,9 +54,9 @@ body {
 @media (min-width: 768px) {
   .iconrow-lg {
     margin-top: 100px;
-    .col-sm-2 {
-    width: 20%;
-    }
+    // .col-sm-2 {
+    // width: 20%;
+    // }
   }
 }
 
@@ -91,7 +91,11 @@ section h1 {
   position: fixed;
   right: 0;
   bottom: 50px;
-  z-index: 1;
+  z-index: 1061;
+  min-height: 20px;
+  p.quickspec-label {
+    min-height: 16px;
+  }
 }
 
 .navbar-fixed-top.navbar-inverse {
@@ -321,6 +325,16 @@ p {
   }
 }
 
+.redboxes {
+  margin-top: 40px;
+  h3 {
+    color: #fff;
+    position: absolute;
+    bottom: 20px;
+    margin-left: 20px;
+  }
+}
+
 #models-data header {
   margin-top: 40px;
 }
@@ -403,6 +417,10 @@ input.form-control {
   }
 }
 .register-leads {
+  header .intro {
+    color: #fff;
+    text-align: center;
+  }
   h4,
   h3 {
     margin: 10px 0;
@@ -449,7 +467,11 @@ input.form-control {
 
 .test-drive {
   section.test-drive-timepick {
-    background: #1C2830;
+    background: $colour-bg-navy;
+    color: #fff;
+  }
+  header h2,
+  .intro {
     color: #fff;
   }
   .datepicker {
@@ -482,7 +504,7 @@ input.form-control {
 
 .modal-dialog.fullscreen {
 
-  width: 100%;
+  width: 100vh-70px;
   margin: $height-navbar-top 0 0 0;
   height: 100vh-70px;
   .toolbar {
