@@ -162,9 +162,9 @@
 </section>
 
 <div class="quick-spec fixed">
-    <a class="btn btn-dark" href="test-drive.html">
-      <i class="icon icon-key"></i> <span>Book a test drive </span>
-    </a>
+    <div class="col-sm-12">
+      <a class="view-prices bordered" href="#example-subview-1" data-startFrom="right"><i class="icon icon-key"></i>&nbsp;  Book a test drive</a>
+    </div>
 </div>
 
 
@@ -407,6 +407,11 @@ jQuery(function(){
     return '' + (d <= 9 ? '0' + d : d) + '.' + (m<=9 ? '0' + m : m) + '.' + y;
   }
 
+  $('#models-data a').click(function (e) {
+    e.preventDefault()
+    $(this).tab('show')
+  })
+
   // lazyload pics
   // --------
   $(".lazy").lazyload({
@@ -429,10 +434,15 @@ jQuery(function(){
     return false;
   });
 
-  jQuery('.item').click(function(){
-    jQuery('.item').removeClass('current');
+  jQuery('.model-data .item').click(function(){
+    jQuery('.model-data .item').removeClass('current');
     jQuery(this).addClass('current');
     jQuery('#nextPage').removeClass('hidden');
+    return false;
+  });
+
+  jQuery('.accessories-item.item').click(function(){
+    jQuery(this).toggleClass('current');
     return false;
   });
 

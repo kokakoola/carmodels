@@ -269,6 +269,11 @@ jQuery(function(){
     return '' + (d <= 9 ? '0' + d : d) + '.' + (m<=9 ? '0' + m : m) + '.' + y;
   }
 
+  $('#models-data a').click(function (e) {
+    e.preventDefault()
+    $(this).tab('show')
+  })
+
   // lazyload pics
   // --------
   $(".lazy").lazyload({
@@ -291,10 +296,15 @@ jQuery(function(){
     return false;
   });
 
-  jQuery('.item').click(function(){
-    jQuery('.item').removeClass('current');
+  jQuery('.model-data .item').click(function(){
+    jQuery('.model-data .item').removeClass('current');
     jQuery(this).addClass('current');
     jQuery('#nextPage').removeClass('hidden');
+    return false;
+  });
+
+  jQuery('.accessories-item.item').click(function(){
+    jQuery(this).toggleClass('current');
     return false;
   });
 

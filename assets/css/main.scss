@@ -87,7 +87,7 @@ section h1 {
 }
 
 .quick-spec.fixed {
-  width: 215px;
+  width: 240px;
   position: fixed;
   right: 0;
   bottom: 50px;
@@ -95,6 +95,39 @@ section h1 {
   min-height: 20px;
   p.quickspec-label {
     min-height: 16px;
+  }
+
+  .view-prices.bordered {
+  border: 1px solid #fff;
+  font-size: 15px;
+  font-size: 1.5rem;
+  border-radius: 3px;
+  padding: 11px 14px 16px;
+  text-decoration: none;
+  line-height: normal;
+  margin: 10px;
+  display: inline-block;
+  background-color: rgba(255,255,255,0);
+  -webkit-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease;
+  &:hover {
+      background-color: rgba(255,255,255,0.2);
+    }
+  }
+}
+
+.view-car {
+  dt {
+    width: 135px;
+  }
+  dd {
+    margin-left: 150px;
+  }
+  .item {
+    padding-top: 0;
   }
 }
 
@@ -176,6 +209,14 @@ section h1 {
   .special-price {
     color: $orange;
     font-family: toyotatext_bd;
+  }
+  .item img {
+    padding: 0;
+  }
+  .accessories .accessories-list .accessories-item.item {
+    padding-top: 15px; 
+    padding-bottom: 15px;
+    margin-bottom: 0;
   }
 }
 
@@ -613,3 +654,16 @@ filter: alpha(opacity=0);
 display: none;
 }
 // end modal
+
+.toyota-tabs {
+    li a {
+      font-family: toyotatext_rg;
+  }
+  li.active a {
+      font-family: toyotatext_bd  !important;
+  }
+  .nav-tabs, .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    border: none;
+  }
+}
+

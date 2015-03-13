@@ -17949,7 +17949,7 @@ section h1 {
   padding-bottom: 20px; }
 
 .quick-spec.fixed {
-  width: 215px;
+  width: 240px;
   position: fixed;
   right: 0;
   bottom: 50px;
@@ -17957,6 +17957,31 @@ section h1 {
   min-height: 20px; }
   .quick-spec.fixed p.quickspec-label {
     min-height: 16px; }
+  .quick-spec.fixed .view-prices.bordered {
+    border: 1px solid #fff;
+    font-size: 15px;
+    font-size: 1.5rem;
+    border-radius: 3px;
+    padding: 11px 14px 16px;
+    text-decoration: none;
+    line-height: normal;
+    margin: 10px;
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0);
+    -webkit-transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    -ms-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease; }
+    .quick-spec.fixed .view-prices.bordered:hover {
+      background-color: rgba(255, 255, 255, 0.2); }
+
+.view-car dt {
+  width: 135px; }
+.view-car dd {
+  margin-left: 150px; }
+.view-car .item {
+  padding-top: 0; }
 
 .navbar-fixed-top.navbar-inverse {
   background: #1e2a32; }
@@ -18011,6 +18036,12 @@ section h1 {
 .view-car .special-price {
   color: #f07f0a;
   font-family: toyotatext_bd; }
+.view-car .item img {
+  padding: 0; }
+.view-car .accessories .accessories-list .accessories-item.item {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 0; }
 
 dl.dl-horizontal {
   font-family: toyotatext_rg, Verdana, Geneva, Arial, Helvetica, sans-serif;
@@ -18342,3 +18373,10 @@ input.form-control {
   opacity: 0;
   filter: alpha(opacity=0);
   display: none; }
+
+.toyota-tabs li a {
+  font-family: toyotatext_rg; }
+.toyota-tabs li.active a {
+  font-family: toyotatext_bd  !important; }
+.toyota-tabs .nav-tabs, .toyota-tabs .nav-tabs > li.active > a, .toyota-tabs .nav-tabs > li.active > a:hover, .toyota-tabs .nav-tabs > li.active > a:focus {
+  border: none; }

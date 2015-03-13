@@ -75,37 +75,32 @@
 
 <div class="quick-spec fixed">
   
+  
+  
   <div class="row">
-    <div class="col-xs-12 col-number">
+    <div class="col-sm-6">
       <p class="quickspec-label">Car<br>price</p>
-      <p class="metric">26.999,00 € </p>
-      <p>€/month</p>
-    </div>
-    <div class="col-xs-4 col-number">
-      <p class="quickspec-label">Accessories<br>price</p>
-      <p class="metric">171,65 €</p>
-      <p>g/km</p>
-    </div>
-<!--     <div class="col-xs-4 col-number">
-      <p class="quickspec-label">Tractie<br>up to</p>
-      <p class="metric">343/1600-2800</p>
-      <p>kg</p>
-    </div> -->
-  </div>
-  <div class="row">
-    <div class="col-xs-12">
-      <p class="quickspec-label">Total price</p>
       <p class="title">26.999,00 €</p>
     </div>
-    <div class="col-xs-12">
+    <div class="col-sm-6">
+      <p class="quickspec-label">Accessories<br>price</p>
+      <p class="title">171,65 €</p>
+    </div>
+    <div class="col-xs-12 col-number">
+      <p class="quickspec-label">Total price</p>
+      <p class="metric">26.999,00 € </p>
+    </div>
+    <div class="col-xs-12 col-number">
       <p class="quickspec-label">Monthly fee</p>
-      <p class="title">269,00 €</p>
+      <p class="metric">269,00 €</p>
     </div>
-    <div class="col-xs-12">
-      <a class="view-prices" href="#example-subview-1" data-startFrom="right">Send offer to Automaster</a>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <a class="view-prices bordered" href="#example-subview-1" data-startFrom="right">Send offer to Automaster</a>
     </div>
-        <div class="col-xs-12">
-      <a class="view-prices" href="#example-subview-1" data-startFrom="right">Book a test drive</a>
+    <div class="col-sm-12">
+      <a class="view-prices bordered" href="#example-subview-1" data-startFrom="right"><i class="icon icon-key"></i> &nbsp; Book a test drive</a>
     </div>
   </div>
 <!--     <a class="btn btn-dark right" id="btn-customerModal" href="#customerModal" data-target="#customerModal" data-direction="right">
@@ -280,7 +275,7 @@
       
         <script type="text/x-handlebars-template" id="accessories-template">
         {{#images}} 
-          <div class="accessories-item responsive-item col-xs-12 col-sm-3" data-filter="" data-bt-action="view_accessory" data-bt-value="">
+          <div class="accessories-item responsive-item col-xs-12 col-sm-3 item " data-filter="" data-bt-action="view_accessory" data-bt-value="">
           <div class="row">
             <div class="col-xs-12"><img src="assets/images/proto-only/acc{{{id}}}.JPG"/></div>
             <div class="col-xs-12">
@@ -832,15 +827,32 @@
   </div>
 </section>
 
-
-<section id="models-data">
-  <!-- source: http://jsfiddle.net/ivanarvizu/JS6JV/16/light/ -->
-  <div class="container">
-    <header>
-      <h1>Stock In-House</h1>
-    </header>
-    <section>
-<div class="placeholder-rav4-in-stock"></div>
+<div id="models-data" class="toyota-tabs">
+  <nav class="toyota-tabs-select container">
+    <div>
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#pane-inhouse" data-tab="pane-inhouse" data-toggle="tab">Stock In-House</a></li>
+            <li><a href="#pane-intoyota" data-tab="pane-intoyota" data-toggle="tab">Stock In Toyota</a></li>
+            <li><a href="#pane-innetwork" data-tab="pane-innetwork" data-toggle="tab">Stock in Network</a></li>
+        </ul>
+        
+          
+        
+          
+        
+    </div>
+  
+  </nav>
+  <div class="toyota-tabs-content active">
+    
+  <div id="pane-inhouse" class="container tab-pane active" >
+  
+    <div class="container">
+      <header>
+        <h1>Stock In-House</h1>
+      </header>
+      <section>
+      <div class="placeholder-rav4-in-stock"></div>
 <script type="text/x-handlebars-template" class="rav4-in-stock-template">
 
 {{#slice VehicleDTO offset="18" limit="7"}}
@@ -871,12 +883,16 @@
   </div>
 {{/slice}}
 </script>
-    </section>
-    <header>
-      <h1>Stock In Toyota</h1>
-    </header>
-    <section>
-<div class="placeholder-rav4-in-stock"></div>
+      </section>
+    </div>
+
+</div>
+<div id="pane-intoyota" class="container tab-pane" >
+  <header>
+    <h1>Stock In Toyota</h1>
+  </header>
+  <section>
+  <div class="placeholder-rav4-in-stock"></div>
 <script type="text/x-handlebars-template" class="rav4-in-stock-template">
 
 {{#slice VehicleDTO offset="18" limit="7"}}
@@ -907,12 +923,15 @@
   </div>
 {{/slice}}
 </script>
-    </section>
-    <header>
-      <h1>Stock in Network</h1>
-    </header>
-    <section>
-<div class="row">
+  </section>
+
+</div>
+<div class="container tab-pane" id="pane-innetwork">
+      <header>
+        <h1>Stock in Network</h1>
+      </header>
+      <section>
+      <div class="row">
   <div class="col-xs-12">
     <div id='carousel-carid' class='carousel slide' data-ride='carousel' data-interval="false">
       <div class="placeholder-rav4"></div>
@@ -962,9 +981,11 @@
     </div>
   </div>
 </div>
-    </section>
-  </div>
-</section>
+      </section>
+    </div>
+</div>
+</div> 
+
 
 
 <!--     <section class="spotlights navy footer">
@@ -1017,6 +1038,11 @@ jQuery(function(){
     return '' + (d <= 9 ? '0' + d : d) + '.' + (m<=9 ? '0' + m : m) + '.' + y;
   }
 
+  $('#models-data a').click(function (e) {
+    e.preventDefault()
+    $(this).tab('show')
+  })
+
   // lazyload pics
   // --------
   $(".lazy").lazyload({
@@ -1039,10 +1065,15 @@ jQuery(function(){
     return false;
   });
 
-  jQuery('.item').click(function(){
-    jQuery('.item').removeClass('current');
+  jQuery('.model-data .item').click(function(){
+    jQuery('.model-data .item').removeClass('current');
     jQuery(this).addClass('current');
     jQuery('#nextPage').removeClass('hidden');
+    return false;
+  });
+
+  jQuery('.accessories-item.item').click(function(){
+    jQuery(this).toggleClass('current');
     return false;
   });
 
