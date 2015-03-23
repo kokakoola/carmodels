@@ -18057,7 +18057,9 @@ dl.dl-horizontal {
   text-indent: 3em;
   margin-bottom: 30px; }
   dl.dl-horizontal dt {
-    font-family: toyotatext_bd; }
+    font-family: toyotatext_bd;
+    text-overflow: clip;
+    white-space: normal; }
   dl.dl-horizontal strong {
     font-size: 1.2em; }
 
@@ -18397,12 +18399,11 @@ input.form-control {
   text-overflow: ellipsis; }
 
 select {
-  padding: 12px;
-  margin: 0;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  border: none;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background: #EBECED;
+  border: 1px solid #BDBFC0;
   outline: none;
   display: inline-block;
   -webkit-appearance: none;
