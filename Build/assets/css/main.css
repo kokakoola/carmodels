@@ -17977,9 +17977,9 @@ section h1 {
       background-color: rgba(255, 255, 255, 0.2); }
 
 .view-car dt {
-  width: 135px; }
+  width: 160px; }
 .view-car dd {
-  margin-left: 150px; }
+  margin-left: 175px; }
 .view-car .item {
   padding-top: 0; }
 
@@ -18046,6 +18046,9 @@ section h1 {
   padding-bottom: 15px;
   margin-bottom: 0;
   display: inline-block; }
+
+.accessories .accessories-list .accessories-item h5 {
+  height: 50px; }
 
 dl.dl-horizontal {
   font-family: toyotatext_rg, Verdana, Geneva, Arial, Helvetica, sans-serif;

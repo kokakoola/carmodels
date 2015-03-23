@@ -121,10 +121,10 @@ section h1 {
 
 .view-car {
   dt {
-    width: 135px;
+    width: 160px;
   }
   dd {
-    margin-left: 150px;
+    margin-left: 175px;
   }
   .item {
     padding-top: 0;
@@ -223,6 +223,10 @@ section h1 {
     margin-bottom: 0;
     display: inline-block;
   }
+}
+
+  .accessories .accessories-list .accessories-item h5 {
+  height: 50px;
 }
 
 dl.dl-horizontal {
