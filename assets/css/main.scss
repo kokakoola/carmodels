@@ -683,7 +683,9 @@ display: none;
 }
 
 
-.carconfig-mini-form select {
+.carconfig-mini-form  {
+
+  select {
   font-family: toyotatext_rg, Verdana, Geneva, Arial, Helvetica, sans-serif;
   color: #1E2A32;
   font-size: 19px;
@@ -693,9 +695,27 @@ display: none;
   text-decoration: none;
   overflow: hidden;
   text-overflow: ellipsis;
+  }
+
+
+
+
+  label {
+    position:relative;
+    color: #1E2A32;
+  }
+  label:after {
+      content:'\f078';
+      font-size: 19px;
+      font-family: 'toyotaicons';
+      right:10px; 
+      top:5px;
+      position:absolute;
+      pointer-events:none;
+  }
 }
 
-select {
+  select {
     -webkit-border-radius:3px;
     -moz-border-radius:3px;
     border-radius:3px;
@@ -709,21 +729,10 @@ select {
     cursor:pointer;
 }
 
-/* Targetting Webkit browsers only. FF will show the dropdown arrow with so much padding. */
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-    select {padding-right:18px}
-}
+  /* Targetting Webkit browsers only. FF will show the dropdown arrow with so much padding. */
+  @media screen and (-webkit-min-device-pixel-ratio:0) {
+      select {
+        padding-right:18px;
+      }
+  }
 
-label {
-  position:relative;
-  color: #1E2A32;
-}
-label:after {
-    content:'\f078';
-    font-size: 19px;
-    font-family: 'toyotaicons';
-    right:10px; 
-    top:5px;
-    position:absolute;
-    pointer-events:none;
-}

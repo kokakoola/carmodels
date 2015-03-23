@@ -18403,6 +18403,17 @@ input.form-control {
   text-decoration: none;
   overflow: hidden;
   text-overflow: ellipsis; }
+.carconfig-mini-form label {
+  position: relative;
+  color: #1E2A32; }
+.carconfig-mini-form label:after {
+  content: '\f078';
+  font-size: 19px;
+  font-family: 'toyotaicons';
+  right: 10px;
+  top: 5px;
+  position: absolute;
+  pointer-events: none; }
 
 select {
   -webkit-border-radius: 3px;
@@ -18421,15 +18432,3 @@ select {
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   select {
     padding-right: 18px; } }
-label {
-  position: relative;
-  color: #1E2A32; }
-
-label:after {
-  content: '\f078';
-  font-size: 19px;
-  font-family: 'toyotaicons';
-  right: 10px;
-  top: 5px;
-  position: absolute;
-  pointer-events: none; }
