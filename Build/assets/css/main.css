@@ -18018,6 +18018,9 @@ section h1 {
 @media (min-width: 1200px) {
   .breadcrumb {
     width: 700px; } }
+.filter-bar .btn-group {
+  background-color: transparent; }
+
 .view-car #models-data header {
   margin-bottom: 0; }
 .view-car header {
@@ -18041,7 +18044,8 @@ section h1 {
 .view-car .accessories .accessories-list .accessories-item.item {
   padding-top: 15px;
   padding-bottom: 15px;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  display: inline-block; }
 
 dl.dl-horizontal {
   font-family: toyotatext_rg, Verdana, Geneva, Arial, Helvetica, sans-serif;
@@ -18380,3 +18384,45 @@ input.form-control {
   font-family: toyotatext_bd  !important; }
 .toyota-tabs .nav-tabs, .toyota-tabs .nav-tabs > li.active > a, .toyota-tabs .nav-tabs > li.active > a:hover, .toyota-tabs .nav-tabs > li.active > a:focus {
   border: none; }
+
+.carconfig-mini-form select {
+  font-family: toyotatext_rg, Verdana, Geneva, Arial, Helvetica, sans-serif;
+  color: #1E2A32;
+  font-size: 19px;
+  font-size: 1.9rem;
+  display: block;
+  padding: 7px 36px 9px 16px;
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+select {
+  padding: 12px;
+  margin: 0;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  border: none;
+  outline: none;
+  display: inline-block;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer; }
+
+/* Targetting Webkit browsers only. FF will show the dropdown arrow with so much padding. */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  select {
+    padding-right: 18px; } }
+label {
+  position: relative;
+  color: #1E2A32; }
+
+label:after {
+  content: '\f078';
+  font-size: 19px;
+  font-family: 'toyotaicons';
+  right: 10px;
+  top: 5px;
+  position: absolute;
+  pointer-events: none; }
