@@ -244,6 +244,10 @@ dl.dl-horizontal {
   }
 }
 
+.accessories .container .accessories-item:nth-child(4n+1) {
+  clear: none;
+}
+
 .gallery-horizontal {
   background: #ccc;
 }

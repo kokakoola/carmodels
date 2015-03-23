@@ -18063,6 +18063,9 @@ dl.dl-horizontal {
   dl.dl-horizontal strong {
     font-size: 1.2em; }
 
+.accessories .container .accessories-item:nth-child(4n+1) {
+  clear: none; }
+
 .gallery-horizontal {
   background: #ccc; }
 
