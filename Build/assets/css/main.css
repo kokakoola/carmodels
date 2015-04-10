@@ -17956,7 +17956,14 @@ section h1 {
   z-index: 1061;
   min-height: 20px; }
   .quick-spec.fixed p.quickspec-label {
-    min-height: 16px; }
+    min-height: 10px; }
+  .quick-spec.fixed p.metric {
+    line-height: 1.4rem; }
+  .quick-spec.fixed hr {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-bottom: none;
+    border-top: 1px solid #FFF; }
   .quick-spec.fixed .view-prices.bordered {
     border: 1px solid #fff;
     font-size: 15px;
@@ -17965,7 +17972,7 @@ section h1 {
     padding: 11px 14px 16px;
     text-decoration: none;
     line-height: normal;
-    margin: 10px;
+    margin: 7px;
     display: inline-block;
     background-color: rgba(255, 255, 255, 0);
     -webkit-transition: all 500ms ease;

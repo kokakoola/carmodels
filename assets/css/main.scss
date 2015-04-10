@@ -86,6 +86,8 @@ section h1 {
   padding-bottom: 20px;
 }
 
+
+
 .quick-spec.fixed {
   width: 240px;
   position: fixed;
@@ -94,7 +96,18 @@ section h1 {
   z-index: 1061;
   min-height: 20px;
   p.quickspec-label {
-    min-height: 16px;
+    min-height: 10px;
+  }
+
+  p.metric {
+    line-height: 1.4rem;
+  }
+
+  hr {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-bottom: none;
+    border-top: 1px solid #FFF;
   }
 
   .view-prices.bordered {
@@ -105,7 +118,7 @@ section h1 {
   padding: 11px 14px 16px;
   text-decoration: none;
   line-height: normal;
-  margin: 10px;
+  margin: 7px;
   display: inline-block;
   background-color: rgba(255,255,255,0);
   -webkit-transition: all 500ms ease;
@@ -696,9 +709,6 @@ display: none;
   overflow: hidden;
   text-overflow: ellipsis;
   }
-
-
-
 
   label {
     position:relative;
