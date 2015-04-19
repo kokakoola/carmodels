@@ -144,6 +144,42 @@
 <script>
 jQuery(function(){
 
+  // fixed position rolling out buttons
+  $( ".js-rollout" ).click(function() {
+    var panel = $(this).find('a');
+    if (panel.hasClass("visible")) {
+      panel.removeClass('visible').animate({'right':'-180px'});
+    } else {
+      panel.addClass('visible').animate({'right':'0px'});
+    }
+  });
+
+  $('.js-rollout-lg').on('click', function() {   
+    var panel = $('.quick-spec');
+    if (panel.hasClass("visible")) {
+      panel.removeClass('visible').animate({'right':'-305px'});
+    } else {
+      panel.addClass('visible').animate({'right':'0px'});
+    } 
+  });
+
+  // Modal with iframe
+  $('.btn-openPdf').click(function (e) {
+    $('#loading-indicator').show();
+    e.preventDefault();
+    var url = $(this).attr('href');
+    $('#frame2').attr('src', url);
+    $('#openPdf').prop('class', 'modal fade right') // revert to default
+    $('#openPdf').modal('show');
+  });
+
+  $('#openPdf').on('shown.bs.modal', function () {
+    $('#loading-indicator').hide();
+  });
+
+
+
+// Datepicker stuff
   $('.datepicker').datepicker().on('changeDate', function () {
     $('#datepicker_value').text(dateToDMY($('.datepicker').datepicker('getDate')));
   });
@@ -155,13 +191,14 @@ jQuery(function(){
     return '' + (d <= 9 ? '0' + d : d) + '.' + (m<=9 ? '0' + m : m) + '.' + y;
   }
 
+// Call bootstrap tab
   $('#models-data a').click(function (e) {
-    e.preventDefault()
-    $(this).tab('show')
-  })
+    e.preventDefault();
+    $(this).tab('show');
+  });
 
-  // lazyload pics
-  // --------
+// lazyload pics
+// --------
   $(".lazy").lazyload({
     placeholder: 'assets/images/loader.svg',
     threshold : 200, 
@@ -197,7 +234,6 @@ jQuery(function(){
     // Plus-minus buttons
 //plugin bootstrap minus and plus
 //http://jsfiddle.net/laelitenetwork/puJ6G/
-
 
 $('.btn-number').click(function(e){
   e.preventDefault();

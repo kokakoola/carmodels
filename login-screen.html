@@ -1,0 +1,52 @@
+<!-- $next view-car -->
+<!-- $nextname View my Car -->
+<!-- $prev model-menu -->
+<!-- $prevname Model menu -->
+<!-- $current model-data -->
+<!-- $currentname Model Data -->
+<!-- $hidden hidden -->
+
+<!-- @include _header -->
+
+<!-- @include nav -->
+
+<div class="container forms" >
+  <header>
+    <h2><strong>Toyota models</strong> / Login</h2>
+  </header>
+  <form class="login-form" name="form-login" action="#" method="post" data-type="json">
+    <div class="row input-row">
+      <div class="col-xs-12 col-md-7">
+        <div class="row">
+          <div class="col-md-12">
+            <h5 class="form-label">Sinu e-mail</h5>
+            <input type="text" data-validation="email" name="email">
+          </div>
+        </div>
+        <div class="row form">
+          <div class="col-md-12">
+            <br>
+            <h5 class="form-label">Sinu salasõna</h5>
+            <input type="password" data-validation="length" min-length="1" name="password">
+          </div>
+        </div>
+      </div>
+      <div class="col-xtra-info col-xs-12 col-md-7"></div>
+    </div>
+    <div class="row form-error-msg">
+      <div class="col-xs-12 col-md-7">
+        <h3 class="error-message"></h3>
+      </div>
+    </div>
+    <div class="row actions-block">
+      <div class="form-btn toyota-tabs-select col-xs-12 col-md-7">
+        <!-- <a href="#" data-tab="pane-register">Pole registreerunud?</a> -->
+        <!-- <a href="#" data-tab="pane-forgotten-password">Unustatud salasõna</a> -->
+        <a href="#" class="btn btn-dark btn-submit" data-action="submit" data-bt-success-eventclass="loginevent" action="login" data-bt-success-value="success" data-bt-fail-value="error" data-bt-success-workflowstep="2" data-bt-fail-workflowstep="-1" data-bt-success-workflowconversion="1" data-bt-success-userinfo-status="loggedin" data-bt-success-userinfo-category="mytoyota-user">Saada</a>
+        <a href="#" class="btn btn-cancel btn-link" data-action="cancel">Tühista</a>
+      </div>
+    </div>
+  </form>
+</div>
+
+<!-- @include footer -->

@@ -73,7 +73,7 @@
   </div>
 </nav>
 
-<section id="slideshow">
+<!-- <section id="slideshow">
 
     <div class="container">
         <div class="row redboxes">
@@ -93,7 +93,42 @@
         </div>
     </div>
 
-</section>
+</section> -->
+
+<!-- <div class="container">
+  <ul class="nav nav-pills nav-justified btn-group">
+    <li role="presentation" ><a href="http://www.irs.gov/pub/irs-pdf/f1098t.pdf" class="btn btn-red btn-openPdf"  data-target="#openPdf" data-direction="right">Must do demos and key selling points</a></li>
+    <li role="presentation"><a href="#" class="btn btn-red">E-guide</a></li>
+    <li role="presentation"><a href="#" class="btn btn-blue">Hybrid Test Drive e-guide</a></li>
+    <li role="presentation"><a href="#" class="btn btn-blue">Hybrid Benefits</a></li>
+  </ul>
+</div> -->
+
+ <img src="assets/images/loader.svg" id="loading-indicator" style="display:none"/>
+
+ <!-- Modal -->
+<div class="modal fade" id="openPdf" tabindex="-1">
+  <div class="modal-dialog fullscreen">
+    
+    <div class="modal-content">
+      <div class="modal-body">
+        
+        <div class="toolbar">
+        <a class="close-link" data-dismiss="modal" aria-label="Close">
+          <div class="btn-back">
+            <div class="btn-graphic" >
+              <i class="icon-angle-left"></i>
+            </div>
+          </div>
+          <span class="back-text">Back to <strong>page</strong></span>
+        </a>
+      </div>
+      <iframe class="toolbar-aside" id="frame2">Your browser Doestn support iframe</iframe>
+        
+      </div>
+    </div>
+  </div>
+</div>
 
 <section id="minicarconfig" class="carconfig-mini hidden-xs">
   <div class="container">
@@ -161,16 +196,43 @@
   </div>
 </section>
 
-<div class="quick-spec fixed">
-    <div class="col-sm-12">
-      <a class="view-prices bordered" href="#example-subview-1" data-startFrom="right"><i class="icon icon-key"></i>&nbsp;  Book a test drive</a>
-    </div>
-</div>
-
 
 <section id="models-data">
   <!-- source: http://jsfiddle.net/ivanarvizu/JS6JV/16/light/ -->
   <div class="container">
+    <div class="cta-bar">
+  <span class="js-rollout">
+    <i class="icon-hybrid-health-check"></i>
+    <a href="http://www.irs.gov/pub/irs-pdf/f1098t.pdf" class="btn-openPdf"  data-target="#openPdf" data-direction="right">Must do demos and key selling points</a>
+  </span>
+  <span class="js-rollout">
+    <i class="icon-brochure"></i>
+    <a href="http://www.irs.gov/pub/irs-pdf/f1098t.pdf" class="btn-openPdf"  data-target="#openPdf" data-direction="right">E-guide</a>
+  </span>
+  <span class="hybrid js-rollout">
+    <i class="icon-brochure"></i>
+    <a href="http://www.irs.gov/pub/irs-pdf/f1098t.pdf" class=" btn-openPdf"  data-target="#openPdf" data-direction="right">Hybrid Test Drive e-guide</a>
+  </span>
+  <span class="hybrid js-rollout">
+    <i class="icon-thumbs-up"></i>
+    <a href="http://www.irs.gov/pub/irs-pdf/f1098t.pdf" class="btn-openPdf"  data-target="#openPdf" data-direction="right">Hybrid Benefits</a>
+  </span>
+  <span class="js-rollout">
+    <i class="icon-key"></i>
+    <a  href="test-drive.html">Book a test drive</a>
+  </span>
+</div>
+
+<!-- <div class="cta-bar">
+  <div id="slide-panel" class="cta-btn-drive">
+      <a href="#" class="btn btn-danger" id="opener"><i class="glyphicon glyphicon-align-justify"></i></a>
+      Panel Content
+      <a href="test-drive.html" class="fool">Link</a>
+  </div>
+</div> -->
+
+
+
     <header>
       <h1>Exact Match</h1>
     </header>
@@ -396,6 +458,42 @@
 <script>
 jQuery(function(){
 
+  // fixed position rolling out buttons
+  $( ".js-rollout" ).click(function() {
+    var panel = $(this).find('a');
+    if (panel.hasClass("visible")) {
+      panel.removeClass('visible').animate({'right':'-180px'});
+    } else {
+      panel.addClass('visible').animate({'right':'0px'});
+    }
+  });
+
+  $('.js-rollout-lg').on('click', function() {   
+    var panel = $('.quick-spec');
+    if (panel.hasClass("visible")) {
+      panel.removeClass('visible').animate({'right':'-305px'});
+    } else {
+      panel.addClass('visible').animate({'right':'0px'});
+    } 
+  });
+
+  // Modal with iframe
+  $('.btn-openPdf').click(function (e) {
+    $('#loading-indicator').show();
+    e.preventDefault();
+    var url = $(this).attr('href');
+    $('#frame2').attr('src', url);
+    $('#openPdf').prop('class', 'modal fade right') // revert to default
+    $('#openPdf').modal('show');
+  });
+
+  $('#openPdf').on('shown.bs.modal', function () {
+    $('#loading-indicator').hide();
+  });
+
+
+
+// Datepicker stuff
   $('.datepicker').datepicker().on('changeDate', function () {
     $('#datepicker_value').text(dateToDMY($('.datepicker').datepicker('getDate')));
   });
@@ -407,13 +505,14 @@ jQuery(function(){
     return '' + (d <= 9 ? '0' + d : d) + '.' + (m<=9 ? '0' + m : m) + '.' + y;
   }
 
+// Call bootstrap tab
   $('#models-data a').click(function (e) {
-    e.preventDefault()
-    $(this).tab('show')
-  })
+    e.preventDefault();
+    $(this).tab('show');
+  });
 
-  // lazyload pics
-  // --------
+// lazyload pics
+// --------
   $(".lazy").lazyload({
     placeholder: 'assets/images/loader.svg',
     threshold : 200, 
@@ -449,7 +548,6 @@ jQuery(function(){
     // Plus-minus buttons
 //plugin bootstrap minus and plus
 //http://jsfiddle.net/laelitenetwork/puJ6G/
-
 
 $('.btn-number').click(function(e){
   e.preventDefault();

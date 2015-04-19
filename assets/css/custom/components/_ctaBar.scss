@@ -5,7 +5,7 @@
 	z-index: $cta-cc-zindex;
 	text-align: center;
 
-	a {
+	span {
 		background-color: rgba(30, 42, 50, 1);
 		position: relative;
 		display: block;
@@ -38,7 +38,7 @@
 			}
 		}
 
-		span {
+		a {
 			display: block;
 			border-radius: $border-radius-default 0 0 $border-radius-default;
 			position: absolute;
@@ -75,7 +75,7 @@
 
 	&.contracted {
 		border-radius: $border-radius-large 0 0 $border-radius-large;
-		a {
+		span {
 			@include opacity(0.9);
 
 			&:hover {
@@ -86,7 +86,7 @@
 				border-radius: $border-radius-large 0 0 $border-radius-large;
 			}
 
-			span {
+			a {
 				display: none;
 			}
 

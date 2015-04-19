@@ -4290,8 +4290,8 @@ td.visible-print, th.visible-print {
 }
 @font-face {
     font-family: toyotaicons;
-    src: url(../fonts/toyotaicons.eot);
-    src: url(../assets/fonts/toyotaicons.eot%3F) format('eot'), url(../fonts/toyotaicons.woff) format('woff'), url(../fonts/toyotaicons.ttf) format('truetype'), url(../fonts/toyotaicons.svg) format('svg');
+    src: url(../assets/fonts/toyotaicons.eot);
+    src: url(../assets/fonts/toyotaicons.eot%3F) format('eot'), url(../assets/fonts/toyotaicons.woff) format('woff'), url(../assets/fonts/toyotaicons.ttf) format('truetype'), url(../assets/fonts/toyotaicons.svg) format('svg');
 }
 [class^=icon] {
     font-family: toyotaicons!important;
