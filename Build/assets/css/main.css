@@ -17726,8 +17726,6 @@ body .tfs-input, body .tfs-disclaimer {
 .modal.fade:not(.in).right .modal-dialog {
   -webkit-transform: translate3d(125%, 0, 0);
   transform: translate3d(125%, 0, 0);
-  -webkit-transition-duration: all 10s ease-in-out;
-  transition-duration: all 10s ease-in-out;
   z-index: 1060; }
 
 .modal.fade:not(.in).bottom .modal-dialog {
@@ -17742,7 +17740,7 @@ body .tfs-input, body .tfs-disclaimer {
     width: 70px;
     float: left;
     background-color: #1e2a32;
-    height: 100vh;
+    height: 100%;
     display: inline-block;
     z-index: 1040;
     text-align: center; }
@@ -17819,23 +17817,6 @@ body .tfs-input, body .tfs-disclaimer {
     width: -webkit-calc(100% - 70px);
     width: calc(100% - 70px); }
 
-html {
-  position: relative;
-  min-height: 100%; }
-
-body {
-  background: #DDD;
-  background: -webkit-linear-gradient(left, #dddddd 0%, white 20%, white 80%, #dddddd 100%);
-  background: -o-linear-gradient(left, #dddddd 0%, white 20%, white 80%, #dddddd 100%);
-  background: linear-gradient(to right, #dddddd 0%, white 20%, white 80%, #dddddd 100%);
-  margin-top: 70px; }
-  @media (max-width: 991px) {
-    body {
-      margin-top: 56px; } }
-
-.container.forms {
-  background: none; }
-
 .modal-dialog {
   width: 100%;
   height: 100%;
@@ -17852,13 +17833,32 @@ body {
   width: 70px; }
 
 .toolbar-aside {
-  width: 90%;
+  width: -moz-calc(100% - 70px);
+  width: -webkit-calc(100% - 70px);
+  width: calc(100% - 70px);
   height: 100%; }
 
 #loading-indicator {
   position: absolute;
   left: 500px;
   top: 500px; }
+
+html {
+  position: relative;
+  min-height: 100%; }
+
+body {
+  background: #DDD;
+  background: -webkit-linear-gradient(left, #dddddd 0%, white 20%, white 80%, #dddddd 100%);
+  background: -o-linear-gradient(left, #dddddd 0%, white 20%, white 80%, #dddddd 100%);
+  background: linear-gradient(to right, #dddddd 0%, white 20%, white 80%, #dddddd 100%);
+  margin-top: 70px; }
+  @media (max-width: 991px) {
+    body {
+      margin-top: 56px; } }
+
+.container.forms {
+  background: none; }
 
 .navbar-brand {
   padding: 0; }
@@ -17979,6 +17979,8 @@ section h1 {
       @media (min-width: 992px) {
         .navbar-fixed-top.navbar-inverse .button-wrapper .btn {
           margin: 17px 10px 17px 0; } }
+    .navbar-fixed-top.navbar-inverse .button-wrapper a.btn i {
+      padding-left: 7px; }
 
 .navbar-fixed-top > .container {
   padding-left: 15px; }

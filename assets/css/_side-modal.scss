@@ -7,8 +7,8 @@
 .modal.fade:not(.in).right .modal-dialog {
   -webkit-transform: translate3d(125%, 0, 0);
   transform: translate3d(125%, 0, 0);
-  -webkit-transition-duration: all 10s ease-in-out;
-  transition-duration: all 10s ease-in-out;
+  // -webkit-transition-duration: all 10s ease-in-out;
+  // transition-duration: all 10s ease-in-out;
   z-index: 1060;
 }
 .modal.fade:not(.in).bottom .modal-dialog {
@@ -25,7 +25,7 @@
     width: 70px;
     float: left;
     background-color: $colour-default-grey-1;
-    height: 100vh;
+    height: 100%;
     display: inline-block;
     z-index: $pageoverlayer-toolbar-zindex;
     // top: 0 px\9;
@@ -119,5 +119,37 @@
     width: -webkit-calc(100% - 70px);
     width: calc(100% - 70px);
   }
+}
+
+// sidemodal with iframe
+.modal-dialog
+{
+    width:100%;height:100%;
+    background: #fff;
+}
+.modal-content
+{
+    height:100%;
+}
+.modal-body
+{
+    width:100%;
+    height:100%;
+}
+.toolbar {
+  width: 70px;
+}
+.toolbar-aside {
+  width: -moz-calc(100% - 70px);
+  width: -webkit-calc(100% - 70px);
+  width: calc(100% - 70px);
+  height: 100%;
+}
+
+#loading-indicator
+{
+    position: absolute;
+    left: 500px;
+    top: 500px;
 }
 // end modal
