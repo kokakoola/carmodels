@@ -353,7 +353,23 @@
     #tmxcc-v6 .cc-show-on-car,
     #tmxcc-v6 .cc-col-headings .cc-col:before {
       background-image: url(../../../images/carconfigurator/sprite.png);
-      background-repeat: no-repeat; }
+      background-repeat: no-repeat; } }
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+    #tmxcc-v6 .cc-box-note:before,
+    #tmxcc-v6 .cc-box-grades:before,
+    #tmxcc-v6 .cc-popup:before,
+    #tmxcc-v6 .cc-dropdown:before,
+    #tmxcc-v6 .cc-message:before,
+    #tmxcc-v6 .cc-checkbox,
+    #tmxcc-v6 .cc-icon-standard i,
+    #tmxcc-v6 .cc-icon-unavailable i,
+    #tmxcc-v6 .cc-icon-optional i,
+    #tmxcc-v6 .cc-icon-dropdown,
+    #tmxcc-v6 .cc-show-on-car,
+    #tmxcc-v6 .cc-col-headings .cc-col:before {
+      background-image: url(../../../images/carconfigurator/sprite_retina.png);
+      background-size: 60px 240px; } }
+@media screen {
     #tmxcc-v6.tmxcc-v6-container {
       font-size: 14px;
       font-size: 1.4rem;
@@ -451,7 +467,7 @@
         /* IE10+ */
         background: linear-gradient(to bottom, #18232a 0%, #141516 100%);
         /* W3C */
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#18232a', endColorstr='#141516',GradientType=0 );
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#18232a', endColorstr='#141516',GradientType=0 );
         /* IE6-9 */
         -webkit-border-radius: 0 0 2px 2px;
         -moz-border-radius: 0 0 2px 2px;
@@ -1131,11 +1147,11 @@
           padding: 0;
           z-index: 100; }
       #tmxcc-v6 .cc-list-thumbs .cc-thumb-checked {
-        -webkit-box-shadow: 0 0 0 2px white;
-        -moz-box-shadow: 0 0 0 2px white;
-        -ms-box-shadow: 0 0 0 2px white;
-        -o-box-shadow: 0 0 0 2px white;
-        box-shadow: 0 0 0 2px white; }
+        -webkit-box-shadow: 0 0 0 2px #fff;
+        -moz-box-shadow: 0 0 0 2px #fff;
+        -ms-box-shadow: 0 0 0 2px #fff;
+        -o-box-shadow: 0 0 0 2px #fff;
+        box-shadow: 0 0 0 2px #fff; }
       #tmxcc-v6 .cc-list-thumbs .cc-pricing {
         font-size: 11px;
         font-size: 1.1rem; }
@@ -2755,20 +2771,5 @@
 
   .fullscreen #tmxcc-v6 .cc-link-fullscreen {
     display: list-item; } }
-  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
-    #tmxcc-v6 .cc-box-note:before,
-    #tmxcc-v6 .cc-box-grades:before,
-    #tmxcc-v6 .cc-popup:before,
-    #tmxcc-v6 .cc-dropdown:before,
-    #tmxcc-v6 .cc-message:before,
-    #tmxcc-v6 .cc-checkbox,
-    #tmxcc-v6 .cc-icon-standard i,
-    #tmxcc-v6 .cc-icon-unavailable i,
-    #tmxcc-v6 .cc-icon-optional i,
-    #tmxcc-v6 .cc-icon-dropdown,
-    #tmxcc-v6 .cc-show-on-car,
-    #tmxcc-v6 .cc-col-headings .cc-col:before {
-      background-image: url(../../../images/carconfigurator/sprite_retina.png);
-      background-size: 60px 240px; } }
 /* end screen */
 /* end print */

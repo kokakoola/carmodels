@@ -1,4 +1,4 @@
-@import 
+@import
     'custom/T1-style',
     'side-modal',
     'modules';
@@ -185,9 +185,21 @@ section h1 {
     margin-left: 175px;
   }
   .item {
-    padding-top: 0;
+    // padding-top: 0;
+    transition: background-color 0.15s ease-in 0s;
+    .item-ppo {
+      background-color: #E8E9EA;
+      padding: 15px;
+        h5 {
+          height: 50px;
+          margin-bottom: 10px;
+        }
+    }
   }
+
 }
+
+
 
 .navbar-fixed-top.navbar-inverse {
   background: $darkgray;
@@ -202,7 +214,7 @@ section h1 {
     .btn {
       margin: 10px 10px 10px 0;
       @media (min-width: 992px) {
-        margin: 17px 10px 17px 0;  
+        margin: 17px 10px 17px 0;
       }
     }
     a.btn i {
@@ -258,7 +270,7 @@ section h1 {
     margin-bottom: 40px;
 
   }
-  section.leasing-calc { 
+  section.leasing-calc {
     margin-top: 80px;
     background: #1C2830;
     color: #fff;
@@ -279,7 +291,7 @@ section h1 {
     padding: 0;
   }
   .accessories .accessories-list .accessories-item.item {
-    padding-top: 15px; 
+    padding-top: 15px;
     padding-bottom: 15px;
     margin-bottom: 0;
     display: inline-block;
@@ -417,7 +429,7 @@ p {
 .desc {
   text-indent: 0;
   .price {
-    font-family: toyotatext_bd; 
+    font-family: toyotatext_bd;
     &.new-price {
       color: $orange;
       margin-right: 5px;
@@ -427,7 +439,7 @@ p {
       text-decoration: line-through;
     }
   }
-  span { 
+  span {
     padding-right: 5px;
     padding-left: 5px;
   }
@@ -483,7 +495,7 @@ input.form-control {
 
 .alert-warning {
   background: $orange;
-  color: #fff; 
+  color: #fff;
 }
 
 .key-features {
@@ -621,9 +633,9 @@ input.form-control {
 
 .modal-dialog.fullscreen {
 
-  width: 100vh-70px;
+  // width: 100vh-70px;
   margin: $height-navbar-top 0 0 0;
-  height: 100vh-70px;
+  // height: 100vh-70px;
   .toolbar {
     width: 70px;
     float: left;
@@ -766,7 +778,7 @@ display: none;
       content:'\f078';
       font-size: 19px;
       font-family: 'toyotaicons';
-      right:10px; 
+      right:10px;
       top:5px;
       position:absolute;
       pointer-events:none;
@@ -793,6 +805,3 @@ display: none;
         padding-right:18px;
       }
   }
-
-
-

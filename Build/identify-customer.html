@@ -25,12 +25,13 @@
                 if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
                 ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
                 ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
+                window.onbeforeunload = function() { ws = null }
                 ws.onmessage = function(){
-                  var links = document.getElementsByTagName('link'); 
-                    for (var i = 0; i < links.length;i++) { 
-                    var link = links[i]; 
-                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) { 
-                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,''); 
+                  var links = document.getElementsByTagName('link');
+                    for (var i = 0; i < links.length;i++) {
+                    var link = links[i];
+                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) {
+                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,'');
                       link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
                     }
                   }
@@ -49,13 +50,13 @@
     
 
     <div class="nav navbar-nav navbar-left">
-<!--       <a href="index.html" id="logo-small" class="logo-link visible-xs visible-sm logo-logo-xs"></a> -->
+<!--       <a href="index.html" id="logo-small" class="current-parent logo-link visible-xs visible-sm logo-logo-xs"></a> -->
       <div class="navbar-header">
-        <a href="index.html" class="navbar-brand">
+        <a href="index.html" class="current-parent navbar-brand">
           <img class="img-responsive" src=" assets/images/sprites/logo.png" alt="">
         </a>
       </div>
-<!--       <a href="index.html" id="logo-big" class="logo-link hidden-xs hidden-sm logo-logo-md-red"></a> -->
+<!--       <a href="index.html" id="logo-big" class="current-parent logo-link hidden-xs hidden-sm logo-logo-md-red"></a> -->
       <ol id="menu-breadcrumb" class="breadcrumb">
   <li><a href="view-car.html">Start</a><i class="sprite-menu-white-arrow"></i><i>/</i></li>
   <li class="current active"><a class='current' href="identify-customer.html">Identify Customer</a><i class="sprite-menu-white-arrow"></i><i>/</i></li>
@@ -66,7 +67,7 @@
       <a href="view-car.html" class="btn btn-small btn-dark">
         <span>Previous</span>
       </a>
-      <a href="index.html" class="btn btn-small btn-red  """ id="nextPage">
+      <a href="index.html" class="current-parent btn btn-small btn-red  """ id="nextPage">
         <span>Start</span><i class="icon-chevron-right"></i>
       </a>
     </div>
@@ -224,7 +225,7 @@
 
         <div class="row">
           <div class="buttons col-xs-12">
-            <a href="index.html" class="btn btn-grey pull-left">
+            <a href="index.html" class="current-parent btn btn-grey pull-left">
               <span>Previous</span>
             </a>
             <a href=".html" class="btn btn-red pull-right" id="nextPage">
@@ -239,12 +240,22 @@
 
 
 <!-- scripts -->
+<script src='bower_components/handlebars/handlebars.js'></script>
 <script src='assets/scripts/vendor/handlebars.js'></script>
+<script src='bower_components/handlebars/handlebars.js.nuspec'></script>
 <script src='assets/scripts/vendor/jquery.js'></script>
+<script src='bower_components/jquery/src/jquery.js'></script>
+<script src='bower_components/jquery/dist/jquery.js'></script>
+<script src='bower_components/skrollr-stylesheets/test/jquery.js'></script>
+<script src='node_modules/grunt/node_modules/underscore.string/test/test_underscore/vendor/jquery.js'></script>
+<script src='node_modules/grunt/node_modules/grunt-legacy-log/node_modules/underscore.string/test/test_underscore/vendor/jquery.js'></script>
 <script src='assets/scripts/vendor/bootstrap.js'></script>
+<script src='bower_components/bootstrap-paginator/lib/bootstrap.js'></script>
+<script src='bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js'></script>
 <script src='assets/scripts/vendor/jquery.blueimp-gallery.min.js'></script>
 <script src='assets/scripts/vendor/bootstrap-image-gallery.js'></script>
 <script src='assets/scripts/vendor/jquery.lazyload.js'></script>
+<script src='bower_components/bootstrap-datepicker/js/bootstrap-datepicker.js'></script>
 <script src='assets/scripts/vendor/bootstrap-datepicker.js'></script>
 
 <script src="data/model-list.json"></script>
