@@ -1,11 +1,3 @@
-hammris asub hammr.co/5918771/3
+Toyota model helper
 
-- select model data lehel töötab bootstrapi dropdownil. disabled eemaldab noole - vt näidissüntaks
-
-- lightboxi moodul on blueimp gallery. lisab 2 css-i ja 2 javascripti. markupis wrapperil id, data-gallery a küljes on oluline ja siis html-include nimega lightbox-component. navi-d eraldi img kataloogis.
-
-- nobedamaks lehelaadimiseks lisatud lazyload (tuupola oma, välja kutsutud javascript.htmlis). NB! ei tööta koos bootstrapi thumbnail-slideriga. lisatud galeriile ja listingutele.
-
-##Todo
-
-Enne live puhastada välja üleliigne css
+run grunt to build
