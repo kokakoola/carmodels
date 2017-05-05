@@ -1,0 +1,135 @@
+/*
+* =============================================================================
+* CAR PRICE PRINT SHEET 
+* ============================================================================= 
+*/
+
+@font-face {
+  font-family: "toyotadisplay_bd";
+  font-style: normal;
+  font-weight: normal;
+  src: url(../fonts/toyotadisplay_bd.eot?#iefix) format("embedded-opentype"), url("../fonts/toyotadisplay_bd.woff2") format("woff2"), url(../fonts/toyotadisplay_bd.woff) format("woff"), url(../fonts/toyotadisplay_bd.ttf) format("truetype"), url(../fonts/toyotadisplay_bd.svg#toyotadisplay_bd) format("svg"); }
+@font-face {
+  font-family: "toyotadisplay_rg";
+  font-style: normal;
+  font-weight: normal;
+  src: url(../fonts/toyotadisplay_rg.eot?#iefix) format("embedded-opentype"), url("../fonts/toyotadisplay_rg.woff2") format("woff2"), url(../fonts/toyotadisplay_rg.woff) format("woff"), url(../fonts/toyotadisplay_rg.ttf) format("truetype"), url(../fonts/toyotadisplay_rg.svg#toyotadisplay_rg) format("svg"); }
+@font-face {
+  font-family: "toyotatext_bd";
+  font-style: normal;
+  font-weight: normal;
+  src: url(../fonts/toyotatext_bd.eot?#iefix) format("embedded-opentype"), url("../fonts/toyotatext_bd.woff2") format("woff2"), url(../fonts/toyotatext_bd.woff) format("woff"), url(../fonts/toyotatext_bd.ttf) format("truetype"), url(../fonts/toyotatext_bd.svg#toyotatext_bd) format("svg"); }
+@font-face {
+  font-family: "toyotatext_rg";
+  font-style: normal;
+  font-weight: normal;
+  src: url(../fonts/toyotatext_rg.eot?#iefix) format("embedded-opentype"), url("../fonts/toyotatext_rg.woff2") format("woff2"), url(../fonts/toyotatext_rg.woff) format("woff"), url(../fonts/toyotatext_rg.ttf) format("truetype"), url(../fonts/toyotatext_rg.svg#toyotatext_rg) format("svg"); }
+
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+	font-family: "Toyota Display";
+}
+
+h1 {
+    margin: 0 0 2rem 0;
+    font-size: 32px;
+	color: #d2001e;
+	line-height: 32px;
+}
+
+h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 24px;
+}
+
+td {
+    margin: 0;
+    padding: 4px 0;
+    font-size: 14px;
+    line-height: 16px;
+    vertical-align: baseline;
+}
+
+sup {
+    line-height: 0;
+}
+
+.text-right {
+    text-align: right;
+}
+
+article {
+    position: relative;
+    margin: 6rem;
+}
+
+table {
+	width: 100%;
+}
+
+.logorow {
+    display: flex;
+    margin-bottom: 2rem;
+    justify-content: space-between;
+}
+
+.logorow img {
+    align-self: center;
+    max-width: 8rem;
+    max-height: 3rem;
+}
+
+.print-specs {
+    margin-bottom: 2rem;
+	border-top: 1px solid lightgray;
+	border-bottom: 1px solid lightgray;
+}
+
+.print-extras {
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+
+.print-prices {
+	position: fixed;
+	bottom: 0;
+    width: calc(100% - 12rem); 
+	margin-bottom: 6rem;
+}
+
+tr.border_bottom td {
+	border-bottom: 1px solid lightgray;
+}
+
+
+.logorow img {
+    align-self: center;
+    max-width: 8rem;
+    max-height: 3rem;
+}
+
+#prices-big {
+    display: flex;
+    margin-bottom: .5rem;
+    padding: 0 2rem;
+    justify-content: space-between;
+    color: #d2001e;
+    text-align: center;
+}
+
+.price-big {
+    font-size: 48px;
+    font-weight: bold;
+    border-bottom: 1px solid lightgray;
+}
+
+.price-big span {
+    font-size: 14px;
+}
