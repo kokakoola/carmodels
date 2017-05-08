@@ -3,236 +3,215 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Toyota model helper</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
-
-        <link href="favicon.ico" rel="shortcut icon">
-          <link rel='stylesheet' href='assets/css/main.css'>
-<link rel='stylesheet' href='assets/css/blueimp-gallery.css'>
-<link rel='stylesheet' href='assets/css/bootstrap-image-gallery.css'>
-        
-
-        
-        <!-- Hammer reload -->
-          <script>
-            setInterval(function(){
-              try {
-                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
-                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
-                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
-                window.onbeforeunload = function() { ws = null }
-                ws.onmessage = function(){
-                  var links = document.getElementsByTagName('link');
-                    for (var i = 0; i < links.length;i++) {
-                    var link = links[i];
-                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) {
-                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,'');
-                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
-                    }
-                  }
-                }
-              }catch(e){}
-            }, 1000)
-          </script>
-        <!-- /Hammer reload -->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Toyota model helper</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <link href="favicon.ico" rel="shortcut icon">
+  <link rel='stylesheet' href='assets/css/main.css'>
+  <link rel='stylesheet' href='assets/css/blueimp-gallery.css'>
+  <link rel='stylesheet' href='assets/css/bootstrap-image-gallery.css'>
+  
+  
+  <!-- Hammer reload -->
+  <script>
+  setInterval(function(){
+  try {
+  if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
+  ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
+  ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
+  window.onbeforeunload = function() { ws = null }
+  ws.onmessage = function(){
+  var links = document.getElementsByTagName('link');
+  for (var i = 0; i < links.length;i++) {
+  var link = links[i];
+  if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) {
+  href = link.href.replace(/((&|\?)hammer=)[^&]+/,'');
+  link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
+  }
+  }
+  }
+  }catch(e){}
+  }, 1000)
+  </script>
+  <!-- /Hammer reload -->
+  
+</head>
+<body class="view-car">
+  
+  <nav id="nav-primary" class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner container">
       
-    </head>
-    <body class="view-car">
-    
-
-<nav id="nav-primary" class="navbar navbar-inverse navbar-fixed-top">
-  <div class="navbar-inner container">
-    
-
-    <div class="nav navbar-nav navbar-left">
-<!--       <a href="index.html" id="logo-small" class="current-parent logo-link visible-xs visible-sm logo-logo-xs"></a> -->
-      <div class="navbar-header">
-        <a href="index.html" class="current-parent navbar-brand">
-          <img class="img-responsive" src=" assets/images/sprites/logo.png" alt="">
+      <div class="nav navbar-nav navbar-left">
+        <!--       <a href="index.html" id="logo-small" class="current-parent logo-link visible-xs visible-sm logo-logo-xs"></a> -->
+        <div class="navbar-header">
+          <a href="index.html" class="current-parent navbar-brand">
+            <img class="img-responsive" src=" assets/images/sprites/logo.png" alt="">
+          </a>
+        </div>
+        <!--       <a href="index.html" id="logo-big" class="current-parent logo-link hidden-xs hidden-sm logo-logo-md-red"></a> -->
+        <ol id="menu-breadcrumb" class="breadcrumb">
+          <li><a href="model-data.html">Model data</a><i class="sprite-menu-white-arrow"></i><i>/</i></li>
+          <li class="current active"><a class='current' href="view-car.html">View my Car</a><i class="sprite-menu-white-arrow"></i><i>/</i></li>
+        </ol>
+      </div>
+      <div class="button-wrapper navbar-right">
+        <a href="model-data.html" class="btn btn-small btn-dark">
+          <span>Previous</span>
+        </a>
+        <a href="index.html" class="current-parent btn btn-small btn-red  empty" id="nextPage">
+          <span>Home</span><i class="icon-chevron-right"></i>
         </a>
       </div>
-<!--       <a href="index.html" id="logo-big" class="current-parent logo-link hidden-xs hidden-sm logo-logo-md-red"></a> -->
-      <ol id="menu-breadcrumb" class="breadcrumb">
-  <li><a href="model-data.html">Model data</a><i class="sprite-menu-white-arrow"></i><i>/</i></li>
-  <li class="current active"><a class='current' href="view-car.html">View my Car</a><i class="sprite-menu-white-arrow"></i><i>/</i></li>
-</ol>
     </div>
-
-    <div class="button-wrapper navbar-right">
-      <a href="model-data.html" class="btn btn-small btn-dark">
-        <span>Previous</span>
-      </a>
-      <a href="index.html" class="current-parent btn btn-small btn-red  empty" id="nextPage">
-        <span>Home</span><i class="icon-chevron-right"></i>
-      </a>
-    </div>
+  </nav>
+  <div class="cta-bar">
+    <span class="js-rollout-lg">
+      <i class="icon-fin-calculator"></i>
+      <div class="quick-spec">
+        <div class="row">
+          <div class="col-sm-6">
+            <p class="quickspec-label">Car<br>price</p>
+            <p class="title">26.999,00 €</p>
+          </div>
+          <div class="col-sm-6">
+            <p class="quickspec-label">Accessories<br>price</p>
+            <p class="title">171,65 €</p>
+          </div>
+          <div class="col-xs-12 col-number">
+            <p class="quickspec-label">Total price</p>
+            <p class="metric">26.999,00 € </p>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-xs-12 col-number">
+            <p class="quickspec-label">Downpayment: 15% <br> Interest: 1.20% <br> Period: 5 years <br>Residual value: 18%</p>
+          </div>
+          <div class="col-xs-12 col-number">
+            <p class="quickspec-label">Monthly fee</p>
+            <p class="metric">269,00 €</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <a class="view-prices bordered visible" href="#example-subview-1" data-startFrom="right">Send to Automaster</a>
+          </div>
+        </div>
+        
+      </div>
+    </span>
+    <span class="hybrid last js-rollout">
+      <i class="icon-key"></i>
+      <a  href="test-drive.html">Book a test drive</a>
+    </span>
   </div>
-</nav>
-
-<div class="cta-bar">
-  <span class="js-rollout-lg">
-    <i class="icon-fin-calculator"></i>
-    <div class="quick-spec">
-      <div class="row">
-        <div class="col-sm-6">
-          <p class="quickspec-label">Car<br>price</p>
-          <p class="title">26.999,00 €</p>
-        </div>
-        <div class="col-sm-6">
-          <p class="quickspec-label">Accessories<br>price</p>
-          <p class="title">171,65 €</p>
-        </div>
-        <div class="col-xs-12 col-number">
-          <p class="quickspec-label">Total price</p>
-          <p class="metric">26.999,00 € </p>
-        </div>
+  <section>
+    <div class="container">
+      <header>
+        <h1>RAV4 2.0 Valvematic Premium Plus 4WD Multidrive S
+        </h1>
+      </header>
+      <div class="col-sm-6">
+        <dl class="dl-horizontal">
+          <dt class="price">Price</dt>
+          <dd><strong>22 990 €</strong></dd>
+          <dt>Special price</dt>
+          <dd class="price special-price"><strong>21 1536 €</strong></dd>
+          <dt>Location</dt>
+          <dd>Tokvila UAB</dd>
+          <dt>URN</dt>
+          <dd>J149345596</dd>
+          <dt>Model code</dt>
+          <dd>VS1BM5-133PECL1M+--</dd>
+          <dt>DIN hj</dt>
+          <dd>150</dd>
+          <dt>kW / p/min</dt>
+          <dd>110/3600</dd>
+          <dt>Fuel type</dt>
+          <dd>Diisel</dd>
+        </dl>
       </div>
-      <hr>
-
-      <div class="row">
-        <div class="col-xs-12 col-number">
-          <p class="quickspec-label">Downpayment: 15% <br> Interest: 1.20% <br> Period: 5 years <br>Residual value: 18%</p>
-        </div>
-        <div class="col-xs-12 col-number">
-          <p class="quickspec-label">Monthly fee</p>
-          <p class="metric">269,00 €</p>
-        </div>
+      <div class="col-sm-6">
+        <dl class="dl-horizontal">
+          <dt>Consumption</dt>
+          <dd>4 l/100km</dd>
+          <dt>Co2</dt>
+          <dd>170 g/km</dd>
+          <dt>Acceleration</dt>
+          <dd>9,8 sekundid</dd>
+          <dt>Dimension</dt>
+          <dd>1810 x 4780 mm</dd>
+          <dt>Wheelbase</dt>
+          <dd>2700 mm</dd>
+          <dt>Boothpace</dt>
+          <dd>20</dd>
+          <dt>Suurim võimsus (kW / p/min)</dt>
+        </dl>
+        <!--       <a class="btn btn-red right" href="identify-customer.html">
+          <span>Send offer to client</span>
+        </a> -->
       </div>
-      <div class="row">
-        <div class="col-xs-12">
-          <a class="view-prices bordered visible" href="#example-subview-1" data-startFrom="right">Send to Automaster</a>
-        </div>
+    </div>
+  </section>
+  <div class="row gallery-horizontal" id="links">
+    <a class="item-link" href="http://images.toyota-europe.com/lt/rav4/width/2048/height/1536/exterior-02.png" data-gallery>
+      <div class="gallery-item car" style="background-color: #eee; ">
+        <img  class="lazy" alt="" data-original="http://images.toyota-europe.com/lt/rav4/width/610/height/380/exterior-02.png">
+        <span class="border-hover"></span>
+        <i class="icon-search"></i>
       </div>
-      
-    </div>
-  </span>
-  <span class="hybrid last js-rollout">
-    <i class="icon-key"></i>
-    <a  href="test-drive.html">Book a test drive</a>
-  </span>
-</div>
-
-
-
-
-<section>
-  <div class="container">
-    <header>
-      <h1>RAV4 2.0 Valvematic Premium Plus 4WD Multidrive S
-      </h1>
-    </header>
-    <div class="col-sm-6">
-      <dl class="dl-horizontal">
-        <dt class="price">Price</dt>
-        <dd><strong>22 990 €</strong></dd>
-        <dt>Special price</dt>
-        <dd class="price special-price"><strong>21 1536 €</strong></dd>
-        <dt>Location</dt>
-        <dd>Tokvila UAB</dd>
-        <dt>URN</dt>
-        <dd>J149345596</dd>
-        <dt>Model code</dt>
-        <dd>VS1BM5-133PECL1M+--</dd>
-        <dt>DIN hj</dt>
-        <dd>150</dd>
-        <dt>kW / p/min</dt>
-        <dd>110/3600</dd>
-        <dt>Fuel type</dt>
-        <dd>Diisel</dd>
-      </dl>
-    </div>
-    <div class="col-sm-6">
-      <dl class="dl-horizontal">
-        <dt>Consumption</dt>
-        <dd>4 l/100km</dd>
-        <dt>Co2</dt>
-        <dd>170 g/km</dd>
-        <dt>Acceleration</dt>
-        <dd>9,8 sekundid</dd>
-        <dt>Dimension</dt>
-        <dd>1810 x 4780 mm</dd>
-        <dt>Wheelbase</dt>
-        <dd>2700 mm</dd>
-        <dt>Boothpace</dt>
-        <dd>20</dd>
-        <dt>Suurim võimsus (kW / p/min)</dt>
-
-      </dl>
-<!--       <a class="btn btn-red right" href="identify-customer.html">
-        <span>Send offer to client</span>
-      </a> -->
-
-    </div>
-  </div>
-</section>
-
-
-<div class="row gallery-horizontal" id="links">
-
-  <a class="item-link" href="http://images.toyota-europe.com/lt/rav4/width/2048/height/1536/exterior-02.png" data-gallery>
-    <div class="gallery-item car" style="background-color: #eee; ">
-      <img  class="lazy" alt="" data-original="http://images.toyota-europe.com/lt/rav4/width/610/height/380/exterior-02.png">
-      <span class="border-hover"></span>
-      <i class="icon-search"></i>
-    </div>
-  </a>
-  <a class="item-link" href="http://images.toyota-europe.com/lt/rav4/width/2048/height/1536/exterior-06.png" data-gallery>
-    <div class="gallery-item car" style="background-color: #fff; ">
-      <img class="lazy" alt="" data-original="http://images.toyota-europe.com/lt/rav4/width/610/height/380/exterior-06.png">
-      <span class="border-hover"></span>
-      <i class="icon-search"></i>
-    </div>
-  </a>
-  <a class=" item-link" href="http://images.toyota-europe.com/ee/Avensis/interior-2.jpg" data-gallery>
-    <div class="gallery-item car">
-      <img class="lazy" alt="" data-original="http://images.toyota-europe.com/ee/Avensis/interior-2.jpg">
-      <span class="border-hover"></span>
-      <i class="icon-search"></i>
-    </div>
-  </a>
-  <a class=" item-link" href="http://images.toyota-europe.com/ee/Avensis/interior-0.jpg" data-gallery>
-    <div class="gallery-item" style="background-color: #D2001E;">
-      <img  class="lazy" alt="" data-original="http://images.toyota-europe.com/ee/Avensis/interior-0.jpg">
-      <span class="border-hover"></span>
-      <i class="icon-search"></i>
-    </div>
-  </a>
-  <a class="item-link" href="http://images.toyota-europe.com/lt/rav4/width/2048/height/1536/exterior-08.png" data-gallery>
-    <div class="gallery-item car sm" style="background-color: #fff;">
-      <img class="lazy" alt="" data-original="http://images.toyota-europe.com/lt/rav4/width/610/height/380/exterior-08.png">
-      <span class="border-hover"></span>
-      <i class="icon-search"></i>
-    </div>
-  </a>
+    </a>
+    <a class="item-link" href="http://images.toyota-europe.com/lt/rav4/width/2048/height/1536/exterior-06.png" data-gallery>
+      <div class="gallery-item car" style="background-color: #fff; ">
+        <img class="lazy" alt="" data-original="http://images.toyota-europe.com/lt/rav4/width/610/height/380/exterior-06.png">
+        <span class="border-hover"></span>
+        <i class="icon-search"></i>
+      </div>
+    </a>
+    <a class=" item-link" href="http://images.toyota-europe.com/ee/Avensis/interior-2.jpg" data-gallery>
+      <div class="gallery-item car">
+        <img class="lazy" alt="" data-original="http://images.toyota-europe.com/ee/Avensis/interior-2.jpg">
+        <span class="border-hover"></span>
+        <i class="icon-search"></i>
+      </div>
+    </a>
+    <a class=" item-link" href="http://images.toyota-europe.com/ee/Avensis/interior-0.jpg" data-gallery>
+      <div class="gallery-item" style="background-color: #D2001E;">
+        <img  class="lazy" alt="" data-original="http://images.toyota-europe.com/ee/Avensis/interior-0.jpg">
+        <span class="border-hover"></span>
+        <i class="icon-search"></i>
+      </div>
+    </a>
+    <a class="item-link" href="http://images.toyota-europe.com/lt/rav4/width/2048/height/1536/exterior-08.png" data-gallery>
+      <div class="gallery-item car sm" style="background-color: #fff;">
+        <img class="lazy" alt="" data-original="http://images.toyota-europe.com/lt/rav4/width/610/height/380/exterior-08.png">
+        <span class="border-hover"></span>
+        <i class="icon-search"></i>
+      </div>
+    </a>
     <a class="item-link" href="http://images.toyota-europe.com/lt/rav4/width/2048/height/1536/exterior-13.png" data-gallery>
-    <div class="gallery-item car sm">
-      <img class="lazy" alt="" data-original="http://images.toyota-europe.com/lt/rav4/width/610/height/380/exterior-13.png">
-      <span class="border-hover"></span>
-      <i class="icon-search"></i>
-    </div>
-  </a>
-
-
-</div>
-
-<!-- https://github.com/blueimp/Bootstrap-image-Gallery#setup -->
-<!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
-<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls"  data-use-bootstrap-modal="false">
-  <!-- The container for the modal slides -->
-  <div class="slides"></div>
-  <!-- Controls for the borderless lightbox -->
-  <h3 class="title"></h3>
-  <a class="prev">‹</a>
-  <a class="next">›</a>
-  <a class="close">×</a>
-  <a class="play-pause"></a>
+      <div class="gallery-item car sm">
+        <img class="lazy" alt="" data-original="http://images.toyota-europe.com/lt/rav4/width/610/height/380/exterior-13.png">
+        <span class="border-hover"></span>
+        <i class="icon-search"></i>
+      </div>
+    </a>
+  </div>
+  <!-- https://github.com/blueimp/Bootstrap-image-Gallery#setup -->
+  <!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
+  <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls"  data-use-bootstrap-modal="false">
+    <!-- The container for the modal slides -->
+    <div class="slides"></div>
+    <!-- Controls for the borderless lightbox -->
+    <h3 class="title"></h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <a class="play-pause"></a>
   <ol class="indicator"></ol>
-
   <div class="modal fade">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -250,8 +229,6 @@
     </div>
   </div>
 </div>
-
-
 <section class="accessories" data-section-title="Accessories"  data-bt-componentname="accessories" >
   <header class="section-title">
     <h1>Malmö PPO</h1>
@@ -268,31 +245,31 @@
         <div class="item-ppo">
           <h5>iQ Schmutzfänger, Satz vorne Schmutzfänger,</h5>
           <span>25,00 €</span>
-         </div>
+        </div>
       </div>
       <div class="accessories-item col-xs-12 col-sm-3 item">
         <div class="item-ppo">
           <h5>iQ Schmutzfänger, Satz vorne Schmutzfänger, </h5>
           <span>25,00 €</span>
-         </div>
+        </div>
       </div>
       <div class="accessories-item col-xs-12 col-sm-3 item">
         <div class="item-ppo">
           <h5>iQ Schmutzfänger, Satz vorne Schmutzfänger, </h5>
           <span>25,00 €</span>
-         </div>
+        </div>
       </div>
       <div class="accessories-item col-xs-12 col-sm-3 item">
         <div class="item-ppo">
           <h5>iQ Schmutzfänger, Satz vorne Schmutzfänger, </h5>
           <span>25,00 €</span>
-         </div>
+        </div>
       </div>
       <div class="accessories-item col-xs-12 col-sm-3 item">
         <div class="item-ppo">
           <h5>iQ Schmutzfänger, Satz vorne Schmutzfänger</h5>
           <span>25,00 €</span>
-         </div>
+        </div>
       </div>
     </div>
   </div>
@@ -314,471 +291,418 @@
       <span class="text-right switch-view"></span>
     </div>
   </div>
-
   <div class="tab-content">
     <div class="tab-pane responsive-carousel active accessories-list " id="top" data-enableswipe=true data-maxcols=24 data-bt-action="click_function" data-bt-value="browse_accessories">
       <div class="container"><!-- accessories-item.nj : begin -->
-
-        <!-- accessories-item.nj : end --><!-- accessories-item.nj : begin -->
-
-        <!-- accessories-item.nj : end --><!-- accessories-item.nj : begin -->
-
-        <!-- accessories-item.nj : end --><!-- accessories-item.nj : begin -->
-
-        <!-- accessories-item.nj : end --><!-- accessories-item.nj : begin -->
-        <div id="placeholder-accessories"></div>
-
-        <script type="text/x-handlebars-template" id="accessories-template">
-        {{#images}}
-          <div class="accessories-item responsive-item col-xs-12 col-sm-3 item " data-filter="" data-bt-action="view_accessory" data-bt-value="">
+      <!-- accessories-item.nj : end --><!-- accessories-item.nj : begin -->
+      <!-- accessories-item.nj : end --><!-- accessories-item.nj : begin -->
+      <!-- accessories-item.nj : end --><!-- accessories-item.nj : begin -->
+      <!-- accessories-item.nj : end --><!-- accessories-item.nj : begin -->
+      <div id="placeholder-accessories"></div>
+      <script type="text/x-handlebars-template" id="accessories-template">
+      {{#images}}
+      <div class="accessories-item responsive-item col-xs-12 col-sm-3 item " data-filter="" data-bt-action="view_accessory" data-bt-value="">
+        <div class="row">
+          <div class="col-xs-12"><img src="assets/images/proto-only/acc{{{id}}}.JPG"/></div>
+          <div class="col-xs-12">
+            <h5>{{caption}}</h5>
+            <span>{{price}} €</span>
+            <span>({{monthly}} €/month)</span>
+          </div>
+        </div>
+      </div>
+      {{/images}}
+      </script>
+      <!-- accessories-item.nj : end --><!-- accessories-item.nj : begin -->
+      <!-- accessories-item.nj : end --><!-- accessories-item.nj : begin -->
+      <!-- accessories-item.nj : end --><!-- accessories-item.nj : begin -->
+      <!-- accessories-item.nj : end --><!-- accessories-item.nj : begin -->
+      <!-- accessories-item.nj : end --><!-- accessories-item.nj : begin -->
+      <!-- accessories-item.nj : end --><!-- accessories-item.nj : begin -->
+      <!-- accessories-item.nj : end --><!-- accessories-item.nj : begin -->
+      <!-- accessories-item.nj : end --><!-- accessories-item.nj : begin -->
+      <!-- accessories-item.nj : end --><!-- accessories-item.nj : begin -->
+      <!-- accessories-item.nj : end --><!-- accessories-item.nj : begin -->
+      <!-- accessories-item.nj : end --></div>
+    </div>
+    <div class="tab-pane" id="ext">
+      <div class="accessories-filter container">
+        <span class="pane-title">Exterior</span>
+      </div>
+      <div class="responsive-carousel accessories-list" data-enableswipe=true data-maxcols=24 data-bt-action="click_function" data-bt-value="browse_accessories">
+        <div class="container"><!-- accessories-item.nj : begin -->
+        <div class="accessories-item responsive-item col-xs-12 col-sm-3" data-filter="Außen" data-bt-action="view_accessory" data-bt-value="pz413-99683-00">
           <div class="row">
-            <div class="col-xs-12"><img src="assets/images/proto-only/acc{{{id}}}.JPG"/></div>
+            <div class="col-xs-12"><img src="https://s3-eu-west-1.amazonaws.com/tme-carassets-acc/27483a27-ea6d-49eb-984f-921887a2683e.JPG"/></div>
             <div class="col-xs-12">
-              <h5>{{caption}}</h5>
-              <span>{{price}} €</span>
-              <span>({{monthly}} €/month)</span>
+              <h5>Diebstahlsicherung für verschiedene LM-Felgen</h5><strong>33,00 €</strong>
+              <a href="iq-index.html#" class="readMore" data-tooltip-selector=".expansion-content.acc_ext_ext_0" data-bt-track="">
+                <span>Read more</span><i class="icon-info-sign"></i>
+              </a>
+              <div class="expansion-content acc_ext_ext_0" style="display: none;">
+                <a class="closelink" style="position: absolute; top: 10px; right: 10px;" href="iq-index.html#">
+                  Close <i class="icon-remove"></i>
+                </a>
+                <div class="expansion-inner">
+                  <h2 class="title">Diebstahlsicherung für verschiedene LM-Felgen</h2><strong>33,00 €</strong>
+                  <p></p>
+                  <div class="description">PZ413-99683-00</div>
+                  <div class="description">Price plus assembly costs</div>
+                </div>
+                <div class="expansion-arrow"></div>
+              </div>
             </div>
           </div>
         </div>
-
-
-        {{/images}}
-        </script>
         <!-- accessories-item.nj : end --><!-- accessories-item.nj : begin -->
-
+        <div class="accessories-item responsive-item col-xs-12 col-sm-3" data-filter="Außen" data-bt-action="view_accessory" data-bt-value="pz415-i0521-zb">
+          <div class="row">
+            <div class="col-xs-12"><img src="https://s3-eu-west-1.amazonaws.com/tme-carassets-acc/ef8f1e3f-657d-4f5c-a122-7768a4f525d5.JPG"/></div>
+            <div class="col-xs-12">
+              <h5>iQ Außenspiegelkappen, chrom</h5><strong>145,00 €</strong>
+              <a href="iq-index.html#" class="readMore" data-tooltip-selector=".expansion-content.acc_ext_ext_1" data-bt-track="">
+                <span>Read more</span><i class="icon-info-sign"></i>
+              </a>
+              <div class="expansion-content acc_ext_ext_1" style="display: none;">
+                <a class="closelink" style="position: absolute; top: 10px; right: 10px;" href="iq-index.html#">
+                  Close <i class="icon-remove"></i>
+                </a>
+                <div class="expansion-inner">
+                  <h2 class="title">iQ Außenspiegelkappen, chrom</h2><strong>145,00 €</strong>
+                  <p></p>
+                  <div class="description">PZ415-I0521-ZB</div>
+                  <div class="description">Price plus assembly costs</div>
+                </div>
+                <div class="expansion-arrow"></div>
+              </div>
+            </div>
+          </div>
+        </div>
         <!-- accessories-item.nj : end --><!-- accessories-item.nj : begin -->
-
+        <div class="accessories-item responsive-item col-xs-12 col-sm-3" data-filter="Außen" data-bt-action="view_accessory" data-bt-value="pz474-i0671-ze">
+          <div class="row">
+            <div class="col-xs-12"><img src="https://s3-eu-west-1.amazonaws.com/tme-carassets-acc/bdb8d26f-d09d-4837-9280-7d857515cff2.JPG"/></div>
+            <div class="col-xs-12">
+              <h5>iQ Leichtmetallfelge, Aurora 15" anthrazit</h5><strong>165,01 €</strong>
+              <a href="iq-index.html#" class="readMore" data-tooltip-selector=".expansion-content.acc_ext_ext_2" data-bt-track="">
+                <span>Read more</span><i class="icon-info-sign"></i>
+              </a>
+              <div class="expansion-content acc_ext_ext_2" style="display: none;">
+                <a class="closelink" style="position: absolute; top: 10px; right: 10px;" href="iq-index.html#">
+                  Close <i class="icon-remove"></i>
+                </a>
+                <div class="expansion-inner">
+                  <h2 class="title">iQ Leichtmetallfelge, Aurora 15" anthrazit</h2><strong>165,01 €</strong>
+                  <p></p>
+                  <div class="description">PZ474-I0671-ZE</div>
+                  <div class="description">Price plus assembly costs</div>
+                </div>
+                <div class="expansion-arrow"></div>
+              </div>
+            </div>
+          </div>
+        </div>
         <!-- accessories-item.nj : end --><!-- accessories-item.nj : begin -->
-
+        <div class="accessories-item responsive-item col-xs-12 col-sm-3" data-filter="Außen" data-bt-action="view_accessory" data-bt-value="pz474-i0671-zj">
+          <div class="row">
+            <div class="col-xs-12"><img src="https://s3-eu-west-1.amazonaws.com/tme-carassets-acc/b83d6208-9119-4507-ab76-8dc41c20aaf7.JPG"/></div>
+            <div class="col-xs-12">
+              <h5>iQ Leichtmetallfelge, Aurora, 15" silber</h5><strong>160,00 €</strong>
+              <a href="iq-index.html#" class="readMore" data-tooltip-selector=".expansion-content.acc_ext_ext_3" data-bt-track="">
+                <span>Read more</span><i class="icon-info-sign"></i>
+              </a>
+              <div class="expansion-content acc_ext_ext_3" style="display: none;">
+                <a class="closelink" style="position: absolute; top: 10px; right: 10px;" href="iq-index.html#">
+                  Close <i class="icon-remove"></i>
+                </a>
+                <div class="expansion-inner">
+                  <h2 class="title">iQ Leichtmetallfelge, Aurora, 15" silber</h2><strong>160,00 €</strong>
+                  <p></p>
+                  <div class="description">PZ474-I0671-ZJ</div>
+                  <div class="description">Price plus assembly costs</div>
+                </div>
+                <div class="expansion-arrow"></div>
+              </div>
+            </div>
+          </div>
+        </div>
         <!-- accessories-item.nj : end --><!-- accessories-item.nj : begin -->
-
+        <div class="accessories-item responsive-item col-xs-12 col-sm-3" data-filter="Außen" data-bt-action="view_accessory" data-bt-value="pz474-i0671-zf">
+          <div class="row">
+            <div class="col-xs-12"><img src="https://s3-eu-west-1.amazonaws.com/tme-carassets-acc/5d291668-bb6d-4562-b1b5-5d76b3306329.JPG"/></div>
+            <div class="col-xs-12">
+              <h5>iQ Leichtmetallfelge, Aurora, 15" sterling silber</h5><strong>165,01 €</strong>
+              <a href="iq-index.html#" class="readMore" data-tooltip-selector=".expansion-content.acc_ext_ext_4" data-bt-track="">
+                <span>Read more</span><i class="icon-info-sign"></i>
+              </a>
+              <div class="expansion-content acc_ext_ext_4" style="display: none;">
+                <a class="closelink" style="position: absolute; top: 10px; right: 10px;" href="iq-index.html#">
+                  Close <i class="icon-remove"></i>
+                </a>
+                <div class="expansion-inner">
+                  <h2 class="title">iQ Leichtmetallfelge, Aurora, 15" sterling silber</h2><strong>165,01 €</strong>
+                  <p></p>
+                  <div class="description">PZ474-I0671-ZF</div>
+                  <div class="description">Price plus assembly costs</div>
+                </div>
+                <div class="expansion-arrow"></div>
+              </div>
+            </div>
+          </div>
+        </div>
         <!-- accessories-item.nj : end --><!-- accessories-item.nj : begin -->
-
+        <div class="accessories-item responsive-item col-xs-12 col-sm-3" data-filter="Außen" data-bt-action="view_accessory" data-bt-value="pz474-i0672-ze">
+          <div class="row">
+            <div class="col-xs-12"><img src="https://s3-eu-west-1.amazonaws.com/tme-carassets-acc/2c54d8e5-2bcd-4fd2-984b-8830171b95df.JPG"/></div>
+            <div class="col-xs-12">
+              <h5>iQ Leichtmetallfelge, Stella, 15" anthrazit</h5><strong>170,00 €</strong>
+              <a href="iq-index.html#" class="readMore" data-tooltip-selector=".expansion-content.acc_ext_ext_5" data-bt-track="">
+                <span>Read more</span><i class="icon-info-sign"></i>
+              </a>
+              <div class="expansion-content acc_ext_ext_5" style="display: none;">
+                <a class="closelink" style="position: absolute; top: 10px; right: 10px;" href="iq-index.html#">
+                  Close <i class="icon-remove"></i>
+                </a>
+                <div class="expansion-inner">
+                  <h2 class="title">iQ Leichtmetallfelge, Stella, 15" anthrazit</h2><strong>170,00 €</strong>
+                  <p></p>
+                  <div class="description">PZ474-I0672-ZE</div>
+                  <div class="description">Price plus assembly costs</div>
+                </div>
+                <div class="expansion-arrow"></div>
+              </div>
+            </div>
+          </div>
+        </div>
         <!-- accessories-item.nj : end --><!-- accessories-item.nj : begin -->
-
+        <div class="accessories-item responsive-item col-xs-12 col-sm-3" data-filter="Außen" data-bt-action="view_accessory" data-bt-value="pz474-i0672-zj">
+          <div class="row">
+            <div class="col-xs-12"><img src="https://s3-eu-west-1.amazonaws.com/tme-carassets-acc/06eaaec1-285f-4c30-9c09-773141525927.JPG"/></div>
+            <div class="col-xs-12">
+              <h5>iQ Leichtmetallfelge, Stella, 15" silber</h5><strong>160,00 €</strong>
+              <a href="iq-index.html#" class="readMore" data-tooltip-selector=".expansion-content.acc_ext_ext_6" data-bt-track="">
+                <span>Read more</span><i class="icon-info-sign"></i>
+              </a>
+              <div class="expansion-content acc_ext_ext_6" style="display: none;">
+                <a class="closelink" style="position: absolute; top: 10px; right: 10px;" href="iq-index.html#">
+                  Close <i class="icon-remove"></i>
+                </a>
+                <div class="expansion-inner">
+                  <h2 class="title">iQ Leichtmetallfelge, Stella, 15" silber</h2><strong>160,00 €</strong>
+                  <p></p>
+                  <div class="description">PZ474-I0672-ZJ</div>
+                  <div class="description">Price plus assembly costs</div>
+                </div>
+                <div class="expansion-arrow"></div>
+              </div>
+            </div>
+          </div>
+        </div>
         <!-- accessories-item.nj : end --><!-- accessories-item.nj : begin -->
-
+        <div class="accessories-item responsive-item col-xs-12 col-sm-3" data-filter="Außen" data-bt-action="view_accessory" data-bt-value="pz474-i0672-zf">
+          <div class="row">
+            <div class="col-xs-12"><img src="https://s3-eu-west-1.amazonaws.com/tme-carassets-acc/c1c12e40-a6bf-47e5-8b44-50e027496455.JPG"/></div>
+            <div class="col-xs-12">
+              <h5>iQ Leichtmetallfelge, Stella, 15" sterling silber</h5><strong>165,01 €</strong>
+              <a href="iq-index.html#" class="readMore" data-tooltip-selector=".expansion-content.acc_ext_ext_7" data-bt-track="">
+                <span>Read more</span><i class="icon-info-sign"></i>
+              </a>
+              <div class="expansion-content acc_ext_ext_7" style="display: none;">
+                <a class="closelink" style="position: absolute; top: 10px; right: 10px;" href="iq-index.html#">
+                  Close <i class="icon-remove"></i>
+                </a>
+                <div class="expansion-inner">
+                  <h2 class="title">iQ Leichtmetallfelge, Stella, 15" sterling silber</h2><strong>165,01 €</strong>
+                  <p></p>
+                  <div class="description">PZ474-I0672-ZF</div>
+                  <div class="description">Price plus assembly costs</div>
+                </div>
+                <div class="expansion-arrow"></div>
+              </div>
+            </div>
+          </div>
+        </div>
         <!-- accessories-item.nj : end --><!-- accessories-item.nj : begin -->
-
+        <div class="accessories-item responsive-item col-xs-12 col-sm-3" data-filter="Außen" data-bt-action="view_accessory" data-bt-value="pz416-i0960-00">
+          <div class="row">
+            <div class="col-xs-12"><img src="https://s3-eu-west-1.amazonaws.com/tme-carassets-acc/430e6c43-5b8e-4631-b9e7-33cde902ca82.JPG"/></div>
+            <div class="col-xs-12">
+              <h5>iQ Schmutzfänger, Satz vorne</h5><strong>25,00 €</strong>
+              <a href="iq-index.html#" class="readMore" data-tooltip-selector=".expansion-content.acc_ext_ext_8" data-bt-track="">
+                <span>Read more</span><i class="icon-info-sign"></i>
+              </a>
+              <div class="expansion-content acc_ext_ext_8" style="display: none;">
+                <a class="closelink" style="position: absolute; top: 10px; right: 10px;" href="iq-index.html#">
+                  Close <i class="icon-remove"></i>
+                </a>
+                <div class="expansion-inner">
+                  <h2 class="title">iQ Schmutzfänger, Satz vorne</h2><strong>25,00 €</strong>
+                  <p></p>
+                  <div class="description">PZ416-I0960-00</div>
+                  <div class="description">Price plus assembly costs</div>
+                </div>
+                <div class="expansion-arrow"></div>
+              </div>
+            </div>
+          </div>
+        </div>
         <!-- accessories-item.nj : end --><!-- accessories-item.nj : begin -->
-
+        <div class="accessories-item responsive-item col-xs-12 col-sm-3" data-filter="Außen" data-bt-action="view_accessory" data-bt-value="pz415-i0491-zb">
+          <div class="row">
+            <div class="col-xs-12"><img src="https://s3-eu-west-1.amazonaws.com/tme-carassets-acc/6e65eaff-d00a-4b97-af11-be712be722d9.JPG"/></div>
+            <div class="col-xs-12">
+              <h5>IQ Seitenchromeisten, Satz</h5><strong>139,00 €</strong>
+              <a href="iq-index.html#" class="readMore" data-tooltip-selector=".expansion-content.acc_ext_ext_9" data-bt-track="">
+                <span>Read more</span><i class="icon-info-sign"></i>
+              </a>
+              <div class="expansion-content acc_ext_ext_9" style="display: none;">
+                <a class="closelink" style="position: absolute; top: 10px; right: 10px;" href="iq-index.html#">
+                  Close <i class="icon-remove"></i>
+                </a>
+                <div class="expansion-inner">
+                  <h2 class="title">IQ Seitenchromeisten, Satz</h2><strong>139,00 €</strong>
+                  <p></p>
+                  <div class="description">PZ415-I0491-ZB</div>
+                  <div class="description">Price plus assembly costs</div>
+                </div>
+                <div class="expansion-arrow"></div>
+              </div>
+            </div>
+          </div>
+        </div>
         <!-- accessories-item.nj : end --><!-- accessories-item.nj : begin -->
-
+        <div class="accessories-item responsive-item col-xs-12 col-sm-3" data-filter="Außen" data-bt-action="view_accessory" data-bt-value="pz415-i0520-00">
+          <div class="row">
+            <div class="col-xs-12"><img src="https://s3-eu-west-1.amazonaws.com/tme-carassets-acc/5834beb8-f2d5-4fc3-a067-ca157c4aa3ed.JPG"/></div>
+            <div class="col-xs-12">
+              <h5>iQ Seitenschutzleisten, Satz lackierbar</h5><strong>69,00 €</strong>
+              <a href="iq-index.html#" class="readMore" data-tooltip-selector=".expansion-content.acc_ext_ext_10" data-bt-track="">
+                <span>Read more</span><i class="icon-info-sign"></i>
+              </a>
+              <div class="expansion-content acc_ext_ext_10" style="display: none;">
+                <a class="closelink" style="position: absolute; top: 10px; right: 10px;" href="iq-index.html#">
+                  Close <i class="icon-remove"></i>
+                </a>
+                <div class="expansion-inner">
+                  <h2 class="title">iQ Seitenschutzleisten, Satz lackierbar</h2><strong>69,00 €</strong>
+                  <p></p>
+                  <div class="description">PZ415-I0520-00</div>
+                  <div class="description">Price plus assembly costs</div>
+                </div>
+                <div class="expansion-arrow"></div>
+              </div>
+            </div>
+          </div>
+        </div>
         <!-- accessories-item.nj : end --></div>
       </div>
-      <div class="tab-pane" id="ext">
-        <div class="accessories-filter container">
-          <span class="pane-title">Exterior</span>
-
-        </div>
-        <div class="responsive-carousel accessories-list" data-enableswipe=true data-maxcols=24 data-bt-action="click_function" data-bt-value="browse_accessories">
-          <div class="container"><!-- accessories-item.nj : begin -->
-            <div class="accessories-item responsive-item col-xs-12 col-sm-3" data-filter="Außen" data-bt-action="view_accessory" data-bt-value="pz413-99683-00">
-              <div class="row">
-                <div class="col-xs-12"><img src="https://s3-eu-west-1.amazonaws.com/tme-carassets-acc/27483a27-ea6d-49eb-984f-921887a2683e.JPG"/></div>
-                <div class="col-xs-12">
-                  <h5>Diebstahlsicherung für verschiedene LM-Felgen</h5><strong>33,00 €</strong>
-                  <a href="iq-index.html#" class="readMore" data-tooltip-selector=".expansion-content.acc_ext_ext_0" data-bt-track="">
-                    <span>Read more</span><i class="icon-info-sign"></i>
-                  </a>
-                  <div class="expansion-content acc_ext_ext_0" style="display: none;">
-                    <a class="closelink" style="position: absolute; top: 10px; right: 10px;" href="iq-index.html#">
-                      Close <i class="icon-remove"></i>
-                    </a>
-                    <div class="expansion-inner">
-                      <h2 class="title">Diebstahlsicherung für verschiedene LM-Felgen</h2><strong>33,00 €</strong>
-
-                      <p></p>
-
-                      <div class="description">PZ413-99683-00</div>
-                      <div class="description">Price plus assembly costs</div>
-                    </div>
-                    <div class="expansion-arrow"></div>
-                  </div>
+    </div>
+    <div class="tab-pane" id="int">
+      <div class="accessories-filter container">
+        <span class="pane-title">Interior</span>
+      </div>
+      <div class="responsive-carousel accessories-list" data-enableswipe=true data-maxcols=24 data-bt-action="click_function" data-bt-value="browse_accessories">
+        <div class="container"><!-- accessories-item.nj : begin -->
+        <div class="accessories-item responsive-item col-xs-12 col-sm-3" data-filter="Innen" data-bt-action="view_accessory" data-bt-value="pz464-i0130-00">
+          <div class="row">
+            <div class="col-xs-12"><img src="https://s3-eu-west-1.amazonaws.com/tme-carassets-acc/40550971-89dd-4e5c-82bb-14aed2a23c71.JPG"/></div>
+            <div class="col-xs-12">
+              <h5>Alarmanlage VSS1 iQ</h5><strong>170,00 €</strong>
+              <a href="iq-index.html#" class="readMore" data-tooltip-selector=".expansion-content.acc_int_int_0" data-bt-track="">
+                <span>Read more</span><i class="icon-info-sign"></i>
+              </a>
+              <div class="expansion-content acc_int_int_0" style="display: none;">
+                <a class="closelink" style="position: absolute; top: 10px; right: 10px;" href="iq-index.html#">
+                  Close <i class="icon-remove"></i>
+                </a>
+                <div class="expansion-inner">
+                  <h2 class="title">Alarmanlage VSS1 iQ</h2><strong>170,00 €</strong>
+                  <p></p>
+                  <div class="description">PZ464-I0130-00</div>
+                  <div class="description">Price plus assembly costs</div>
                 </div>
+                <div class="expansion-arrow"></div>
               </div>
-            </div>
-            <!-- accessories-item.nj : end --><!-- accessories-item.nj : begin -->
-            <div class="accessories-item responsive-item col-xs-12 col-sm-3" data-filter="Außen" data-bt-action="view_accessory" data-bt-value="pz415-i0521-zb">
-              <div class="row">
-                <div class="col-xs-12"><img src="https://s3-eu-west-1.amazonaws.com/tme-carassets-acc/ef8f1e3f-657d-4f5c-a122-7768a4f525d5.JPG"/></div>
-                <div class="col-xs-12">
-                  <h5>iQ Außenspiegelkappen, chrom</h5><strong>145,00 €</strong>
-                  <a href="iq-index.html#" class="readMore" data-tooltip-selector=".expansion-content.acc_ext_ext_1" data-bt-track="">
-                    <span>Read more</span><i class="icon-info-sign"></i>
-                  </a>
-                  <div class="expansion-content acc_ext_ext_1" style="display: none;">
-                    <a class="closelink" style="position: absolute; top: 10px; right: 10px;" href="iq-index.html#">
-                      Close <i class="icon-remove"></i>
-                    </a>
-                    <div class="expansion-inner">
-                      <h2 class="title">iQ Außenspiegelkappen, chrom</h2><strong>145,00 €</strong>
-
-                      <p></p>
-
-                      <div class="description">PZ415-I0521-ZB</div>
-                      <div class="description">Price plus assembly costs</div>
-                    </div>
-                    <div class="expansion-arrow"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- accessories-item.nj : end --><!-- accessories-item.nj : begin -->
-            <div class="accessories-item responsive-item col-xs-12 col-sm-3" data-filter="Außen" data-bt-action="view_accessory" data-bt-value="pz474-i0671-ze">
-              <div class="row">
-                <div class="col-xs-12"><img src="https://s3-eu-west-1.amazonaws.com/tme-carassets-acc/bdb8d26f-d09d-4837-9280-7d857515cff2.JPG"/></div>
-                <div class="col-xs-12">
-                  <h5>iQ Leichtmetallfelge, Aurora 15" anthrazit</h5><strong>165,01 €</strong>
-                  <a href="iq-index.html#" class="readMore" data-tooltip-selector=".expansion-content.acc_ext_ext_2" data-bt-track="">
-                    <span>Read more</span><i class="icon-info-sign"></i>
-                  </a>
-                  <div class="expansion-content acc_ext_ext_2" style="display: none;">
-                    <a class="closelink" style="position: absolute; top: 10px; right: 10px;" href="iq-index.html#">
-                      Close <i class="icon-remove"></i>
-                    </a>
-                    <div class="expansion-inner">
-                      <h2 class="title">iQ Leichtmetallfelge, Aurora 15" anthrazit</h2><strong>165,01 €</strong>
-
-                      <p></p>
-
-                      <div class="description">PZ474-I0671-ZE</div>
-                      <div class="description">Price plus assembly costs</div>
-                    </div>
-                    <div class="expansion-arrow"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- accessories-item.nj : end --><!-- accessories-item.nj : begin -->
-            <div class="accessories-item responsive-item col-xs-12 col-sm-3" data-filter="Außen" data-bt-action="view_accessory" data-bt-value="pz474-i0671-zj">
-              <div class="row">
-                <div class="col-xs-12"><img src="https://s3-eu-west-1.amazonaws.com/tme-carassets-acc/b83d6208-9119-4507-ab76-8dc41c20aaf7.JPG"/></div>
-                <div class="col-xs-12">
-                  <h5>iQ Leichtmetallfelge, Aurora, 15" silber</h5><strong>160,00 €</strong>
-                  <a href="iq-index.html#" class="readMore" data-tooltip-selector=".expansion-content.acc_ext_ext_3" data-bt-track="">
-                    <span>Read more</span><i class="icon-info-sign"></i>
-                  </a>
-                  <div class="expansion-content acc_ext_ext_3" style="display: none;">
-                    <a class="closelink" style="position: absolute; top: 10px; right: 10px;" href="iq-index.html#">
-                      Close <i class="icon-remove"></i>
-                    </a>
-                    <div class="expansion-inner">
-                      <h2 class="title">iQ Leichtmetallfelge, Aurora, 15" silber</h2><strong>160,00 €</strong>
-
-                      <p></p>
-
-                      <div class="description">PZ474-I0671-ZJ</div>
-                      <div class="description">Price plus assembly costs</div>
-                    </div>
-                    <div class="expansion-arrow"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- accessories-item.nj : end --><!-- accessories-item.nj : begin -->
-            <div class="accessories-item responsive-item col-xs-12 col-sm-3" data-filter="Außen" data-bt-action="view_accessory" data-bt-value="pz474-i0671-zf">
-              <div class="row">
-                <div class="col-xs-12"><img src="https://s3-eu-west-1.amazonaws.com/tme-carassets-acc/5d291668-bb6d-4562-b1b5-5d76b3306329.JPG"/></div>
-                <div class="col-xs-12">
-                  <h5>iQ Leichtmetallfelge, Aurora, 15" sterling silber</h5><strong>165,01 €</strong>
-                  <a href="iq-index.html#" class="readMore" data-tooltip-selector=".expansion-content.acc_ext_ext_4" data-bt-track="">
-                    <span>Read more</span><i class="icon-info-sign"></i>
-                  </a>
-                  <div class="expansion-content acc_ext_ext_4" style="display: none;">
-                    <a class="closelink" style="position: absolute; top: 10px; right: 10px;" href="iq-index.html#">
-                      Close <i class="icon-remove"></i>
-                    </a>
-                    <div class="expansion-inner">
-                      <h2 class="title">iQ Leichtmetallfelge, Aurora, 15" sterling silber</h2><strong>165,01 €</strong>
-
-                      <p></p>
-
-                      <div class="description">PZ474-I0671-ZF</div>
-                      <div class="description">Price plus assembly costs</div>
-                    </div>
-                    <div class="expansion-arrow"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- accessories-item.nj : end --><!-- accessories-item.nj : begin -->
-            <div class="accessories-item responsive-item col-xs-12 col-sm-3" data-filter="Außen" data-bt-action="view_accessory" data-bt-value="pz474-i0672-ze">
-              <div class="row">
-                <div class="col-xs-12"><img src="https://s3-eu-west-1.amazonaws.com/tme-carassets-acc/2c54d8e5-2bcd-4fd2-984b-8830171b95df.JPG"/></div>
-                <div class="col-xs-12">
-                  <h5>iQ Leichtmetallfelge, Stella, 15" anthrazit</h5><strong>170,00 €</strong>
-                  <a href="iq-index.html#" class="readMore" data-tooltip-selector=".expansion-content.acc_ext_ext_5" data-bt-track="">
-                    <span>Read more</span><i class="icon-info-sign"></i>
-                  </a>
-                  <div class="expansion-content acc_ext_ext_5" style="display: none;">
-                    <a class="closelink" style="position: absolute; top: 10px; right: 10px;" href="iq-index.html#">
-                      Close <i class="icon-remove"></i>
-                    </a>
-                    <div class="expansion-inner">
-                      <h2 class="title">iQ Leichtmetallfelge, Stella, 15" anthrazit</h2><strong>170,00 €</strong>
-
-                      <p></p>
-
-                      <div class="description">PZ474-I0672-ZE</div>
-                      <div class="description">Price plus assembly costs</div>
-                    </div>
-                    <div class="expansion-arrow"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- accessories-item.nj : end --><!-- accessories-item.nj : begin -->
-            <div class="accessories-item responsive-item col-xs-12 col-sm-3" data-filter="Außen" data-bt-action="view_accessory" data-bt-value="pz474-i0672-zj">
-              <div class="row">
-                <div class="col-xs-12"><img src="https://s3-eu-west-1.amazonaws.com/tme-carassets-acc/06eaaec1-285f-4c30-9c09-773141525927.JPG"/></div>
-                <div class="col-xs-12">
-                  <h5>iQ Leichtmetallfelge, Stella, 15" silber</h5><strong>160,00 €</strong>
-                  <a href="iq-index.html#" class="readMore" data-tooltip-selector=".expansion-content.acc_ext_ext_6" data-bt-track="">
-                    <span>Read more</span><i class="icon-info-sign"></i>
-                  </a>
-                  <div class="expansion-content acc_ext_ext_6" style="display: none;">
-                    <a class="closelink" style="position: absolute; top: 10px; right: 10px;" href="iq-index.html#">
-                      Close <i class="icon-remove"></i>
-                    </a>
-                    <div class="expansion-inner">
-                      <h2 class="title">iQ Leichtmetallfelge, Stella, 15" silber</h2><strong>160,00 €</strong>
-
-                      <p></p>
-
-                      <div class="description">PZ474-I0672-ZJ</div>
-                      <div class="description">Price plus assembly costs</div>
-                    </div>
-                    <div class="expansion-arrow"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- accessories-item.nj : end --><!-- accessories-item.nj : begin -->
-            <div class="accessories-item responsive-item col-xs-12 col-sm-3" data-filter="Außen" data-bt-action="view_accessory" data-bt-value="pz474-i0672-zf">
-              <div class="row">
-                <div class="col-xs-12"><img src="https://s3-eu-west-1.amazonaws.com/tme-carassets-acc/c1c12e40-a6bf-47e5-8b44-50e027496455.JPG"/></div>
-                <div class="col-xs-12">
-                  <h5>iQ Leichtmetallfelge, Stella, 15" sterling silber</h5><strong>165,01 €</strong>
-                  <a href="iq-index.html#" class="readMore" data-tooltip-selector=".expansion-content.acc_ext_ext_7" data-bt-track="">
-                    <span>Read more</span><i class="icon-info-sign"></i>
-                  </a>
-                  <div class="expansion-content acc_ext_ext_7" style="display: none;">
-                    <a class="closelink" style="position: absolute; top: 10px; right: 10px;" href="iq-index.html#">
-                      Close <i class="icon-remove"></i>
-                    </a>
-                    <div class="expansion-inner">
-                      <h2 class="title">iQ Leichtmetallfelge, Stella, 15" sterling silber</h2><strong>165,01 €</strong>
-
-                      <p></p>
-
-                      <div class="description">PZ474-I0672-ZF</div>
-                      <div class="description">Price plus assembly costs</div>
-                    </div>
-                    <div class="expansion-arrow"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- accessories-item.nj : end --><!-- accessories-item.nj : begin -->
-            <div class="accessories-item responsive-item col-xs-12 col-sm-3" data-filter="Außen" data-bt-action="view_accessory" data-bt-value="pz416-i0960-00">
-              <div class="row">
-                <div class="col-xs-12"><img src="https://s3-eu-west-1.amazonaws.com/tme-carassets-acc/430e6c43-5b8e-4631-b9e7-33cde902ca82.JPG"/></div>
-                <div class="col-xs-12">
-                  <h5>iQ Schmutzfänger, Satz vorne</h5><strong>25,00 €</strong>
-                  <a href="iq-index.html#" class="readMore" data-tooltip-selector=".expansion-content.acc_ext_ext_8" data-bt-track="">
-                    <span>Read more</span><i class="icon-info-sign"></i>
-                  </a>
-                  <div class="expansion-content acc_ext_ext_8" style="display: none;">
-                    <a class="closelink" style="position: absolute; top: 10px; right: 10px;" href="iq-index.html#">
-                      Close <i class="icon-remove"></i>
-                    </a>
-                    <div class="expansion-inner">
-                      <h2 class="title">iQ Schmutzfänger, Satz vorne</h2><strong>25,00 €</strong>
-
-                      <p></p>
-
-                      <div class="description">PZ416-I0960-00</div>
-                      <div class="description">Price plus assembly costs</div>
-                    </div>
-                    <div class="expansion-arrow"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- accessories-item.nj : end --><!-- accessories-item.nj : begin -->
-            <div class="accessories-item responsive-item col-xs-12 col-sm-3" data-filter="Außen" data-bt-action="view_accessory" data-bt-value="pz415-i0491-zb">
-              <div class="row">
-                <div class="col-xs-12"><img src="https://s3-eu-west-1.amazonaws.com/tme-carassets-acc/6e65eaff-d00a-4b97-af11-be712be722d9.JPG"/></div>
-                <div class="col-xs-12">
-                  <h5>IQ Seitenchromeisten, Satz</h5><strong>139,00 €</strong>
-                  <a href="iq-index.html#" class="readMore" data-tooltip-selector=".expansion-content.acc_ext_ext_9" data-bt-track="">
-                    <span>Read more</span><i class="icon-info-sign"></i>
-                  </a>
-                  <div class="expansion-content acc_ext_ext_9" style="display: none;">
-                    <a class="closelink" style="position: absolute; top: 10px; right: 10px;" href="iq-index.html#">
-                      Close <i class="icon-remove"></i>
-                    </a>
-                    <div class="expansion-inner">
-                      <h2 class="title">IQ Seitenchromeisten, Satz</h2><strong>139,00 €</strong>
-
-                      <p></p>
-
-                      <div class="description">PZ415-I0491-ZB</div>
-                      <div class="description">Price plus assembly costs</div>
-                    </div>
-                    <div class="expansion-arrow"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- accessories-item.nj : end --><!-- accessories-item.nj : begin -->
-            <div class="accessories-item responsive-item col-xs-12 col-sm-3" data-filter="Außen" data-bt-action="view_accessory" data-bt-value="pz415-i0520-00">
-              <div class="row">
-                <div class="col-xs-12"><img src="https://s3-eu-west-1.amazonaws.com/tme-carassets-acc/5834beb8-f2d5-4fc3-a067-ca157c4aa3ed.JPG"/></div>
-                <div class="col-xs-12">
-                  <h5>iQ Seitenschutzleisten, Satz lackierbar</h5><strong>69,00 €</strong>
-                  <a href="iq-index.html#" class="readMore" data-tooltip-selector=".expansion-content.acc_ext_ext_10" data-bt-track="">
-                    <span>Read more</span><i class="icon-info-sign"></i>
-                  </a>
-                  <div class="expansion-content acc_ext_ext_10" style="display: none;">
-                    <a class="closelink" style="position: absolute; top: 10px; right: 10px;" href="iq-index.html#">
-                      Close <i class="icon-remove"></i>
-                    </a>
-                    <div class="expansion-inner">
-                      <h2 class="title">iQ Seitenschutzleisten, Satz lackierbar</h2><strong>69,00 €</strong>
-
-                      <p></p>
-
-                      <div class="description">PZ415-I0520-00</div>
-                      <div class="description">Price plus assembly costs</div>
-                    </div>
-                    <div class="expansion-arrow"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- accessories-item.nj : end --></div>
-          </div>
-        </div>
-        <div class="tab-pane" id="int">
-          <div class="accessories-filter container">
-            <span class="pane-title">Interior</span>
-
-          </div>
-          <div class="responsive-carousel accessories-list" data-enableswipe=true data-maxcols=24 data-bt-action="click_function" data-bt-value="browse_accessories">
-            <div class="container"><!-- accessories-item.nj : begin -->
-              <div class="accessories-item responsive-item col-xs-12 col-sm-3" data-filter="Innen" data-bt-action="view_accessory" data-bt-value="pz464-i0130-00">
-                <div class="row">
-                  <div class="col-xs-12"><img src="https://s3-eu-west-1.amazonaws.com/tme-carassets-acc/40550971-89dd-4e5c-82bb-14aed2a23c71.JPG"/></div>
-                  <div class="col-xs-12">
-                    <h5>Alarmanlage VSS1 iQ</h5><strong>170,00 €</strong>
-                    <a href="iq-index.html#" class="readMore" data-tooltip-selector=".expansion-content.acc_int_int_0" data-bt-track="">
-                      <span>Read more</span><i class="icon-info-sign"></i>
-                    </a>
-                    <div class="expansion-content acc_int_int_0" style="display: none;">
-                      <a class="closelink" style="position: absolute; top: 10px; right: 10px;" href="iq-index.html#">
-                        Close <i class="icon-remove"></i>
-                      </a>
-                      <div class="expansion-inner">
-                        <h2 class="title">Alarmanlage VSS1 iQ</h2><strong>170,00 €</strong>
-
-                        <p></p>
-
-                        <div class="description">PZ464-I0130-00</div>
-                        <div class="description">Price plus assembly costs</div>
-                      </div>
-                      <div class="expansion-arrow"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- accessories-item.nj : end --><!-- accessories-item.nj : begin -->
-              <div class="accessories-item responsive-item col-xs-12 col-sm-3" data-filter="Innen" data-bt-action="view_accessory" data-bt-value="pz49k-i0350-rj">
-                <div class="row">
-                  <div class="col-xs-12"><img src="https://s3-eu-west-1.amazonaws.com/tme-carassets-acc/c480c23e-5db8-4208-b383-58d9bea0a9a5.PNG"/></div>
-                  <div class="col-xs-12">
-                    <h5>Gummi Fußmatten iQ</h5><strong>55,00 €</strong>
-                    <a href="iq-index.html#" class="readMore" data-tooltip-selector=".expansion-content.acc_int_int_1" data-bt-track="">
-                      <span>Read more</span><i class="icon-info-sign"></i>
-                    </a>
-                    <div class="expansion-content acc_int_int_1" style="display: none;">
-                      <a class="closelink" style="position: absolute; top: 10px; right: 10px;" href="iq-index.html#">
-                        Close <i class="icon-remove"></i>
-                      </a>
-                      <div class="expansion-inner">
-                        <h2 class="title">Gummi Fußmatten iQ</h2><strong>55,00 €</strong>
-
-                        <p></p>
-
-                        <div class="description">PZ49K-I0350-RJ</div>
-                        <div class="description">Price plus assembly costs</div>
-                      </div>
-                      <div class="expansion-arrow"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- accessories-item.nj : end --><!-- accessories-item.nj : begin -->
-              <div class="accessories-item responsive-item col-xs-12 col-sm-3" data-filter="Innen" data-bt-action="view_accessory" data-bt-value="pz438-i0181-00">
-                <div class="row">
-                  <div class="col-xs-12"><img src="https://s3-eu-west-1.amazonaws.com/tme-carassets-acc/dcf924e1-4397-4bd6-aeac-043753ba40fd.JPG"/></div>
-                  <div class="col-xs-12">
-                    <h5>iQ Einstiegsleisten, Satz Aluminium gebürstet</h5><strong>58,00 €</strong>
-                    <a href="iq-index.html#" class="readMore" data-tooltip-selector=".expansion-content.acc_int_int_2" data-bt-track="">
-                      <span>Read more</span><i class="icon-info-sign"></i>
-                    </a>
-                    <div class="expansion-content acc_int_int_2" style="display: none;">
-                      <a class="closelink" style="position: absolute; top: 10px; right: 10px;" href="iq-index.html#">
-                        Close <i class="icon-remove"></i>
-                      </a>
-                      <div class="expansion-inner">
-                        <h2 class="title">iQ Einstiegsleisten, Satz Aluminium gebürstet</h2><strong>58,00 €</strong>
-
-                        <p></p>
-
-                        <div class="description">PZ438-I0181-00</div>
-                        <div class="description">Price plus assembly costs</div>
-                      </div>
-                      <div class="expansion-arrow"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- accessories-item.nj : end --><!-- accessories-item.nj : begin -->
-              <div class="accessories-item responsive-item col-xs-12 col-sm-3" data-filter="Innen" data-bt-action="view_accessory" data-bt-value="pz472-i0340-za">
-                <div class="row">
-                  <div class="col-xs-12"><img src="https://s3-eu-west-1.amazonaws.com/tme-carassets-acc/a631e978-d42a-48e3-8bdd-f5d205e61d40.JPG"/></div>
-                  <div class="col-xs-12">
-                    <h5>iQ Gepäcknetz, vertikal</h5><strong>37,00 €</strong>
-                    <a href="iq-index.html#" class="readMore" data-tooltip-selector=".expansion-content.acc_int_int_3" data-bt-track="">
-                      <span>Read more</span><i class="icon-info-sign"></i>
-                    </a>
-                    <div class="expansion-content acc_int_int_3" style="display: none;">
-                      <a class="closelink" style="position: absolute; top: 10px; right: 10px;" href="iq-index.html#">
-                        Close <i class="icon-remove"></i>
-                      </a>
-                      <div class="expansion-inner">
-                        <h2 class="title">iQ Gepäcknetz, vertikal</h2><strong>37,00 €</strong>
-
-                        <p></p>
-
-                        <div class="description">PZ472-I0340-ZA</div>
-                        <div class="description">Price plus assembly costs</div>
-                      </div>
-                      <div class="expansion-arrow"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- accessories-item.nj : end --></div>
             </div>
           </div>
         </div>
-
-      </section>
-
-
+        <!-- accessories-item.nj : end --><!-- accessories-item.nj : begin -->
+        <div class="accessories-item responsive-item col-xs-12 col-sm-3" data-filter="Innen" data-bt-action="view_accessory" data-bt-value="pz49k-i0350-rj">
+          <div class="row">
+            <div class="col-xs-12"><img src="https://s3-eu-west-1.amazonaws.com/tme-carassets-acc/c480c23e-5db8-4208-b383-58d9bea0a9a5.PNG"/></div>
+            <div class="col-xs-12">
+              <h5>Gummi Fußmatten iQ</h5><strong>55,00 €</strong>
+              <a href="iq-index.html#" class="readMore" data-tooltip-selector=".expansion-content.acc_int_int_1" data-bt-track="">
+                <span>Read more</span><i class="icon-info-sign"></i>
+              </a>
+              <div class="expansion-content acc_int_int_1" style="display: none;">
+                <a class="closelink" style="position: absolute; top: 10px; right: 10px;" href="iq-index.html#">
+                  Close <i class="icon-remove"></i>
+                </a>
+                <div class="expansion-inner">
+                  <h2 class="title">Gummi Fußmatten iQ</h2><strong>55,00 €</strong>
+                  <p></p>
+                  <div class="description">PZ49K-I0350-RJ</div>
+                  <div class="description">Price plus assembly costs</div>
+                </div>
+                <div class="expansion-arrow"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- accessories-item.nj : end --><!-- accessories-item.nj : begin -->
+        <div class="accessories-item responsive-item col-xs-12 col-sm-3" data-filter="Innen" data-bt-action="view_accessory" data-bt-value="pz438-i0181-00">
+          <div class="row">
+            <div class="col-xs-12"><img src="https://s3-eu-west-1.amazonaws.com/tme-carassets-acc/dcf924e1-4397-4bd6-aeac-043753ba40fd.JPG"/></div>
+            <div class="col-xs-12">
+              <h5>iQ Einstiegsleisten, Satz Aluminium gebürstet</h5><strong>58,00 €</strong>
+              <a href="iq-index.html#" class="readMore" data-tooltip-selector=".expansion-content.acc_int_int_2" data-bt-track="">
+                <span>Read more</span><i class="icon-info-sign"></i>
+              </a>
+              <div class="expansion-content acc_int_int_2" style="display: none;">
+                <a class="closelink" style="position: absolute; top: 10px; right: 10px;" href="iq-index.html#">
+                  Close <i class="icon-remove"></i>
+                </a>
+                <div class="expansion-inner">
+                  <h2 class="title">iQ Einstiegsleisten, Satz Aluminium gebürstet</h2><strong>58,00 €</strong>
+                  <p></p>
+                  <div class="description">PZ438-I0181-00</div>
+                  <div class="description">Price plus assembly costs</div>
+                </div>
+                <div class="expansion-arrow"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- accessories-item.nj : end --><!-- accessories-item.nj : begin -->
+        <div class="accessories-item responsive-item col-xs-12 col-sm-3" data-filter="Innen" data-bt-action="view_accessory" data-bt-value="pz472-i0340-za">
+          <div class="row">
+            <div class="col-xs-12"><img src="https://s3-eu-west-1.amazonaws.com/tme-carassets-acc/a631e978-d42a-48e3-8bdd-f5d205e61d40.JPG"/></div>
+            <div class="col-xs-12">
+              <h5>iQ Gepäcknetz, vertikal</h5><strong>37,00 €</strong>
+              <a href="iq-index.html#" class="readMore" data-tooltip-selector=".expansion-content.acc_int_int_3" data-bt-track="">
+                <span>Read more</span><i class="icon-info-sign"></i>
+              </a>
+              <div class="expansion-content acc_int_int_3" style="display: none;">
+                <a class="closelink" style="position: absolute; top: 10px; right: 10px;" href="iq-index.html#">
+                  Close <i class="icon-remove"></i>
+                </a>
+                <div class="expansion-inner">
+                  <h2 class="title">iQ Gepäcknetz, vertikal</h2><strong>37,00 €</strong>
+                  <p></p>
+                  <div class="description">PZ472-I0340-ZA</div>
+                  <div class="description">Price plus assembly costs</div>
+                </div>
+                <div class="expansion-arrow"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- accessories-item.nj : end --></div>
+      </div>
+    </div>
+  </div>
+</section>
 <section class="leasing-calc">
   <div class="container clearfix">
     <header>
@@ -788,17 +712,16 @@
       <div class="col-md-3 col-sm-4 carconfig-mini">
         <h5>Rent type</h5>
         <div class="carconfig-mini-form">
-<label for="">
-  <select id="periodSelect" class="t1-select">
+          <label for="">
+            <select id="periodSelect" class="t1-select">
               <option value="5" selected=""> 5 years</option>
               <option value="4"> 4 years</option>
               <option value="3"> 3 years</option>
               <option value="2"> 2 years</option>
               <option value="1"> 1 years</option>
-  </select>
-</label>
+            </select>
+          </label>
           <ul class="carconfig-mini-select">
-
             <li class="dropdown " data-step="">
               <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="model-data.html"><span>Operating lease</span><i class="icon-chevron-down"></i></a>
               <ul class="dropdown-menu" role="menu">
@@ -813,8 +736,8 @@
           </ul>
         </div>
       </div>
-        <div class="col-md-2 col-sm-4 carconfig-mini">
-          <h5>Downpayment</h5>
+      <div class="col-md-2 col-sm-4 carconfig-mini">
+        <h5>Downpayment</h5>
         <div class="carconfig-mini-form">
           <ul class="carconfig-mini-select">
             <li class="dropdown " data-step="">
@@ -829,7 +752,7 @@
           </ul>
         </div>
       </div>
-            <div class="col-md-2 col-sm-4 carconfig-mini">
+      <div class="col-md-2 col-sm-4 carconfig-mini">
         <div class="carconfig-mini-form">
           <h5>Interest</h5>
           <ul class="carconfig-mini-select">
@@ -845,7 +768,7 @@
           </ul>
         </div>
       </div>
-            <div class="col-md-3 col-sm-4 carconfig-mini">
+      <div class="col-md-3 col-sm-4 carconfig-mini">
         <div class="carconfig-mini-form">
           <h5>Period</h5>
           <ul class="carconfig-mini-select">
@@ -861,25 +784,24 @@
           </ul>
         </div>
       </div>
-            <div class="col-md-2 col-sm-4 carconfig-mini">
+      <div class="col-md-2 col-sm-4 carconfig-mini">
         <div class="carconfig-mini-form">
           <h5>Residual value</h5>
-            <div class="input-group pull-right">
+          <div class="input-group pull-right">
             <span class="input-group-btn">
               <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
-                <span class="icon-minus"></span>
+              <span class="icon-minus"></span>
               </button>
             </span>
             <input type="text" name="quant[1]" class="form-control input-number ee-default" value="20%" min="1" max="35">
             <span class="input-group-btn">
               <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]">
-                <span class="icon-plus"></span>
+              <span class="icon-plus"></span>
               </button>
             </span>
           </div>
         </div>
       </div>
-
     </div>
     
     
@@ -892,187 +814,174 @@
     </div>
   </div>
 </section>
-
 <div id="models-data" class="toyota-tabs">
   <nav class="toyota-tabs-select container">
     <div>
-        <ul class="nav nav-tabs">
-            <li class="active"><a href="#pane-inhouse" data-tab="pane-inhouse" data-toggle="tab">Stock In-House</a></li>
-            <li><a href="#pane-intoyota" data-tab="pane-intoyota" data-toggle="tab">Stock In Toyota</a></li>
-            <li><a href="#pane-innetwork" data-tab="pane-innetwork" data-toggle="tab">Stock in Network</a></li>
-        </ul>
-        
-          
-        
-          
-        
+      <ul class="nav nav-tabs">
+        <li class="active"><a href="#pane-inhouse" data-tab="pane-inhouse" data-toggle="tab">Stock In-House</a></li>
+        <li><a href="#pane-intoyota" data-tab="pane-intoyota" data-toggle="tab">Stock In Toyota</a></li>
+        <li><a href="#pane-innetwork" data-tab="pane-innetwork" data-toggle="tab">Stock in Network</a></li>
+      </ul>
+      
+      
+      
+      
+      
     </div>
-  
+    
   </nav>
   <div class="toyota-tabs-content active">
     
-  <div id="pane-inhouse" class="container tab-pane active" >
-  
-    <div class="container">
+    <div id="pane-inhouse" class="container tab-pane active" >
+      
+      <div class="container">
+        <header>
+          <h1>Stock In-House</h1>
+        </header>
+        <section>
+          <div class="placeholder-rav4-in-stock"></div>
+          <script type="text/x-handlebars-template" class="rav4-in-stock-template">
+          {{#slice VehicleDTO offset="18" limit="7"}}
+          <div class="row item">
+            <div class="col-sm-4">
+              <img class="img-responsive" alt="{{ImageBaseURL}}" data-original="http://images.toyota-europe.com/lt/{{ImageBaseURL}}/width/308/height/190/exterior-32_{{ExtColour}}.png">
+            </div>
+            <div class="col-sm-8 promotions">
+              <h5>{{Model.Name}}
+              {{#if Model.GoodPrice }}
+              <i class="icon-tag"></i>
+              {{/if}}
+              </h5>
+              <hr>
+              <p class="desc">
+                <span class="price {{#if Model.GoodPrice }} old-price {{/if}} " >{{Price}} €</span>
+                {{#if Model.GoodPrice }}
+                <span class="price new-price">{{Model.GoodPrice}} €</span>
+                <span class="avantage">Save 19% by buying this car</span> <br>
+                {{/if}}
+                <span>Interior color: {{IntColour}}</span>  |  <span>Exterior color: {{ExtColour}}</span>
+                {{#if Options}}
+                <br>
+                <i class="icon-info-sign"></i> Extras: {{Options.string}}
+                {{/if}}
+              </p>
+            </div>
+          </div>
+          {{/slice}}
+          </script>
+        </section>
+      </div>
+    </div>
+    <div id="pane-intoyota" class="container tab-pane" >
       <header>
-        <h1>Stock In-House</h1>
+        <h1>Stock In Toyota</h1>
       </header>
       <section>
-      <div class="placeholder-rav4-in-stock"></div>
-<script type="text/x-handlebars-template" class="rav4-in-stock-template">
-
-{{#slice VehicleDTO offset="18" limit="7"}}
-  <div class="row item">
-    <div class="col-sm-4">
-      <img class="img-responsive" alt="{{ImageBaseURL}}" data-original="http://images.toyota-europe.com/lt/{{ImageBaseURL}}/width/308/height/190/exterior-32_{{ExtColour}}.png">
-    </div>
-    <div class="col-sm-8 promotions">
-      <h5>{{Model.Name}}
-        {{#if Model.GoodPrice }}
-        <i class="icon-tag"></i>
-        {{/if}}
-      </h5>
-      <hr>
-      <p class="desc">
-        <span class="price {{#if Model.GoodPrice }} old-price {{/if}} " >{{Price}} €</span> 
-        {{#if Model.GoodPrice }}
-          <span class="price new-price">{{Model.GoodPrice}} €</span>
-          <span class="avantage">Save 19% by buying this car</span> <br> 
-        {{/if}}
-            <span>Interior color: {{IntColour}}</span>  |  <span>Exterior color: {{ExtColour}}</span>
-      {{#if Options}}
-        <br>
-        <i class="icon-info-sign"></i> Extras: {{Options.string}}
-      {{/if}}
-      </p>
-    </div>
-  </div>
-{{/slice}}
-</script>
+        <div class="placeholder-rav4-in-stock"></div>
+        <script type="text/x-handlebars-template" class="rav4-in-stock-template">
+        {{#slice VehicleDTO offset="18" limit="7"}}
+        <div class="row item">
+          <div class="col-sm-4">
+            <img class="img-responsive" alt="{{ImageBaseURL}}" data-original="http://images.toyota-europe.com/lt/{{ImageBaseURL}}/width/308/height/190/exterior-32_{{ExtColour}}.png">
+          </div>
+          <div class="col-sm-8 promotions">
+            <h5>{{Model.Name}}
+            {{#if Model.GoodPrice }}
+            <i class="icon-tag"></i>
+            {{/if}}
+            </h5>
+            <hr>
+            <p class="desc">
+              <span class="price {{#if Model.GoodPrice }} old-price {{/if}} " >{{Price}} €</span>
+              {{#if Model.GoodPrice }}
+              <span class="price new-price">{{Model.GoodPrice}} €</span>
+              <span class="avantage">Save 19% by buying this car</span> <br>
+              {{/if}}
+              <span>Interior color: {{IntColour}}</span>  |  <span>Exterior color: {{ExtColour}}</span>
+              {{#if Options}}
+              <br>
+              <i class="icon-info-sign"></i> Extras: {{Options.string}}
+              {{/if}}
+            </p>
+          </div>
+        </div>
+        {{/slice}}
+        </script>
       </section>
     </div>
-
-</div>
-<div id="pane-intoyota" class="container tab-pane" >
-  <header>
-    <h1>Stock In Toyota</h1>
-  </header>
-  <section>
-  <div class="placeholder-rav4-in-stock"></div>
-<script type="text/x-handlebars-template" class="rav4-in-stock-template">
-
-{{#slice VehicleDTO offset="18" limit="7"}}
-  <div class="row item">
-    <div class="col-sm-4">
-      <img class="img-responsive" alt="{{ImageBaseURL}}" data-original="http://images.toyota-europe.com/lt/{{ImageBaseURL}}/width/308/height/190/exterior-32_{{ExtColour}}.png">
-    </div>
-    <div class="col-sm-8 promotions">
-      <h5>{{Model.Name}}
-        {{#if Model.GoodPrice }}
-        <i class="icon-tag"></i>
-        {{/if}}
-      </h5>
-      <hr>
-      <p class="desc">
-        <span class="price {{#if Model.GoodPrice }} old-price {{/if}} " >{{Price}} €</span> 
-        {{#if Model.GoodPrice }}
-          <span class="price new-price">{{Model.GoodPrice}} €</span>
-          <span class="avantage">Save 19% by buying this car</span> <br> 
-        {{/if}}
-            <span>Interior color: {{IntColour}}</span>  |  <span>Exterior color: {{ExtColour}}</span>
-      {{#if Options}}
-        <br>
-        <i class="icon-info-sign"></i> Extras: {{Options.string}}
-      {{/if}}
-      </p>
-    </div>
-  </div>
-{{/slice}}
-</script>
-  </section>
-
-</div>
-<div class="container tab-pane" id="pane-innetwork">
+    <div class="container tab-pane" id="pane-innetwork">
       <header>
         <h1>Stock in Network</h1>
       </header>
       <section>
-      <div class="row">
-  <div class="col-xs-12">
-    <div id='carousel-carid' class='carousel slide' data-ride='carousel' data-interval="false">
-      <div class="placeholder-rav4"></div>
-
-        <script type="text/x-handlebars-template" class="rav4-template">
-          <div class='carousel-outer'>
-            <div class='carousel-inner'>
-            {{#slice VehicleDTO offset="0" limit="4"}}
-              <div class='row item {{class}}'>
-                <div class="col-sm-4">
-                  <img alt="{{ImageBaseURL}}" src="http://images.toyota-europe.com/lt/{{ImageBaseURL}}/width/308/height/190/exterior-32_{{ExtColour}}.png">
+        <div class="row">
+          <div class="col-xs-12">
+            <div id='carousel-carid' class='carousel slide' data-ride='carousel' data-interval="false">
+              <div class="placeholder-rav4"></div>
+              <script type="text/x-handlebars-template" class="rav4-template">
+              <div class='carousel-outer'>
+                <div class='carousel-inner'>
+                  {{#slice VehicleDTO offset="0" limit="4"}}
+                  <div class='row item {{class}}'>
+                    <div class="col-sm-4">
+                      <img alt="{{ImageBaseURL}}" src="http://images.toyota-europe.com/lt/{{ImageBaseURL}}/width/308/height/190/exterior-32_{{ExtColour}}.png">
+                    </div>
+                    <div class="col-sm-8 promotions">
+                      <h5>{{Model.Name}}
+                      {{#if Model.GoodPrice }}
+                      <i class="icon-tag"></i>
+                      {{/if}}
+                      </h5>
+                      <hr>
+                      <p class="desc">
+                        <span class="price {{#if Model.GoodPrice }} old-price {{/if}} " >{{Price}} €</span>
+                        {{#if Model.GoodPrice }}
+                        <span class="price new-price">{{Model.GoodPrice}} €</span>
+                        <span class="avantage">Save 19% by buying this car</span>
+                        {{/if}}
+                        |  <span>Interior color: {{IntColour}}</span>  |  <span>Exterior color: {{ExtColour}}</span>
+                        {{#if Options}}
+                        <br>
+                        <i class="icon-info-sign"></i> Extras: {{Options.string}}
+                        {{/if}}
+                      </p>
+                    </div>
+                  </div>
+                  {{/slice}}
                 </div>
-                <div class="col-sm-8 promotions">
-                  <h5>{{Model.Name}}
-                    {{#if Model.GoodPrice }}
-                    <i class="icon-tag"></i>
-                    {{/if}}
-                  </h5>
-                <hr>
-                <p class="desc">
-                  <span class="price {{#if Model.GoodPrice }} old-price {{/if}} " >{{Price}} €</span> 
-                  {{#if Model.GoodPrice }}
-                    <span class="price new-price">{{Model.GoodPrice}} €</span>
-                    <span class="avantage">Save 19% by buying this car</span>
-                  {{/if}}
-                    |  <span>Interior color: {{IntColour}}</span>  |  <span>Exterior color: {{ExtColour}}</span>
-                {{#if Options}}
-                  <br>
-                  <i class="icon-info-sign"></i> Extras: {{Options.string}}
-                {{/if}}
-                </p>
               </div>
+              <ol class='carousel-indicators mCustomScrollbar'>
+                {{#slice VehicleDTO offset="0" limit="4"}}
+                <li data-target='#carousel-carid' data-slide-to='{{no}}' class='{{class}}'>
+                  <img alt="{{ImageBaseURL}}" src="http://images.toyota-europe.com/lt/{{ImageBaseURL}}/width/150/height/95/exterior-32_{{ExtColour}}.png">
+                </li>
+                {{/slice}}
+              </ol>
+              <hr>
+              </script>
             </div>
-            {{/slice}}
           </div>
         </div>
-        <ol class='carousel-indicators mCustomScrollbar'>
-          {{#slice VehicleDTO offset="0" limit="4"}}
-          <li data-target='#carousel-carid' data-slide-to='{{no}}' class='{{class}}'>
-            <img alt="{{ImageBaseURL}}" src="http://images.toyota-europe.com/lt/{{ImageBaseURL}}/width/150/height/95/exterior-32_{{ExtColour}}.png">
-          </li>
-          {{/slice}}
-        </ol>
-        <hr>
-      </script>
-
+      </section>
     </div>
   </div>
 </div>
-      </section>
-    </div>
-</div>
-</div> 
-
-
-
 <!--     <section class="spotlights navy footer">
-      <div class="container clearfix">
-
-        <div class="row">
-          <div class="buttons col-xs-12">
-            <a href="index.html" class="current-parent btn btn-grey pull-left">
-              <span>Previous</span>
-            </a>
-            <a href=".html" class="btn btn-red pull-right" id="nextPage">
-              <span>Model data</span><i class="icon-chevron-right"></i>
-            </a>
-          </div>
-          
-          
-        </div>
+  <div class="container clearfix">
+    <div class="row">
+      <div class="buttons col-xs-12">
+        <a href="index.html" class="current-parent btn btn-grey pull-left">
+          <span>Previous</span>
+        </a>
+        <a href=".html" class="btn btn-red pull-right" id="nextPage">
+          <span>Model data</span><i class="icon-chevron-right"></i>
+        </a>
       </div>
-    </section> -->
-
-
+      
+      
+    </div>
+  </div>
+</section> -->
 <!-- scripts -->
 <script src='bower_components/handlebars/handlebars.js'></script>
 <script src='assets/scripts/vendor/handlebars.js'></script>
@@ -1091,7 +1000,6 @@
 <script src='assets/scripts/vendor/jquery.lazyload.js'></script>
 <script src='bower_components/bootstrap-datepicker/js/bootstrap-datepicker.js'></script>
 <script src='assets/scripts/vendor/bootstrap-datepicker.js'></script>
-
 <script src="data/model-list.json"></script>
 <script src="data/model-data.json"></script>
 <script src="data/rav4-stock.json"></script>
@@ -1099,365 +1007,324 @@
 <script src="data/testdrive.json"></script>
 <script src="data/customer-needs.json"></script>
 <script src="data/accessories.json"></script>
-
 <script>
 jQuery(function(){
-
-  // fixed position rolling out buttons
-  $( ".js-rollout" ).click(function() {
-    var panel = $(this).find('a');
-    if (panel.hasClass("visible")) {
-      panel.removeClass('visible').animate({'right':'-180px'});
-    } else {
-      panel.addClass('visible').animate({'right':'0px'});
-    }
-  });
-
-  $('.js-rollout-lg').on('click', function() {   
-    var panel = $('.quick-spec');
-    if (panel.hasClass("visible")) {
-      panel.removeClass('visible').animate({'right':'-305px'});
-    } else {
-      panel.addClass('visible').animate({'right':'0px'});
-    } 
-  });
-
-  // Modal with iframe
-  $('.btn-openPdf').click(function (e) {
-    $('#loading-indicator').show();
-    e.preventDefault();
-    var url = $(this).attr('href');
-    $('#frame2').attr('src', url);
-    $('#openPdf').prop('class', 'modal fade right') // revert to default
-    $('#openPdf').modal('show');
-  });
-
-  $('#openPdf').on('shown.bs.modal', function () {
-    $('#loading-indicator').hide();
-  });
-
-
-
+// fixed position rolling out buttons
+$( ".js-rollout" ).click(function() {
+var panel = $(this).find('a');
+if (panel.hasClass("visible")) {
+panel.removeClass('visible').animate({'right':'-180px'});
+} else {
+panel.addClass('visible').animate({'right':'0px'});
+}
+});
+$('.js-rollout-lg').on('click', function() {
+var panel = $('.quick-spec');
+if (panel.hasClass("visible")) {
+panel.removeClass('visible').animate({'right':'-305px'});
+} else {
+panel.addClass('visible').animate({'right':'0px'});
+}
+});
+// Modal with iframe
+$('.btn-openPdf').click(function (e) {
+$('#loading-indicator').show();
+e.preventDefault();
+var url = $(this).attr('href');
+$('#frame2').attr('src', url);
+$('#openPdf').prop('class', 'modal fade right') // revert to default
+$('#openPdf').modal('show');
+});
+$('#openPdf').on('shown.bs.modal', function () {
+$('#loading-indicator').hide();
+});
 // Datepicker stuff
-  $('.datepicker').datepicker().on('changeDate', function () {
-    $('#datepicker_value').text(dateToDMY($('.datepicker').datepicker('getDate')));
-  });
-
-  function dateToDMY(date) {
-    var d = date.getDate();
-    var m = date.getMonth() + 1;
-    var y = date.getFullYear();
-    return '' + (d <= 9 ? '0' + d : d) + '.' + (m<=9 ? '0' + m : m) + '.' + y;
-  }
-
+$('.datepicker').datepicker().on('changeDate', function () {
+$('#datepicker_value').text(dateToDMY($('.datepicker').datepicker('getDate')));
+});
+function dateToDMY(date) {
+var d = date.getDate();
+var m = date.getMonth() + 1;
+var y = date.getFullYear();
+return '' + (d <= 9 ? '0' + d : d) + '.' + (m<=9 ? '0' + m : m) + '.' + y;
+}
 // Call bootstrap tab
-  $('#models-data a').click(function (e) {
-    e.preventDefault();
-    $(this).tab('show');
-  });
-
+$('#models-data a').click(function (e) {
+e.preventDefault();
+$(this).tab('show');
+});
 // lazyload pics
 // --------
-  $(".lazy").lazyload({
-    placeholder: 'assets/images/loader.svg',
-    threshold : 200, 
-    effect : "fadeIn"
-  });
-
-  $(".img-responsive").lazyload({
-    placeholder: 'assets/images/loader.svg',
-    threshold : 200, 
-    effect : "fadeIn"
-  });
-
-
-  jQuery('.modelitem').click(function(){
-    jQuery('.modelitem').removeClass('active');
-    jQuery(this).addClass('active');
-    jQuery('#nextPage').removeClass('hidden');
-    return false;
-  });
-
-  jQuery('.model-data .item').click(function(){
-    jQuery('.model-data .item').removeClass('current');
-    jQuery(this).addClass('current');
-    jQuery('#nextPage').removeClass('hidden');
-    return false;
-  });
-
-  jQuery('.accessories-item.item').click(function(){
-    jQuery(this).toggleClass('current');
-    return false;
-  });
-
-    // Plus-minus buttons
+$(".lazy").lazyload({
+placeholder: 'assets/images/loader.svg',
+threshold : 200,
+effect : "fadeIn"
+});
+$(".img-responsive").lazyload({
+placeholder: 'assets/images/loader.svg',
+threshold : 200,
+effect : "fadeIn"
+});
+jQuery('.modelitem').click(function(){
+jQuery('.modelitem').removeClass('active');
+jQuery(this).addClass('active');
+jQuery('#nextPage').removeClass('hidden');
+return false;
+});
+jQuery('.model-data .item').click(function(){
+jQuery('.model-data .item').removeClass('current');
+jQuery(this).addClass('current');
+jQuery('#nextPage').removeClass('hidden');
+return false;
+});
+jQuery('.accessories-item.item').click(function(){
+jQuery(this).toggleClass('current');
+return false;
+});
+// Plus-minus buttons
 //plugin bootstrap minus and plus
 //http://jsfiddle.net/laelitenetwork/puJ6G/
-
 $('.btn-number').click(function(e){
-  e.preventDefault();
-
-  fieldName = $(this).attr('data-field');
-  type      = $(this).attr('data-type');
-  var input = $("input[name='"+fieldName+"']");
-  var currentVal = parseInt(input.val());
-  if (!isNaN(currentVal)) {
-    if(type == 'minus') {
-
-      if(currentVal > input.attr('min')) {
-        input.val(currentVal - 1).change();
-      } 
-      if(parseInt(input.val()) == input.attr('min')) {
-        $(this).attr('disabled', true);
-      }
-
-    } else if(type == 'plus') {
-
-      if(currentVal < input.attr('max')) {
-        input.val(currentVal + 1).change();
-      }
-      if(parseInt(input.val()) == input.attr('max')) {
-        $(this).attr('disabled', true);
-      }
-
-    }
-  } else {
-    input.val(0);
-  }
+e.preventDefault();
+fieldName = $(this).attr('data-field');
+type      = $(this).attr('data-type');
+var input = $("input[name='"+fieldName+"']");
+var currentVal = parseInt(input.val());
+if (!isNaN(currentVal)) {
+if(type == 'minus') {
+if(currentVal > input.attr('min')) {
+input.val(currentVal - 1).change();
+}
+if(parseInt(input.val()) == input.attr('min')) {
+$(this).attr('disabled', true);
+}
+} else if(type == 'plus') {
+if(currentVal < input.attr('max')) {
+input.val(currentVal + 1).change();
+}
+if(parseInt(input.val()) == input.attr('max')) {
+$(this).attr('disabled', true);
+}
+}
+} else {
+input.val(0);
+}
 });
 $('.input-number').focusin(function(){
- $(this).data('oldValue', $(this).val());
+$(this).data('oldValue', $(this).val());
 });
 $('.input-number').change(function() {
-
-  minValue =  parseInt($(this).attr('min'));
-  maxValue =  parseInt($(this).attr('max'));
-  valueCurrent = parseInt($(this).val());
-
-  name = $(this).attr('name');
-  if(valueCurrent >= minValue) {
-    $(".btn-number[data-type='minus'][data-field='"+name+"']").removeAttr('disabled')
-  } else {
-    alert('Sorry, the minimum value was reached');
-    $(this).val($(this).data('oldValue'));
-  }
-  if(valueCurrent <= maxValue) {
-    $(".btn-number[data-type='plus'][data-field='"+name+"']").removeAttr('disabled')
-  } else {
-    alert('Sorry, the maximum value was reached');
-    $(this).val($(this).data('oldValue'));
-  }
-
-
+minValue =  parseInt($(this).attr('min'));
+maxValue =  parseInt($(this).attr('max'));
+valueCurrent = parseInt($(this).val());
+name = $(this).attr('name');
+if(valueCurrent >= minValue) {
+$(".btn-number[data-type='minus'][data-field='"+name+"']").removeAttr('disabled')
+} else {
+alert('Sorry, the minimum value was reached');
+$(this).val($(this).data('oldValue'));
+}
+if(valueCurrent <= maxValue) {
+$(".btn-number[data-type='plus'][data-field='"+name+"']").removeAttr('disabled')
+} else {
+alert('Sorry, the maximum value was reached');
+$(this).val($(this).data('oldValue'));
+}
 });
 $(".input-number").keydown(function (e) {
-        // Allow: backspace, delete, tab, escape, enter and .
-        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 190]) !== -1 ||
-             // Allow: Ctrl+A
-             (e.keyCode == 65 && e.ctrlKey === true) || 
-             // Allow: home, end, left, right
-             (e.keyCode >= 35 && e.keyCode <= 39)) {
-                 // let it happen, don't do anything
-               return;
-             }
-        // Ensure that it is a number and stop the keypress
-        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
-          e.preventDefault();
-        }
-      });
+// Allow: backspace, delete, tab, escape, enter and .
+if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 190]) !== -1 ||
+// Allow: Ctrl+A
+(e.keyCode == 65 && e.ctrlKey === true) ||
+// Allow: home, end, left, right
+(e.keyCode >= 35 && e.keyCode <= 39)) {
+// let it happen, don't do anything
+return;
+}
+// Ensure that it is a number and stop the keypress
+if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+e.preventDefault();
+}
+});
 // End Plusminus
 });
-
 // directional modal
 $('#btn-customerModal').click(function() {
-    $('#customerModal')
-        .prop('class', 'modal fade') // revert to default
-        .addClass( $(this).data('direction') );
-    $('#customerModal').modal('show');
+$('#customerModal')
+.prop('class', 'modal fade') // revert to default
+.addClass( $(this).data('direction') );
+$('#customerModal').modal('show');
 });
-
-
 </script>
-
-
-  </body>
+</body>
 </html>
-
 <div class="modal fade" id="customerModal" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog fullscreen">
-    
-    <div class="modal-content">
-      <div class="modal-body">
-        <div class="toolbar">
-          <a class="close-link" data-dismiss="modal" aria-label="Close">
-            <div class="btn-back">
-              <div class="btn-graphic" >
-                <i class="icon-angle-left"></i>
-              </div>
-            </div>
-            <span class="back-text">Tagasi <strong>lehele</strong></span>
-          </a>
+<div class="modal-dialog fullscreen">
+
+<div class="modal-content">
+  <div class="modal-body">
+    <div class="toolbar">
+      <a class="close-link" data-dismiss="modal" aria-label="Close">
+        <div class="btn-back">
+          <div class="btn-graphic" >
+            <i class="icon-angle-left"></i>
+          </div>
         </div>
-         <div class="row in-modal">
+        <span class="back-text">Tagasi <strong>lehele</strong></span>
+      </a>
+    </div>
+    <div class="row in-modal">
+      <div class="container">
+        <div class="col-sm-12">
+          <section id="identify-customer" class="register-leads">
             <div class="container">
-              <div class="col-sm-12">
-                <section id="identify-customer" class="register-leads">
-	<div class="container">
-		<header class="section-title">
-			<h1>Identify customer</h1>
-		</header>
-		<div class="row">
-			<div class="col-md-10 col-md-offset-1">
-				<form action="" class="form-horizontal">
-					<div class="form-group">
-						<label class="col-sm-3 col-md-3 control-label" for="textinput">Name</label>  
-						<div class="col-sm-8 col-md-6">
-							<input id="textinput" name="textinput" type="text" placeholder="Required" class="form-control input-md" value="Sven Peekmann">
-						</div>
-					</div>
-
-					<div class="form-group">
-						<label class="col-sm-3 col-md-3 control-label" for="textinput-1">Company</label>  
-						<div class="col-sm-8 col-md-6">
-							<input id="textinput-1" name="textinput-1" type="text" placeholder="Optional" class="form-control input-md">
-						</div>
-					</div>
-
-					<div class="form-group">
-						<label class="col-sm-3 col-md-3 control-label" for="textinput-2">Email</label>  
-						<div class="col-sm-8 col-md-6">
-							<input id="textinput-2" name="textinput-2" type="text" placeholder="Required" class="form-control input-md">
-						</div>
-					</div>
-
-					<div class="form-group">
-						<label class="col-sm-3 col-md-3 control-label" for="textinput-3">Phone</label>  
-						<div class="col-sm-8 col-md-6">
-							<input id="textinput-3" name="textinput-3" type="text" placeholder="Optional" class="form-control input-md">
-						</div>
-					</div>
-				</form>
-
-				<!-- <div class="row">
-					<div class="col-md-8 col-md-offset-3 col-sm-offset-3">
-						<h3><i class="glyphicon glyphicon-ok"></i> Sven Peekmann is found in the client list.</h3>
-					</div>
-				</div> -->
-				<!-- <div class="row">
-					<div class="col-md-6 col-md-offset-3 col-sm-offset-3">
-						<a id="btn-customerModal" href="#customerModal" data-target="#customerModal" data-direction="right" class="btn btn-link pull-right">View Sven record <i class="icon-chevron-right"></i></a>
-					</div>
-				</div> -->
-			</div>
-		</div>
-		
-	</div>
-
-<!--             <a class="btn btn-red right" id="btn-customerModal" href="#customerModal" data-target="#customerModal" data-direction="right">
-        <span>Send offer to client</span>
-      </a> -->
-
-	<div class="modal fade" id="customerModal" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog fullscreen">
-    
-    <div class="modal-content">
-      <div class="modal-body">
-        <div class="toolbar">
-          <a class="close-link" data-dismiss="modal" aria-label="Close">
-            <div class="btn-back">
-              <div class="btn-graphic" >
-                <i class="icon-angle-left"></i>
+              <header class="section-title">
+                <h1>Identify customer</h1>
+              </header>
+              <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                  <form action="" class="form-horizontal">
+                    <div class="form-group">
+                      <label class="col-sm-3 col-md-3 control-label" for="textinput">Name</label>
+                      <div class="col-sm-8 col-md-6">
+                        <input id="textinput" name="textinput" type="text" placeholder="Required" class="form-control input-md" value="Sven Peekmann">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-sm-3 col-md-3 control-label" for="textinput-1">Company</label>
+                      <div class="col-sm-8 col-md-6">
+                        <input id="textinput-1" name="textinput-1" type="text" placeholder="Optional" class="form-control input-md">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-sm-3 col-md-3 control-label" for="textinput-2">Email</label>
+                      <div class="col-sm-8 col-md-6">
+                        <input id="textinput-2" name="textinput-2" type="text" placeholder="Required" class="form-control input-md">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-sm-3 col-md-3 control-label" for="textinput-3">Phone</label>
+                      <div class="col-sm-8 col-md-6">
+                        <input id="textinput-3" name="textinput-3" type="text" placeholder="Optional" class="form-control input-md">
+                      </div>
+                    </div>
+                  </form>
+                  <!-- <div class="row">
+                      <div class="col-md-8 col-md-offset-3 col-sm-offset-3">
+                          <h3><i class="glyphicon glyphicon-ok"></i> Sven Peekmann is found in the client list.</h3>
+                      </div>
+                  </div> -->
+                  <!-- <div class="row">
+                      <div class="col-md-6 col-md-offset-3 col-sm-offset-3">
+                          <a id="btn-customerModal" href="#customerModal" data-target="#customerModal" data-direction="right" class="btn btn-link pull-right">View Sven record <i class="icon-chevron-right"></i></a>
+                      </div>
+                  </div> -->
+                </div>
               </div>
+              
             </div>
-            <span class="back-text">Tagasi <strong>lehele</strong></span>
-          </a>
-        </div>
-         <div class="row in-modal">
-            <div class="container">
-              <div class="col-sm-12">
-                <section id="customer-card" class="register-leads">
-	<div class="container">
-		<header class="section-title">
-			<h1>Customer card</h1>
-		</header>
-		<div class="row">
-			<div class="col-md-8 col-md-offset-3 col-sm-offset-3">
-				<div class="row">
-					<div class="col-sm-3">
-						<h4>Name</h4>
-					</div>
-					<div class="col-sm-9">
-						<h3><strong>Sven Peekmann</strong></h3>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-sm-3">
-						<h4>Company</h4>
-					</div>
-					<div class="col-sm-9">
-						<h3><strong>Net Group</strong></h3>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-sm-3">
-						<h4>Email</h4>
-					</div>
-					<div class="col-sm-9">
-						<h3><strong>sven.peekmann@netgroup.ee</strong></h3>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-sm-3">
-						<h4>Phone</h4>
-					</div>
-					<div class="col-sm-9">
-						<h3><strong></strong></h3>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-md-8 col-md-offset-3 col-sm-offset-3 car-list-item">
-				<h4>Toyota GT86 2,0 D-4S bokser 200hj 6 M/T Bensiin</h4>
-				<p>reg. date 01.01.2015</p>
-				<p>mileage 125 0000</p>
-			</div>
-
-			<div class="col-md-8 col-md-offset-3 col-sm-offset-3 car-list-item">
-				<h4>Avensis 1.8 Valvematic Linea Sol Plus FWD Multidrive S</h4>
-				<p>reg. date 23.12.2014</p>
-				<p>mileage 58 0000</p>
-			</div>
-		</div>
-	</div>
-</section>
-                <div class="modal-footer">
-                  <button name="cancel" value="cancel" class="btn btn-link" data-dismiss="modal">
-                      Cancel
-                  </button>
-                  <button type="submit" class="btn btn-dark" name="submit" value="submit">
-                      Send
-                  </button>
+            <!--             <a class="btn btn-red right" id="btn-customerModal" href="#customerModal" data-target="#customerModal" data-direction="right">
+              <span>Send offer to client</span>
+            </a> -->
+            <div class="modal fade" id="customerModal" tabindex="-1" role="dialog" aria-hidden="true">
+              <div class="modal-dialog fullscreen">
+                
+                <div class="modal-content">
+                  <div class="modal-body">
+                    <div class="toolbar">
+                      <a class="close-link" data-dismiss="modal" aria-label="Close">
+                        <div class="btn-back">
+                          <div class="btn-graphic" >
+                            <i class="icon-angle-left"></i>
+                          </div>
+                        </div>
+                        <span class="back-text">Tagasi <strong>lehele</strong></span>
+                      </a>
+                    </div>
+                    <div class="row in-modal">
+                      <div class="container">
+                        <div class="col-sm-12">
+                          <section id="customer-card" class="register-leads">
+                            <div class="container">
+                              <header class="section-title">
+                                <h1>Customer card</h1>
+                              </header>
+                              <div class="row">
+                                <div class="col-md-8 col-md-offset-3 col-sm-offset-3">
+                                  <div class="row">
+                                    <div class="col-sm-3">
+                                      <h4>Name</h4>
+                                    </div>
+                                    <div class="col-sm-9">
+                                      <h3><strong>Sven Peekmann</strong></h3>
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col-sm-3">
+                                      <h4>Company</h4>
+                                    </div>
+                                    <div class="col-sm-9">
+                                      <h3><strong>Net Group</strong></h3>
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col-sm-3">
+                                      <h4>Email</h4>
+                                    </div>
+                                    <div class="col-sm-9">
+                                      <h3><strong>sven.peekmann@netgroup.ee</strong></h3>
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col-sm-3">
+                                      <h4>Phone</h4>
+                                    </div>
+                                    <div class="col-sm-9">
+                                      <h3><strong></strong></h3>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-md-8 col-md-offset-3 col-sm-offset-3 car-list-item">
+                                  <h4>Toyota GT86 2,0 D-4S bokser 200hj 6 M/T Bensiin</h4>
+                                  <p>reg. date 01.01.2015</p>
+                                  <p>mileage 125 0000</p>
+                                </div>
+                                <div class="col-md-8 col-md-offset-3 col-sm-offset-3 car-list-item">
+                                  <h4>Avensis 1.8 Valvematic Linea Sol Plus FWD Multidrive S</h4>
+                                  <p>reg. date 23.12.2014</p>
+                                  <p>mileage 58 0000</p>
+                                </div>
+                              </div>
+                            </div>
+                          </section>
+                          <div class="modal-footer">
+                            <button name="cancel" value="cancel" class="btn btn-link" data-dismiss="modal">
+                            Cancel
+                            </button>
+                            <button type="submit" class="btn btn-dark" name="submit" value="submit">
+                            Send
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
+          </section>
+          <div class="modal-footer">
+            <button name="cancel" value="cancel" class="btn btn-link" data-dismiss="modal">
+            Cancel
+            </button>
+            <button type="submit" class="btn btn-dark" name="submit" value="submit">
+            Send
+            </button>
           </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
-</section>
-                <div class="modal-footer">
-                  <button name="cancel" value="cancel" class="btn btn-link" data-dismiss="modal">
-                      Cancel
-                  </button>
-                  <button type="submit" class="btn btn-dark" name="submit" value="submit">
-                      Send
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-      </div>
-    </div>
-  </div>
+</div>
 </div>
