@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 48 49" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+    <g transform="matrix(1,0,0,1,-3177,-974)">
+        <g transform="matrix(1,0,0,1,2920.38,32)">
+            <g id="icon_petrol" transform="matrix(2.14746,0,0,2.14746,255.116,938.564)">
+                <path d="M17,2.5C17,2.224 16.776,2 16.5,2L1.5,2C1.224,2 1,2.224 1,2.5L1,10L17,10L17,2.5ZM15,7.5C15,7.776 14.776,8 14.5,8L3.5,8C3.224,8 3,7.776 3,7.5L3,4.5C3,4.224 3.224,4 3.5,4L14.5,4C14.776,4 15,4.224 15,4.5L15,7.5Z" style="fill:rgb(21,30,36);fill-rule:nonzero;"/>
+                <path d="M22.832,4.874C23.039,4.689 23.057,4.374 22.873,4.168C22.689,3.961 22.373,3.944 22.168,4.127C20.984,5.181 19,7.086 19,8L19,15.5C19,16.327 18.327,17 17.5,17L17,17L17,11L1,11L1,23.5C1,23.776 1.224,24 1.5,24L16.5,24C16.776,24 17,23.776 17,23.5L17,18L17.5,18C18.878,18 20,16.879 20,15.5L20,12.81L21.724,11.948C21.893,11.862 22,11.689 22,11.5L22,9.5C22,9.224 21.776,9 21.5,9L20,9L19.999,8.014C20.065,7.587 21.517,6.046 22.832,4.874Z" style="fill-rule:nonzero;"/>
+            </g>
+        </g>
+    </g>
+</svg>
