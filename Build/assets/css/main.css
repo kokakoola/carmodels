@@ -17862,6 +17862,16 @@ section h1 {
     .quick-spec .view-prices.bordered:hover {
       background-color: rgba(255, 255, 255, 0.2); }
 
+#printsheet-preview {
+  width: 460px;
+  right: -460px;
+}
+
+#printsheet-preview table {
+  width: 100%;
+}
+
+
 .view-car dt {
   width: 160px; }
 .view-car dd {
