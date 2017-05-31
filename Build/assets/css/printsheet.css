@@ -107,6 +107,10 @@ table {
 		border-bottom: 1px solid lightgray;
 }
 
+.nowrap {
+	white-space: nowrap;
+}
+
 .print-specs svg {
 		margin: 0 4px -3px 0;
 		width: 1rem;
