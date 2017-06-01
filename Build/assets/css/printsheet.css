@@ -82,7 +82,7 @@ strong {
 
 article {
 		position: relative;
-		margin: 4rem 5rem 5rem 5rem;
+		margin: 2rem 3rem 3rem 3rem;
 }
 
 table {
@@ -128,8 +128,8 @@ tr.border_bottom td {
 
 .print-prices {
 		position: fixed;
-		width: calc(100% - 10rem);
-		bottom: 4rem;
+		width: calc(100% - 7rem);
+		bottom: 2rem;
 }
 
 #prices-big-wrapper {
@@ -144,7 +144,7 @@ tr.border_bottom td {
 }
 
 .price-big {
-		padding: 0 8px;
+		padding: 24px 0 8px 0;
 		font-size: 48px;
 		font-family: "toyotadisplay_bd";
 		line-height: 32px;
