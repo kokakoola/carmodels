@@ -139,13 +139,18 @@ tr.border_bottom td {
 		text-align: center;
 }
 
-#prices-big-wrapper * {
+#prices-big-wrapper .price-big {
 		color: #d2001e;
+}
+
+#prices-big-wrapper img {
+	align-self: flex-end;
+	max-width: 18rem;
 }
 
 .price-big {
 		padding: 24px 0 8px 0;
-		font-size: 48px;
+		font-size: 36px;
 		font-family: "toyotadisplay_bd";
 		line-height: 32px;
 		border-bottom: 1px solid lightgray;
