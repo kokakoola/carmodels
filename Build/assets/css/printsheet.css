@@ -149,13 +149,21 @@ tr.border_bottom td {
 }
 
 .price-big {
+		margin-bottom: 8px;
 		padding: 24px 0 8px 0;
 		font-size: 36px;
 		font-family: "toyotadisplay_bd";
 		line-height: 32px;
-		border-bottom: 1px solid lightgray;
+		border-bottom: 1px solid #818285;
 }
 
 .price-big span {
 		font-size: 14px;
+		color: #818285;
+}
+
+.pricelabel {
+	color: #818285;
+	font-weight: bold;
+	font-size: 18px;
 }
